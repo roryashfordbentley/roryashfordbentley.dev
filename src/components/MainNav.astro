@@ -1,0 +1,36 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import config from "../content/config/config.json";
+import IconLink from "./react/IconLink";
+
+function isActiveNav(link: string) {
+    const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+    const subpath = pathname.match(/[^\/]+/g);
+
+    if (link === pathname || link === '/' + (subpath?.[0] || '')) {
+        return true;
+    }
+
+    return false;
+}
+---
+
+<nav class="main-nav">
+    <ul class="main-nav__list">
+        {
+            config.nav.map((item) => (
+                <a
+                    class={isActiveNav(item.link)
+                        ? "main-nav__link main-nav__link--active"
+                        : "main-nav__link"
+                    }
+                    href={item.link}
+                >
+                    {item.title}
+                </a>
+            ))
+        }
+    </ul>
+</nav>
+
+<style></style>
