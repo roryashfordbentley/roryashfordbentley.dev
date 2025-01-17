@@ -1,0 +1,35 @@
+---
+import "../assets/css/tokens/colours.css";
+import "../assets/css/tokens/fonts.css";
+import "../assets/css/tokens/spacing.css";
+import "../assets/css/reset.css";
+import "../assets/css/global.css";
+import "../assets/css/typography.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { client } from "../../tina/__generated__/client";
+
+const options = await client.queries.options({ relativePath: "index.json" });
+const title = options.data.options.site_title;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<Header />
+		<slot />
+        <Footer />
+	</body>
+</html>

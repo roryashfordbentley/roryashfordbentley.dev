@@ -1,0 +1,15 @@
+:root {
+  --font-size-1: 2.986rem;
+  --font-size-2: 2.488rem;
+  --font-size-3: 2.074rem;
+  --font-size-4: 1.728rem;
+  --font-size-5: 1.44rem;
+  --font-size-6: 1.2rem;
+  --font-size-7: 1rem;
+  --font-size-8: 0.833rem;
+  --font-size-9: 0.694rem;
+
+  --font-weight-light: 300;
+  --font-weight-medium: 400;
+  --font-weight-bold: 600;
+}

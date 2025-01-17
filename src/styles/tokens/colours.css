@@ -1,0 +1,7 @@
+:root {
+	--theme-primary: #00ff88;
+	--theme-text: white;
+	--theme-text-tint: #8ba498;
+	--theme-link: var(--theme-primary);
+	--theme-background: #1c201b;
+}
