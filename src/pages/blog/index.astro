@@ -1,5 +1,5 @@
 ---
-import PageStructure from "@layouts/PageStructure.astro";
+import PageWrapper from "@layouts/PageWrapper.astro";
 import { getCollection } from "astro:content";
 import BlogGrid from "@components/BlogGrid.astro";
 import CardArticle from "@components/CardArticle.astro";
@@ -11,7 +11,7 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <!--<BaseHead title={config.seo.title} description={config.seo.description} /> -->
-<PageStructure>
+<PageWrapper>
 	<main>
 		<Wrapper>
 			<BlogGrid>
@@ -28,4 +28,4 @@ const posts = (await getCollection("blog")).sort(
 			</BlogGrid>
 		</Wrapper>
 	</main>
-</PageStructure>
+</PageWrapper>
