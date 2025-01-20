@@ -1,0 +1,21 @@
+---
+import "../styles/tokens/colours.css";
+import "../styles/tokens/fonts.css";
+import "../styles/tokens/spacing.css";
+
+const { items } = Astro.props;
+---
+
+<div class="blog-grid">
+	<slot />
+</div>
+
+<style>
+	.blog-grid {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+		column-gap: var(--spacing-4);
+		row-gap: var(--spacing-4);
+	}
+</style>

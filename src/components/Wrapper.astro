@@ -1,0 +1,24 @@
+---
+import "../styles/tokens/colours.css";
+import "../styles/tokens/fonts.css";
+import "../styles/tokens/spacing.css";
+
+const { items } = Astro.props;
+---
+
+<div class="wrapper">
+	<slot />
+</div>
+
+<!-- Have to use is:global to style ancestor links in Astro :( -->
+<style is:global>
+	.wrapper {
+		display: grid;
+		grid-template-columns: 10% auto 10%;
+		grid-auto-flow: row;
+	}
+
+	.wrapper > * {
+		grid-column: 2/3;
+	}
+</style>
