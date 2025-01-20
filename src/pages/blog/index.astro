@@ -1,10 +1,9 @@
 ---
-import PageStructure from "../../layouts/PageStructure.astro";
+import PageStructure from "@layouts/PageStructure.astro";
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import BlogGrid from "../../components/BlogGrid.astro";
-import CardArticle from "../../components/CardArticle.astro";
-import Wrapper from "../../components/Wrapper.astro";
+import BlogGrid from "@components/BlogGrid.astro";
+import CardArticle from "@components/CardArticle.astro";
+import Wrapper from "@components/Wrapper.astro";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
