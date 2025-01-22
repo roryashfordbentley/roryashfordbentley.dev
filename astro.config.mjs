@@ -8,8 +8,11 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://example.com",
+	site: "https://www.roryashfordbentley.dev",
 	integrations: [mdx(), sitemap(), react(), tinaDirective()],
+	redirects: {
+		"/admin": "/admin/index.html",
+	},
 	vite: {
 		plugins: [basicSsl()],
 		server: {
