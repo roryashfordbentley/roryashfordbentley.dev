@@ -1,7 +1,17 @@
 :root {
+	--theme-primary: #09181a;
+	--theme-text: #585b5c;
+	--theme-text-tint: #687f7c;
+	--theme-link: var(--theme-primary);
+	--theme-background: #f3f8f8;
+	--theme-border: #ccddde;
+}
+
+:root.dark {
 	--theme-primary: #00ff88;
 	--theme-text: white;
 	--theme-text-tint: #8ba498;
 	--theme-link: var(--theme-primary);
 	--theme-background: #1c201b;
+	--theme-border: #374435;
 }

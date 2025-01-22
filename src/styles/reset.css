@@ -2,3 +2,12 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
