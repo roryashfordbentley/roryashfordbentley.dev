@@ -21,7 +21,7 @@ function dateFormat(date: Date) {
 		date.getFullYear(),
 	];
 
-	let readableDateString = `${month}/${day}—${year}`;
+	let readableDateString = `${day}/${month + 1} — ${year}`;
 	let machineReadableDateString = dateFormatted.toISOString();
 
 	return { readableDateString, machineReadableDateString };

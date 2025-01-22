@@ -16,17 +16,17 @@ const featuredPost = posts.shift();
 <PageWrapper>
 	<main>
 		<Wrapper>
-			{
-				featuredPost && (
-					<CardArticle
-						title={featuredPost.data.title}
-						description={featuredPost.data.description}
-						date={featuredPost.data.pubDate}
-						url={`/blog/${featuredPost.id}/`}
-					/>
-				)
-			}
 			<BlogGrid>
+				{
+					featuredPost && (
+						<CardArticle
+							title={featuredPost.data.title}
+							description={featuredPost.data.description}
+							date={featuredPost.data.pubDate}
+							url={`/blog/${featuredPost.id}/`}
+						/>
+					)
+				}
 				{
 					posts.map((post) => (
 						<CardArticle

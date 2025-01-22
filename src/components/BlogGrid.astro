@@ -10,7 +10,7 @@ const { items } = Astro.props;
 	<slot />
 </div>
 
-<style>
+<style is:inline>
 	.blog-grid {
 		display: grid;
 		width: 100%;
@@ -18,5 +18,10 @@ const { items } = Astro.props;
 		column-gap: var(--spacing-6);
 		row-gap: var(--spacing-6);
 		padding: var(--spacing-8) 0;
+	}
+
+	/* Blame: Currently Astro doesnt provide a way to wrap slotted elements :( */
+	.blog-grid > div:first-child {
+		grid-column: 1 / -1;
 	}
 </style>

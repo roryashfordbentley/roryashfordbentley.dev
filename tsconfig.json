@@ -10,6 +10,7 @@
 			"@content/*": ["src/content/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@styles/*": ["src/styles/*"],
+			"@scripts/*": ["src/scripts/*"],
 			"@pages/*": ["src/pages/*"],
 			"@tina/*": ["tina/*"]
 		}
