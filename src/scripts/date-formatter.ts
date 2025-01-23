@@ -10,9 +10,9 @@ function dateFormatter(date: Date) {
 	new Date(date).toString();
 
 	const [month, day, year] = [
-		date.getMonth(),
-		date.getDate(),
-		date.getFullYear(),
+		dateFormatted.getMonth(),
+		dateFormatted.getDate(),
+		dateFormatted.getFullYear(),
 	];
 
 	let readableDateString = `${day}/${month + 1} — ${year}`;
