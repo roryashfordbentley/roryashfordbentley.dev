@@ -2,7 +2,14 @@ import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import type { BlogQuery, BlogQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import FormattedDate from "../../src/components/react/FormattedDate.tsx";
+import FormattedDate from "@components/react/FormattedDate.tsx";
+import dateFormatter from "@scripts/date-formatter.js";
+
+/**
+ * This template is rendered isomorphically, both frontend and backend.
+ * It uses data-tina-field={tinaField(FILED_NAME, "title")} to build relationships
+ * within the CSM to see what you are editing
+ */
 
 type Props = {
 	variables: BlogQueryVariables;
@@ -21,9 +28,9 @@ export default function AdminBlogPost(props: Props) {
 
 	return (
 		<article>
-			<div
+			<figure
 				data-tina-field={tinaField(blog, "heroImage")}
-				class="hero-image"
+				className="hero-image"
 			>
 				{blog.heroImage && (
 					<img
@@ -33,32 +40,36 @@ export default function AdminBlogPost(props: Props) {
 						alt=""
 					/>
 				)}
-			</div>
-			<div class="prose">
-				<div class="title">
-					<div
-						class="date"
-						data-tina-field={tinaField(blog, "pubDate")}
+			</figure>
+
+			<h1 data-tina-field={tinaField(blog, "title")}>{blog.title}</h1>
+
+			<div className="date" data-tina-field={tinaField(blog, "pubDate")}>
+				{blog.pubDate && (
+					<time
+						className="card-article__date"
+						dateTime={
+							dateFormatter(blog.pubDate)
+								.machineReadableDateString
+						}
 					>
-						<FormattedDate date={blog.pubDate} />
-						{blog.updatedDate && (
-							<div
-								class="last-updated-on"
-								data-tina-field={tinaField(blog, "updatedDate")}
-							>
-								Last updated on{" "}
-								<FormattedDate date={blog.updatedDate} />
-							</div>
-						)}
+						{dateFormatter(blog.pubDate).readableDateString}
+					</time>
+				)}
+
+				{blog.updatedDate && (
+					<div
+						className="last-updated-on"
+						data-tina-field={tinaField(blog, "updatedDate")}
+					>
+						Last updated on{" "}
+						<FormattedDate date={blog.updatedDate} />
 					</div>
-					<h1 data-tina-field={tinaField(blog, "title")}>
-						{blog.title}
-					</h1>
-					<hr />
-				</div>
-				<div data-tina-field={tinaField(blog, "body")}>
-					<TinaMarkdown content={blog.body} />
-				</div>
+				)}
+			</div>
+
+			<div data-tina-field={tinaField(blog, "body")}>
+				<TinaMarkdown content={blog.body} />
 			</div>
 		</article>
 	);

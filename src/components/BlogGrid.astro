@@ -15,13 +15,13 @@ const { items } = Astro.props;
 		display: grid;
 		width: 100%;
 		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-		column-gap: var(--spacing-6);
-		row-gap: var(--spacing-6);
+		column-gap: var(--spacing-7);
+		row-gap: var(--spacing-8);
 		padding: var(--spacing-8) 0;
 	}
 
 	/* Blame: Currently Astro doesnt provide a way to wrap slotted elements :( */
-	.blog-grid > div:first-child {
+	.blog-grid > *:first-child {
 		grid-column: 1 / -1;
 	}
 </style>
