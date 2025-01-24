@@ -3,11 +3,12 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import type { BlogQuery, BlogQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import dateFormatter from "@scripts/date-formatter.js";
+import { Blocks } from "@blocks/_blocksLoader.tsx";
 
 /**
  * This template is rendered isomorphically, both frontend and backend.
  * It uses data-tina-field={tinaField(FILED_NAME, "title")} to build relationships
- * within the CSM to see what you are editing
+ * within the CMS to see what you are editing
  */
 
 type Props = {
@@ -17,11 +18,7 @@ type Props = {
 };
 
 export default function AdminBlogPost(props: Props) {
-	const { data } = useTina({
-		query: props.query,
-		variables: props.variables,
-		data: props.data,
-	});
+	const { data } = useTina(props);
 
 	const blog = data.blog;
 
@@ -70,6 +67,8 @@ export default function AdminBlogPost(props: Props) {
 			<div data-tina-field={tinaField(blog, "body")}>
 				<TinaMarkdown content={blog.body} />
 			</div>
+
+			<Blocks {...blog} />
 		</article>
 	);
 }

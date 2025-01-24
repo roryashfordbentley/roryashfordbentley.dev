@@ -12,6 +12,7 @@
 			"@styles/*": ["src/styles/*"],
 			"@scripts/*": ["src/scripts/*"],
 			"@pages/*": ["src/pages/*"],
+			"@blocks/*": ["src/blocks/*"],
 			"@tina/*": ["tina/*"]
 		}
 	}
