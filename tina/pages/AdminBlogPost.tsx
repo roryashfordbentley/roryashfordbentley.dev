@@ -45,7 +45,13 @@ export default function AdminBlogPost(props: Props) {
 						className="last-updated-on"
 						data-tina-field={tinaField(blog, "updatedDate")}
 					>
-						Last updated on <FormattedDate date={blog.updatedDate} />
+						Last updated on{" "}
+						<time
+							className="card-article__date"
+							dateTime={dateFormatter(blog.updatedDate).machineReadableDateString}
+						>
+							{dateFormatter(blog.updatedDate).readableDateString}
+						</time>
 					</div>
 				)}
 			</div>
