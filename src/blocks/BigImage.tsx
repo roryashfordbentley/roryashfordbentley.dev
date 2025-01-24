@@ -1,4 +1,6 @@
-const BigImage = ({ data, parentField = "" }) => {
+import type { Template } from "tinacms";
+
+export const BigImage = ({ data, parentField = "" }) => {
 	console.log(data);
 	return (
 		<figure className="big-image">
@@ -7,4 +9,26 @@ const BigImage = ({ data, parentField = "" }) => {
 	);
 };
 
-export default BigImage;
+/**
+ * Block Schema Template
+ *
+ * This should be added to the appropriate collection. e.g. @tina/collections/blog.ts
+ *
+ * import { bigImageBlock } from "@blocks/bigImage.tsx"
+ */
+export const BigImageBlockSchema: Template = {
+	name: "bigImageBlock",
+	label: "Big Image",
+	fields: [
+		{
+			type: "image",
+			name: "image",
+			label: "Image",
+		},
+		{
+			type: "string",
+			name: "altText",
+			label: "Alt Text",
+		},
+	],
+};

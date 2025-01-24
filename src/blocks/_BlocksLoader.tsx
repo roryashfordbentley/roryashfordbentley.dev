@@ -2,8 +2,8 @@ import React from "react";
 import type { Blog } from "@tina/__generated__/types";
 import { tinaField, useTina } from "tinacms/dist/react";
 
-import TextContent from "@blocks/TextContent.tsx";
-import BigImage from "@blocks/BigImage.tsx";
+import { TextContent } from "@blocks/TextContent.tsx";
+import { BigImage } from "@blocks/BigImage.tsx";
 
 /**
  * Case values must be equal to {CollectionName}{FieldName}{BlockTemplateName}
