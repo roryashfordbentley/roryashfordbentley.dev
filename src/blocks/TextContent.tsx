@@ -1,8 +1,16 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { tinaField } from "tinacms/dist/react";
 
 export const TextContent = ({ data, parentField = "" }) => {
-	return <TinaMarkdown content={data.text} />;
+	return (
+		<div
+			className="big-text-block"
+			data-tina-field={tinaField(data, "text")}
+		>
+			<TinaMarkdown content={data.text} />
+		</div>
+	);
 };
 
 /**
