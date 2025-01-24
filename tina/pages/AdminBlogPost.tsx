@@ -24,18 +24,8 @@ export default function AdminBlogPost(props: Props) {
 
 	return (
 		<article>
-			<figure
-				data-tina-field={tinaField(blog, "heroImage")}
-				className="hero-image"
-			>
-				{blog.heroImage && (
-					<img
-						width={1020}
-						height={510}
-						src={blog.heroImage}
-						alt=""
-					/>
-				)}
+			<figure data-tina-field={tinaField(blog, "heroImage")} className="hero-image">
+				{blog.heroImage && <img width={1020} height={510} src={blog.heroImage} alt="" />}
 			</figure>
 
 			<h1 data-tina-field={tinaField(blog, "title")}>{blog.title}</h1>
@@ -44,10 +34,7 @@ export default function AdminBlogPost(props: Props) {
 				{blog.pubDate && (
 					<time
 						className="card-article__date"
-						dateTime={
-							dateFormatter(blog.pubDate)
-								.machineReadableDateString
-						}
+						dateTime={dateFormatter(blog.pubDate).machineReadableDateString}
 					>
 						{dateFormatter(blog.pubDate).readableDateString}
 					</time>
@@ -58,8 +45,7 @@ export default function AdminBlogPost(props: Props) {
 						className="last-updated-on"
 						data-tina-field={tinaField(blog, "updatedDate")}
 					>
-						Last updated on{" "}
-						<FormattedDate date={blog.updatedDate} />
+						Last updated on <FormattedDate date={blog.updatedDate} />
 					</div>
 				)}
 			</div>

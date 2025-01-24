@@ -23,26 +23,14 @@ export const Blocks = (props: Blog) => {
 						switch (block.__typename) {
 							case `${collectionName}${fieldName}TextContentBlock`:
 								return (
-									<div
-										data-tinafield={`blocks.${i}`}
-										key={i + block.__typename}
-									>
-										<TextContent
-											data={block}
-											parentField={`blocks.${i}`}
-										/>
+									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
+										<TextContent data={block} parentField={`blocks.${i}`} />
 									</div>
 								);
 							case `${collectionName}${fieldName}BigImageBlock`:
 								return (
-									<div
-										data-tinafield={`blocks.${i}`}
-										key={i + block.__typename}
-									>
-										<BigImage
-											data={block}
-											parentField={`blocks.${i}`}
-										/>
+									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
+										<BigImage data={block} parentField={`blocks.${i}`} />
 									</div>
 								);
 							default:

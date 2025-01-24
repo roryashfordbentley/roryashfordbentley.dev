@@ -15,11 +15,7 @@ function dateFormat(date: Date) {
 
 	new Date(date).toString();
 
-	const [month, day, year] = [
-		date.getMonth(),
-		date.getDate(),
-		date.getFullYear(),
-	];
+	const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
 
 	let readableDateString = `${day}/${month + 1} — ${year}`;
 	let machineReadableDateString = dateFormatted.toISOString();

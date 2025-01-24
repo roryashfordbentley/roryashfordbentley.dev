@@ -2,13 +2,7 @@
 
 ---
 
-<button
-	class="theme-toggle"
-	id="themeToggle"
-	type="button"
-	role="switch"
-	aria-checked="false"
->
+<button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="false">
 	<span class="theme-toggle__label">Toggle light or dark mode</span>
 	<span class="theme-toggle__pseudo-button"></span>
 
@@ -67,12 +61,10 @@
 		--icon-size: calc(var(--pseudo-button-size) / 1.5);
 		--toggle-width: calc(var(--pseudo-button-size) * 2.8);
 		--track-height: calc(
-			(var(--border-size) * 2) + var(--pseudo-button-size) +
-				(var(--pseudo-button-margin) * 2)
+			(var(--border-size) * 2) + var(--pseudo-button-size) + (var(--pseudo-button-margin) * 2)
 		);
 		--icon-x-offset: calc(
-			((var(--pseudo-button-size) - var(--icon-size)) / 2) +
-				var(--pseudo-button-margin)
+			((var(--pseudo-button-size) - var(--icon-size)) / 2) + var(--pseudo-button-margin)
 		);
 
 		position: relative;
@@ -195,7 +187,5 @@
 		}
 	};
 
-	document
-		.getElementById("themeToggle")
-		?.addEventListener("click", handleToggleClick);
+	document.getElementById("themeToggle")?.addEventListener("click", handleToggleClick);
 </script>
