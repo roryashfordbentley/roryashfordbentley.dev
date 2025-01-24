@@ -3,7 +3,7 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import type { BlogQuery, BlogQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import dateFormatter from "@scripts/date-formatter.js";
-import { Blocks } from "@blocks/_blocksLoader.tsx";
+import { Blocks } from "@blocks/_BlocksLoader";
 
 /**
  * This template is rendered isomorphically, both frontend and backend.
