@@ -1,17 +1,18 @@
 :root {
-	--theme-primary: #09181a;
-	--theme-text: #585b5c;
-	--theme-text-tint: #687f7c;
+	--theme-primary: #222b2e;
+	--theme-secondary: #585b5c;
+	--theme-text: var(--theme-primary);
+	--theme-text-tint: #7c868a;
 	--theme-link: var(--theme-primary);
-	--theme-background: #f3f8f8;
-	--theme-border: #ccddde;
+	--theme-background: #fafafc;
+	--theme-border: var(--theme-secondary);
 }
 
 :root.dark {
-	--theme-primary: #00ff88;
-	--theme-text: white;
+	--theme-primary: #fafafc;
+	--theme-text: #fafafc;
 	--theme-text-tint: #8ba498;
 	--theme-link: var(--theme-primary);
-	--theme-background: #1c201b;
+	--theme-background: #222b2e;
 	--theme-border: #374435;
 }
