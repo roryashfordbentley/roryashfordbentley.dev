@@ -16,13 +16,7 @@ const logo = config.logo;
 	<Wrapper>
 		<div class="site-header__inner">
 			<div class="site-header__logo">
-				<LogoLink
-					image={logo}
-					link="/"
-					width="50px"
-					height="20px"
-					alt="Rory Ashford Bentley (RAB) Logo"
-				/>
+				<LogoLink link="/" />
 			</div>
 
 			<div class="site-header__nav">
@@ -38,14 +32,18 @@ const logo = config.logo;
 
 <style>
 	.site-header {
-		border-bottom: 1px solid var(--theme-border);
+		/*border-bottom: 1px solid var(--theme-border);*/
 	}
 
 	.site-header__inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: var(--spacing-5) 0;
+		padding: var(--spacing-8) 0 var(--spacing-5) 0;
+	}
+
+	.site-header__logo {
+		width: 5rem;
 	}
 
 	.site-header__nav {
