@@ -1,31 +1,10 @@
 ---
-import "../styles/global.css";
+import "@styles/global.css";
+import dateFormatter from "@scripts/date-formatter.ts";
+
 const urlPrefix = "/posts/";
 
 const { title, description, date, url } = Astro.props;
-
-/**
- * dateFormatter
- *
- * Create appropriate date strings for the <time> element.
- * Returns both human and machine readable values.
- */
-function dateFormat(date: Date) {
-	const dateFormatted = new Date(date);
-
-	new Date(date).toString();
-
-	const [month, day, year] = [
-		date.getMonth(),
-		date.getDate(),
-		date.getFullYear(),
-	];
-
-	let readableDateString = `${month}/${day}—${year}`;
-	let machineReadableDateString = dateFormatted.toISOString();
-
-	return { readableDateString, machineReadableDateString };
-}
 ---
 
 <div class="card-article">
@@ -42,9 +21,9 @@ function dateFormat(date: Date) {
 			<h3 class="card-article__subtitle">Posted:</h3>
 			<time
 				class="card-article__date"
-				datetime={dateFormat(date).machineReadableDateString}
+				datetime={dateFormatter(date).machineReadableDateString}
 			>
-				{dateFormat(date).readableDateString}
+				{dateFormatter(date).readableDateString}
 			</time>
 		</div>
 		<div class="card-article__meta-item">
@@ -67,6 +46,7 @@ function dateFormat(date: Date) {
 	.card-article__title {
 		font-size: clamp(var(--font-size-4), 3vw, var(--font-size-6));
 		margin-bottom: var(--spacing-5);
+		min-height: 8rem;
 	}
 
 	.card-article__link {
@@ -74,6 +54,7 @@ function dateFormat(date: Date) {
 
 	.card-article__description {
 		font-size: clamp(var(--font-size-2), 2vw, var(--font-size-3));
+		margin-bottom: var(--spacing-5);
 	}
 
 	.card-article__meta {

@@ -1,20 +1,35 @@
 ---
 import PageWrapper from "@layouts/PageWrapper.astro";
+import Wrapper from "@components/Wrapper.astro";
 import { getCollection } from "astro:content";
 import BlogGrid from "@components/BlogGrid.astro";
 import CardArticle from "@components/CardArticle.astro";
-import Wrapper from "@components/Wrapper.astro";
+import CardArticleFeatured from "@components/CardArticleFeatured.astro";
+import PageTitle from "@components/PageTitle.astro";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const featuredPost = posts.shift();
 ---
 
 <!--<BaseHead title={config.seo.title} description={config.seo.description} /> -->
 <PageWrapper>
 	<main>
+		<PageTitle />
 		<Wrapper>
 			<BlogGrid>
+				{
+					featuredPost && (
+						<CardArticleFeatured
+							title={featuredPost.data.title}
+							description={featuredPost.data.description}
+							date={featuredPost.data.pubDate}
+							url={`/blog/${featuredPost.id}/`}
+						/>
+					)
+				}
 				{
 					posts.map((post) => (
 						<CardArticle

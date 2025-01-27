@@ -1,36 +1,61 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import config from "../content/config/config.json";
-import IconLink from "./react/IconLink";
+import "@styles/tokens/colours.css";
+import "@styles/tokens/fonts.css";
+import "@styles/tokens/spacing.css";
 
 function isActiveNav(link: string) {
-    const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-    const subpath = pathname.match(/[^\/]+/g);
+	const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+	const subpath = pathname.match(/[^\/]+/g);
 
-    if (link === pathname || link === '/' + (subpath?.[0] || '')) {
-        return true;
-    }
+	if (link === pathname || link === "/" + (subpath?.[0] || "")) {
+		return true;
+	}
 
-    return false;
+	return false;
 }
 ---
 
 <nav class="main-nav">
-    <ul class="main-nav__list">
-        {
-            config.nav.map((item) => (
-                <a
-                    class={isActiveNav(item.link)
-                        ? "main-nav__link main-nav__link--active"
-                        : "main-nav__link"
-                    }
-                    href={item.link}
-                >
-                    {item.title}
-                </a>
-            ))
-        }
-    </ul>
+	<ul class="main-nav__list">
+		{
+			config.nav.map((item) => (
+				<li class="main-nav__list-item">
+					<a
+						class={
+							isActiveNav(item.link)
+								? "main-nav__link main-nav__link--active"
+								: "main-nav__link"
+						}
+						href={item.link}
+					>
+						{item.title}
+					</a>
+				</li>
+			))
+		}
+	</ul>
 </nav>
 
-<style></style>
+<style>
+	.main-nav {
+		font-size: var(--font-size-4);
+	}
+
+	.main-nav__list {
+		display: flex;
+		justify-content: flex-start;
+		list-style: none;
+		padding: 0;
+	}
+
+	.main-nav__link {
+		position: relative;
+		padding: var(--spacing-1) var(--spacing-3);
+		text-decoration-color: var(--theme-border);
+
+		&:hover {
+			text-decoration-color: var(--theme-primary);
+		}
+	}
+</style>

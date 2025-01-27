@@ -16,4 +16,3 @@ const ReactIcon = ({ iconName }: Props) => {
 };
 
 export default ReactIcon;
-

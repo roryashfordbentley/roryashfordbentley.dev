@@ -7,18 +7,20 @@ const { items } = Astro.props;
 ---
 
 <div class="wrapper">
-	<slot />
+	<div class="wrapper__content">
+		<slot />
+	</div>
 </div>
 
 <!-- Have to use is:global to style ancestor links in Astro :( -->
-<style is:global>
+<style>
 	.wrapper {
 		display: grid;
-		grid-template-columns: 10% auto 10%;
+		grid-template-columns: auto clamp(350px, 80%, 1200px) auto;
 		grid-auto-flow: row;
 	}
 
-	.wrapper > * {
-		grid-column: 2/3;
+	.wrapper__content {
+		grid-column: 2/3 !important;
 	}
 </style>

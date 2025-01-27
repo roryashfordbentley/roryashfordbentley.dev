@@ -17,10 +17,7 @@ const IconComponent = wrapFieldsWithMeta((props) => {
 		iconKey.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 
-	const itemsPerRow = Math.max(
-		1,
-		Math.floor((containerWidth + gapSize) / (iconSize + gapSize))
-	);
+	const itemsPerRow = Math.max(1, Math.floor((containerWidth + gapSize) / (iconSize + gapSize)));
 
 	const totalRows = Math.ceil(filteredIcons.length / itemsPerRow);
 
@@ -87,10 +84,7 @@ const IconComponent = wrapFieldsWithMeta((props) => {
 				>
 					{rowVirtualizer.getVirtualItems().map((virtualRow) => {
 						const startIndex = virtualRow.index * itemsPerRow;
-						const endIndex = Math.min(
-							startIndex + itemsPerRow,
-							filteredIcons.length
-						);
+						const endIndex = Math.min(startIndex + itemsPerRow, filteredIcons.length);
 
 						return (
 							<div
@@ -109,7 +103,9 @@ const IconComponent = wrapFieldsWithMeta((props) => {
 									return (
 										<div
 											key={iconKey}
-											onClick={() => handleIconSelect(iconKey as keyof typeof tb)}
+											onClick={() =>
+												handleIconSelect(iconKey as keyof typeof tb)
+											}
 											style={{
 												cursor: "pointer",
 												padding: "5px",
@@ -139,4 +135,3 @@ const IconComponent = wrapFieldsWithMeta((props) => {
 });
 
 export default IconComponent;
-

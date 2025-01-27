@@ -10,9 +10,7 @@ const today = new Date();
 	<div class="social-links">
 		{
 			config?.contactLinks?.map((link) => {
-				return (
-					<IconLink {...link} />
-				);
+				return <IconLink {...link} />;
 			})
 		}
 	</div>
