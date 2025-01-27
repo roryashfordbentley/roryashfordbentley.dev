@@ -1,0 +1,34 @@
+---
+import "@styles/tokens/colours.css";
+import "@styles/tokens/spacing.css";
+import "@styles/tokens/fonts.css";
+
+import Wrapper from "./Wrapper.astro";
+---
+
+<section class="page-title">
+	<Wrapper>
+		<h1 class="page-title__title">Hi 👋🏻,<br /> I'm Rory Ashford—Bentley.</h1>
+		<span class="page-title__subtitle">A Full-stack Engineer from the North of England.</span>
+	</Wrapper>
+</section>
+
+<style>
+	.page-title {
+		line-height: 1;
+		letter-spacing: -0.14rem;
+		padding: 10% 0;
+	}
+
+	.page-title__title {
+		font-size: clamp(var(--font-size-6), 6vw, var(--font-size-11));
+		font-weight: var(--font-weight-bold);
+		color: #222b2e;
+	}
+
+	.page-title__subtitle {
+		font-size: clamp(var(--font-size-6), 6vw, var(--font-size-11));
+		font-weight: var(--font-weight-bold);
+		color: #7c868a;
+	}
+</style>
