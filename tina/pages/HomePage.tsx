@@ -1,6 +1,7 @@
 import { tinaField, useTina } from "tinacms/dist/react";
 import type { PageQuery, PageQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { Blocks } from "@blocks/_BlocksLoader";
 
 type Props = {
 	variables: PageQueryVariables;
@@ -18,11 +19,13 @@ const HomePage = (props: Props) => {
 	const page = data.page;
 
 	return (
-		<main>
+		<>
+			Homey
 			<div data-tina-field={tinaField(page, "body")}>
 				<TinaMarkdown content={page.body} />
 			</div>
-		</main>
+			<Blocks {...page} />
+		</>
 	);
 };
 
