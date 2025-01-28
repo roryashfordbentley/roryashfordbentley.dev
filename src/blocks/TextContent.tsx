@@ -15,7 +15,7 @@ export const TextContent = ({ data, parentField = "" }) => {
  *
  * This should be added to the appropriate collection. e.g. @tina/collections/blog.ts
  *
- * import { TextContentBlock } from "@blocks/TextContent.tsx"
+ * import { TextContent } from "@blocks/TextContent.tsx"
  */
 export const TextContentBlockSchema: Template = {
 	name: "textContentBlock",

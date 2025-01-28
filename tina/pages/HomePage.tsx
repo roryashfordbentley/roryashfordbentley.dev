@@ -16,15 +16,13 @@ const HomePage = (props: Props) => {
 		data: props.data,
 	});
 
-	const page = data.homepage;
+	const homepage = data.homepage;
 
 	return (
 		<>
-			Homey
-			<div data-tina-field={tinaField(page, "body")}>
-				<TinaMarkdown content={page.body} />
-			</div>
-			<Blocks {...page} />
+			mellow
+			<Blocks {...homepage} />
+			ello
 		</>
 	);
 };
