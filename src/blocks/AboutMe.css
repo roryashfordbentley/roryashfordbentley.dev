@@ -1,27 +1,41 @@
 .about-me {
-	background: var(--theme-background);
-	border-radius: 5rem;
+	background: var(--theme-primary);
+	color: var(--theme-background);
+	border-radius: 2rem;
+	margin: 0 auto;
+	width: var(--util-breakout-width);
+	padding: 5%;
 }
 
 .about-me__inner {
-	margin: 0 auto;
-	width: var(--util-content-width);
 	display: grid;
 	grid-template-columns: 2fr 1fr;
+	gap: var(--spacing-6);
 }
 
 .about-me__content {
-	border: 1px solid hotpink;
+	display: flex;
+	flex-direction: column;
 }
 
 .about-me__title {
+	font-size: clamp(var(--font-size-5), 4vw, var(--font-size-8));
+	font-weight: var(--font-weight-bold);
+	margin-bottom: var(--spacing-6);
 }
 
 .about-me__description {
+	font-size: clamp(var(--font-size-4), 3vw, var(--font-size-6));
+
+	strong {
+		color: var(--theme-accent);
+	}
 }
 
 .about-me__footer {
+	margin-top: auto;
 }
 
 .about-me__image {
+	border-radius: 0.8rem;
 }

@@ -6,6 +6,7 @@
 	--theme-link: var(--theme-primary);
 	--theme-background: #fafafc;
 	--theme-border: var(--theme-secondary);
+	--theme-accent: #96ffad;
 }
 
 :root.dark {
@@ -15,4 +16,5 @@
 	--theme-link: var(--theme-primary);
 	--theme-background: #222b2e;
 	--theme-border: #374435;
+	--theme-accent: #96ffad;
 }

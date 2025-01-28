@@ -16,3 +16,7 @@ body {
 a {
 	color: var(--theme-link);
 }
+
+img {
+	max-width: 100%;
+}

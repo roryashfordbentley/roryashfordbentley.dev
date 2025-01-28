@@ -14,7 +14,7 @@ export const AboutMe = ({ data, parentField = "" }) => {
 					</h1>
 
 					<div
-						data-tina-field={tinaField(data, "description")}
+						data-tina-field={tinaField(data, "aboutDescription")}
 						className="about-me__description"
 					>
 						<TinaMarkdown content={data.aboutDescription} />
@@ -25,8 +25,17 @@ export const AboutMe = ({ data, parentField = "" }) => {
 						<span>[contact button]</span>
 					</footer>
 				</div>
-				<figure data-tina-field={tinaField(data, "aboutImage")} className="about-me__photo">
-					<img src={data.aboutImage} alt={data.aboutImageAltText} width="" height="" />
+				<figure
+					data-tina-field={tinaField(data, "aboutImage")}
+					className="about-me__figure"
+				>
+					<img
+						class="about-me__image"
+						src={data.aboutImage}
+						alt={data.aboutImageAltText}
+						width=""
+						height=""
+					/>
 				</figure>
 			</div>
 		</section>
