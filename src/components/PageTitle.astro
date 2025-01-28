@@ -4,12 +4,16 @@ import "@styles/tokens/spacing.css";
 import "@styles/tokens/fonts.css";
 
 import Wrapper from "./Wrapper.astro";
+
+const { title, subtitle } = Astro.props;
 ---
 
 <section class="page-title">
 	<Wrapper>
-		<h1 class="page-title__title">Hi 👋🏻,<br /> I'm Rory Ashford—Bentley.</h1>
-		<span class="page-title__subtitle">A Full-stack Engineer from the North of England.</span>
+		{title && <h1 class="page-title__title">{title}</h1>}
+		{subtitle && <span class="page-title__subtitle">{subtitle}</span>}
+		<!--<h1 class="page-title__title">Hi 👋🏻,<br /> I'm Rory Ashford—Bentley.</h1>
+		<span class="page-title__subtitle">A Full-stack Engineer from the North of England.</span> -->
 	</Wrapper>
 </section>
 

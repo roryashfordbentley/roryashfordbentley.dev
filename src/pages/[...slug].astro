@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import client from "@tina/__generated__/client";
 import Page from "@tina/pages/Page";
-import PageWrapper from "@layouts/PageWrapper.astro";
+import PageLayout from "@layouts/PageLayout.astro";
 import Wrapper from "@components/Wrapper.astro";
 
 export async function getStaticPaths() {
@@ -22,7 +22,7 @@ const { getTinaProps } = Astro.props;
 const data = await getTinaProps();
 ---
 
-<PageWrapper>
+<PageLayout>
 	<main>
 		<Wrapper>
 			<div>
@@ -30,4 +30,4 @@ const data = await getTinaProps();
 			</div>
 		</Wrapper>
 	</main>
-</PageWrapper>
+</PageLayout>
