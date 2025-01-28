@@ -18,13 +18,7 @@ const HomePage = (props: Props) => {
 
 	const homepage = data.homepage;
 
-	return (
-		<>
-			mellow
-			<Blocks {...homepage} />
-			ello
-		</>
-	);
+	return <Blocks {...homepage} />;
 };
 
 export default HomePage;

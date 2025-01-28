@@ -23,13 +23,10 @@ const fieldName = "Blocks";
 export const Blocks = (props: Blog | Homepage) => {
 	const collectionName = props.__typename;
 
-	console.log(collectionName);
-
 	return (
 		<>
 			{props.blocks
 				? props.blocks.map(function (block, i) {
-						console.log(block.__typename);
 						switch (block.__typename) {
 							/**
 							 * The Page Title block Component

@@ -1,0 +1,3 @@
+:root {
+	--util-content-width: clamp(350px, 80%, 1200px);
+}
