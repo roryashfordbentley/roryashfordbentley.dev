@@ -1,6 +1,7 @@
 import type { Collection } from "tinacms";
 
 import { PageTitleBlockSchema } from "@blocks/PageTitle";
+import { AboutMeBlockSchema } from "@blocks/AboutMe";
 import { BigImageBlockSchema } from "@blocks/BigImage";
 import { TextContentBlockSchema } from "@blocks/TextContent";
 import { GalleryBlockSchema } from "@blocks/Gallery";
@@ -38,6 +39,7 @@ export const HomePageCollection: Collection = {
 			},
 			templates: [
 				PageTitleBlockSchema,
+				AboutMeBlockSchema,
 				TextContentBlockSchema,
 				BigImageBlockSchema,
 				//GalleryBlockSchema,

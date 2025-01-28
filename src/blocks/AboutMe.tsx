@@ -1,0 +1,68 @@
+import type { Template } from "tinacms";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { tinaField } from "tinacms/dist/react";
+
+import "@blocks/AboutMe.css";
+
+export const AboutMe = ({ data, parentField = "" }) => {
+	return (
+		<section className="about-me">
+			<div className="about-me__inner">
+				<div className="about-me__content">
+					<h1 data-tina-field={tinaField(data, "aboutTitle")} className="about-me__title">
+						{data.aboutTitle}
+					</h1>
+
+					<div
+						data-tina-field={tinaField(data, "description")}
+						className="about-me__description"
+					>
+						<TinaMarkdown content={data.aboutDescription} />
+					</div>
+
+					<footer className="about-me__footer">
+						<span>[social links]</span>
+						<span>[contact button]</span>
+					</footer>
+				</div>
+				<figure data-tina-field={tinaField(data, "aboutImage")} className="about-me__photo">
+					<img src={data.aboutImage} alt={data.aboutImageAltText} width="" height="" />
+				</figure>
+			</div>
+		</section>
+	);
+};
+
+/**
+ * Block Schema Template
+ *
+ * This should be added to the appropriate collection. e.g. @tina/collections/blog.ts
+ *
+ * import { PageTitleBlockSchema } from "@blocks/PageTitle.tsx"
+ */
+export const AboutMeBlockSchema: Template = {
+	name: "aboutMeBlock",
+	label: "About Me",
+	fields: [
+		{
+			type: "string",
+			name: "aboutTitle",
+			label: "Title",
+		},
+		{
+			type: "rich-text",
+			name: "aboutDescription",
+			label: "Description",
+		},
+		{
+			type: "image",
+			name: "aboutImage",
+			label: "Image",
+		},
+		{
+			type: "string",
+			name: "aboutImageAltText",
+			label: "Alt Text",
+		},
+	],
+};

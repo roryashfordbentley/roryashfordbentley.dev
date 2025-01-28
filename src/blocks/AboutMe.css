@@ -1,0 +1,27 @@
+.about-me {
+	background: var(--theme-background);
+	border-radius: 5rem;
+}
+
+.about-me__inner {
+	margin: 0 auto;
+	width: var(--util-content-width);
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.about-me__content {
+	border: 1px solid hotpink;
+}
+
+.about-me__title {
+}
+
+.about-me__description {
+}
+
+.about-me__footer {
+}
+
+.about-me__image {
+}

@@ -2,6 +2,7 @@ import React from "react";
 import type { Blog, Page, Homepage } from "@tina/__generated__/types";
 
 import { PageTitle } from "@blocks/PageTitle.tsx";
+import { AboutMe } from "@blocks/AboutMe.tsx";
 import { TextContent } from "@blocks/TextContent.tsx";
 import { BigImage } from "@blocks/BigImage.tsx";
 
@@ -35,6 +36,16 @@ export const Blocks = (props: Blog | Homepage) => {
 								return (
 									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
 										<PageTitle data={block} parentField={`blocks.${i}`} />
+									</div>
+								);
+
+							/**
+							 * The About Me block Component
+							 */
+							case `${collectionName}${fieldName}AboutMeBlock`:
+								return (
+									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
+										<AboutMe data={block} parentField={`blocks.${i}`} />
 									</div>
 								);
 
