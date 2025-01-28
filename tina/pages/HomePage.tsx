@@ -1,11 +1,11 @@
 import { tinaField, useTina } from "tinacms/dist/react";
-import type { PageQuery, PageQueryVariables } from "../__generated__/types";
+import type { HomepageQuery, HomepageQueryVariables } from "../__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Blocks } from "@blocks/_BlocksLoader";
 
 type Props = {
-	variables: PageQueryVariables;
-	data: PageQuery;
+	variables: HomepageQueryVariables;
+	data: HomepageQuery;
 	query: string;
 };
 
@@ -16,7 +16,7 @@ const HomePage = (props: Props) => {
 		data: props.data,
 	});
 
-	const page = data.page;
+	const page = data.homepage;
 
 	return (
 		<>
