@@ -1,0 +1,6 @@
+:root {
+	--radius-1: pxrem(10px);
+	--radius-2: pxrem(20px);
+	--radius-2: pxrem(30px);
+	--radius-5: pxrem(40px);
+}
