@@ -16,31 +16,28 @@ const featuredPost = posts.shift();
 
 <!--<BaseHead title={config.seo.title} description={config.seo.description} /> -->
 <PageLayout>
-	<main>
-		<PageTitle />
-		<Wrapper>
-			<BlogGrid>
-				{
-					featuredPost && (
-						<CardArticleFeatured
-							title={featuredPost.data.title}
-							description={featuredPost.data.description}
-							date={featuredPost.data.pubDate}
-							url={`/blog/${featuredPost.id}/`}
-						/>
-					)
-				}
-				{
-					posts.map((post) => (
-						<CardArticle
-							title={post.data.title}
-							description={post.data.description}
-							date={post.data.pubDate}
-							url={`/blog/${post.id}/`}
-						/>
-					))
-				}
-			</BlogGrid>
-		</Wrapper>
-	</main>
+	<PageTitle />
+
+	<BlogGrid>
+		{
+			featuredPost && (
+				<CardArticleFeatured
+					title={featuredPost.data.title}
+					description={featuredPost.data.description}
+					date={featuredPost.data.pubDate}
+					url={`/blog/${featuredPost.id}/`}
+				/>
+			)
+		}
+		{
+			posts.map((post) => (
+				<CardArticle
+					title={post.data.title}
+					description={post.data.description}
+					date={post.data.pubDate}
+					url={`/blog/${post.id}/`}
+				/>
+			))
+		}
+	</BlogGrid>
 </PageLayout>

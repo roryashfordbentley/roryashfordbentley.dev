@@ -3,8 +3,24 @@
 	color: var(--theme-background);
 	border-radius: 2rem;
 	margin: 0 auto;
-	width: var(--util-breakout-width);
+	/*width: var(--util-breakout-width);*/
 	padding: 5%;
+
+	@media (--s) {
+		background: hotpink;
+	}
+
+	@media (--m) {
+		background: yellow;
+	}
+
+	@media (--l) {
+		background: orange;
+	}
+
+	@media (--xl) {
+		background: green;
+	}
 }
 
 .about-me__inner {

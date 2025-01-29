@@ -5,7 +5,6 @@ import client from "@tina/__generated__/client";
 import AdminBlogPost from "@tina/pages/AdminBlogPost";
 
 import PageLayout from "@layouts/PageLayout.astro";
-import Wrapper from "@components/Wrapper.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -27,9 +26,7 @@ const tinaProps = await getTinaProps();
 ---
 
 <PageLayout>
-	<Wrapper>
-		<BlogPost {...tinaProps}>
-			<AdminBlogPost {...tinaProps} client:tina />
-		</BlogPost>
-	</Wrapper>
+	<BlogPost {...tinaProps}>
+		<AdminBlogPost {...tinaProps} client:tina />
+	</BlogPost>
 </PageLayout>

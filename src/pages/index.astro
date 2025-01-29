@@ -1,17 +1,10 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
-import Wrapper from "@components/Wrapper.astro";
 import config from "@content/config/config.json";
 import client from "@tina/__generated__/client";
 import HomePage from "@tina/pages/HomePage.tsx";
-import PageTitle from "@components/PageTitle.astro";
-const data = await client.queries.homepage({ relativePath: "home.mdx" });
 
-/**
- * Temp
- */
-const title = "Hi 👋🏻,<br /> I'm Rory Ashford—Bentley.";
-const subtitle = "A Full-stack Engineer from the North of England.";
+const data = await client.queries.homepage({ relativePath: "home.mdx" });
 ---
 
 <PageLayout>

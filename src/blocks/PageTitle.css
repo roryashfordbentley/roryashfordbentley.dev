@@ -1,14 +1,7 @@
 .page-title {
-	display: grid;
-	grid-template-columns: auto var(--util-content-width) auto;
-	grid-auto-flow: row;
 	line-height: 1;
 	letter-spacing: -0.14rem;
 	padding: 10% 0;
-}
-
-.page-title__content {
-	grid-column: 2/3;
 }
 
 .page-title__title {

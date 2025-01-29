@@ -35,7 +35,9 @@ const title = "RAB Website";
 	</head>
 	<body class={isDevelopment ? "dev" : ""}>
 		<Header />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>

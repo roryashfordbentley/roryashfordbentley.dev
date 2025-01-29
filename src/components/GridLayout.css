@@ -1,6 +1,5 @@
 .grid-layout {
 	display: grid;
-	background: pink;
 	width: 100%;
 	grid-template-columns: var(--spacing-7) auto clamp(400px, 80%, 850px) auto var(--spacing-7);
 }

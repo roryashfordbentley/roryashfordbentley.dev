@@ -6,18 +6,16 @@ import "@blocks/PageTitle.css";
 export const PageTitle = ({ data, parentField = "" }) => {
 	return (
 		<section className="page-title">
-			<div className="page-title__content">
-				<div data-tina-field={tinaField(data, "title")}>
-					<h1 className="page-title__title">
-						<TinaMarkdown content={data.title} />
-					</h1>
-				</div>
+			<div data-tina-field={tinaField(data, "title")}>
+				<h1 className="page-title__title">
+					<TinaMarkdown content={data.title} />
+				</h1>
+			</div>
 
-				<div data-tina-field={tinaField(data, "subtitle")}>
-					<span className="page-title__subtitle">
-						<TinaMarkdown content={data.subtitle} />
-					</span>
-				</div>
+			<div data-tina-field={tinaField(data, "subtitle")}>
+				<span className="page-title__subtitle">
+					<TinaMarkdown content={data.subtitle} />
+				</span>
 			</div>
 		</section>
 	);

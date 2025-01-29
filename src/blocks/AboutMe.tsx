@@ -30,7 +30,7 @@ export const AboutMe = ({ data, parentField = "" }) => {
 					className="about-me__figure"
 				>
 					<img
-						class="about-me__image"
+						className="about-me__image"
 						src={data.aboutImage}
 						alt={data.aboutImageAltText}
 						width=""
