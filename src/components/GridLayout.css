@@ -1,7 +1,11 @@
 .grid-layout {
 	display: grid;
 	width: 100%;
-	grid-template-columns: var(--spacing-7) auto clamp(400px, 80%, 850px) auto var(--spacing-7);
+	grid-template-columns: var(--spacing-4) auto clamp(400px, 80%, 850px) auto var(--spacing-4);
+
+	@media (--m) {
+		grid-template-columns: var(--spacing-7) auto clamp(400px, 80%, 850px) auto var(--spacing-7);
+	}
 }
 
 .grid-layout__item {
