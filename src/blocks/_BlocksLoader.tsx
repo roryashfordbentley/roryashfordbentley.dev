@@ -5,6 +5,7 @@ import { PageTitle } from "@blocks/PageTitle.tsx";
 import { AboutMe } from "@blocks/AboutMe.tsx";
 import { TextContent } from "@blocks/TextContent.tsx";
 import { BigImage } from "@blocks/BigImage.tsx";
+import { GridLayout, GridLayoutItem } from "@components/GridLayout";
 
 /**
  * Case values must be equal to {CollectionName}{FieldName}{BlockTemplateName}
@@ -25,7 +26,7 @@ export const Blocks = (props: Blog | Homepage) => {
 	const collectionName = props.__typename;
 
 	return (
-		<>
+		<GridLayout>
 			{props.blocks
 				? props.blocks.map(function (block, i) {
 						switch (block.__typename) {
@@ -34,9 +35,11 @@ export const Blocks = (props: Blog | Homepage) => {
 							 */
 							case `${collectionName}${fieldName}PageTitleBlock`:
 								return (
-									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
-										<PageTitle data={block} parentField={`blocks.${i}`} />
-									</div>
+									<GridLayoutItem key={i + block.__typename}>
+										<div data-tinafield={`blocks.${i}`}>
+											<PageTitle data={block} parentField={`blocks.${i}`} />
+										</div>
+									</GridLayoutItem>
 								);
 
 							/**
@@ -44,9 +47,11 @@ export const Blocks = (props: Blog | Homepage) => {
 							 */
 							case `${collectionName}${fieldName}AboutMeBlock`:
 								return (
-									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
-										<AboutMe data={block} parentField={`blocks.${i}`} />
-									</div>
+									<GridLayoutItem layout="full" key={i + block.__typename}>
+										<div data-tinafield={`blocks.${i}`}>
+											<AboutMe data={block} parentField={`blocks.${i}`} />
+										</div>
+									</GridLayoutItem>
 								);
 
 							/**
@@ -54,9 +59,11 @@ export const Blocks = (props: Blog | Homepage) => {
 							 */
 							case `${collectionName}${fieldName}TextContentBlock`:
 								return (
-									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
-										<TextContent data={block} parentField={`blocks.${i}`} />
-									</div>
+									<GridLayoutItem key={i + block.__typename}>
+										<div data-tinafield={`blocks.${i}`}>
+											<TextContent data={block} parentField={`blocks.${i}`} />
+										</div>
+									</GridLayoutItem>
 								);
 
 							/**
@@ -64,9 +71,11 @@ export const Blocks = (props: Blog | Homepage) => {
 							 */
 							case `${collectionName}${fieldName}BigImageBlock`:
 								return (
-									<div data-tinafield={`blocks.${i}`} key={i + block.__typename}>
-										<BigImage data={block} parentField={`blocks.${i}`} />
-									</div>
+									<GridLayoutItem key={i + block.__typename}>
+										<div data-tinafield={`blocks.${i}`}>
+											<BigImage data={block} parentField={`blocks.${i}`} />
+										</div>
+									</GridLayoutItem>
 								);
 
 							default:
@@ -74,6 +83,6 @@ export const Blocks = (props: Blog | Homepage) => {
 						}
 					})
 				: null}
-		</>
+		</GridLayout>
 	);
 };
