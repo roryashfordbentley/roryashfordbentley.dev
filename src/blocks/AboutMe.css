@@ -1,25 +1,12 @@
 .about-me {
-	background: var(--theme-primary);
-	color: var(--theme-background);
-	border-radius: 2rem;
-	margin: 0 auto;
-	/*width: var(--util-breakout-width);*/
-	padding: 5%;
-
-	@media (--s) {
-		background: hotpink;
-	}
+	padding: var(--spacing-4);
+	background: var(--theme-background-tint);
+	color: var(--theme-text);
+	border-radius: var(--radius-2);
 
 	@media (--m) {
-		background: yellow;
-	}
-
-	@media (--l) {
-		background: orange;
-	}
-
-	@media (--xl) {
-		background: green;
+		padding: var(--spacing-7);
+		border-radius: var(--radius-3);
 	}
 }
 
