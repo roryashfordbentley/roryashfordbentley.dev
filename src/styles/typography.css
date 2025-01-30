@@ -1,11 +1,15 @@
-h1,
+h1 {
+	font-weight: var(--font-weight-bold);
+	letter-spacing: -0.14rem;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
 	font-weight: var(--font-weight-bold);
-	letter-spacing: -0.14rem;
+	/*letter-spacing: -0.1rem;*/
 }
 
 a {

@@ -3,28 +3,12 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 
 import "@blocks/AboutMe.css";
+import { ContactWidget } from "@components/ContactWidget";
 
 export const AboutMe = ({ data, parentField = "" }) => {
 	return (
 		<section className="about-me">
 			<div className="about-me__inner">
-				<div className="about-me__content">
-					<h1 data-tina-field={tinaField(data, "aboutTitle")} className="about-me__title">
-						{data.aboutTitle}
-					</h1>
-
-					<div
-						data-tina-field={tinaField(data, "aboutDescription")}
-						className="about-me__description"
-					>
-						<TinaMarkdown content={data.aboutDescription} />
-					</div>
-
-					<footer className="about-me__footer">
-						<span>[social links]</span>
-						<span>[contact button]</span>
-					</footer>
-				</div>
 				<figure
 					data-tina-field={tinaField(data, "aboutImage")}
 					className="about-me__figure"
@@ -37,6 +21,22 @@ export const AboutMe = ({ data, parentField = "" }) => {
 						height=""
 					/>
 				</figure>
+				<div className="about-me__content">
+					<h2 data-tina-field={tinaField(data, "aboutTitle")} className="about-me__title">
+						{data.aboutTitle}
+					</h2>
+
+					<div
+						data-tina-field={tinaField(data, "aboutDescription")}
+						className="about-me__description"
+					>
+						<TinaMarkdown content={data.aboutDescription} />
+					</div>
+
+					<footer className="about-me__footer">
+						<ContactWidget />
+					</footer>
+				</div>
 			</div>
 		</section>
 	);

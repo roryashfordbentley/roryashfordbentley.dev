@@ -4,7 +4,6 @@ html {
 	font-weight: var(--font-weight-medium);
 	font-style: normal;
 	line-height: 1.3;
-	letter-spacing: -0.08rem;
 	background-color: var(--theme-background);
 	color: var(--theme-text);
 }
@@ -30,7 +29,7 @@ body {
 	background: var(--theme-primary);
 	color: var(--theme-background);
 	font-family: monospace;
-	letter-spacing: 0;
+
 	padding: var(--spacing-1);
 	content: "Breakpoint: default (smallest)";
 
