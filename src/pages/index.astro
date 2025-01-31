@@ -1,9 +1,9 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
+
 import config from "@content/config/config.json";
 import client from "@tina/__generated__/client";
 import HomePage from "@tina/pages/HomePage.tsx";
-
 const data = await client.queries.homepage({ relativePath: "home.mdx" });
 ---
 

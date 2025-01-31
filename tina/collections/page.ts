@@ -4,6 +4,7 @@ import { PageTitleBlockSchema } from "@blocks/PageTitle";
 import { AboutMeBlockSchema } from "@blocks/AboutMe";
 import { BigImageBlockSchema } from "@blocks/BigImage";
 import { TextContentBlockSchema } from "@blocks/TextContent";
+import { BlogPostsBlockSchema } from "@blocks/BlogPosts";
 
 export const PageCollection: Collection = {
 	name: "page",
@@ -44,6 +45,7 @@ export const PageCollection: Collection = {
 				AboutMeBlockSchema,
 				TextContentBlockSchema,
 				BigImageBlockSchema,
+				BlogPostsBlockSchema,
 			],
 		},
 	],

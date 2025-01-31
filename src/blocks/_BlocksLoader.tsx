@@ -1,11 +1,12 @@
 import React from "react";
 import type { Blog, Page, Homepage } from "@tina/__generated__/types";
 
-import { PageTitle } from "@blocks/PageTitle.tsx";
-import { AboutMe } from "@blocks/AboutMe.tsx";
-import { TextContent } from "@blocks/TextContent.tsx";
-import { BigImage } from "@blocks/BigImage.tsx";
+import { PageTitle } from "@blocks/PageTitle";
+import { AboutMe } from "@blocks/AboutMe";
+import { TextContent } from "@blocks/TextContent";
+import { BigImage } from "@blocks/BigImage";
 import { GridLayout, GridLayoutItem } from "@components/GridLayout";
+import { BlogPosts } from "@blocks/BlogPosts";
 
 /**
  * Case values must be equal to {CollectionName}{FieldName}{BlockTemplateName}
@@ -74,6 +75,18 @@ export const Blocks = (props: Blog | Homepage) => {
 									<GridLayoutItem key={i + block.__typename}>
 										<div data-tinafield={`blocks.${i}`}>
 											<BigImage data={block} parentField={`blocks.${i}`} />
+										</div>
+									</GridLayoutItem>
+								);
+
+							/**
+							 * The BlogPosts block component
+							 */
+							case `${collectionName}${fieldName}BlogPostsBlock`:
+								return (
+									<GridLayoutItem key={i + block.__typename}>
+										<div data-tinafield={`blocks.${i}`}>
+											<BlogPosts data={block} parentField={`blocks.${i}`} />
 										</div>
 									</GridLayoutItem>
 								);
