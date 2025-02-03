@@ -6,7 +6,7 @@ import { AboutMe } from "@blocks/AboutMe";
 import { TextContent } from "@blocks/TextContent";
 import { BigImage } from "@blocks/BigImage";
 import { GridLayout, GridLayoutItem } from "@components/GridLayout";
-//import BlogPosts from "@blocks/BlogPosts";
+import BlogPosts from "@blocks/BlogPosts";
 
 /**
  * Case values must be equal to {CollectionName}{FieldName}{BlockTemplateName}
@@ -40,6 +40,7 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 	return (
 		<GridLayout>
 			{props.blocks?.map(function (block, i) {
+				console.log(block.__typename);
 				/**
 				 * The Page Title block Component
 				 */
@@ -87,7 +88,7 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 				/**
 				 * The BlogPosts block component
 				 */
-				if (block.__typename == `${collectionName}${fieldName}BigImageBlock`) {
+				if (block.__typename == `${collectionName}${fieldName}BlogPostsBlock`) {
 					return (
 						<GridLayoutItem key={i + block.__typename}>
 							<BlogPosts data={block} parentField={`blocks.${i}`} />

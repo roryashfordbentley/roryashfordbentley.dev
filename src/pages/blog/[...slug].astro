@@ -2,7 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "@layouts/BlogPost.astro";
 import client from "@tina/__generated__/client";
-import AdminBlogPost from "@tina/pages/AdminBlogPost";
+import { BlocksLoader } from "@blocks/_BlocksLoader";
 
 import PageLayout from "@layouts/PageLayout.astro";
 
@@ -26,7 +26,5 @@ const tinaProps = await getTinaProps();
 ---
 
 <PageLayout>
-	<BlogPost {...tinaProps}>
-		<AdminBlogPost {...tinaProps} client:tina />
-	</BlogPost>
+	<BlocksLoader {...tinaProps} client:tina />
 </PageLayout>

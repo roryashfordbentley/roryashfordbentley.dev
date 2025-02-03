@@ -1,23 +1,11 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
-import Wrapper from "@components/Wrapper.astro";
-import { getCollection } from "astro:content";
-import BlogGrid from "@components/BlogGrid";
-import CardArticle from "@components/CardArticle.astro";
-import CardArticleFeatured from "@components/CardArticleFeatured.astro";
-import Page from "@tina/pages/Page.tsx";
-
 import client from "@tina/__generated__/client";
+import { BlocksLoader } from "@blocks/_BlocksLoader";
+
 const data = await client.queries.page({ relativePath: "blog.mdx" });
-
-const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const featuredPost = posts.shift();
 ---
 
-<!--<BaseHead title={config.seo.title} description={config.seo.description} /> -->
 <PageLayout>
-	<Page {...data} client:tina />
+	<BlocksLoader {...data} client:tina />
 </PageLayout>
