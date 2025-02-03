@@ -6,7 +6,7 @@ import { AboutMe } from "@blocks/AboutMe";
 import { TextContent } from "@blocks/TextContent";
 import { BigImage } from "@blocks/BigImage";
 import { GridLayout, GridLayoutItem } from "@components/GridLayout";
-import { BlogPosts } from "@blocks/BlogPosts";
+import BlogPosts from "@blocks/BlogPosts";
 
 /**
  * Case values must be equal to {CollectionName}{FieldName}{BlockTemplateName}

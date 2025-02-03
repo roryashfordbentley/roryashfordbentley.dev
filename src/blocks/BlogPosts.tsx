@@ -1,55 +1,66 @@
-import type { Template } from "tinacms";
-import { BlogGrid } from "@components/BlogGrid.tsx";
+import React, { useEffect, useState } from "react";
 import client from "@tina/__generated__/client";
 
-async function getPosts() {
-	const blogRequest = await client.queries.blogConnection();
+type BlogPost = {
+	id: string;
+	title: string;
+	description: string;
+	pubDate: string;
+};
 
-	const posts = blogRequest.data.blogConnection.edges.map((post) => {
-		return {
-			id: post?.node?.id,
-			title: post?.node?.title,
-			description: post?.node?.description,
-			pubDate: post?.node?.pubDate,
-			updateDate: post?.node?.updatedDate,
-			heroImage: post?.node?.heroImage,
-			blocks: post?.node?.blocks,
+const BlogPosts: React.FC<{ initialPosts: BlogPost[] }> = ({ initialPosts }) => {
+	const [posts, setPosts] = useState<BlogPost[]>(initialPosts || []);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const fetchPosts = async () => {
+			try {
+				const response = await client.queries.blogConnection();
+				const blogPosts = response.data.blogConnection.edges.map((edge: any) => ({
+					id: edge.node.id,
+					title: edge.node.title,
+					description: edge.node.description,
+					pubDate: edge.node.pubDate,
+				}));
+				setPosts(blogPosts);
+			} catch (err) {
+				setError("Failed to fetch blog posts.");
+				console.error(err);
+			}
 		};
-	});
 
-	console.log(posts);
+		fetchPosts();
+	}, []);
 
-	//return posts;
-	return posts;
-}
+	if (error) {
+		return <div>Error: {error}</div>;
+	}
 
-export const BlogPosts = ({ data, parentField = "" }) => {
-	const posts = await getPosts();
+	if (posts.length === 0) {
+		console.log(posts);
+		return <div>Loading...</div>;
+	}
 
 	return (
 		<section className="blog-posts">
-			<BlogGrid>
-				<h2>Blog posts:</h2>
-				{/*featuredPost && (
-					<CardArticleFeatured
-						title={featuredPost.data.title}
-						description={featuredPost.data.description}
-						date={featuredPost.data.pubDate}
-						url={`/blog/${featuredPost.id}/`}
-					/>
-				)*/}
+			<h2>Blog Posts</h2>
+			<div className="blog-grid">
 				{posts.map((post) => (
-					<div>
-						title={post.data.title}
-						description={post.data.description}
-						date={post.data.pubDate}
-						url={`/blog/${post.id}/`}
+					<div key={post.id} className="blog-card">
+						<h3>{post.title}</h3>
+						<p>{post.description}</p>
+						<time dateTime={post.pubDate}>
+							{new Date(post.pubDate).toLocaleDateString()}
+						</time>
+						<a href={`/blog/${post.id}`}>Read More</a>
 					</div>
 				))}
-			</BlogGrid>
+			</div>
 		</section>
 	);
 };
+
+export default BlogPosts;
 
 /**
  * Block Schema Template
