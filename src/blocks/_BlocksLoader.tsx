@@ -39,11 +39,11 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 	return (
 		<GridLayout>
 			{props.blocks?.map(function (block, i) {
-				console.log(block.__typename);
+				console.log(block?.__typename);
 				/**
 				 * The Page Title block Component
 				 */
-				if (block.__typename == `${collectionName}${fieldName}PageTitleBlock`) {
+				if (block?.__typename == `${collectionName}${fieldName}PageTitleBlock`) {
 					return (
 						<GridLayoutItem key={i + block.__typename}>
 							<PageTitle data={block} parentField={`blocks.${i}`} />
@@ -54,7 +54,7 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 				/**
 				 * The About Me block Component
 				 */
-				if (block.__typename == `${collectionName}${fieldName}AboutMeBlock`) {
+				if (block?.__typename == `${collectionName}${fieldName}AboutMeBlock`) {
 					return (
 						<GridLayoutItem layout="full" key={i + block.__typename}>
 							<AboutMe data={block} parentField={`blocks.${i}`} />
@@ -65,7 +65,7 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 				/**
 				 * The Text Content block Component
 				 */
-				if (block.__typename == `${collectionName}${fieldName}TextContentBlock`) {
+				if (block?.__typename == `${collectionName}${fieldName}TextContentBlock`) {
 					return (
 						<GridLayoutItem key={i + block.__typename}>
 							<TextContent data={block} parentField={`blocks.${i}`} />
@@ -76,7 +76,7 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 				/**
 				 * The Big Image block component
 				 */
-				if (block.__typename == `${collectionName}${fieldName}BigImageBlock`) {
+				if (block?.__typename == `${collectionName}${fieldName}BigImageBlock`) {
 					return (
 						<GridLayoutItem layout="full" key={i + block.__typename}>
 							<BigImage data={block} parentField={`blocks.${i}`} />
@@ -105,7 +105,7 @@ export const Blocks = (props: Blog | Page | Homepage) => {
  * query the Tina collections and render the <Blocks> component.
  * @returns
  */
-export const BlocksLoader = (props) => {
+export const BlocksLoader = (props: { query: string; variables: object; data: object }) => {
 	const { data } = useTina({
 		query: props.query,
 		variables: props.variables,
