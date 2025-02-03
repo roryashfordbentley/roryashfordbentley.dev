@@ -1,9 +1,11 @@
-//import type { Template } from "tinacms";
-import { Children } from "react";
-
 import "@components/GridLayout.css";
 
-export const GridLayoutItem = ({ children, layout }) => {
+interface Props {
+	children?: React.ReactNode;
+	layout?: String;
+}
+
+export const GridLayoutItem = ({ children, layout }: Props) => {
 	let gridItemClassName = "grid-layout__item";
 
 	if (layout == "full") {
@@ -19,6 +21,6 @@ export const GridLayoutItem = ({ children, layout }) => {
  * GridLayout
  *
  */
-export const GridLayout = ({ children }) => {
+export const GridLayout = ({ children }: Props) => {
 	return <div className="grid-layout">{children}</div>;
 };
