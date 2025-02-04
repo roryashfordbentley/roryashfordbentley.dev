@@ -1,38 +1,31 @@
 ---
-import PageWrapper from "@layouts/PageWrapper.astro";
-import Wrapper from "@components/Wrapper.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import client from "@tina/__generated__/client";
+import { BlocksLoader } from "@blocks/_BlocksLoader";
 import { getCollection } from "astro:content";
-import BlogGrid from "@components/BlogGrid.astro";
+import { BlogGrid } from "@components/BlogGrid";
 import CardArticle from "@components/CardArticle.astro";
-import CardArticleFeatured from "@components/CardArticleFeatured.astro";
-import PageTitle from "@components/PageTitle.astro";
+import { GridLayout } from "@components/GridLayout";
+import { GridLayoutItem } from "@components/GridLayout";
+
+const data = await client.queries.page({ relativePath: "blog.mdx" });
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-
-const featuredPost = posts.shift();
 ---
 
-<!--<BaseHead title={config.seo.title} description={config.seo.description} /> -->
-<PageWrapper>
-	<main>
-		<PageTitle />
-		<Wrapper>
+<PageLayout>
+	<BlocksLoader {...data} client:tina />
+
+	<GridLayout>
+		<GridLayoutItem>
 			<BlogGrid>
-				{
-					featuredPost && (
-						<CardArticleFeatured
-							title={featuredPost.data.title}
-							description={featuredPost.data.description}
-							date={featuredPost.data.pubDate}
-							url={`/blog/${featuredPost.id}/`}
-						/>
-					)
-				}
 				{
 					posts.map((post) => (
 						<CardArticle
+							image_src="https://placehold.co/600x400"
+							image_alt="alt txt"
 							title={post.data.title}
 							description={post.data.description}
 							date={post.data.pubDate}
@@ -41,6 +34,6 @@ const featuredPost = posts.shift();
 					))
 				}
 			</BlogGrid>
-		</Wrapper>
-	</main>
-</PageWrapper>
+		</GridLayoutItem>
+	</GridLayout>
+</PageLayout>

@@ -1,18 +1,22 @@
-:root {
-	--theme-primary: #222b2e;
-	--theme-secondary: #585b5c;
-	--theme-text: var(--theme-primary);
-	--theme-text-tint: #7c868a;
-	--theme-link: var(--theme-primary);
-	--theme-background: #fafafc;
-	--theme-border: var(--theme-secondary);
-}
-
 :root.dark {
 	--theme-primary: #fafafc;
 	--theme-text: #fafafc;
 	--theme-text-tint: #8ba498;
 	--theme-link: var(--theme-primary);
-	--theme-background: #222b2e;
+	--theme-background: #14313b;
+	--theme-background-tint: #283236;
 	--theme-border: #374435;
+	--theme-accent: #96ffad;
+}
+
+:root {
+	--theme-primary: #14313b;
+	--theme-secondary: #585b5c;
+	--theme-text: var(--theme-primary);
+	--theme-text-tint: #7c868a;
+	--theme-link: var(--theme-primary);
+	--theme-background: #fafafc;
+	--theme-background-tint: #f0f0f0;
+	--theme-border: var(--theme-secondary);
+	--theme-accent: #96ffad;
 }

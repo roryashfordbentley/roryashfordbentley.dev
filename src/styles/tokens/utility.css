@@ -1,0 +1,4 @@
+:root {
+	--util-content-width: clamp(350px, 80%, 1200px);
+	--util-breakout-width: clamp(350px, 90%, 1300px);
+}

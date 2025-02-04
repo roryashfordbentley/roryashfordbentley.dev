@@ -1,5 +1,4 @@
 import type { Collection } from "tinacms";
-import IconComponent from "../components/IconComponent";
 
 export const GlobalConfigCollection: Collection = {
 	name: "config",
@@ -27,19 +26,13 @@ export const GlobalConfigCollection: Collection = {
 			required: true,
 		},
 		{
-			name: "siteOwner",
-			label: "Your Name, Company Name (Used in the footer)",
+			name: "siteAuthor",
+			label: "Author name",
 			required: true,
 			type: "string",
 			ui: {
 				defaultValue: "Your name here",
 			},
-		},
-		{
-			type: "image",
-			name: "logo",
-			label: "Logo",
-			required: true,
 		},
 		{
 			name: "nav",
@@ -94,11 +87,7 @@ export const GlobalConfigCollection: Collection = {
 				{
 					name: "icon",
 					label: "Icon",
-					type: "string",
-					ui: {
-						//@ts-ignore
-						component: IconComponent,
-					},
+					type: "image",
 				},
 			],
 		},

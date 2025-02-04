@@ -2,8 +2,9 @@
 import config from "../content/config/config.json";
 import LogoLink from "./LogoLink.astro";
 import MainNav from "./MainNav.astro";
-import Wrapper from "./Wrapper.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+
+import { GridLayout, GridLayoutItem } from "./GridLayout";
 
 import "@styles/tokens/colours.css";
 import "@styles/tokens/spacing.css";
@@ -13,21 +14,23 @@ const logo = config.logo;
 ---
 
 <header class="site-header">
-	<Wrapper>
-		<div class="site-header__inner">
-			<div class="site-header__logo">
-				<LogoLink link="/" />
-			</div>
+	<GridLayout>
+		<GridLayoutItem>
+			<div class="site-header__inner">
+				<div class="site-header__logo">
+					<LogoLink link="/" />
+				</div>
 
-			<div class="site-header__nav">
-				<MainNav />
-			</div>
+				<div class="site-header__nav">
+					<MainNav />
+				</div>
 
-			<div class="site-header__toggle">
-				<ThemeToggle />
+				<div class="site-header__toggle">
+					<ThemeToggle />
+				</div>
 			</div>
-		</div>
-	</Wrapper>
+		</GridLayoutItem>
+	</GridLayout>
 </header>
 
 <style>

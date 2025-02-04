@@ -1,42 +1,36 @@
 {
-	"seo": {
-		"title": "Astro Blog + Tina",
-		"description": "Welcome to my website!",
-		"siteOwner": "Your name here"
-	},
-	"siteTitle": "Rory Ashford Bentley - Engineer",
-	"description": "The personal Website of Rory Ashford Bentley",
-	"siteOwner": "Rory Ashford Bentley",
-	"logo": "/rab-logo.svg",
-	"nav": [
-		{
-			"title": "Home",
-			"link": "/"
-		},
-		{
-			"title": "Blog",
-			"link": "/blog"
-		},
-		{
-			"title": "About",
-			"link": "/about"
-		}
-	],
-	"contactLinks": [
-		{
-			"title": "Twitter",
-			"link": "https://x.com/tinacms",
-			"icon": "TbBrandTwitter"
-		},
-		{
-			"title": "Docs",
-			"link": "https://tina.io/docs",
-			"icon": "TbBook2"
-		},
-		{
-			"title": "GitHub",
-			"link": "https://github.com/tinacms/tinacms",
-			"icon": "TbBrandGithub"
-		}
-	]
+  "seo": {
+    "title": "Astro Blog + Tina",
+    "description": "Welcome to my website!",
+    "siteOwner": "Your name here"
+  },
+  "siteTitle": "Rory Ashford Bentley - Engineer",
+  "description": "The personal Website of Rory Ashford Bentley",
+  "siteAuthor": "Rory Ashford Bentley",
+  "nav": [
+    {
+      "title": "Home",
+      "link": "/"
+    },
+    {
+      "title": "Blog",
+      "link": "/blog"
+    },
+    {
+      "title": "About",
+      "link": "/about"
+    }
+  ],
+  "contactLinks": [
+    {
+      "title": "Bluesky",
+      "link": "https://roikles.bsky.social",
+      "icon": "/uploads/bluesky-logo.svg"
+    },
+    {
+      "title": "GitHub",
+      "link": "https://github.com/roryashfordbentley",
+      "icon": "/uploads/github-logo.svg"
+    }
+  ]
 }

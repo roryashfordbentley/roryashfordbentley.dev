@@ -1,19 +1,13 @@
 ---
 import config from "../content/config/config.json";
-import IconLink from "./react/IconLink";
+import { ContactWidget } from "./ContactWidget";
 const today = new Date();
 ---
 
 <footer>
 	&copy; {today.getFullYear()}
 	{config.seo.siteOwner}. All rights reserved.
-	<div class="social-links">
-		{
-			config?.contactLinks?.map((link) => {
-				return <IconLink {...link} />;
-			})
-		}
-	</div>
+	<ContactWidget />
 </footer>
 <style>
 	footer {

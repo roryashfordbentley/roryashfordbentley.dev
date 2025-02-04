@@ -1,0 +1,13 @@
+/**
+ * Media queries
+ *
+ * The project is configured to run postCSS thanks to Vite.
+ * The postcss.config.cjs file instructs postCSS to use the custom-media polyfill
+ * This file defines some reusable media-query breakpoints.
+ */
+:root {
+	@custom-media --s (min-width: 600px);
+	@custom-media --m (min-width: 800px);
+	@custom-media --l (min-width: 1000px);
+	@custom-media --xl (min-width: 1200px);
+}

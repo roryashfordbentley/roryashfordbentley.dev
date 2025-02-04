@@ -9,13 +9,36 @@ function dateFormatter(date: Date) {
 
 	new Date(date).toString();
 
-	const [month, day, year] = [
-		dateFormatted.getMonth(),
-		dateFormatted.getDate(),
+	var monthNames = [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December",
+	];
+
+	const nthNumber = (number) => {
+		return number > 0
+			? ["th", "st", "nd", "rd"][
+					(number > 3 && number < 21) || number % 10 > 3 ? 0 : number % 10
+				]
+			: "";
+	};
+
+	const [day, month, year] = [
+		dateFormatted.getDate() + nthNumber(dateFormatted.getDate()),
+		monthNames[dateFormatted.getMonth()],
 		dateFormatted.getFullYear(),
 	];
 
-	let readableDateString = `${day}/${month + 1} — ${year}`;
+	let readableDateString = `${day} ${month} ${year}`;
 	let machineReadableDateString = dateFormatted.toISOString();
 
 	return { readableDateString, machineReadableDateString };

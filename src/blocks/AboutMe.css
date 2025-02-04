@@ -1,0 +1,54 @@
+.about-me {
+	padding: var(--spacing-4);
+	background: var(--theme-background-tint);
+	color: var(--theme-text);
+	border-radius: var(--radius-2);
+
+	@media (--m) {
+		padding: var(--spacing-7);
+		border-radius: var(--radius-4);
+	}
+}
+
+.about-me__inner {
+	gap: var(--spacing-6);
+
+	@media (--m) {
+		display: flex;
+	}
+}
+
+.about-me__figure {
+	@media (--m) {
+		width: 30%;
+		flex: 1 0 auto;
+	}
+}
+
+.about-me__image {
+	border-radius: 0.8rem;
+}
+
+.about-me__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.about-me__title {
+	font-size: clamp(var(--font-size-4), 4vw, var(--font-size-8));
+	font-weight: var(--font-weight-bold);
+	margin-bottom: var(--spacing-6);
+}
+
+.about-me__description {
+	font-size: clamp(var(--font-size-2), 3vw, var(--font-size-5));
+
+	strong {
+		color: var(--theme-accent);
+	}
+	margin-bottom: var(--spacing-6);
+}
+
+.about-me__footer {
+	margin-top: auto;
+}

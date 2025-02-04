@@ -4,30 +4,28 @@ import { PageTitleBlockSchema } from "@blocks/PageTitle";
 import { AboutMeBlockSchema } from "@blocks/AboutMe";
 import { BigImageBlockSchema } from "@blocks/BigImage";
 import { TextContentBlockSchema } from "@blocks/TextContent";
+import { GalleryBlockSchema } from "@blocks/Gallery";
+import { AlertBlockSchema } from "@blocks/Alert";
+import { CodeBlockSchema } from "@blocks/Code";
 
-export const PageCollection: Collection = {
-	name: "page",
-	label: "Pages",
-	path: "src/content/page",
+export const HomePageCollection: Collection = {
+	name: "homepage",
+	label: "Home Page",
+	path: "src/content/homepage",
 	format: "mdx",
 	ui: {
-		filename: {
-			// if disabled, the editor can not edit the filename
-			readonly: true,
-			// Example of using a custom slugify function
-			slugify: (values) => {
-				// Values is an object containing all the values of the form. In this case it is {title?: string, topic?: string}
-				return values?.title?.toLowerCase().replace(/ /g, "-");
-			},
-		},
 		router: ({ document }) => {
-			return `${document._sys.filename}`;
+			/*return `/${document._sys.filename}`;*/
+			return `/`;
+		},
+		allowedActions: {
+			create: false,
+			delete: false,
 		},
 	},
 	fields: [
 		{
-			name: "title",
-			label: "Title",
+			name: "Title",
 			type: "string",
 			required: true,
 		},
@@ -44,6 +42,9 @@ export const PageCollection: Collection = {
 				AboutMeBlockSchema,
 				TextContentBlockSchema,
 				BigImageBlockSchema,
+				//GalleryBlockSchema,
+				//AlertBlockSchema,
+				//CodeBlockSchema,
 			],
 		},
 	],

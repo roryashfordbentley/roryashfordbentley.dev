@@ -22,9 +22,13 @@
     "tinacms": "^2.6.0"
   },
   "devDependencies": {
+    "@csstools/postcss-global-data": "^3.0.0",
     "@tinacms/cli": "^1.8.0",
     "@types/node": "^22.10.5",
     "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "postcss-custom-media": "^11.0.5",
+    "postcss-nesting": "^13.0.1",
+    "postcss-rem": "^3.0.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1"
   }

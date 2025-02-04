@@ -1,0 +1,31 @@
+.contact-widget {
+	display: flex;
+	gap: var(--spacing-2);
+}
+
+.contact-widget__list {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	gap: var(--spacing-2);
+}
+
+.contact-widget__list-item {
+	border: 1px solid var(--theme-text-tint);
+	border-radius: pxrem(30px);
+	padding: pxrem(5px);
+}
+
+.contact-widget__link {
+}
+
+.contact-widget__icon {
+	//width: pxrem(24px);
+	height: pxrem(32px);
+	aspect-ratio: 1/1;
+
+	background: var(--theme-primary);
+	mask-image: var(--mask);
+	mask-repeat: no-repeat;
+	mask-position: bottom center;
+}
