@@ -2,10 +2,8 @@
 import { getCollection } from "astro:content";
 import client from "@tina/__generated__/client";
 import PageLayout from "@layouts/PageLayout.astro";
-
+import { BlocksLoader } from "@blocks/_BlocksLoader";
 import { tinaField, useTina } from "tinacms/dist/react";
-
-import { Blocks } from "@blocks/_BlocksLoader";
 
 export async function getStaticPaths() {
 	const page = await getCollection("page");
@@ -22,9 +20,9 @@ export async function getStaticPaths() {
 }
 
 const { getTinaProps } = Astro.props;
-const pageData = await getTinaProps();
+const tinaProps = await getTinaProps();
 ---
 
 <PageLayout>
-	<Blocks {...page.data} client:tina />
+	<BlocksLoader {...tinaProps} client:tina />
 </PageLayout>

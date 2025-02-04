@@ -24,7 +24,7 @@ const posts = (await getCollection("blog")).sort(
 				{
 					posts.map((post) => (
 						<CardArticle
-							image_src="https://placehold.co/600x400"
+							image_src={post.data.heroImage}
 							image_alt="alt txt"
 							title={post.data.title}
 							description={post.data.description}
