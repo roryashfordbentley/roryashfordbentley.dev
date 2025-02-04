@@ -1,6 +1,7 @@
 ---
 import "@styles/global.css";
 import dateFormatter from "@scripts/date-formatter.ts";
+import { Image } from "astro:assets";
 
 const urlPrefix = "/posts/";
 
@@ -9,7 +10,17 @@ const { title, description, date, url, image_src, image_alt } = Astro.props;
 
 <div class="card-article">
 	<figure class="card-article__figure">
-		<img class="card-article__image" src={image_src} alt={image_alt} />
+		{
+			image_src && (
+				<Image
+					src={image_src}
+					alt={image_alt}
+					layout="responsive"
+					width={800}
+					height={450}
+				/>
+			)
+		}
 	</figure>
 
 	<time class="card-article__date" datetime={dateFormatter(date).machineReadableDateString}>
