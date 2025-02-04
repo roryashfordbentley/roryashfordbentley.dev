@@ -39,7 +39,6 @@ export const Blocks = (props: Blog | Page | Homepage) => {
 	return (
 		<GridLayout>
 			{props.blocks?.map(function (block, i) {
-				console.log(block?.__typename);
 				/**
 				 * The Page Title block Component
 				 */
