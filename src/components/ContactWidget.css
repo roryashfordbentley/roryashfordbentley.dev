@@ -20,7 +20,6 @@
 }
 
 .contact-widget__icon {
-	//width: pxrem(24px);
 	height: pxrem(32px);
 	aspect-ratio: 1/1;
 
