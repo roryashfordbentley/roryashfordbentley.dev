@@ -17,6 +17,6 @@
 	--theme-link: var(--theme-primary);
 	--theme-background: #fafafc;
 	--theme-background-tint: #f0f0f0;
-	--theme-border: var(--theme-secondary);
+	--theme-border: #e6e6e6;
 	--theme-accent: #96ffad;
 }

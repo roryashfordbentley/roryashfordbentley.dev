@@ -47,6 +47,7 @@ export const BlogCollection: Collection = {
 			name: "pubDate",
 			label: "Publication Date",
 			type: "datetime",
+			required: true,
 		},
 		{
 			name: "updatedDate",
@@ -54,14 +55,14 @@ export const BlogCollection: Collection = {
 			type: "datetime",
 		},
 		{
-			name: "heroImage",
-			label: "Hero Image",
+			name: "featuredImage",
+			label: "Featured Image",
 			type: "image",
 		},
 		{
 			type: "rich-text",
 			name: "body",
-			label: "Body",
+			label: "Body (deprecated)",
 			isBody: true,
 		},
 		{

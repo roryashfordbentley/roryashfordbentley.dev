@@ -37,9 +37,12 @@ const { title, description, date, url, image_src, image_alt } = Astro.props;
 		width: 100%;
 	}
 
-	.card-article__image {
+	.card-article__figure {
 		border-radius: var(--radius-2);
 		margin-bottom: var(--spacing-5);
+		overflow: hidden;
+		background-color: var(--theme-background-tint);
+		border: pxrem(1px) solid var(--theme-border);
 	}
 
 	.card-article__date {
