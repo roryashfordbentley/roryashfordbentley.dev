@@ -2,7 +2,7 @@ import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Code = ({ data, parentField = "" }) => {
-	return <div className="code">{data.codeText}</div>;
+	return <div className={styles["code"]}>{data.codeText}</div>;
 };
 
 /**

@@ -3,7 +3,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const Alert = ({ data, parentField = "" }) => {
 	return (
-		<div className="alert">
+		<div className={styles["alert"]}>
 			<TinaMarkdown content={data.alertContent} />
 		</div>
 	);

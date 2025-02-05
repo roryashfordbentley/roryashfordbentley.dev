@@ -2,38 +2,38 @@ import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 
-import "@blocks/AboutMe.css";
+import styles from "@blocks/AboutMe.module.css";
 import { ContactWidget } from "@components/ContactWidget";
 
 export const AboutMe = ({ data, parentField = "" }) => {
 	return (
-		<section className="about-me">
-			<div className="about-me__inner">
+		<section className={styles["about-me"]}>
+			<div className={styles["about-me__inner"]}>
 				<figure
 					data-tina-field={tinaField(data, "aboutImage")}
-					className="about-me__figure"
+					className={styles["about-me__figure"]}
 				>
 					<img
-						className="about-me__image"
+						className={styles["about-me__image"]}
 						src={data.aboutImage}
 						alt={data.aboutImageAltText}
 						width=""
 						height=""
 					/>
 				</figure>
-				<div className="about-me__content">
-					<h2 data-tina-field={tinaField(data, "aboutTitle")} className="about-me__title">
+				<div className={styles["about-me__content"]}>
+					<h2 data-tina-field={tinaField(data, "aboutTitle")} className={styles["about-me__title"]}>
 						{data.aboutTitle}
 					</h2>
 
 					<div
 						data-tina-field={tinaField(data, "aboutDescription")}
-						className="about-me__description"
+						className={styles["about-me__description"]}
 					>
 						<TinaMarkdown content={data.aboutDescription} />
 					</div>
 
-					<footer className="about-me__footer">
+					<footer className={styles["about-me__footer"]}>
 						<ContactWidget />
 					</footer>
 				</div>

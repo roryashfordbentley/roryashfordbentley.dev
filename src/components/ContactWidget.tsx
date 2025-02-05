@@ -1,17 +1,17 @@
 import { LinkButton } from "@components/LinkButton";
-import "@components/ContactWidget.css";
+import styles from "@components/ContactWidget.module.css";
 import config from "../content/config/config.json";
 
 export const ContactWidget = () => {
 	return (
-		<div className="contact-widget">
-			<ul className="contact-widget__list">
+		<div className={styles["contact-widget"]}>
+			<ul className={styles["contact-widget__list"]}>
 				{config?.contactLinks?.map((link, index) => {
 					return (
-						<li className="contact-widget__list-item" key={index}>
-							<a className="contact-widget__link" href={link.link}>
+						<li className={styles["contact-widget__list-item"]} key={index}>
+							<a className={styles["contact-widget__link"]} href={link.link}>
 								<div
-									className="contact-widget__icon"
+									className={styles["contact-widget__icon"]}
 									style={
 										{
 											"--mask": `url(${link.icon})`,

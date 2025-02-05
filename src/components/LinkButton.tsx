@@ -1,4 +1,4 @@
-import "@components/LinkButton.css";
+import "@components/LinkButton.module.css";
 
 export const LinkButton = (props) => {
 	let linkClassName = "link-button";

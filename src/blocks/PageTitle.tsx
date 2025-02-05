@@ -1,19 +1,19 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
-import "@blocks/PageTitle.css";
+import styles from "@blocks/PageTitle.module.css";
 
 export const PageTitle = ({ data, parentField = "" }) => {
 	return (
-		<section className="page-title">
+		<section className={styles["page-title"]}>
 			<div data-tina-field={tinaField(data, "title")}>
-				<h1 className="page-title__title">
+				<h1 className={styles["page-title__title"]}>
 					<TinaMarkdown content={data.title} />
 				</h1>
 			</div>
 
 			<div data-tina-field={tinaField(data, "subtitle")}>
-				<span className="page-title__subtitle">
+				<span className={styles["page-title__subtitle"]}>
 					<TinaMarkdown content={data.subtitle} />
 				</span>
 			</div>

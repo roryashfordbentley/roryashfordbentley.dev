@@ -1,0 +1,11 @@
+.logo-link {
+    width: 100%;
+    height: auto;
+}
+
+.logo-link__svg {
+}
+
+.logo-link__shape {
+    fill: var(--theme-primary);
+}

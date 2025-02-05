@@ -1,0 +1,21 @@
+.main-nav {
+    font-size: var(--font-size-4);
+}
+
+.main-nav__list {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav__link {
+    position: relative;
+    padding: var(--spacing-1) var(--spacing-3);
+    text-decoration-color: var(--theme-border);
+
+    &:hover {
+        text-decoration-color: var(--theme-primary);
+    }
+}
+

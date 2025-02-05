@@ -1,7 +1,5 @@
 # build output
 dist/
-# generated types
-.astro/
 
 # dependencies
 node_modules/
@@ -24,3 +22,6 @@ pnpm-debug.log*
 .idea/
 
 node_modules
+
+# NextJS
+.next

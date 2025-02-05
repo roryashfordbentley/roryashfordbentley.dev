@@ -1,0 +1,101 @@
+.theme-toggle {
+    /* Toggle scales based on size of the pseuedo button */
+    --pseudo-button-size: 22px;
+
+    --foreground-colour: var(--theme-primary);
+    --background-colour: var(--theme-background);
+    --border-colour: var(--theme-border);
+    --icon-colour: black;
+
+    --dark-foreground-colour: white;
+    --dark-background-colour: var(--theme-background);
+    --dark-icon-colour: white;
+    --dark-border-colour: white;
+
+    --pseudo-button-margin: 4px;
+    --border-size: 1px;
+
+    --icon-size: calc(var(--pseudo-button-size) / 1.5);
+    --toggle-width: calc(var(--pseudo-button-size) * 2.8);
+    --track-height: calc(
+        (var(--border-size) * 2) + var(--pseudo-button-size) + (var(--pseudo-button-margin) * 2)
+    );
+    --icon-x-offset: calc(
+        ((var(--pseudo-button-size) - var(--icon-size)) / 2) + var(--pseudo-button-margin)
+    );
+
+    position: relative;
+    width: var(--toggle-width);
+    height: var(--track-height);
+    background: var(--background-colour);
+    border: none;
+    border-radius: calc(var(--track-height) / 2);
+    border: var(--border-size) solid var(--border-colour);
+}
+
+.theme-toggle--dark {
+    position: relative;
+    width: var(--toggle-width);
+    height: var(--track-height);
+    background: var(--dark-background-colour);
+    border: none;
+    border-radius: calc(var(--track-height) / 2);
+    border: var(--border-size) solid var(--dark-border-colour);
+}
+
+.theme-toggle__label {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.theme-toggle__pseudo-button {
+    position: absolute;
+    background: var(--foreground-colour);
+    width: var(--pseudo-button-size);
+    height: var(--pseudo-button-size);
+    top: var(--pseudo-button-margin);
+    left: var(--pseudo-button-margin);
+    border-radius: 100%;
+}
+
+.theme-toggle__pseudo-button--dark {
+    left: auto;
+    right: var(--pseudo-button-margin);
+    background: var(--dark-foreground-colour);
+}
+
+.theme-toggle__icon {
+    position: absolute;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: var(--icon-x-offset);
+
+    & path,
+    & circle {
+        fill: white;
+    }
+}
+
+.theme-toggle__icon--dark {
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: var(--icon-x-offset);
+
+    & path,
+    & circle {
+        fill: var(--theme-primary);
+    }
+}
+
+.theme-toggle:focus,
+.theme-toggle:hover {
+    cursor: pointer;
+	}

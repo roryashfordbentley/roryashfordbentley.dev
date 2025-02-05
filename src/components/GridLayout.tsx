@@ -1,4 +1,4 @@
-import "@components/GridLayout.css";
+import styles from "@components/GridLayout.module.css";
 
 interface Props {
 	children?: React.ReactNode;
@@ -6,12 +6,12 @@ interface Props {
 }
 
 export const GridLayoutItem = ({ children, layout }: Props) => {
-	let gridItemClassName = "grid-layout__item";
+	let gridItemClassName = styles["grid-layout__item"];
 
 	if (layout == "full") {
-		gridItemClassName = `${gridItemClassName} ${gridItemClassName}--full`;
+		gridItemClassName = `${styles["grid-layout__item"]} ${styles["grid-layout__item--full"]}`;
 	} else if (layout == "narrow") {
-		gridItemClassName = `${gridItemClassName} ${gridItemClassName}--narrow`;
+		gridItemClassName = `${styles["grid-layout__item"]} ${styles["grid-layout__item--narrow"]}`;
 	}
 
 	return <div className={gridItemClassName}>{children}</div>;
@@ -22,5 +22,5 @@ export const GridLayoutItem = ({ children, layout }: Props) => {
  *
  */
 export const GridLayout = ({ children }: Props) => {
-	return <div className="grid-layout">{children}</div>;
+	return <div className={styles["grid-layout"]}>{children}</div>;
 };
