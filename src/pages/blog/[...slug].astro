@@ -5,7 +5,7 @@ import client from "@tina/__generated__/client";
 import { BlocksLoader } from "@blocks/_BlocksLoader";
 
 import PageLayout from "@layouts/PageLayout.astro";
-import BlogArticleTitle from "@components/BlogArticleTitle.astro";
+import { BlogArticleTitle } from "@components/BlogArticleTitle";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
