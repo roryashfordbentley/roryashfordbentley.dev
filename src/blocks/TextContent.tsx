@@ -4,7 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 
 export const TextContent = ({ data, parentField = "" }) => {
 	return (
-		<div className={styles["big-text-block"]} data-tina-field={tinaField(data, "text")}>
+		<div className="big-text-block" data-tina-field={tinaField(data, "text")}>
 			<TinaMarkdown content={data.text} />
 		</div>
 	);

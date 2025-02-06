@@ -1,7 +1,7 @@
 import type { Template } from "tinacms";
 
 export const Gallery = ({ data, parentField = "" }) => {
-	return <div className={styles["gallery-here"]}></div>;
+	return <div className="gallery-here"></div>;
 };
 
 /**

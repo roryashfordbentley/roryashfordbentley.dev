@@ -2,7 +2,7 @@ import type { Template } from "tinacms";
 
 export const BigImage = ({ data, parentField = "" }) => {
 	return (
-		<figure className={styles["big-image"]}>
+		<figure className="big-image">
 			<img src={data.image} alt={data.altText} />
 		</figure>
 	);
