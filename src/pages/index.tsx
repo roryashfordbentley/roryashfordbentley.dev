@@ -10,7 +10,7 @@ const HomePage = () => {
 	return (
 		<PageLayout>
 			<Head>
-				<title>{`Blog - ${config.siteTitle}`}</title>
+				<title>{`Home - ${config.siteTitle}`}</title>
 			</Head>
 			<BlocksLoader {...data} />
 		</PageLayout>

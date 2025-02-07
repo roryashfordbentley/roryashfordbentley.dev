@@ -20,7 +20,7 @@ const Blog = () => {
 	return (
 		<PageLayout>
 			<Head>
-				<title>Blog - {config.siteTitle}</title>
+				<title>{`Blog - ${config.siteTitle}`}</title>
 			</Head>
 			<BlocksLoader {...data} />
 
