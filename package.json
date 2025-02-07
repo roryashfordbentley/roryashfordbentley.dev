@@ -1,29 +1,29 @@
 {
-  "name": "rab-website",
-  "version": "1.0.0",
-  "description": "This repository stores the code used for **roryashfordbentley.dev.**",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
-    "build": "tinacms build && next build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@next/env": "^15.1.6",
-    "next": "^15.1.6",
-    "tinacms": "^2.6.2"
-  },
-  "devDependencies": {
-    "@csstools/postcss-global-data": "^3.0.0",
-    "@tinacms/cli": "^1.8.2",
-    "@types/node": "^22.13.1",
-    "postcss-custom-media": "^11.0.5",
-    "postcss-nesting": "^13.0.1",
-    "postcss-rem": "^3.0.0",
-    "prettier": "3.4.2"
-  }
+	"name": "rab-website",
+	"version": "1.0.0",
+	"description": "This repository stores the code used for **roryashfordbentley.dev.**",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev --experimental-https\"",
+		"build": "tinacms build && next build"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"dependencies": {
+		"@next/env": "^15.1.6",
+		"next": "^15.1.6",
+		"tinacms": "^2.6.2"
+	},
+	"devDependencies": {
+		"@csstools/postcss-global-data": "^3.0.0",
+		"@tinacms/cli": "^1.8.2",
+		"@types/node": "^22.13.1",
+		"postcss-custom-media": "^11.0.5",
+		"postcss-nesting": "^13.0.1",
+		"postcss-rem": "^3.0.0",
+		"prettier": "3.4.2"
+	}
 }
