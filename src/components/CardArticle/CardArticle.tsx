@@ -1,6 +1,6 @@
 import Image from "next/image";
 import dateFormatter from "@scripts/date-formatter";
-import styles from "@components/CardArticle.module.css";
+import styles from "./CardArticle.module.css";
 
 const urlPrefix = "/posts/";
 

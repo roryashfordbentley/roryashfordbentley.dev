@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@components/BlogGrid.module.css"; // External CSS for the styles
+import styles from "./BlogGrid.module.css"; // External CSS for the styles
 
 export const BlogGrid = ({ children }) => {
 	return <div className={styles["blog-grid"]}>{children}</div>;

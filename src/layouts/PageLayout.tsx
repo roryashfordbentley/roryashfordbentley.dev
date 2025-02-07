@@ -1,6 +1,6 @@
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { loadEnvConfig } from '@next/env'
+import { Header } from "@components/Header/Header";
+import { Footer } from "@components/Footer/Footer";
+import { loadEnvConfig } from "@next/env";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -9,8 +9,8 @@ const title = options.data.options.site_title;*/
 
 const title = "RAB Website";
 
-export default function PageLayout({children}) {
-    /*return (
+export default function PageLayout({ children }) {
+	/*return (
         <html lang="en">
             <head>
                 <meta charSet="UTF-8" />
@@ -33,13 +33,11 @@ export default function PageLayout({children}) {
             </body>
         </html>
     )*/
-   return(
-    <>
-        <Header />
-        <main>
-            {children}
-        </main>
-        <Footer />
-    </>
-   )
+	return (
+		<>
+			<Header />
+			<main>{children}</main>
+			<Footer />
+		</>
+	);
 }

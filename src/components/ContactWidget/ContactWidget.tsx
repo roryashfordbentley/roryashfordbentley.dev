@@ -1,5 +1,5 @@
-import { LinkButton } from "@components/LinkButton";
-import styles from "@components/ContactWidget.module.css";
+import { LinkButton } from "@components/LinkButton/LinkButton";
+import styles from "@components/ContactWidget/ContactWidget.module.css";
 import config from "@content/config/config.json";
 
 export const ContactWidget = () => {

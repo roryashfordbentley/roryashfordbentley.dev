@@ -5,10 +5,10 @@ import PageLayout from "@layouts/PageLayout";
 import client from "@tina/__generated__/client";
 import { BlocksLoader } from "@blocks/_BlocksLoader";
 
-import { BlogGrid, BlogGridItem } from "@components/BlogGrid";
-import { CardArticle } from "@components/CardArticle";
-import { GridLayout } from "@components/GridLayout";
-import { GridLayoutItem } from "@components/GridLayout";
+import { BlogGrid, BlogGridItem } from "@components/BlogGrid/BlogGrid";
+import { CardArticle } from "@components/CardArticle/CardArticle";
+import { GridLayout } from "@components/GridLayout/GridLayout";
+import { GridLayoutItem } from "@components/GridLayout/GridLayout";
 
 const data = await client.queries.blogConnection();
 

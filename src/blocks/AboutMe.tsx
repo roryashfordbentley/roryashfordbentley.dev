@@ -3,7 +3,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 
 import styles from "@blocks/AboutMe.module.css";
-import { ContactWidget } from "@components/ContactWidget";
+import { ContactWidget } from "@components/ContactWidget/ContactWidget";
 
 export const AboutMe = ({ data, parentField = "" }) => {
 	return (
@@ -22,7 +22,10 @@ export const AboutMe = ({ data, parentField = "" }) => {
 					/>
 				</figure>
 				<div className={styles["about-me__content"]}>
-					<h2 data-tina-field={tinaField(data, "aboutTitle")} className={styles["about-me__title"]}>
+					<h2
+						data-tina-field={tinaField(data, "aboutTitle")}
+						className={styles["about-me__title"]}
+					>
 						{data.aboutTitle}
 					</h2>
 

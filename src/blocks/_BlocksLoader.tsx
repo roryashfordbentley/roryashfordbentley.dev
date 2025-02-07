@@ -5,7 +5,7 @@ import { PageTitle } from "@blocks/PageTitle";
 import { AboutMe } from "@blocks/AboutMe";
 import { TextContent } from "@blocks/TextContent";
 import { BigImage } from "@blocks/BigImage";
-import { GridLayout, GridLayoutItem } from "@components/GridLayout";
+import { GridLayout, GridLayoutItem } from "@components/GridLayout/GridLayout";
 
 /**
  * Case values must be equal to {CollectionName}{FieldName}{BlockTemplateName}

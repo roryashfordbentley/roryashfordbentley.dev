@@ -1,4 +1,4 @@
-import styles from "@components/GridLayout.module.css";
+import styles from "./GridLayout.module.css";
 
 interface Props {
 	children?: React.ReactNode;

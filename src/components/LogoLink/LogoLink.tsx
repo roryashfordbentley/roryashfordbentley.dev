@@ -1,4 +1,4 @@
-import styles from "@components/LogoLink.module.css";
+import styles from "./LogoLink.module.css";
 
 export const LogoLink = ({ link }) => {
 	return (

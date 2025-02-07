@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-import styles from "@components/ThemeToggle.module.css";
+import styles from "./ThemeToggle.module.css";
 
 const useTheme = () => {
 	const [theme, setTheme] = useState<string>("light");
