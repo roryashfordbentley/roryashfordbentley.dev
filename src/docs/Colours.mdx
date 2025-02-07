@@ -1,0 +1,16 @@
+import { DesignTokenDocBlock } from "storybook-design-token";
+import { Meta, Controls } from "@storybook/blocks";
+
+<Meta title="Design Tokens/Colour" />
+
+# Colour tokens
+
+Colour tokens are by default set as the light versions but if the `<body>` element contains the class `.dark` the dark colours are used instead. This allows for very simple theme toggling/
+
+## Light mode
+
+<DesignTokenDocBlock categoryName="Colors Light" viewType="table" />
+
+## Dark mode
+
+<DesignTokenDocBlock categoryName="Colors Dark" viewType="table" />

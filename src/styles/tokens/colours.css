@@ -1,3 +1,7 @@
+/**
+* @tokens Colors Dark
+* @presenter Color
+*/
 :root.dark {
 	--theme-primary: #fafafc;
 	--theme-text: #fafafc;
@@ -9,6 +13,10 @@
 	--theme-accent: #96ffad;
 }
 
+/**
+* @tokens Colors Light
+* @presenter Color
+*/
 :root {
 	--theme-primary: #14313b;
 	--theme-secondary: #585b5c;

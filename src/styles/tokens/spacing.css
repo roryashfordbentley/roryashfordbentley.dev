@@ -1,4 +1,8 @@
 :root {
+	/**
+     * @tokens Spacing
+     * @presenter Spacing
+     */
 	--spacing-1: 0.25rem;
 	--spacing-2: 0.5rem;
 	--spacing-3: 0.75rem;

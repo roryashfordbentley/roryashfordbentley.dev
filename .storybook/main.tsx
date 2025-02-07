@@ -1,12 +1,13 @@
 import type { StorybookConfig } from "@storybook/nextjs";
+const path = require("path");
 
 const config: StorybookConfig = {
-	stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+	stories: ["../src/docs/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 	addons: [
-		"@storybook/addon-onboarding",
 		"@storybook/addon-essentials",
 		"@chromatic-com/storybook",
 		"@storybook/addon-interactions",
+		"storybook-design-token",
 	],
 	framework: {
 		name: "@storybook/nextjs",

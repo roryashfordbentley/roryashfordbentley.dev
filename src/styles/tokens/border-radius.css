@@ -1,4 +1,8 @@
 :root {
+	/**
+    * @tokens Border Radius
+    * @presenter BorderRadius
+     */
 	--radius-1: pxrem(10px);
 	--radius-2: pxrem(15px);
 	--radius-3: pxrem(20px);
