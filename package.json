@@ -5,8 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev --experimental-https\"",
-		"build": "tinacms build && next build"
+		"dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev --experimental-https & storybook dev -p 6006\"",
+		"build": "tinacms build && next build",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,12 +20,21 @@
 		"tinacms": "^2.6.2"
 	},
 	"devDependencies": {
+		"@chromatic-com/storybook": "^3.2.4",
 		"@csstools/postcss-global-data": "^3.0.0",
+		"@storybook/addon-essentials": "^8.5.3",
+		"@storybook/addon-interactions": "^8.5.3",
+		"@storybook/addon-onboarding": "^8.5.3",
+		"@storybook/blocks": "^8.5.3",
+		"@storybook/nextjs": "^8.5.3",
+		"@storybook/react": "^8.5.3",
+		"@storybook/test": "^8.5.3",
 		"@tinacms/cli": "^1.8.2",
 		"@types/node": "^22.13.1",
 		"postcss-custom-media": "^11.0.5",
 		"postcss-nesting": "^13.0.1",
 		"postcss-rem": "^3.0.0",
-		"prettier": "3.4.2"
+		"prettier": "3.4.2",
+		"storybook": "^8.5.3"
 	}
 }
