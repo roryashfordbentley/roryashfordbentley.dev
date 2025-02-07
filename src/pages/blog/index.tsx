@@ -1,3 +1,6 @@
+import Head from "next/head";
+import config from "@content/config/config.json";
+
 import PageLayout from "@layouts/PageLayout";
 import client from "@tina/__generated__/client";
 import { BlocksLoader } from "@blocks/_BlocksLoader";
@@ -16,6 +19,9 @@ const posts = data.data.blogConnection.edges.map((post) => {
 const Blog = () => {
 	return (
 		<PageLayout>
+			<Head>
+				<title>Blog - {config.siteTitle}</title>
+			</Head>
 			<BlocksLoader {...data} />
 
 			<GridLayout>
