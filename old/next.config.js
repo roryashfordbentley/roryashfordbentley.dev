@@ -1,4 +1,5 @@
-module.exports = {
+const { withPayload } = require("@payloadcms/next/withPayload");
+module.exports = withPayload({
 	i18n: {
 		locales: ["en", "en-gb"],
 		defaultLocale: "en-gb",
@@ -39,4 +40,4 @@ module.exports = {
 			},
 		];
 	},
-};
+});
