@@ -8,7 +8,7 @@ The site is built using [Astro](https://astro.build) as its underlying framework
 
 Components are built using [SolidJS]().
 
-The site uses [Tina CMS](https://tina.io/) as its CMS
+The site uses [Payload](https://payloadcms.com/) as its CMS
 
 The site deploys to [Vercel](https://vercel.com)
 

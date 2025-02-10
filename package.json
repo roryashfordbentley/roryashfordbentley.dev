@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev --experimental-https & storybook dev -p 6006\"",
-		"build": "tinacms build && next build",
+		"dev": "next dev --experimental-https & storybook dev -p 6006",
+		"build": "next build",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
@@ -16,8 +16,7 @@
 	"type": "commonjs",
 	"dependencies": {
 		"@next/env": "^15.1.6",
-		"next": "^15.1.6",
-		"tinacms": "^2.6.2"
+		"next": "^15.1.6"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^3.2.4",
@@ -28,7 +27,6 @@
 		"@storybook/nextjs": "^8.5.3",
 		"@storybook/react": "^8.5.3",
 		"@storybook/test": "^8.5.3",
-		"@tinacms/cli": "^1.8.2",
 		"@types/node": "^22.13.1",
 		"postcss-custom-media": "^11.0.5",
 		"postcss-nesting": "^13.0.1",

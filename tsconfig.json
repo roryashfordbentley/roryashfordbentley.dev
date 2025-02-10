@@ -29,7 +29,6 @@
 			"@scripts/*": ["src/scripts/*"],
 			"@pages/*": ["src/pages/*"],
 			"@blocks/*": ["src/blocks/*"],
-			"@tina/*": ["tina/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/content.config.ts--OLD"]

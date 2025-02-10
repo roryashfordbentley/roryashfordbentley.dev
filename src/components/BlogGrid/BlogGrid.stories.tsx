@@ -4,8 +4,6 @@ import { BlogGrid } from "./BlogGrid";
 import { CardArticle } from "@components/CardArticle/CardArticle";
 import { Core as CoreCard } from "@components/CardArticle/CardArticle.stories";
 
-import { Blog } from "@tina/__generated__/types";
-
 type Story = StoryObj<typeof meta>;
 
 const meta = {
