@@ -32,8 +32,16 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    Settings: Setting;
+    Navigation: Navigation;
+    socialMediaLinks: SocialMediaLink;
+  };
+  globalsSelect: {
+    Settings: SettingsSelect<false> | SettingsSelect<true>;
+    Navigation: NavigationSelect<false> | NavigationSelect<true>;
+    socialMediaLinks: SocialMediaLinksSelect<false> | SocialMediaLinksSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: 'users';
@@ -343,6 +351,94 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Settings".
+ */
+export interface Setting {
+  id: number;
+  /**
+   * The Site title is used in the page meta title and can also be used to display the site title in the header, footer or anywhere else within the site.
+   */
+  siteTitle?: string | null;
+  /**
+   * Add some text that is typically used in the footer of the site to indicate copyright. If you wish to include the date it is recommended to do this in code, not typed here.
+   */
+  copyright?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Navigation".
+ */
+export interface Navigation {
+  id: number;
+  items: {
+    page: number | Page;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "socialMediaLinks".
+ */
+export interface SocialMediaLink {
+  id: number;
+  items: {
+    name?: string | null;
+    link?: string | null;
+    'icon '?: (number | null) | Media;
+    id?: string | null;
+  }[];
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Settings_select".
+ */
+export interface SettingsSelect<T extends boolean = true> {
+  siteTitle?: T;
+  copyright?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Navigation_select".
+ */
+export interface NavigationSelect<T extends boolean = true> {
+  items?:
+    | T
+    | {
+        page?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "socialMediaLinks_select".
+ */
+export interface SocialMediaLinksSelect<T extends boolean = true> {
+  items?:
+    | T
+    | {
+        name?: T;
+        link?: T;
+        'icon '?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

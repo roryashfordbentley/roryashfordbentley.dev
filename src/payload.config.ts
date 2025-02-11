@@ -7,10 +7,15 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
+// Collection Imports
 import { Posts } from './collections/Posts'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { SocialMediaLinks } from './collections/SocialMediaLinks'
+// Global Imports (*note: also stored in src/collections)
+import { Settings } from './collections/Settings'
+import { NavPrimary } from './collections/NavPrimary'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -23,6 +28,7 @@ export default buildConfig({
     },
   },
   collections: [Posts, Pages, Users, Media],
+  globals: [Settings, NavPrimary, SocialMediaLinks],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
