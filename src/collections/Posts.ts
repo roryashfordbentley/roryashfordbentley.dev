@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { QuoteBlock } from '@blocks/Quote'
+import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -25,6 +26,19 @@ export const Posts: CollectionConfig = {
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media',
+    },
+    {
+      name: 'content',
+      label: 'Content',
+      type: 'richText',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures, rootFeatures }) => [
+          ...defaultFeatures,
+          BlocksFeature({
+            blocks: [QuoteBlock],
+          }),
+        ],
+      }),
     },
     {
       name: 'layout', // required

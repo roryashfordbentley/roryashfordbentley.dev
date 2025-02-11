@@ -44,7 +44,7 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
-  livePreview: {
+  /*livePreview: {
     breakpoints: [
       {
         label: 'Mobile',
@@ -65,5 +65,5 @@ export default buildConfig({
         height: 900,
       },
     ],
-  },
+  },*/
 })

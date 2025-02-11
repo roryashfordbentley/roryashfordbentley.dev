@@ -78,9 +78,24 @@ export interface Post {
   title?: string | null;
   description?: string | null;
   featuredImage?: (number | null) | Media;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   layout?:
     | {
-        quoteHeader: string;
+        quoteHeader?: string | null;
         quoteText?: string | null;
         id?: string | null;
         blockName?: string | null;
@@ -120,7 +135,7 @@ export interface Page {
   layout?:
     | (
         | {
-            quoteHeader: string;
+            quoteHeader?: string | null;
             quoteText?: string | null;
             id?: string | null;
             blockName?: string | null;
@@ -242,6 +257,7 @@ export interface PostsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   featuredImage?: T;
+  content?: T;
   layout?:
     | T
     | {

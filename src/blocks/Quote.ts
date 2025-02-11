@@ -7,7 +7,6 @@ export const QuoteBlock: Block = {
     {
       name: 'quoteHeader',
       type: 'text',
-      required: true,
     },
     {
       name: 'quoteText',
