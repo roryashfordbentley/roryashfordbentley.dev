@@ -7,6 +7,8 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
+import { Posts } from './collections/Posts'
+import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 
@@ -20,7 +22,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Posts, Pages, Users, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -36,4 +38,26 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
+  livePreview: {
+    breakpoints: [
+      {
+        label: 'Mobile',
+        name: 'mobile',
+        width: 375,
+        height: 667,
+      },
+      {
+        label: 'Tablet',
+        name: 'tablet',
+        width: 768,
+        height: 1024,
+      },
+      {
+        label: 'Desktop',
+        name: 'desktop',
+        width: 1440,
+        height: 900,
+      },
+    ],
+  },
 })
