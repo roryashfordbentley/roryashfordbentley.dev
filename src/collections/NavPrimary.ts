@@ -1,7 +1,8 @@
 import { GlobalConfig } from 'payload'
 
 export const NavPrimary: GlobalConfig = {
-  slug: 'Navigation',
+  slug: 'navPrimary',
+  label: 'Primary Nav',
   fields: [
     {
       name: 'items',

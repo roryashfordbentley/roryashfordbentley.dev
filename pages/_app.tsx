@@ -13,7 +13,9 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+import type { AppProps } from 'next/app'
+
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />

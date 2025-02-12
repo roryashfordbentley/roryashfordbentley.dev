@@ -34,12 +34,12 @@ export interface Config {
   };
   globals: {
     Settings: Setting;
-    Navigation: Navigation;
+    navPrimary: NavPrimary;
     socialMediaLinks: SocialMediaLink;
   };
   globalsSelect: {
     Settings: SettingsSelect<false> | SettingsSelect<true>;
-    Navigation: NavigationSelect<false> | NavigationSelect<true>;
+    navPrimary: NavPrimarySelect<false> | NavPrimarySelect<true>;
     socialMediaLinks: SocialMediaLinksSelect<false> | SocialMediaLinksSelect<true>;
   };
   locale: null;
@@ -164,6 +164,8 @@ export interface Page {
           }
       )[]
     | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -300,6 +302,8 @@ export interface PagesSelect<T extends boolean = true> {
               blockName?: T;
             };
       };
+  slug?: T;
+  slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -387,9 +391,9 @@ export interface Setting {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Navigation".
+ * via the `definition` "navPrimary".
  */
-export interface Navigation {
+export interface NavPrimary {
   id: number;
   items: {
     page: number | Page;
@@ -426,9 +430,9 @@ export interface SettingsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Navigation_select".
+ * via the `definition` "navPrimary_select".
  */
-export interface NavigationSelect<T extends boolean = true> {
+export interface NavPrimarySelect<T extends boolean = true> {
   items?:
     | T
     | {

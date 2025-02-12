@@ -1,8 +1,8 @@
 import configPromise from '@payload-config'
+import { Media } from '@/payload-types'
 import { getPayload } from 'payload'
 import React from 'react'
-import Head from 'next/head'
-import PageLayout from '@layouts/PageLayout'
+//import type Media from 'payload'
 
 import { Header } from '@components/Header/Header'
 import { Footer } from '@components/Footer/Footer'
@@ -52,18 +52,22 @@ export default async function Page() {
       <GridLayout>
         <GridLayoutItem>
           <BlogGrid>
-            {posts.docs.map((post) => (
-              <BlogGridItem key={post.id}>
-                <CardArticle
-                  imageSrc={post.featuredImage.url ? post.featuredImage.url : undefined}
-                  imageAlt={post.featuredImage.alt ? post.featuredImage.alt : undefined}
-                  title={post.title}
-                  description={post.description}
-                  date={post.createdAt}
-                  url={`/blog/${post.slug}`}
-                />
-              </BlogGridItem>
-            ))}
+            {posts.docs.map((post) => {
+              const featuredImage = post.featuredImage as Media
+
+              return (
+                <BlogGridItem key={post.id}>
+                  <CardArticle
+                    imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
+                    imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
+                    title={post.title}
+                    description={post.description}
+                    date={post.createdAt}
+                    url={`/blog/add-url-here`}
+                  />
+                </BlogGridItem>
+              )
+            })}
           </BlogGrid>
         </GridLayoutItem>
       </GridLayout>
