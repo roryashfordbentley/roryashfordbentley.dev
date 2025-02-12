@@ -102,6 +102,8 @@ export interface Post {
         blockType: 'QuoteBlock';
       }[]
     | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -272,6 +274,8 @@ export interface PostsSelect<T extends boolean = true> {
               blockName?: T;
             };
       };
+  slug?: T;
+  slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
 }

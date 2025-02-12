@@ -63,7 +63,7 @@ export default async function Page() {
                     title={post.title}
                     description={post.description}
                     date={post.createdAt}
-                    url={`/blog/add-url-here`}
+                    url={`/blog/${post.slug}`}
                   />
                 </BlogGridItem>
               )

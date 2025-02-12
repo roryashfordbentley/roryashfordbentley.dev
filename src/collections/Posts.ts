@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { QuoteBlock } from '@blocks/Quote'
 import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
+import { slugField } from '@/fields/slug'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -50,5 +51,6 @@ export const Posts: CollectionConfig = {
         QuoteBlock,
       ],
     },
+    ...slugField(),
   ],
 }
