@@ -20,11 +20,31 @@ import { NavPrimary } from './collections/NavPrimary'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+/*livePreview: {
+      url: ({ data }) => {
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}/${data.slug}`
+      },
+    },*/
+
 export default buildConfig({
   admin: {
     user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),
+    },
+    livePreview: {
+      url: ({ data, collectionConfig }) => {
+        let previewSlug = ''
+
+        if (collectionConfig?.slug === 'posts') {
+          previewSlug = `/blog/${data.slug}`
+        } else if (collectionConfig?.slug === 'pages') {
+          previewSlug = `/${data.slug}`
+        }
+
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}/${previewSlug}`
+      },
+      collections: ['posts', 'pages'],
     },
   },
   collections: [Posts, Pages, Users, Media],
@@ -44,26 +64,4 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
-  /*livePreview: {
-    breakpoints: [
-      {
-        label: 'Mobile',
-        name: 'mobile',
-        width: 375,
-        height: 667,
-      },
-      {
-        label: 'Tablet',
-        name: 'tablet',
-        width: 768,
-        height: 1024,
-      },
-      {
-        label: 'Desktop',
-        name: 'desktop',
-        width: 1440,
-        height: 900,
-      },
-    ],
-  },*/
 })

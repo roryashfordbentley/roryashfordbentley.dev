@@ -7,11 +7,6 @@ export const Pages: CollectionConfig = {
   slug: 'pages',
   admin: {
     useAsTitle: 'title',
-    livePreview: {
-      url: ({ data }) => {
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}/${data.slug}`
-      },
-    },
   },
   fields: [
     {
