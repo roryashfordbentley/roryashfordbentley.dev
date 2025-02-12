@@ -14,8 +14,6 @@ const navPrimaryData = await payload.findGlobal({
   depth: 5,
 })
 
-console.log(Array.isArray(navPrimaryData.items))
-
 export const Header = () => {
   return (
     <header className={styles['header']}>

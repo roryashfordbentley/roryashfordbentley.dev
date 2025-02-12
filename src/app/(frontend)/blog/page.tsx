@@ -27,8 +27,6 @@ export default async function Page() {
     },*/
   })
 
-  console.log(posts)
-
   /*return (
     <div>
       <h1>Posts</h1>

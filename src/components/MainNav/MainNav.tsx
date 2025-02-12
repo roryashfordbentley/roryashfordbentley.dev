@@ -6,8 +6,6 @@ function isActiveNav(link: string) {
 }
 
 export const MainNav = (props: { navItems: any }) => {
-  console.log(props.navItems)
-
   const navItems = props.navItems
 
   return (
