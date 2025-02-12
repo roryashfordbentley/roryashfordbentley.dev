@@ -7,18 +7,14 @@ import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 import { GridLayout, GridLayoutItem } from '@components/GridLayout/GridLayout'
 import styles from './Header.module.css'
 
-/**
- *
- * @returns Primary Navigation
- */
 const payload = await getPayload({ config: configPromise })
 
-const navPrimary = await payload.findGlobal({
+const navPrimaryData = await payload.findGlobal({
   slug: 'navPrimary',
-  depth: 1,
+  depth: 5,
 })
 
-console.log(navPrimary.items)
+console.log(Array.isArray(navPrimaryData.items))
 
 export const Header = () => {
   return (
@@ -31,7 +27,7 @@ export const Header = () => {
             </div>
 
             <div className={styles['header__nav']}>
-              <MainNav />
+              <MainNav navItems={navPrimaryData.items} />
             </div>
 
             <div className={styles['header__nav']}>
