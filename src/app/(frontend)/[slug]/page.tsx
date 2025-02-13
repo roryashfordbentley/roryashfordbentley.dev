@@ -11,9 +11,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const slug = (await params).slug
 
   const pageData = await queryBySlug('pages', slug)
-  //const featuredImage = await pageData.featuredImage as Media
 
-  //console.log(pageData)
+  const image = pageData.featuredImage as Media
 
   return (
     <>
@@ -24,15 +23,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <br />
         current slug is {slug}
         <br />
-        <LexicalToJSX data={pageData.content} />
+        {pageData.content && <LexicalToJSX data={pageData.content} />}
         <br />
-        {pageData.featuredImage && pageData.featuredImage.url && pageData.featuredImage.alt && (
-          <Image
-            src={pageData.featuredImage.url ?? ''}
-            alt={pageData.featuredImage.alt}
-            width={800}
-            height={450}
-          />
+        {image && image.url && image.alt && (
+          <Image src={image.url ?? ''} alt={image.alt} width={800} height={450} />
         )}
       </main>
       <Footer />
