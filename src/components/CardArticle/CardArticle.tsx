@@ -1,12 +1,29 @@
 import Image from 'next/image'
-import dateFormatter from '@scripts/date-formatter'
+import Link from 'next/link'
+import dateFormatter from '@scripts/dateFormatter'
 import styles from './CardArticle.module.css'
 
-export const CardArticle = ({ title, description, date, url, imageSrc, imageAlt }) => {
+interface CardArticleProps {
+  title: string
+  description?: string
+  date?: Date | String | null
+  url: string
+  imageSrc?: string
+  imageAlt?: string
+}
+
+export const CardArticle = ({
+  title,
+  description,
+  date,
+  url,
+  imageSrc,
+  imageAlt,
+}: CardArticleProps) => {
   return (
     <div className={styles['card-article']}>
       <figure className={styles['card-article__figure']}>
-        {imageSrc && <Image src={imageSrc} alt={imageAlt} fill />}
+        {imageSrc && <Image src={imageSrc} alt={imageAlt ?? ''} fill />}
       </figure>
 
       {date && (
@@ -19,9 +36,9 @@ export const CardArticle = ({ title, description, date, url, imageSrc, imageAlt 
       )}
 
       <h2 className={styles['card-article__title']}>
-        <a className={styles['card-article__link']} href={url}>
+        <Link className={styles['card-article__link']} href={url}>
           {title}
-        </a>
+        </Link>
       </h2>
 
       {description && <p className={styles['card-article__description']}>{description}</p>}

@@ -19,30 +19,7 @@ export default async function Page() {
     depth: 1,
     limit: 12,
     overrideAccess: false,
-    /*select: {
-      title: true,
-      slug: true,
-      //categories: true,
-      //meta: true,
-    },*/
   })
-
-  /*return (
-    <div>
-      <h1>Posts</h1>
-
-      <p>currentPage={posts.page}</p>
-      <p>limit={12}</p>
-      <p>totalDocs={posts.totalDocs}</p>
-
-      {posts.totalPages > 1 && posts.page && (
-        <>
-          <p>page={posts.page}</p>
-          <p>totalPages={posts.totalPages}</p>
-        </>
-      )}
-    </div>
-  )*/
 
   return (
     <>
@@ -58,10 +35,10 @@ export default async function Page() {
                   <CardArticle
                     imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
                     imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
-                    title={post.title}
-                    description={post.description}
-                    date={post.createdAt}
-                    url={`/blog/${post.slug}`}
+                    title={post.title ?? ''}
+                    description={post.description ?? ''}
+                    date={post.createdAt ?? null}
+                    url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
                   />
                 </BlogGridItem>
               )
