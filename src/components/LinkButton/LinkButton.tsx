@@ -1,15 +1,21 @@
-import "./LinkButton.module.css";
+import './LinkButton.module.css'
 
-export const LinkButton = (props) => {
-	let linkClassName = "link-button";
+interface LinkButtonProps {
+  href: string
+  title: string
+  variant?: string
+}
 
-	if (props.variant == "x") {
-		linkClassName = `${linkClassName} ${linkClassName}--x`;
-	}
+export const LinkButton = (props: LinkButtonProps) => {
+  let linkClassName = 'link-button'
 
-	return (
-		<a className={linkClassName} href={props.href}>
-			{props.title}
-		</a>
-	);
-};
+  if (props.variant == 'x') {
+    linkClassName = `${linkClassName} ${linkClassName}--x`
+  }
+
+  return (
+    <a className={linkClassName} href={props.href}>
+      {props.title}
+    </a>
+  )
+}

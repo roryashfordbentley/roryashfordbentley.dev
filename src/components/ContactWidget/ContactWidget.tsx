@@ -1,9 +1,8 @@
-import { LinkButton } from "@components/LinkButton/LinkButton";
-import styles from "@components/ContactWidget/ContactWidget.module.css";
-import config from "@content/config/config.json";
+import { LinkButton } from '@components/LinkButton/LinkButton'
+import styles from '@components/ContactWidget/ContactWidget.module.css'
 
 export const ContactWidget = () => {
-	return (
+  /*return (
 		<div className={styles["contact-widget"]}>
 			<ul className={styles["contact-widget__list"]}>
 				{config?.contactLinks?.map((link, index) => {
@@ -29,5 +28,5 @@ export const ContactWidget = () => {
 			</ul>
 			<LinkButton href="/" title="Contact" />
 		</div>
-	);
-};
+	);*/
+}

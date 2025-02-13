@@ -6,7 +6,7 @@ import styles from './CardArticle.module.css'
 interface CardArticleProps {
   title: string
   description?: string
-  date?: Date | String | null
+  date?: Date | string | null
   url: string
   imageSrc?: string
   imageAlt?: string
