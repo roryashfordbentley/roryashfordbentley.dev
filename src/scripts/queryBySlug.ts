@@ -18,6 +18,7 @@ const queryBySlug = async (collection: CollectionSlug, slug: String) => {
     limit: 1,
     pagination: false,
     //overrideAccess: false,
+    draft: true,
     where: {
       slug: {
         equals: slug,
@@ -25,7 +26,7 @@ const queryBySlug = async (collection: CollectionSlug, slug: String) => {
     },
   })
 
-  console.log(result.docs?.[0])
+  //console.log(result.docs?.[0])
 
   return result.docs?.[0] || null
 }

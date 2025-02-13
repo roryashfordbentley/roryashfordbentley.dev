@@ -20,12 +20,6 @@ import { NavPrimary } from './collections/NavPrimary'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-/*livePreview: {
-      url: ({ data }) => {
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}/${data.slug}`
-      },
-    },*/
-
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -37,12 +31,12 @@ export default buildConfig({
         let previewSlug = ''
 
         if (collectionConfig?.slug === 'posts') {
-          previewSlug = `/blog/${data.slug}`
+          previewSlug = `./blog/${data.slug}`
         } else if (collectionConfig?.slug === 'pages') {
-          previewSlug = `/${data.slug}`
+          previewSlug = `./${data.slug}`
         }
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}/${previewSlug}`
+        return `/${previewSlug}`
       },
       collections: ['posts', 'pages'],
     },
