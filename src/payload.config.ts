@@ -49,13 +49,13 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   // Automatically uses proces.env.POSTGRES_URL if no options are provided.
-  db: vercelPostgresAdapter(),
+  //db: vercelPostgresAdapter(),
   // Optionally, can accept the same options as the @vercel/postgres package.
-  /*db: vercelPostgresAdapter({
+  db: vercelPostgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URL,
     },
-  }),*/
+  }),
   sharp,
   plugins: [
     payloadCloudPlugin(),
