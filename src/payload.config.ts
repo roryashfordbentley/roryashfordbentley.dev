@@ -1,5 +1,5 @@
 // storage-adapter-import-placeholder
-import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
@@ -48,9 +48,12 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI || '',
+  // Automatically uses proces.env.POSTGRES_URL if no options are provided.
+  //db: vercelPostgresAdapter(),
+  // Optionally, can accept the same options as the @vercel/postgres package.
+  db: vercelPostgresAdapter({
+    pool: {
+      connectionString: process.env.DATABASE_URL,
     },
   }),
   sharp,
