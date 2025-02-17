@@ -66,8 +66,3 @@
 .metaItemValue {
   color: var(--theme-text-tint);
 }
-
-.featuredImage {
-  margin-top: var(--spacing-5);
-  grid-column: 1 / -1;
-}
