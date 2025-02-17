@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { BlogArticleTitle } from './{{ name }}'
+import { {{ name }} } from './{{ name }}'
 import Image from 'next/image'
 
 type Story = StoryObj<typeof meta>
