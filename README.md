@@ -14,7 +14,7 @@ The site deploys to [Vercel](https://vercel.com)
 
 ## 🚧 Prerequisites
 
-## Currently the site requires Node/NPM installed locally to run until I get around to building a Docker container.
+## Currently the site requires Node/NPM installed locally as the official Payload Docker container node instance is broken.
 
 ## ➡️ Quickstart
 
