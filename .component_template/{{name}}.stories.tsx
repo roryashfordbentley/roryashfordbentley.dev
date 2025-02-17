@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { {{ name }} } from './{{ name }}'
-import Image from 'next/image'
 
 type Story = StoryObj<typeof meta>
 
