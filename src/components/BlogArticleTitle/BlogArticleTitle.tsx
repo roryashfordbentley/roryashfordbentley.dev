@@ -1,29 +1,33 @@
 import { Media } from '@/payload-types'
 import Image from 'next/image'
+import styles from './BlogArticleTitle.module.css' // External CSS for the styles
 
 export const BlogArticleTitle = (props: {
   title: string
   description: string
-  featuredImage: Number | Media
+  datePostedLabel: string
+  datePosted: string
+  readingTimeLabel: string
+  readingTime: string
 }) => {
-  const image = props.featuredImage as Media
-
   return (
-    <section className="blog-article-title">
-      {props.title && <h1 className="blog-article-title__title">{props.title}</h1>}
+    <section className={styles.grid}>
+      <div className={styles.content}>
+        {props.title && <h1 className={styles.title}>{props.title}</h1>}
+        {props.description && <p className={styles.description}>{props.description}</p>}
+      </div>
 
-      {props.description && (
-        <span className="blog-article-title__description">{props.description}</span>
-      )}
+      <aside className={styles.meta}>
+        <div className={styles.metaItem}>
+          <span className={styles.metaItemTitle}>{props.datePostedLabel ?? 'Date Posted'}</span>
+          <span className={styles.metaItemValue}>{props.datePosted ?? ''}</span>
+        </div>
 
-      {image && (
-        <Image
-          src={image.url as string}
-          alt={image.alt || 'Featured Image'}
-          width={1330}
-          height={750}
-        />
-      )}
+        <div className={styles.metaItem}>
+          <span className={styles.metaItemTitle}>{props.readingTimeLabel ?? 'Reading time'}</span>
+          <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>
+        </div>
+      </aside>
     </section>
   )
 }
