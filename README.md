@@ -4,11 +4,9 @@ This repository stores the code used for **roryashfordbentley.dev.**
 
 ## 🗂️ Build tools, frameworks and core dependencies
 
-The site is built using [Astro](https://astro.build) as its underlying framework.
+The site is built using [Next.js](https://nextjs.org/) as its underlying React framework.
 
-Components are built using [SolidJS]().
-
-The site uses [Payload](https://payloadcms.com/) as its CMS
+The site uses [PayloadCMS](https://payloadcms.com/) as its CMS
 
 The site deploys to [Vercel](https://vercel.com)
 
@@ -41,15 +39,14 @@ npm run dev
 
 ---
 
-## 🖥️ Astro command reference
+## 🖥️ Project command reference
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                           | Action                                        |
+| :-------------------------------- | :-------------------------------------------- |
+| `npm install`                     | Installs dependencies                         |
+| `npm run dev`                     | Starts local dev server at `localhost:4321`   |
+| `npm run dev-storybook`           | Runs local dev server and storybook instance  |
+| `npm run build`                   | Runs a Next build                             |
+| `npm run create-component [NAME]` | Scaffolds a new componet with stories and css |
