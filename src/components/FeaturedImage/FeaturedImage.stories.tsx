@@ -8,6 +8,7 @@ type Story = StoryObj<typeof meta>
 const meta = {
   title: 'Components/FeaturedImage',
   component: FeaturedImage,
+  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
   },

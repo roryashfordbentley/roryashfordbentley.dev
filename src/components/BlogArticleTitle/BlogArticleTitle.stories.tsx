@@ -11,6 +11,7 @@ const meta = {
   parameters: {
     layout: 'padded',
   },
+  tags: ['autodocs'],
 } satisfies Meta<typeof BlogArticleTitle>
 
 export default meta

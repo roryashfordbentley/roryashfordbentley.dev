@@ -12,6 +12,7 @@ const meta = {
   parameters: {
     layout: 'padded',
   },
+  tags: ['autodocs'],
 } satisfies Meta<typeof BlogGrid>
 
 export default meta
