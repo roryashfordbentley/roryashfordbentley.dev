@@ -26,13 +26,5 @@ export const Default: Story = {
     datePosted: 'January 6th 2025',
     readingTimeLabel: 'Reading Time',
     readingTime: '5 Minutes',
-    featuredImage: (
-      <Image
-        src={'./story-images/climber-1500-844.jpg' as string}
-        alt={'Featured Image Alt Text'}
-        width={1330}
-        height={750}
-      />
-    ),
   },
 }
