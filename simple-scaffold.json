@@ -1,10 +1,10 @@
 {
   "component": {
     "templates": [
-      ".component_template/{{ name }}.tsx",
-      ".component_template/{{ name }}.stories.tsx",
-      ".component_template/{{ name }}.module.css"
+      ".component_template/{{name}}.tsx",
+      ".component_template/{{name}}.stories.tsx",
+      ".component_template/{{name}}.module.css"
     ],
-    "output": "src/components"
+    "output": "src/components/{{name}}"
   }
 }
