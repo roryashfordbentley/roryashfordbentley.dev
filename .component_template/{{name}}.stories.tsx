@@ -15,7 +15,7 @@ const meta = {
 
 export default meta;
 
-export const Core: Story = {
+export const Default: Story = {
   args: {
     example: 'This is example text',
   },

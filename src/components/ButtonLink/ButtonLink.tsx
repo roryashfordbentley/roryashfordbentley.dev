@@ -4,9 +4,14 @@ export const ButtonLink = (props: {
   url: String
   target: '_self' | '_blank' | '_parent' | '_top'
   label: 'string'
+  type: 'outline'
 }) => {
   return (
-    <a className={styles.button} href={props.url} target={props.target ?? '_self'}>
+    <a
+      className={`${styles.button} ${props.type == 'outline' ? styles['button--outline'] : ''}`}
+      href={props.url}
+      target={props.target ?? '_self'}
+    >
       {props.label}
     </a>
   )

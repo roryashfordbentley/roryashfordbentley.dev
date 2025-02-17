@@ -17,7 +17,7 @@ const meta = {
 export default meta
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Core: Story = {
+export const Default: Story = {
   args: {
     title: 'Key changes in WCAG 2.2: What you need to know',
     description:

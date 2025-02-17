@@ -33,3 +33,9 @@
     }
   }
 }
+
+.button--outline {
+  background: var(--theme-background);
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+}

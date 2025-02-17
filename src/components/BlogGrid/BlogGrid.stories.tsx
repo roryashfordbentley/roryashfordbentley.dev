@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { BlogGrid } from './BlogGrid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
-import { Core as CoreCard } from '@components/CardArticle/CardArticle.stories'
+import { Default as DefaultCard } from '@components/CardArticle/CardArticle.stories'
 
 type Story = StoryObj<typeof meta>
 
@@ -18,8 +18,8 @@ const meta = {
 export default meta
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Core: Story = {
+export const Default: Story = {
   args: {
-    children: Array(9).fill(<CardArticle {...CoreCard.args} />),
+    children: Array(9).fill(<CardArticle {...DefaultCard.args} />),
   },
 }

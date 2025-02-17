@@ -14,10 +14,19 @@ const meta = {
 
 export default meta
 
-export const Core: Story = {
+export const Default: Story = {
   args: {
     url: 'https://www.roryashfordbentley.dev',
     target: '_blank',
     label: 'Example button',
+  },
+}
+
+export const Outline: Story = {
+  args: {
+    url: 'https://www.roryashfordbentley.dev',
+    target: '_blank',
+    label: 'Example outline button',
+    type: 'outline',
   },
 }
