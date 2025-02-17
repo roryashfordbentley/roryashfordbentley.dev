@@ -1,6 +1,5 @@
 h1 {
-	font-weight: var(--font-weight-bold);
-	/*letter-spacing: -0.14rem;*/
+  font-weight: var(--font-weight-bold);
 }
 
 h2,
@@ -8,10 +7,10 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: var(--font-weight-bold);
-	/*letter-spacing: -0.1rem;*/
+  font-weight: var(--font-weight-bold);
+  /*letter-spacing: -0.1rem;*/
 }
 
 a {
-	color: var(--theme-link);
+  color: var(--theme-link);
 }

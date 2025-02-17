@@ -1,55 +1,72 @@
 html {
-	font-family: "Inter", Arial, Helvetica, sans-serif;
-	font-optical-sizing: auto;
-	font-weight: var(--font-weight-medium);
-	font-style: normal;
-	line-height: 1.3;
-	background-color: var(--theme-background);
-	color: var(--theme-text);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-medium);
+  font-style: normal;
+  line-height: 1.3;
+  background-color: var(--theme-background);
+  color: var(--theme-text);
 }
 
 body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	width: 90%;
-	max-width: pxrem(1330px);
-	margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 90%;
+  max-width: pxrem(1330px);
+  margin: 0 auto;
+}
+
+/**
+ * Storybook override to center content (
+ */
+
+body.sb-show-main.sb-main-padded {
+  margin: 0 auto;
+}
+
+/**
+ * Images
+ */
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /**
  * Developer bar (only runs locally)
  */
 .dev:before {
-	box-sizing: border-box;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000;
-	background: var(--theme-primary);
-	color: var(--theme-background);
-	font-family: monospace;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--theme-primary);
+  color: var(--theme-background);
+  font-family: monospace;
 
-	padding: var(--spacing-1);
-	content: "Breakpoint: default (smallest)";
+  padding: var(--spacing-1);
+  content: 'Breakpoint: default (smallest)';
 
-	@media (--s) {
-		content: "Breakpoint: @custom-query (--s)";
-	}
+  @media (--s) {
+    content: 'Breakpoint: @custom-query (--s)';
+  }
 
-	@media (--m) {
-		content: "Breakpoint: @custom-query (--m)";
-	}
+  @media (--m) {
+    content: 'Breakpoint: @custom-query (--m)';
+  }
 
-	@media (--l) {
-		content: "Breakpoint: @custom-query (--l)";
-	}
+  @media (--l) {
+    content: 'Breakpoint: @custom-query (--l)';
+  }
 
-	@media (--xl) {
-		content: "Breakpoint: @custom-query (--xl)";
-	}
+  @media (--xl) {
+    content: 'Breakpoint: @custom-query (--xl)';
+  }
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
