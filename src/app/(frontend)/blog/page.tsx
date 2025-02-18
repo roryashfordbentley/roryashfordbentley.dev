@@ -23,7 +23,6 @@ export default async function Page() {
 
   return (
     <>
-      <Header />
       <GridLayout>
         <GridLayoutItem>
           <BlogGrid>
@@ -46,7 +45,6 @@ export default async function Page() {
           </BlogGrid>
         </GridLayoutItem>
       </GridLayout>
-      <Footer />
     </>
   )
 }

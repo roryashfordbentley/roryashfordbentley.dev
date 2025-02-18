@@ -9,8 +9,13 @@ import '@styles/reset.css'
 import '@styles/global.css'
 import '@styles/typography.css'
 
+import '@components/Header/Header'
+import '@components/Footer/Footer'
+
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Header } from '@/components/Header/Header'
+import { Footer } from '@/components/Footer/Footer'
 
 export const metadata: Metadata = {
   title: 'R/AB website',

@@ -4,9 +4,7 @@ import { Footer } from '@components/Footer/Footer'
 const BlogPost = () => {
   return (
     <>
-      <Header />
       <main>Blog Post template</main>
-      <Footer />
     </>
   )
 }
