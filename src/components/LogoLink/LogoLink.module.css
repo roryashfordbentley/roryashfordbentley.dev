@@ -1,11 +1,11 @@
-.logo-link {
-    width: 100%;
-    height: auto;
+.link {
+  width: 100%;
+  height: auto;
 }
 
-.logo-link__svg {
+.svg {
 }
 
-.logo-link__shape {
-    fill: var(--theme-primary);
+.shape {
+  fill: var(--theme-primary);
 }
