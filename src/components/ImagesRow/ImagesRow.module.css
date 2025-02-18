@@ -1,0 +1,8 @@
+.imageGroup {
+  display: flex;
+  gap: var(--spacing-5);
+}
+
+.figure img {
+  border-radius: var(--radius-2);
+}
