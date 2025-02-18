@@ -20,7 +20,8 @@ body {
  * Storybook override to center content (
  */
 
-body.sb-show-main.sb-main-padded {
+body.sb-show-main.sb-main-padded,
+body.sb-show-main.sb-main-centered {
   margin: 0 auto;
 }
 
