@@ -6,31 +6,32 @@ import { MainNav } from '@components/MainNav/MainNav'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 import { GridLayout, GridLayoutItem } from '@components/GridLayout/GridLayout'
 import styles from './Header.module.css'
+import { ReactNode } from 'react'
 
-const payload = await getPayload({ config: configPromise })
+/**
+ * Commented out as it currently breaks Storybook - logic needs hoisting up out of components
+ */
+
+/*const payload = await getPayload({ config: configPromise })
 
 const navPrimaryData = await payload.findGlobal({
   slug: 'navPrimary',
   depth: 5,
 })
 
-export const Header = () => {
+const navItems = navPrimaryData.items;
+
+*/
+
+export const Header = (props: { logo: ReactNode; navMenu: ReactNode; themeToggle: ReactNode }) => {
   return (
-    <header className={styles['header']}>
+    <header className={styles.wrapper}>
       <GridLayout>
         <GridLayoutItem>
-          <div className={styles['header__inner']}>
-            <div className={styles['header__logo']}>
-              <LogoLink link="/" />
-            </div>
-
-            <div className={styles['header__nav']}>
-              <MainNav navItems={navPrimaryData.items} />
-            </div>
-
-            <div className={styles['header__nav']}>
-              <ThemeToggle />
-            </div>
+          <div className={styles.inner}>
+            {props.logo && <div className={styles.logo}>{props.logo}</div>}
+            {props.navMenu && <div className={styles.nav}>{props.navMenu}</div>}
+            {props.themeToggle && <div className={styles.themeToggle}>{props.themeToggle}</div>}
           </div>
         </GridLayoutItem>
       </GridLayout>
