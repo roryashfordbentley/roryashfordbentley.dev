@@ -17,8 +17,36 @@ const meta = {
 
 export default meta
 
+const tagTitle = [
+  'Javascript',
+  'React',
+  'NextJs',
+  'Web development',
+  'Climbing',
+  'Accessibility',
+  'Godot',
+  'Astro',
+  'CSS',
+]
+
 export const Default: Story = {
   args: {
-    children: Array(18).fill(<Tag {...TagDefault.args} />),
+    children: [
+      <Tag label="Javascript" />,
+      <Tag label="React" />,
+      <Tag label="NextJs" />,
+      <Tag label="Web development" />,
+      <Tag label="Climbing" />,
+      <Tag label="Accessibility" />,
+      <Tag label="Godot" />,
+      <Tag label="Astro" />,
+      <Tag label="CSS" />,
+      <Tag label="Javascript" />,
+      <Tag label="Javascript" />,
+      <Tag label="React" />,
+      <Tag label="NextJs" />,
+      <Tag label="Web development" />,
+      <Tag label="Climbing" />,
+    ],
   },
 }
