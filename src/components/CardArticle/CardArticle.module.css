@@ -1,36 +1,75 @@
-.card-article {
-	width: 100%;
+.container {
+  border-radius: var(--radius-2);
 }
 
-.card-article__figure {
-	position: relative;
-	aspect-ratio: 16/9;
-	border-radius: var(--radius-2);
-	margin-bottom: var(--spacing-5);
-	overflow: hidden;
-	background-color: var(--theme-background-tint);
-	border: pxrem(1px) solid var(--theme-border);
+.figure {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: var(--theme-background-tint);
+  border: pxrem(1px) solid var(--theme-border);
+  border-radius: var(--radius-2);
+
+  img {
+    border-radius: var(--radius-2);
+    overflow: hidden;
+  }
 }
 
-.card-article__date {
-	display: block;
-	margin-bottom: var(--spacing-5);
+/*.figure + .content {
+  margin-top: var(--spacing-3);
+}*/
+
+.date {
+  display: block;
+  margin-bottom: var(--spacing-5);
 }
 
-.card-article__title {
-	font-size: clamp(var(--font-size-4), 3vw, var(--font-size-6));
-	font-weight: var(--font-weight-extra-bold);
+.title {
+  font-size: clamp(var(--font-size-4), 3vw, var(--font-size-7));
+  font-weight: var(--font-weight-extra-bold);
+  letter-spacing: -0.05em;
 }
 
-.card-article__link {
-	text-decoration: none;
+.link {
+  text-decoration: none;
 
-	&:hover {
-		text-decoration: underline;
-	}
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.card-article__description {
-	font-size: clamp(var(--font-size-2), 2vw, var(--font-size-3));
-	margin-bottom: var(--spacing-5);
+.description {
+  font-size: clamp(var(--font-size-2), 2vw, var(--font-size-3));
+  margin-top: var(--spacing-5);
+}
+
+.container--featured {
+  height: 100%;
+  background: white;
+
+  .figure img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .content {
+    padding: var(--spacing-5);
+  }
+}
+
+.container--compact {
+  background: white;
+
+  .title {
+    font-size: clamp(var(--font-size-4), 3vw, var(--font-size-5));
+  }
+
+  .figure img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .content {
+    padding: var(--spacing-5);
+  }
 }

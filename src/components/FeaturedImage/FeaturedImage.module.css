@@ -1,6 +1,5 @@
 .figure {
-}
-
-img {
-  border-radius: var(--radius-3);
+  img {
+    border-radius: var(--radius-3);
+  }
 }

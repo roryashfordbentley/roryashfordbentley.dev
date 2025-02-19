@@ -9,11 +9,11 @@ export const MainNav = (props: { navItems: any }) => {
   const navItems = props.navItems
 
   return (
-    <nav className={styles['main-nav']}>
-      <ul className={styles['main-nav__list']}>
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
         {navItems.map((item: { id: Key; page: { slug: string | undefined; title: string } }) => (
-          <li key={item.id} className={styles['main-nav__list-item']}>
-            <a className={styles['main-nav__link']} href={item.page.slug}>
+          <li key={item.id} className={styles.listItem}>
+            <a className={styles.link} href={item.page.slug}>
               {item.page.title}
             </a>
           </li>
