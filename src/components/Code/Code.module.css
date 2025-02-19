@@ -1,4 +1,5 @@
-.code {
+.container {
+  --background: #fefefe;
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
   --sh-sign: #8996a3;
@@ -10,17 +11,18 @@
   --sh-comment: #a19595;
 }
 
-/*:global(.dark) .code {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #ffffff;
-  --sh-sign: #8996a3;
-  --sh-property: #0550ae;
-  --sh-entity: #249a97;
+.container--dark {
+  --background: #2e303d;
+  --sh-class: #ffffff;
+  --sh-identifier: #b588f8;
+  --sh-sign: #ffffff;
+  --sh-property: #46f96f;
+  --sh-entity: #ff6ebf;
   --sh-jsxliterals: #6266d1;
-  --sh-string: #00a99a;
-  --sh-keyword: #f47067;
+  --sh-string: #eff981;
+  --sh-keyword: #ff6ebf;
   --sh-comment: #a19595;
-}*/
+}
 
 .container {
   border: 1px solid var(--theme-border);
@@ -35,6 +37,7 @@
   justify-content: space-between;
   padding: var(--spacing-2);
   gap: var(--spacing-2);
+  border-bottom: pxrem(1px) var(--theme-border) solid;
   border-top-left-radius: var(--radius-2);
   border-top-right-radius: var(--radius-2);
 }
@@ -62,7 +65,12 @@
   }
 }
 
-.copyButton {
+.buttonGroup {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.button {
   background: transparent;
   border: pxrem(1px) solid var(--theme-border);
   border-radius: var(--radius-1);
@@ -77,6 +85,7 @@
 
   &:hover {
     cursor: pointer;
+    border: pxrem(1px) solid var(--theme-primary);
 
     svg path {
       stroke: var(--theme-primary);
@@ -85,7 +94,10 @@
 }
 
 .codeWrapper {
+  background: var(--background);
   padding: var(--spacing-4);
   overflow-x: scroll;
   font-size: clamp(var(--font-size-1), 2vw, var(--font-size-2));
+  border-bottom-left-radius: var(--radius-2);
+  border-bottom-right-radius: var(--radius-2);
 }
