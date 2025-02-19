@@ -7,6 +7,10 @@ import { Footer } from '@components/Footer/Footer'
 import { LivePreviewListener } from '@/components/utils/LivePreviewListener'
 import { LexicalToJSX } from '@/components/utils/LexicalToJSX'
 
+import { LogoLink } from '@components/LogoLink/LogoLink'
+import { MainNav } from '@components/MainNav/MainNav'
+import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug
 
@@ -14,10 +18,44 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const image = pageData.featuredImage as Media
 
+  const logoInstance = <LogoLink link="/" />
+
+  // Temp until we pull live data from Payload
+  const navInstance = (
+    <MainNav
+      navItems={[
+        {
+          id: 1,
+          page: {
+            slug: 'home',
+            title: 'Home',
+          },
+        },
+        {
+          id: 2,
+          page: {
+            slug: 'work',
+            title: 'Work',
+          },
+        },
+        {
+          id: 3,
+          page: {
+            slug: 'blog',
+            title: 'Blog',
+          },
+        },
+      ]}
+    />
+  )
+
+  var themeToggleInstance = <ThemeToggle />
+
   return (
     <>
       <LivePreviewListener />
-      <Header />
+      <Header logo={logoInstance} navMenu={navInstance} themeToggle={themeToggleInstance} />
+
       <main>
         {pageData.title}
         <br />

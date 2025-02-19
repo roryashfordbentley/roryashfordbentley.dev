@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Header } from './Header'
 import { LogoLink } from '@components/LogoLink/LogoLink'
 import { MainNav } from '@components/MainNav/MainNav'
-import ThemeToggle from '../ThemeToggle/ThemeToggle'
+import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 
 // Get the Default Stories to reuse here
 import { Default as LogoLinkDefault } from '@components/LogoLink/LogoLink.stories'
