@@ -1,0 +1,40 @@
+import { ReactElement } from 'react'
+import styles from './Container.module.css'
+
+interface ItemProps {
+  children?: React.ReactNode
+  layout?: 'full' | 'narrow' | 'debug'
+}
+
+export const ContainerItem = ({ children, layout }: ItemProps) => {
+  let itemClassName = styles.item
+
+  if (layout == 'full') {
+    itemClassName = `${styles.item} ${styles['item--full']}`
+  } else if (layout == 'narrow') {
+    itemClassName = `${styles.item} ${styles['item--narrow']}`
+  }
+
+  return <div className={itemClassName}>{children}</div>
+}
+
+interface ContainerProps {
+  children: ReactElement<typeof ContainerItem>[]
+  debug?: boolean
+}
+
+export const Container = ({ children, debug }: ContainerProps) => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.grid}>{children}</div>
+      {/**
+       * We add an additional grid that sits behind the actual Grid for visual debugging when required.
+       */}
+      {debug && (
+        <div className={`${styles.grid} ${styles['grid--debug']}`}>
+          {Array(5).fill(<div className={`${styles.item} ${styles['item--debug']}`}></div>)}
+        </div>
+      )}
+    </div>
+  )
+}
