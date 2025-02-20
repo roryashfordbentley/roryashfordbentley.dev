@@ -13,8 +13,11 @@ function cleanMarkup(htmlCode: string) {
  * ahead of being passed through to dangerouslySetInnerHTML to prevent XSS
  * vulnerabilites.
  */
-export const Prose = ({ children }: { children: string }) => {
+export const Prose = ({ children, padded }: { children: ReactNode; padded?: boolean }) => {
   return (
-    <section className={styles.contentWrapper} dangerouslySetInnerHTML={cleanMarkup(children)} />
+    <section
+      className={`${styles.contentWrapper} ${padded ? styles['contentWrapper--padded'] : ''}`}
+      dangerouslySetInnerHTML={cleanMarkup(children as string)}
+    />
   )
 }

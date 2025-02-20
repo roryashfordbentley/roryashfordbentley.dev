@@ -1,5 +1,5 @@
 .contentWrapper {
-  max-width: pxrem(800px);
+  max-width: pxrem(850px);
   line-height: 1.7;
   color: var(--theme-text);
 
@@ -97,4 +97,9 @@
     font-weight: var(--font---font-weight-medium);
     color: var(--theme-secondary);
   }
+}
+
+.contentWrapper--padded {
+  padding-top: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
 }
