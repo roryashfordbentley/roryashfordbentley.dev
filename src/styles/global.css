@@ -17,12 +17,20 @@ body {
 }
 
 /**
- * Storybook override to center content (
+ * Storybook overrides (
  */
 
 body.sb-show-main.sb-main-padded,
 body.sb-show-main.sb-main-centered {
   margin: 0 auto;
+}
+
+/**
+ * make autodocs narrower
+ */
+
+.sbdocs > p {
+  max-width: pxrem(700px);
 }
 
 /**

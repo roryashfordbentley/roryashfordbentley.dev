@@ -20,7 +20,7 @@
 :root {
   --theme-primary: #14313b;
   --theme-secondary: #585b5c;
-  --theme-text: var(--theme-primary);
+  --theme-text: #2d394b;
   --theme-text-tint: #7c868a;
   --theme-link: var(--theme-primary);
   --theme-background: #fafafc;

@@ -1,0 +1,105 @@
+.contentWrapper {
+  max-width: pxrem(850px);
+  line-height: 1.7;
+  color: var(--theme-text);
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: var(--spacing-4);
+    color: var(--theme-primary);
+  }
+
+  h2 {
+    font-size: clamp(var(--font-size-5), 4vw, var(--font-size-7));
+    /*font-size: 4vw;*/
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(var(--font-size-4), 4vw, var(--font-size-6));
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: clamp(var(--font-size-3), 3vw, var(--font-size-4));
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  h5 {
+    font-size: clamp(var(--font-size-1), 3vw, var(--font-size-3));
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+  }
+
+  p,
+  ul,
+  ol {
+    margin-bottom: var(--spacing-5);
+  }
+
+  ul,
+  ol {
+    padding: 0 0 0 var(--spacing-6);
+  }
+
+  ul ul,
+  ol ul,
+  ul ol {
+    margin: 0;
+    padding: 0 0 0 var(--spacing-5);
+  }
+
+  ul ul li {
+    list-style-type: disc;
+  }
+
+  ol ul li {
+    list-style-type: disc;
+  }
+
+  li {
+    margin: var(--spacing-2) 0;
+  }
+
+  li::marker {
+    color: var(--theme-secondary);
+  }
+
+  :is(p, ol, ul) + :is(h2, h3, h4, h5, h6) {
+    margin-top: var(--spacing-7);
+  }
+
+  hr {
+    border: none;
+    border-top: pxrem(1px) solid var(--theme-primary);
+    margin: var(--spacing-7) 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border-bottom: 1px solid var(--theme-border);
+    text-align: left;
+    padding: var(--spacing-1);
+  }
+
+  th {
+    font-weight: var(--font---font-weight-medium);
+    color: var(--theme-secondary);
+  }
+}
+
+.contentWrapper--padded {
+  padding-top: var(--spacing-8);
+  padding-bottom: var(--spacing-8);
+}
