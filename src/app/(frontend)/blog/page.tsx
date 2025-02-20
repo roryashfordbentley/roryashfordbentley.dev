@@ -6,8 +6,8 @@ import React from 'react'
 
 import { Header } from '@components/Header/Header'
 import { Footer } from '@components/Footer/Footer'
-import { GridLayout } from '@components/GridLayout/GridLayout'
-import { GridLayoutItem } from '@components/GridLayout/GridLayout'
+import { Container } from '@components/Container/Container'
+import { ContainerItem } from '@components/Container/Container'
 import { BlogGrid, BlogGridItem } from '@components/BlogGrid/BlogGrid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 
@@ -23,8 +23,8 @@ export default async function Page() {
 
   return (
     <>
-      <GridLayout>
-        <GridLayoutItem>
+      <Container>
+        <ContainerItem>
           <BlogGrid>
             {posts.docs.map((post) => {
               const featuredImage = post.featuredImage as Media
@@ -43,8 +43,8 @@ export default async function Page() {
               )
             })}
           </BlogGrid>
-        </GridLayoutItem>
-      </GridLayout>
+        </ContainerItem>
+      </Container>
     </>
   )
 }
