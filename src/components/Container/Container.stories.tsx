@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Container } from './Container'
 import { ContainerItem } from './Container'
-import { WireframeBox } from '@components/wireframeBox/wireframeBox'
+import { WireframeBox } from '@components/WireframeBox/WireframeBox'
 import { FeaturedImage } from '@components/FeaturedImage/FeaturedImage'
 import { Default as DefaultFeaturedImage } from '@components/FeaturedImage/FeaturedImage.stories'
 import { Prose } from '@components/Prose/Prose'

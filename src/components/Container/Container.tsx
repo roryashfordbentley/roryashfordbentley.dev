@@ -19,7 +19,7 @@ export const ContainerItem = ({ children, layout }: ItemProps) => {
 }
 
 interface ContainerProps {
-  children: ReactElement<typeof ContainerItem>[]
+  children?: ReactElement<typeof ContainerItem>[]
   debug?: boolean
 }
 
