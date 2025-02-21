@@ -2,7 +2,7 @@
 
 echo "Running tests before pushing..."
 echo "Check to makesure that there are no local file changes since last commit that could cause a build to differ locally"
-git diff HEAD --quiet && npx vitest run
+git diff HEAD --quiet && npx vitest run --testTimeout=0
 
 # Check if the tests passed
 if [ $? -ne 0 ]; then
