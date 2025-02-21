@@ -1,7 +1,7 @@
 # To use this Dockerfile, you have to set `output: 'standalone'` in your next.config.mjs file.
 # From https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile
 
-FROM node:22.12.0-alpine AS base
+FROM node:22.14.0-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -11,7 +11,8 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /src/app
 
 # Fixes: https://github.com/nodejs/corepack/issues/612#issuecomment-2630469508
-RUN npm i -g corepack@latest
+RUN npm install -g corepack@latest && \
+    corepack enable
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
