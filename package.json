@@ -17,7 +17,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "serve-storybook": "serve storybook-static",
-    "create-component": "npx simple-scaffold -c simple-scaffold.json -k component $1"
+    "create-component": "npx simple-scaffold -c simple-scaffold.json -k component $1",
+    "prepare": "husky"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -53,12 +54,14 @@
     "ajv": "^8.17.1",
     "eslint": "^9.16.0",
     "eslint-config-next": "15.1.5",
+    "husky": "^9.1.7",
     "postcss-custom-media": "^11.0.5",
     "postcss-nesting": "^13.0.1",
     "postcss-rem": "^3.0.0",
     "prettier": "^3.4.2",
     "storybook": "^8.5.3",
     "storybook-design-token": "^3.0.0-beta.7",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "vitest": "^3.0.6"
   }
 }
