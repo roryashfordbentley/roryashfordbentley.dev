@@ -10,11 +10,13 @@ The site uses [PayloadCMS](https://payloadcms.com/) as its CMS
 
 The site deploys to [Vercel](https://vercel.com)
 
+The site Database engine is MongoDB.
+
 ---
 
 ## 🚧 Prerequisites
 
-## Currently the site requires Node/NPM installed locally as the official Payload Docker container node instance is broken.
+The site requires that the user has [mongodb-database-tools](https://www.mongodb.com/docs/database-tools/installation/installation-macos/) installed locally to migrate the database between local and remote server environments.
 
 ## ➡️ Quickstart
 
@@ -50,3 +52,35 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev-storybook`           | Runs local dev server and storybook instance  |
 | `npm run build`                   | Runs a Next build                             |
 | `npm run create-component [NAME]` | Scaffolds a new componet with stories and css |
+
+## Database commands
+
+To move the database from local to remote server, or visa-versa the following commands can be used.
+
+### Migrate from local to MongoDB Atlas cluster (local to remote)
+
+#### Backup
+
+```sh
+mongodump --uri="mongodb://<host>:<port>/<database_name>" --out ~/Desktop/mongodb-backup
+```
+
+#### Restore
+
+```sh
+mongorestore --uri="mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database_name>" ~/Desktop/mongodb-backup/<database_name>
+```
+
+### Migrate from MongoDB Atlas cluster (remote to local)
+
+#### Backup
+
+```sh
+mongodump --uri="mongodb://127.0.0.1:27017/<local_database_name>" --out ~/Desktop/mongodb-backup
+```
+
+#### Restore
+
+```sh
+mongorestore --uri="mongodb+srv://<username>:<password>@<host>/<remote_database_name>" ~/Desktop/mongodb-backup/<local_database_name>
+```
