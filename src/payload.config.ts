@@ -1,7 +1,7 @@
 // storage-adapter-import-placeholder
-import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -48,13 +48,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  // Automatically uses proces.env.POSTGRES_URL if no options are provided.
-  //db: vercelPostgresAdapter(),
-  // Optionally, can accept the same options as the @vercel/postgres package.
-  db: vercelPostgresAdapter({
-    pool: {
-      connectionString: process.env.DATABASE_URL,
-    },
+  // Configure the Mongoose adapter here
+  db: mongooseAdapter({
+    // Mongoose-specific arguments go here.
+    // URL is required.
+    url: process.env.DATABASE_URL || '',
   }),
   sharp,
   plugins: [

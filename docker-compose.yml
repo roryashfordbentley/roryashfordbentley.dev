@@ -1,49 +1,28 @@
 services:
   payload:
-    image: node:18-alpine
+    image: node:22.14.0-alpine
     ports:
       - '3000:3000' # Website
       - '6006:6006' # Storybook
     volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
+      - .:/usr/app
+      - ./node_modules:/usr/app/node_modules
+    working_dir: /usr/app/
     command: sh -c "corepack enable && corepack prepare npm@latest --activate && npm install && npm run dev-storybook"
     depends_on:
-      # - mongo
-      - postgres
+      - mongo
+      #- postgres
     env_file:
       - .env
-
-  # Uncomment the following to use postgres
-  postgres:
-    image: postgres:17
-    command: '-d 1'
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    command:
+      - --storageEngine=wiredTiger
     volumes:
-      - db_data:/var/lib/postgresql/data
-    ports:
-      - '5432:5432'
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=main
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  neon-proxy:
-    image: ghcr.io/timowilhelm/local-neon-http-proxy:main
-    environment:
-      - PG_CONNECTION_STRING=postgres://postgres:postgres@postgres:5432/main
-    ports:
-      - '4444:4444'
-    depends_on:
-      postgres:
-        condition: service_healthy
-
+      - data:/data/db
+    logging:
+      driver: none
 volumes:
-  #data:
-  db_data:
-  node_modules:
+  data:

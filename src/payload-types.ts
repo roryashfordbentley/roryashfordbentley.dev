@@ -64,6 +64,7 @@ export interface Config {
   auth: {
     users: UserAuthOperations;
   };
+  blocks: {};
   collections: {
     posts: Post;
     pages: Page;
@@ -86,7 +87,7 @@ export interface Config {
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   globals: {
     Settings: Setting;
@@ -136,10 +137,10 @@ export interface UserAuthOperations {
  * via the `definition` "posts".
  */
 export interface Post {
-  id: number;
+  id: string;
   title?: string | null;
   description?: string | null;
-  featuredImage?: (number | null) | Media;
+  featuredImage?: (string | null) | Media;
   content?: {
     root: {
       type: string;
@@ -174,7 +175,7 @@ export interface Post {
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
+  id: string;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -193,9 +194,9 @@ export interface Media {
  * via the `definition` "pages".
  */
 export interface Page {
-  id: number;
+  id: string;
   title?: string | null;
-  featuredImage?: (number | null) | Media;
+  featuredImage?: (string | null) | Media;
   content?: {
     root: {
       type: string;
@@ -254,7 +255,7 @@ export interface Page {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
+  id: string;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -271,7 +272,7 @@ export interface User {
  * via the `definition` "payload-jobs".
  */
 export interface PayloadJob {
-  id: number;
+  id: string;
   /**
    * Input data provided to the job
    */
@@ -363,32 +364,32 @@ export interface PayloadJob {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: string;
   document?:
     | ({
         relationTo: 'posts';
-        value: number | Post;
+        value: string | Post;
       } | null)
     | ({
         relationTo: 'pages';
-        value: number | Page;
+        value: string | Page;
       } | null)
     | ({
         relationTo: 'users';
-        value: number | User;
+        value: string | User;
       } | null)
     | ({
         relationTo: 'media';
-        value: number | Media;
+        value: string | Media;
       } | null)
     | ({
         relationTo: 'payload-jobs';
-        value: number | PayloadJob;
+        value: string | PayloadJob;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -398,10 +399,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   key?: string | null;
   value?:
@@ -421,7 +422,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
@@ -588,7 +589,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  * via the `definition` "Settings".
  */
 export interface Setting {
-  id: number;
+  id: string;
   /**
    * The Site title is used in the page meta title and can also be used to display the site title in the header, footer or anywhere else within the site.
    */
@@ -605,9 +606,9 @@ export interface Setting {
  * via the `definition` "navPrimary".
  */
 export interface NavPrimary {
-  id: number;
+  id: string;
   items: {
-    page: number | Page;
+    page: string | Page;
     id?: string | null;
   }[];
   updatedAt?: string | null;
@@ -618,11 +619,11 @@ export interface NavPrimary {
  * via the `definition` "socialMediaLinks".
  */
 export interface SocialMediaLink {
-  id: number;
+  id: string;
   items: {
     name?: string | null;
     link?: string | null;
-    'icon '?: (number | null) | Media;
+    'icon '?: (string | null) | Media;
     id?: string | null;
   }[];
   updatedAt?: string | null;
@@ -681,10 +682,10 @@ export interface TaskSchedulePublish {
     locale?: string | null;
     doc?: {
       relationTo: 'pages';
-      value: number | Page;
+      value: string | Page;
     } | null;
     global?: string | null;
-    user?: (number | null) | User;
+    user?: (string | null) | User;
   };
   output?: unknown;
 }
