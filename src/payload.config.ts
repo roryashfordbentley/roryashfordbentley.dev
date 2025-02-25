@@ -1,8 +1,8 @@
 // storage-adapter-import-placeholder
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -58,14 +58,21 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    payloadCloudPlugin(),
-    vercelBlobStorage({
+    /*vercelBlobStorage({
       enabled: true,
       collections: {
         media: true,
       },
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
+    }),*/
+    uploadthingStorage({
+      collections: {
+        media: true,
+      },
+      options: {
+        token: process.env.UPLOADTHING_TOKEN || '',
+        acl: 'public-read',
+      },
     }),
-    // storage-adapter-placeholder
   ],
 })
