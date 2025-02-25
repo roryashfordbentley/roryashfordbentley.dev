@@ -5,10 +5,10 @@ import styles from './BlogArticleTitle.module.css' // External CSS for the style
 export const BlogArticleTitle = (props: {
   title: string
   description: string
-  datePostedLabel: string
+  datePostedLabel?: string
   datePosted: string
-  readingTimeLabel: string
-  readingTime: string
+  readingTimeLabel?: string
+  readingTime?: string
 }) => {
   return (
     <section className={styles.grid}>

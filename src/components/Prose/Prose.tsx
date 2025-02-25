@@ -17,7 +17,9 @@ export const Prose = ({ children, padded }: { children: ReactNode; padded?: bool
   return (
     <section
       className={`${styles.contentWrapper} ${padded ? styles['contentWrapper--padded'] : ''}`}
-      dangerouslySetInnerHTML={cleanMarkup(children as string)}
-    />
+      //dangerouslySetInnerHTML={cleanMarkup(children as string)}
+    >
+      {children}
+    </section>
   )
 }
