@@ -1,19 +1,19 @@
 services:
-  payload:
-    image: node:22.14.0-alpine
-    ports:
-      - '3000:3000' # Website
-      - '6006:6006' # Storybook
-    volumes:
-      - .:/usr/app
-      - ./node_modules:/usr/app/node_modules
-    working_dir: /usr/app/
-    #command: sh -c "corepack enable && corepack prepare npm@latest --activate && npm install && npm run dev-storybook"
-    depends_on:
-      - mongo
-      #- postgres
-    env_file:
-      - .env
+  #payload:
+  #  image: node:22.14.0-alpine
+  #  ports:
+  #    - '3000:3000' # Website
+  #    - '6006:6006' # Storybook
+  #  volumes:
+  #    - .:/usr/app
+  #    - ./node_modules:/usr/app/node_modules
+  #  working_dir: /usr/app/
+  #  #command: sh -c "corepack enable && corepack prepare npm@latest --activate && npm install && npm run dev-storybook"
+  #  depends_on:
+  #    - mongo
+  #    #- postgres
+  #  env_file:
+  #    - .env
   mongo:
     image: mongo:latest
     ports:
@@ -21,8 +21,8 @@ services:
     command:
       - --storageEngine=wiredTiger
     volumes:
-      - data:/data/db
+      - mongo_data:/data/db
     logging:
       driver: none
 volumes:
-  data:
+  mongo_data:
