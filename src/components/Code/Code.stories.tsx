@@ -45,7 +45,7 @@ export const Code = (props: { label: string; codeString: string }) => {
   }
 
   return (
-    <div className={styles['container--dark']}}>
+    <div className={styles['container--dark']}>
       <header className={styles.header}>
         <div className={styles.circles}>
           <span className={styles.circle}></span>

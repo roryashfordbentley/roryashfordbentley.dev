@@ -1,5 +1,4 @@
 import type { CollectionConfig } from 'payload'
-import { QuoteBlock } from '@blocks/Quote'
 import { RichTextBlock } from '@blocks/RichText'
 import { slugField } from '@/fields/slug'
 
@@ -29,7 +28,6 @@ export const Pages: CollectionConfig = {
       maxRows: 20,
       blocks: [
         // required
-        QuoteBlock,
         RichTextBlock,
       ],
     },

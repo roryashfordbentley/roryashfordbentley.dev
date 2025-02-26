@@ -1,3 +1,4 @@
+'use client'
 import styles from './Code.module.css'
 import { highlight } from 'sugar-high'
 import { useState } from 'react'

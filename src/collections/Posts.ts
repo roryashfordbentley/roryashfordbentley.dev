@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { QuoteBlock } from '@blocks/Quote'
+import { CodeBlock } from '@blocks/Code/Code'
 import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugField } from '@/fields/slug'
 
@@ -55,9 +55,9 @@ export const Posts: CollectionConfig = {
       editor: lexicalEditor({
         features: ({ defaultFeatures, rootFeatures }) => [
           ...defaultFeatures,
-          /*BlocksFeature({
-            blocks: [QuoteBlock],
-          }),*/
+          BlocksFeature({
+            blocks: [CodeBlock],
+          }),
         ],
       }),
     },
@@ -66,10 +66,7 @@ export const Posts: CollectionConfig = {
       type: 'blocks', // required
       minRows: 1,
       maxRows: 20,
-      blocks: [
-        // required
-        QuoteBlock,
-      ],
+      blocks: [CodeBlock],
     },
     ...slugField(),
   ],

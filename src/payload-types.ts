@@ -158,11 +158,11 @@ export interface Post {
   } | null;
   layout?:
     | {
-        quoteHeader?: string | null;
-        quoteText?: string | null;
+        codeBlockLabel?: string | null;
+        codeBlockCode: string;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'QuoteBlock';
+        blockType: 'code';
       }[]
     | null;
   slug?: string | null;
@@ -244,36 +244,27 @@ export interface Page {
     [k: string]: unknown;
   } | null;
   layout?:
-    | (
-        | {
-            quoteHeader?: string | null;
-            quoteText?: string | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'QuoteBlock';
-          }
-        | {
-            richTextHeader: string;
-            richTextEditor: {
-              root: {
-                type: string;
-                children: {
-                  type: string;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
+    | {
+        richTextHeader: string;
+        richTextEditor: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
               [k: string]: unknown;
-            };
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'RichTextBlock';
-          }
-      )[]
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        };
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'RichTextBlock';
+      }[]
     | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -471,11 +462,11 @@ export interface PostsSelect<T extends boolean = true> {
   layout?:
     | T
     | {
-        QuoteBlock?:
+        code?:
           | T
           | {
-              quoteHeader?: T;
-              quoteText?: T;
+              codeBlockLabel?: T;
+              codeBlockCode?: T;
               id?: T;
               blockName?: T;
             };
@@ -497,14 +488,6 @@ export interface PagesSelect<T extends boolean = true> {
   layout?:
     | T
     | {
-        QuoteBlock?:
-          | T
-          | {
-              quoteHeader?: T;
-              quoteText?: T;
-              id?: T;
-              blockName?: T;
-            };
         RichTextBlock?:
           | T
           | {
