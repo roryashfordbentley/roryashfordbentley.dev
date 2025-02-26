@@ -158,6 +158,10 @@ export interface Post {
   } | null;
   layout?:
     | {
+        /**
+         * Select the layout for this block
+         */
+        blockLayoutField?: ('default' | 'full' | 'narrow') | null;
         codeBlockLabel?: string | null;
         codeBlockCode: string;
         id?: string | null;
@@ -465,6 +469,7 @@ export interface PostsSelect<T extends boolean = true> {
         code?:
           | T
           | {
+              blockLayoutField?: T;
               codeBlockLabel?: T;
               codeBlockCode?: T;
               id?: T;

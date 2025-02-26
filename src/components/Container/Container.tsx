@@ -32,7 +32,11 @@ export const Container = ({ children, debug }: ContainerProps) => {
        */}
       {debug && (
         <div className={`${styles.grid} ${styles['grid--debug']}`}>
-          {Array(5).fill(<div className={`${styles.item} ${styles['item--debug']}`}></div>)}
+          {Array(5)
+            .fill(null)
+            .map((_, index) => (
+              <div key={index} className={`${styles.item} ${styles['item--debug']}`}></div>
+            ))}
         </div>
       )}
     </div>

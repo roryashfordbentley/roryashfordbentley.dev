@@ -1,9 +1,10 @@
 import type { Block } from 'payload'
+import { layoutField } from '@blocks/LayoutField'
 
 export const CodeBlock: Block = {
-  slug: 'code', // required
+  slug: 'code',
   fields: [
-    // required
+    layoutField,
     {
       name: 'codeBlockLabel',
       type: 'text',
