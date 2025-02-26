@@ -7,7 +7,7 @@ import Image from 'next/image'
 /**
  * Blocks
  */
-import { Code } from '@blocks/Code/Code'
+import { CodeBlock } from '@blocks/Code/Code'
 
 /**
  * Components
@@ -90,6 +90,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           )}
         </ContainerItem>
       </Container>
+
       <RenderBlocks blocks={layout} />
     </>
   )

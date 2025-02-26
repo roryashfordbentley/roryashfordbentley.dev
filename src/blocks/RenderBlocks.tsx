@@ -10,7 +10,7 @@ import { CodeBlock } from '@blocks/Code/Component'
  * Developer defined list of block components (i.e. the components used to render the block data).
  * key must equal block slug.
  */
-const blockComponentsRegister: { [key: string]: React.ComponentType<any> } = {
+const blockComponentsRegister = {
   code: CodeBlock,
 }
 
