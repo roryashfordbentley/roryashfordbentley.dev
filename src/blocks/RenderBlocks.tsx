@@ -27,9 +27,6 @@ export const RenderBlocks: React.FC<{
       <Fragment>
         {blocks.map((block, index) => {
           const { blockType } = block
-          //console.log(blockType)
-          //console.log(blockComponentsRegister[blockType])
-
           /**
            * If blockType is defined within the collection (Posts, Pages etc)
            * and the blockType is registered as a block component then render
@@ -39,7 +36,7 @@ export const RenderBlocks: React.FC<{
             const Block = blockComponentsRegister[blockType]
 
             if (Block) {
-              return <Block {...block} disableInnerContainer key={index} />
+              return <Block {...block} key={index} />
             }
           }
 
