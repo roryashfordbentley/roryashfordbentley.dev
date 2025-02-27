@@ -24,7 +24,7 @@
   --theme-text-tint: #7c868a;
   --theme-link: var(--theme-primary);
   --theme-background: #fafafc;
-  --theme-background-tint: #f0f0f0;
-  --theme-border: #d0cfce;
+  --theme-background-tint: #e4ebec;
+  --theme-border: #d5d8d8;
   --theme-accent: #96ffad;
 }

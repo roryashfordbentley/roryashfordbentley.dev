@@ -8,7 +8,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--theme-border);
+    background-color: var(--theme-background-tint);
   }
 }
 
