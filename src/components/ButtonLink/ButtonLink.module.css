@@ -4,6 +4,7 @@
   --gradient-3: #f097fd;
   --gradient-4: #e70fae;
 
+  display: inline-block;
   position: relative;
   background: var(--theme-primary);
   color: var(--theme-background);

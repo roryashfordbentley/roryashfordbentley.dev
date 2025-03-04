@@ -1,0 +1,31 @@
+.wrapper {
+}
+
+.header {
+  margin-bottom: var(--spacing-6);
+}
+
+.title {
+  font-size: clamp(var(--font-size-3), 8vw, var(--font-size-11));
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.subtitle {
+  font-size: clamp(var(--font-size-3), 8vw, var(--font-size-11));
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.content {
+  margin-bottom: var(--spacing-6);
+  letter-spacing: -0.03em;
+}
+
+.description {
+  font-size: clamp(var(--font-size-3), 2vw, var(--font-size-6));
+  width: 50%;
+  margin-bottom: var(--spacing-6);
+}

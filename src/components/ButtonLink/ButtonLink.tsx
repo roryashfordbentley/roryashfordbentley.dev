@@ -2,7 +2,7 @@ import styles from './ButtonLink.module.css'
 
 export const ButtonLink = (props: {
   url: string
-  target: '_self' | '_blank' | '_parent' | '_top'
+  target?: '_self' | '_blank' | '_parent' | '_top'
   label: string
   type?: 'outline'
 }) => {
