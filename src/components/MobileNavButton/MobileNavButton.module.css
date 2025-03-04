@@ -1,0 +1,14 @@
+.button {
+  border: 0;
+  border-radius: var(--radius-1);
+  border: none;
+  background: none;
+  width: pxrem(46px);
+  height: pxrem(46px);
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--theme-background-tint);
+  }
+}
