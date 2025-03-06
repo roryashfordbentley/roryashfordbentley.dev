@@ -1,4 +1,9 @@
 .wrapper {
+  padding: var(--spacing-6) 0;
+
+  @media (--m) {
+    padding: var(--spacing-10) 0;
+  }
 }
 
 .header {
@@ -20,12 +25,15 @@
 }
 
 .content {
-  margin-bottom: var(--spacing-6);
   letter-spacing: -0.03em;
 }
 
 .description {
   font-size: clamp(var(--font-size-3), 2vw, var(--font-size-6));
-  width: 50%;
+
   margin-bottom: var(--spacing-6);
+
+  @media (--m) {
+    width: 50%;
+  }
 }
