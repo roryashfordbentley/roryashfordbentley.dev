@@ -6,7 +6,7 @@ import { WireframeBox } from '@components/WireframeBox/WireframeBox'
 type Story = StoryObj<typeof meta>
 
 const meta = {
-  title: 'Components/Grid',
+  title: 'Utility/Grid',
   component: Grid,
   parameters: {
     layout: 'padded',
@@ -38,6 +38,20 @@ export const ThreeColumnGrid: Story = {
   args: {
     columns: 3,
     children: Array(3).fill(
+      <GridItem>
+        <WireframeBox title="Grid item" />
+      </GridItem>,
+    ),
+  },
+}
+
+/**
+ * This is a 5 column grid example. It will have 5 columns at all screen sizes.
+ */
+export const FiveColumnGrid: Story = {
+  args: {
+    columns: 5,
+    children: Array(10).fill(
       <GridItem>
         <WireframeBox title="Grid item" />
       </GridItem>,
