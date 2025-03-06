@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const pageData = await queryBySlug('pages', slug)
 
-  const image = pageData.featuredImage as Media
+  const image = pageData?.featuredImage as Media
 
   const logoInstance = <LogoLink link="/" />
 
