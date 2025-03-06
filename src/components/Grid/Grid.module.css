@@ -34,8 +34,4 @@
   @media (--l) {
     grid-column: span var(--col-span-l);
   }
-
-  & * {
-    width: 100%;
-  }
 }
