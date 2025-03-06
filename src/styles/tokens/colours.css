@@ -7,8 +7,8 @@
   --theme-text: #fafafc;
   --theme-text-tint: #8ba498;
   --theme-link: var(--theme-primary);
-  --theme-background: #14313b;
-  --theme-background-tint: #20282c;
+  --theme-background: #1e2122;
+  --theme-background-tint: #191c1d;
   --theme-border: #214b59;
   --theme-accent: #96ffad;
 }
