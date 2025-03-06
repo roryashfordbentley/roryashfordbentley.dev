@@ -1,5 +1,3 @@
-import { Header } from '@components/Header/Header'
-import { Footer } from '@components/Footer/Footer'
 import { ButtonLink } from '@components/ButtonLink/ButtonLink'
 import { Hero } from '@components/Hero/Hero'
 
@@ -25,7 +23,6 @@ const HomePage = () => {
     <>
       <Hero title={title} subtitle={subtitle} description={description} button={button} />
       <main>HelloWorld</main>
-      <Footer />
     </>
   )
 }
