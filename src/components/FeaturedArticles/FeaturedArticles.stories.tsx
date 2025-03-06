@@ -19,6 +19,7 @@ export default meta
 
 export const Default: Story = {
   args: {
+    title: 'The latest from the blog.',
     articlePrimary: <CardArticle {...Featured.args} />,
     articleSecondary: <CardArticle {...Compact.args} />,
     articleTertiary: <CardArticle {...Compact.args} />,

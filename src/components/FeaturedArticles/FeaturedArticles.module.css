@@ -1,29 +1,23 @@
 .articles {
-  display: flex;
-  flex-direction: column;
+}
+
+.title {
+}
+
+.content {
   background: var(--theme-background-tint);
   padding: var(--spacing-5);
-  gap: var(--spacing-4);
   border-radius: var(--radius-4);
 
   @media (--m) {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     padding: var(--spacing-7);
-    gap: var(--spacing-6);
   }
 }
 
 .articlePrimary {
-  @media (--m) {
-    grid-column: 1/4;
-    grid-row: 1/3;
-  }
+  height: 100%;
 }
 
-.articleSecondary {
-  @media (--m) {
-    grid-column: 4/6;
-  }
+.articleSecondary:first-child {
+  margin-bottom: var(--spacing-5);
 }
