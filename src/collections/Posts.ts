@@ -2,8 +2,9 @@ import type { CollectionConfig } from 'payload'
 import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugField } from '@/fields/slug'
 
-import { CodeBlockSchema } from '@/blocks/Code/Schema'
-import { ProseBlockSchema } from '@/blocks/Prose/Schema'
+import { CodeBlockSchema } from '@blocks/Code/Schema'
+import { ProseBlockSchema } from '@blocks/Prose/Schema'
+import { BigImageBlockSchema } from '@blocks/BigImage/Schema'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -68,7 +69,7 @@ export const Posts: CollectionConfig = {
       type: 'blocks', // required
       minRows: 1,
       maxRows: 20,
-      blocks: [CodeBlockSchema, ProseBlockSchema],
+      blocks: [CodeBlockSchema, ProseBlockSchema, BigImageBlockSchema],
     },
     ...slugField(),
   ],

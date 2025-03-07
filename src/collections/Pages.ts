@@ -3,6 +3,7 @@ import type { CollectionConfig } from 'payload'
 import { CodeBlockSchema } from '@blocks/Code/Schema'
 import { HeroBlockSchema } from '@blocks/Hero/Schema'
 import { ProseBlockSchema } from '@blocks/Prose/Schema'
+import { BigImageBlockSchema } from '@blocks/BigImage/Schema'
 
 import { slugField } from '@/fields/slug'
 
@@ -35,6 +36,7 @@ export const Pages: CollectionConfig = {
         CodeBlockSchema,
         HeroBlockSchema,
         ProseBlockSchema,
+        BigImageBlockSchema,
       ],
     },
     ...slugField(),

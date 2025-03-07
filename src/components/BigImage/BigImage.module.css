@@ -1,0 +1,28 @@
+.figure {
+}
+
+.figure img {
+  border-radius: var(--radius-2);
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--spacing-2) 0;
+  font-size: var(--font-size-1);
+
+  @media (--m) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.captionText {
+}
+
+.credit {
+}
+
+.creditLink {
+}

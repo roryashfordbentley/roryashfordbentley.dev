@@ -7,6 +7,7 @@ import { Container, ContainerItem } from '@/components/Container/Container'
 import { CodeBlock } from '@blocks/Code/Component'
 import { HeroBlock } from '@blocks/Hero/Component'
 import { ProseBlock } from '@blocks/Prose/Component'
+import { BigImageBlock } from '@blocks/BigImage/Component'
 
 /**
  * Block Components
@@ -18,6 +19,7 @@ const blockComponentsRegister: { [key: string]: React.FC<any> } = {
   code: CodeBlock,
   hero: HeroBlock,
   prose: ProseBlock,
+  bigImage: BigImageBlock,
 }
 
 /**

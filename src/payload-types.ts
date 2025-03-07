@@ -193,6 +193,19 @@ export interface Post {
             blockName?: string | null;
             blockType: 'prose';
           }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            image: string | Media;
+            caption?: string | null;
+            credit?: string | null;
+            creditLink?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'bigImage';
+          }
       )[]
     | null;
   slug?: string | null;
@@ -323,6 +336,19 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'prose';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            image: string | Media;
+            caption?: string | null;
+            credit?: string | null;
+            creditLink?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'bigImage';
           }
       )[]
     | null;
@@ -539,6 +565,17 @@ export interface PostsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        bigImage?:
+          | T
+          | {
+              blockLayoutField?: T;
+              image?: T;
+              caption?: T;
+              credit?: T;
+              creditLink?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   slug?: T;
   slugLock?: T;
@@ -583,6 +620,17 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               blockLayoutField?: T;
               proseEditor?: T;
+              id?: T;
+              blockName?: T;
+            };
+        bigImage?:
+          | T
+          | {
+              blockLayoutField?: T;
+              image?: T;
+              caption?: T;
+              credit?: T;
+              creditLink?: T;
               id?: T;
               blockName?: T;
             };
