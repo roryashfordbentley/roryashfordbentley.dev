@@ -1,7 +1,8 @@
 import type { CollectionConfig } from 'payload'
 
-import { CodeBlock } from '@blocks/Code/Block'
-import { HeroBlock } from '@blocks/Hero/Block'
+import { CodeBlockSchema } from '@blocks/Code/Schema'
+import { HeroBlockSchema } from '@blocks/Hero/Schema'
+import { ProseBlockSchema } from '@blocks/Prose/Schema'
 
 import { slugField } from '@/fields/slug'
 
@@ -31,8 +32,9 @@ export const Pages: CollectionConfig = {
       maxRows: 20,
       blocks: [
         // required
-        CodeBlock,
-        HeroBlock,
+        CodeBlockSchema,
+        HeroBlockSchema,
+        ProseBlockSchema,
       ],
     },
     ...slugField(),

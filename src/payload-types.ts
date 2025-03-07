@@ -157,17 +157,43 @@ export interface Post {
     [k: string]: unknown;
   } | null;
   layout?:
-    | {
-        /**
-         * Select the layout for this block
-         */
-        blockLayoutField?: ('default' | 'full' | 'narrow') | null;
-        codeBlockLabel?: string | null;
-        codeBlockCode: string;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'code';
-      }[]
+    | (
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            codeBlockLabel?: string | null;
+            codeBlockCode: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'code';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            proseEditor: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'prose';
+          }
+      )[]
     | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -273,6 +299,30 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            proseEditor: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'prose';
           }
       )[]
     | null;
@@ -481,6 +531,14 @@ export interface PostsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        prose?:
+          | T
+          | {
+              blockLayoutField?: T;
+              proseEditor?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   slug?: T;
   slugLock?: T;
@@ -517,6 +575,14 @@ export interface PagesSelect<T extends boolean = true> {
               heroBlockDescription?: T;
               heroBlockButtonText?: T;
               heroBlockButtonLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+        prose?:
+          | T
+          | {
+              blockLayoutField?: T;
+              proseEditor?: T;
               id?: T;
               blockName?: T;
             };

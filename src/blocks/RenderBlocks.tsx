@@ -2,9 +2,11 @@ import React, { Fragment } from 'react'
 
 import type { Post } from '@/payload-types'
 
+import { Container, ContainerItem } from '@/components/Container/Container'
+
 import { CodeBlock } from '@blocks/Code/Component'
 import { HeroBlock } from '@blocks/Hero/Component'
-import { Container, ContainerItem } from '@/components/Container/Container'
+import { ProseBlock } from '@blocks/Prose/Component'
 
 /**
  * Block Components
@@ -15,6 +17,7 @@ import { Container, ContainerItem } from '@/components/Container/Container'
 const blockComponentsRegister: { [key: string]: React.FC<any> } = {
   code: CodeBlock,
   hero: HeroBlock,
+  prose: ProseBlock,
 }
 
 /**

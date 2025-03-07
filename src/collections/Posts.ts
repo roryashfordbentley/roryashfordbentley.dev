@@ -1,7 +1,9 @@
 import type { CollectionConfig } from 'payload'
-import { CodeBlock } from '@/blocks/Code/Block'
 import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugField } from '@/fields/slug'
+
+import { CodeBlockSchema } from '@/blocks/Code/Schema'
+import { ProseBlockSchema } from '@/blocks/Prose/Schema'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -56,7 +58,7 @@ export const Posts: CollectionConfig = {
         features: ({ defaultFeatures, rootFeatures }) => [
           ...defaultFeatures,
           BlocksFeature({
-            blocks: [CodeBlock],
+            blocks: [CodeBlockSchema, ProseBlockSchema],
           }),
         ],
       }),
@@ -66,7 +68,7 @@ export const Posts: CollectionConfig = {
       type: 'blocks', // required
       minRows: 1,
       maxRows: 20,
-      blocks: [CodeBlock],
+      blocks: [CodeBlockSchema, ProseBlockSchema],
     },
     ...slugField(),
   ],

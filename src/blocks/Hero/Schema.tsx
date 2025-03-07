@@ -1,7 +1,7 @@
 import type { Block } from 'payload'
 import { layoutField } from '@blocks/LayoutField'
 
-export const HeroBlock: Block = {
+export const HeroBlockSchema: Block = {
   slug: 'hero',
   fields: [
     layoutField,
