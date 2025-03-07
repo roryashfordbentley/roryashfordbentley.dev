@@ -36,6 +36,21 @@ const nextConfig = {
 
     return config
   },
+  // Solution for image 400 on vercel: https://github.com/vercel/next.js/discussions/20138
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.vercel.app',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/api/media/**',
+      },
+    ],
+  },
 }
 
 export default withPayload(nextConfig)
