@@ -45,13 +45,14 @@ npm run dev
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                           | Action                                        |
-| :-------------------------------- | :-------------------------------------------- |
-| `npm install`                     | Installs dependencies                         |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`   |
-| `npm run dev-storybook`           | Runs local dev server and storybook instance  |
-| `npm run build`                   | Runs a Next build                             |
-| `npm run create-component [NAME]` | Scaffolds a new componet with stories and css |
+| Command                           | Action                                         |
+| :-------------------------------- | :--------------------------------------------- |
+| `npm install`                     | Installs dependencies                          |
+| `npm run dev`                     | Starts local dev server at `localhost:4321`    |
+| `npm run dev-storybook`           | Runs local dev server and storybook instance   |
+| `npm run build`                   | Runs a Next build                              |
+| `npm run create-component [NAME]` | Scaffolds a new component with stories and css |
+| `npm run create-block [NAME]`     | Scaffolds a new block with stories and css     |
 
 ## Database commands
 

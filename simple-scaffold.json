@@ -1,10 +1,14 @@
 {
   "component": {
     "templates": [
-      ".component_template/{{name}}.tsx",
-      ".component_template/{{name}}.stories.tsx",
-      ".component_template/{{name}}.module.css"
+      ".component-template/{{name}}.tsx",
+      ".component-template/{{name}}.stories.tsx",
+      ".component-template/{{name}}.module.css"
     ],
     "output": "src/components/{{name}}"
+  },
+  "block": {
+    "templates": [".block-template/Component.tsx", ".block-template/Schema.tsx"],
+    "output": "src/blocks/{{name}}"
   }
 }
