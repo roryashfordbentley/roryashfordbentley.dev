@@ -7,7 +7,7 @@ import Image from 'next/image'
 /**
  * Blocks
  */
-import { CodeBlock } from '@blocks/Code/Code'
+import { CodeBlock } from '@/blocks/Code/Block'
 
 /**
  * Components

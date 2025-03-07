@@ -3,6 +3,7 @@ import React, { Fragment } from 'react'
 import type { Post } from '@/payload-types'
 
 import { CodeBlock } from '@blocks/Code/Component'
+import { HeroBlock } from '@blocks/Hero/Component'
 import { Container, ContainerItem } from '@/components/Container/Container'
 
 /**
@@ -11,15 +12,16 @@ import { Container, ContainerItem } from '@/components/Container/Container'
  * Developer defined list of block components (i.e. the components used to render the block data).
  * key must equal block slug.
  */
-const blockComponentsRegister = {
+const blockComponentsRegister: { [key: string]: React.FC<any> } = {
   code: CodeBlock,
+  hero: HeroBlock,
 }
 
 /**
  * Render Blocks - functional component
  */
 export const RenderBlocks: React.FC<{
-  blocks: Post['layout']
+  blocks: Array<any>
 }> = (props) => {
   const { blocks } = props
 
@@ -27,7 +29,7 @@ export const RenderBlocks: React.FC<{
     return (
       <Container>
         {blocks.map((block, index) => {
-          const { blockType } = block
+          const { blockType } = block as { blockType: string }
 
           /**
            * Check for layout type

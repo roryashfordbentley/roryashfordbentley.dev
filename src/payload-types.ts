@@ -248,27 +248,33 @@ export interface Page {
     [k: string]: unknown;
   } | null;
   layout?:
-    | {
-        richTextHeader: string;
-        richTextEditor: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        };
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'RichTextBlock';
-      }[]
+    | (
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            codeBlockLabel?: string | null;
+            codeBlockCode: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'code';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            heroBlockTitle: string;
+            heroBlockSubtitle: string;
+            heroBlockDescription: string;
+            heroBlockButtonText: string;
+            heroBlockButtonLink: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+      )[]
     | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -493,11 +499,24 @@ export interface PagesSelect<T extends boolean = true> {
   layout?:
     | T
     | {
-        RichTextBlock?:
+        code?:
           | T
           | {
-              richTextHeader?: T;
-              richTextEditor?: T;
+              blockLayoutField?: T;
+              codeBlockLabel?: T;
+              codeBlockCode?: T;
+              id?: T;
+              blockName?: T;
+            };
+        hero?:
+          | T
+          | {
+              blockLayoutField?: T;
+              heroBlockTitle?: T;
+              heroBlockSubtitle?: T;
+              heroBlockDescription?: T;
+              heroBlockButtonText?: T;
+              heroBlockButtonLink?: T;
               id?: T;
               blockName?: T;
             };

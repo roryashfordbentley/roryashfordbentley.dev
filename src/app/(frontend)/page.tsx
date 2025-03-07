@@ -1,30 +1,45 @@
+import { getPayload } from 'payload'
+import { RenderBlocks } from '@blocks/RenderBlocks'
+import configPromise from '@payload-config'
+import { Media } from '@/payload-types'
+
 import { ButtonLink } from '@components/ButtonLink/ButtonLink'
 import { Hero } from '@components/Hero/Hero'
 
-//import type { Payload } from 'payload'
+/**
+ * Load the homepage content from Payload
+ *
+ * Important: Hompeage must have the slug "home"
+ */
+async function getHomepage() {
+  const payload = await getPayload({ config: configPromise })
 
-/*const getPosts = async (payload: Payload) => {
-  const posts = await payload.find({
-    collection: 'posts',
+  const post = await payload.find({
+    collection: 'pages',
+    limit: 1,
+    pagination: false,
+    draft: true, // Required for live preview
+    where: {
+      slug: {
+        equals: 'home',
+      },
+    },
   })
 
-  return posts
-}*/
+  return post.docs[0]
+}
 
-const title = 'Rory Ashford-Bentley.'
-const subtitle = 'Full-Stack Engineer.'
-const description =
-  'Passionate about creating digital solutions that make meaningful change and have a positive social impact.'
-const buttonUrl = 'https://www.google.com'
-const button = <ButtonLink url={buttonUrl} label="Get in Touch" />
+export default async function HomePage() {
+  const postData = await getHomepage()
 
-const HomePage = () => {
+  //console.log(postData)
+  const layout = postData.layout || []
+
   return (
     <>
-      <Hero title={title} subtitle={subtitle} description={description} button={button} />
-      <main>HelloWorld</main>
+      <main>
+        <RenderBlocks blocks={layout} />
+      </main>
     </>
   )
 }
-
-export default HomePage
