@@ -33,7 +33,7 @@ export default async function HomePage() {
   const postData = await getHomepage()
 
   //console.log(postData)
-  const layout = postData.layout || []
+  const layout = postData?.layout || []
 
   return (
     <>
