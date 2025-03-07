@@ -8,7 +8,7 @@ export type {{pascalCase name}}BlockProps = {
 
 export const {{ name }}Block: React.FC<{{pascalCase name }}BlockProps> = ({}) => {
   return (
-    <div className="{{ hyphenCasename }}-block">
+    <div className="{{ hyphenCase name }}-block">
       <Example />
     </div>
   )

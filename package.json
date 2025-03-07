@@ -18,6 +18,7 @@
     "build-storybook": "storybook build",
     "serve-storybook": "serve storybook-static",
     "create-component": "npx simple-scaffold -c simple-scaffold.json -k component $1",
+    "create-block": "npx simple-scaffold -c simple-scaffold.json -k block $1",
     "prepare": "husky"
   },
   "dependencies": {
