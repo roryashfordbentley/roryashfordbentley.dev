@@ -1,5 +1,8 @@
 import type { CollectionConfig } from 'payload'
-import { RichTextBlock } from '@blocks/RichText'
+
+import { CodeBlock } from '@blocks/Code/Block'
+import { HeroBlock } from '@blocks/Hero/Block'
+
 import { slugField } from '@/fields/slug'
 
 export const Pages: CollectionConfig = {
@@ -28,7 +31,8 @@ export const Pages: CollectionConfig = {
       maxRows: 20,
       blocks: [
         // required
-        RichTextBlock,
+        CodeBlock,
+        HeroBlock,
       ],
     },
     ...slugField(),

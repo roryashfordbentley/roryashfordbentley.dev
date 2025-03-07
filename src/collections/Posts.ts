@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { CodeBlock } from '@blocks/Code/Code'
+import { CodeBlock } from '@/blocks/Code/Block'
 import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugField } from '@/fields/slug'
 
