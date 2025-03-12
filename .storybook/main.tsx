@@ -29,5 +29,6 @@ const config: StorybookConfig = {
     })
     return config
   },
+  features: { experimentalRSC: true },
 }
 export default config
