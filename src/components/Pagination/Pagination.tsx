@@ -1,5 +1,17 @@
-import styles from './Pagination.module.css'
+'use client'
 
+import Link from 'next/link'
+import styles from './Pagination.module.css'
+import { useCallback } from 'react'
+import { usePathname, useSearchParams } from 'next/navigation'
+
+/**
+ * Range
+ *
+ * Simple way to generate a range of numbers in an array
+ * eg. range(5) => [0, 1, 2, 3, 4]
+ * @returns
+ */
 const range = (start: number, end: number, step = 1) => {
   let output = []
 
@@ -15,23 +27,41 @@ const range = (start: number, end: number, step = 1) => {
   return output
 }
 
-export const PageNumber = (props: { pageNumber: number; active?: boolean }) => {
+export const PageNumber = (props: { pageNumber: string; active?: boolean }) => {
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams?.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
+
   return (
-    <a
+    <Link
       aria-current={props.active ? 'page' : undefined}
       className={props.active ? `${styles.link} ${styles.linkActive}` : styles.link}
-      href=""
+      href={
+        // <pathname>?sort=desc
+        pathname + '?' + createQueryString('page', props.pageNumber)
+      }
     >
       {props.pageNumber}
-    </a>
+    </Link>
   )
 }
 
 export const Pagination = (props: {
   totalItems: number
   itemsPerPage: number
-  currentPage: number
-  maxNumLinks: number
+  currentPage: number | any
 }) => {
   const numberOfPages = Math.ceil(props.totalItems / props.itemsPerPage)
 
@@ -52,14 +82,14 @@ export const Pagination = (props: {
 
       <ul className={styles.list}>
         <li className={styles.listItem}>
-          <a className={styles.link} href="">
+          <Link className={styles.link} href="/2">
             &lt; Prev
-          </a>
+          </Link>
         </li>
 
         {range(startPage, endPage + 1).map((index) => (
           <li className={styles.listItem} key={index}>
-            <PageNumber pageNumber={index} active={index === props.currentPage} />
+            <PageNumber pageNumber={index.toString()} active={index === props.currentPage} />
           </li>
         ))}
 
