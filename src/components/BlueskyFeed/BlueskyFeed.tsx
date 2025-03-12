@@ -147,7 +147,7 @@ export function Post(props: {
  * mockData is an array of dummy posts. This allows for us to test the component in Storybook without
  * dealing with API and CORS errors.
  */
-export async function BlueskyFeed(props: { numberOfPosts: number; mockData: any }) {
+export async function BlueskyFeed(props: { numberOfPosts: number; mockData?: any }) {
   let posts = []
 
   if (!props.mockData) {
