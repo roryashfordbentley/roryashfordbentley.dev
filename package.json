@@ -22,6 +22,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@atproto/api": "^0.14.9",
     "@heroicons/react": "^2.2.0",
     "@payloadcms/db-mongodb": "^3.25.0",
     "@payloadcms/live-preview-react": "^3.25.0",
