@@ -20,7 +20,6 @@ export const Default: Story = {
     totalItems: 100,
     itemsPerPage: 10,
     currentPage: 2,
-    maxNumLinks: 5,
   },
 }
 
@@ -29,6 +28,5 @@ export const LargePageNumber: Story = {
     totalItems: 1000,
     itemsPerPage: 10,
     currentPage: 20,
-    maxNumLinks: 5,
   },
 }
