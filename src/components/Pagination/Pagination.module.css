@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  gap: var(--spacing-2);
+  list-style: none;
+}
+
+.listItem {
+}
+
+.link {
+  text-decoration: none;
+  border: pxrem(1px) solid var(--theme-border);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-1);
+
+  &:hover {
+    background-color: var(--theme-primary);
+    color: var(--theme-background);
+    border: var(--theme-primary) pxrem(1px) solid;
+  }
+}
+
+.linkActive {
+  background-color: var(--theme-primary);
+  color: var(--theme-background);
+  border: var(--theme-primary) pxrem(1px) solid;
+}
