@@ -23,3 +23,12 @@ export const Default: Story = {
     maxNumLinks: 5,
   },
 }
+
+export const LargePageNumber: Story = {
+  args: {
+    totalItems: 1000,
+    itemsPerPage: 10,
+    currentPage: 20,
+    maxNumLinks: 5,
+  },
+}
