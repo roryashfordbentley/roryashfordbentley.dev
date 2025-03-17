@@ -7,7 +7,7 @@ import React from 'react'
 
 import { Container } from '@components/Container/Container'
 import { ContainerItem } from '@components/Container/Container'
-import { BlogGrid, BlogGridItem } from '@components/BlogGrid/BlogGrid'
+import { Grid, GridItem } from '@components/Grid/Grid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Pagination } from '@components/Pagination/Pagination'
 
@@ -25,7 +25,7 @@ export default async function Page({
   const posts = await payload.find({
     collection: 'posts',
     depth: 1,
-    limit: 3,
+    limit: 6,
     overrideAccess: false,
     page: currentPage,
   })
@@ -35,15 +35,14 @@ export default async function Page({
 
   return (
     <>
-      {`the current page number is ${page}`}
       <Container>
-        <ContainerItem>
-          <BlogGrid>
+        <ContainerItem layout="full">
+          <Grid columns={1} columnsMedium={3} gutter>
             {posts.docs.map((post) => {
               const featuredImage = post.featuredImage as Media
 
               return (
-                <BlogGridItem key={post.id}>
+                <GridItem key={post.id}>
                   <CardArticle
                     imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
                     imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
@@ -52,11 +51,16 @@ export default async function Page({
                     date={post.createdAt ?? null}
                     url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
                   />
-                </BlogGridItem>
+                </GridItem>
               )
             })}
-          </BlogGrid>
-          <Pagination totalItems={posts.totalDocs} itemsPerPage={posts.limit} currentPage={page} />
+          </Grid>
+
+          <Pagination
+            totalItems={posts.totalDocs}
+            itemsPerPage={posts.limit}
+            currentPage={currentPage}
+          />
         </ContainerItem>
       </Container>
     </>
