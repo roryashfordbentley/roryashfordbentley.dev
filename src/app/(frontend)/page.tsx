@@ -39,8 +39,8 @@ export default async function HomePage() {
   return (
     <>
       <main>
-        <BlueskyFeed numberOfPosts={3} />
         <RenderBlocks blocks={layout} />
+        <BlueskyFeed numberOfPosts={3} />
       </main>
     </>
   )

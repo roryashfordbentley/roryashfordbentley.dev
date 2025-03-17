@@ -1,0 +1,10 @@
+.wrapper {
+  background-color: var(--theme-background);
+  padding: 0 2%;
+  /*max-width: pxrem(1330px);*/
+}
+
+.inner {
+  max-width: pxrem(1330px);
+  margin: 0 auto;
+}

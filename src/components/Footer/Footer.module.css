@@ -1,0 +1,25 @@
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  height: pxrem(400px);
+  padding-top: var(--spacing-5);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bigText {
+  position: absolute;
+
+  /*bottom: clamp(calc((0.875rem * -1) * 0.3), calc((9vw * 0.3)), calc((7rem * 0.3) * -1));*/
+  bottom: -10%;
+  left: 0;
+  right: 0;
+
+  font-size: clamp(var(--font-size-1), 9vw, 9rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.07em;
+}

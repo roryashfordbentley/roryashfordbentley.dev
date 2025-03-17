@@ -11,9 +11,7 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 90%;
-  max-width: pxrem(1330px);
-  margin: 0 auto;
+  padding-bottom: pxrem(400px); /* Footer height */
 }
 
 /**
