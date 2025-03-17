@@ -1,26 +1,27 @@
 :root {
-	/**
+  /**
     * @tokens Font Sizes
     * @presenter FontSize
     */
-	--font-size-1: 0.875rem; /* 14px */
-	--font-size-2: 1rem; /* 16px */
-	--font-size-3: 1.188rem; /* 19px */
-	--font-size-4: 1.5rem; /* 24px */
-	--font-size-5: 1.75rem; /* 28px */
-	--font-size-6: 2rem; /* 32px */
-	--font-size-7: 2.25rem; /* 36px */
-	--font-size-8: 2.625rem; /* 42px */
-	--font-size-9: 3.375rem; /* 54px */
-	--font-size-10: 4rem; /* 64px */
-	--font-size-11: 5rem; /* 80px */
+  --font-size-1: 0.875rem; /* 14px */
+  --font-size-2: 1rem; /* 16px */
+  --font-size-3: 1.188rem; /* 19px */
+  --font-size-4: 1.5rem; /* 24px */
+  --font-size-5: 1.75rem; /* 28px */
+  --font-size-6: 2rem; /* 32px */
+  --font-size-7: 2.25rem; /* 36px */
+  --font-size-8: 2.625rem; /* 42px */
+  --font-size-9: 3.375rem; /* 54px */
+  --font-size-10: 4rem; /* 64px */
+  --font-size-11: 5rem; /* 80px */
+  --font-size-12: 9rem; /* 144px */
 
-	/**
+  /**
     * @tokens Font Weights
     * @presenter FontWeight
     */
-	--font-weight-light: 300;
-	--font-weight-medium: 500;
-	--font-weight-bold: 700;
-	--font-weight-extra-bold: 800;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
 }

@@ -18,9 +18,9 @@
 * @presenter Color
 */
 :root {
-  --theme-primary: #14313b;
-  --theme-secondary: #585b5c;
-  --theme-text: #2d394b;
+  --theme-primary: #131718;
+  --theme-secondary: #515151;
+  --theme-text: var(--theme-secondary);
   --theme-text-tint: #7c868a;
   --theme-link: var(--theme-primary);
   --theme-background: #fafafc;
