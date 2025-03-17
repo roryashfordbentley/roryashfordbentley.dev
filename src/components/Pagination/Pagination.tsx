@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import styles from './Pagination.module.css'
 import { useCallback } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
+
+import styles from './Pagination.module.css'
 
 /**
  * Range
@@ -27,7 +28,7 @@ const range = (start: number, end: number, step = 1) => {
   return output
 }
 
-export const PageNumber = (props: { pageNumber: string; active?: boolean }) => {
+const PageNumber = (props: { pageNumber: string; active?: boolean }) => {
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
 
@@ -58,45 +59,117 @@ export const PageNumber = (props: { pageNumber: string; active?: boolean }) => {
   )
 }
 
+const PrevLink = (props: { currentPage: number }) => {
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams?.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
+
+  if (props.currentPage - 1 > 0) {
+    return (
+      <Link
+        className={styles.link}
+        href={pathname + '?' + createQueryString('page', (props.currentPage - 1).toString())}
+      >
+        &lt; Prev
+      </Link>
+    )
+  } else {
+    return (
+      <Link className={`${styles.link} ${styles.linkDisabled}`} href="#">
+        &lt; Prev
+      </Link>
+    )
+  }
+}
+
+const NextLink = (props: { currentPage: number; totalPages: number }) => {
+  // Get a new searchParams string by merging the current
+  // searchParams with a provided key/value pair
+  console.log(typeof props.currentPage)
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams?.toString())
+      params.set(name, value)
+
+      return params.toString()
+    },
+    [searchParams],
+  )
+
+  if (props.currentPage + 1 <= props.totalPages) {
+    return (
+      <Link
+        className={styles.link}
+        href={pathname + '?' + createQueryString('page', (props.currentPage + 1).toString())}
+      >
+        Next &gt;
+      </Link>
+    )
+  } else {
+    return (
+      <Link className={`${styles.link} ${styles.linkDisabled}`} href="#">
+        Next &gt;
+      </Link>
+    )
+  }
+}
+
 export const Pagination = (props: {
   totalItems: number
   itemsPerPage: number
-  currentPage: number | any
+  currentPage: number
 }) => {
   const numberOfPages = Math.ceil(props.totalItems / props.itemsPerPage)
 
   let startPage = 1
   let endPage = numberOfPages
 
-  if (props.currentPage - 2 > 0) {
-    startPage = props.currentPage - 2
+  const currentPage = Number(props.currentPage)
+
+  if (currentPage - 2 > 0) {
+    startPage = currentPage - 2
   }
 
-  if (props.currentPage + 2 < numberOfPages) {
-    endPage = props.currentPage + 2
+  if (currentPage + 2 < numberOfPages) {
+    endPage = currentPage + 2
   }
+
+  console.log(currentPage)
 
   return (
     <nav className={styles.wrapper} aria-labelledby="pagination">
-      <h2 id="pagination">Pagination</h2>
+      <h2 className={styles.screenReaderHeading} id="pagination">
+        Pagination
+      </h2>
 
       <ul className={styles.list}>
         <li className={styles.listItem}>
-          <Link className={styles.link} href="/2">
-            &lt; Prev
-          </Link>
+          <PrevLink currentPage={currentPage} />
         </li>
 
         {range(startPage, endPage + 1).map((index) => (
           <li className={styles.listItem} key={index}>
-            <PageNumber pageNumber={index.toString()} active={index === props.currentPage} />
+            <PageNumber pageNumber={index.toString()} active={index == currentPage} />
           </li>
         ))}
 
         <li className={styles.listItem}>
-          <a className={styles.link} href="">
-            Next &gt;
-          </a>
+          <NextLink currentPage={currentPage} totalPages={numberOfPages} />
         </li>
       </ul>
     </nav>

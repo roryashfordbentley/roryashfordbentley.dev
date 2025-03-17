@@ -1,3 +1,11 @@
+.screenReaderHeading {
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .list {
   display: flex;
   gap: var(--spacing-2);
@@ -9,6 +17,7 @@
 }
 
 .link {
+  display: block;
   text-decoration: none;
   border: pxrem(1px) solid var(--theme-border);
   padding: var(--spacing-2) var(--spacing-3);
@@ -25,4 +34,11 @@
   background-color: var(--theme-primary);
   color: var(--theme-background);
   border: var(--theme-primary) pxrem(1px) solid;
+}
+
+.linkDisabled {
+  pointer-events: none;
+  background: var(--theme-background-tint);
+  color: var(--theme-text-tint);
+  border: var(--theme-border) pxrem(1px) solid;
 }
