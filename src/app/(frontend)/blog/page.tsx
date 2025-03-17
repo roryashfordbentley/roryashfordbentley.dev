@@ -10,6 +10,7 @@ import { ContainerItem } from '@components/Container/Container'
 import { Grid, GridItem } from '@components/Grid/Grid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Pagination } from '@components/Pagination/Pagination'
+import { PageTitle } from '@components/PageTitle/PageTitle'
 
 export default async function Page({
   searchParams,
@@ -36,6 +37,9 @@ export default async function Page({
   return (
     <>
       <Container>
+        <ContainerItem layout="full">
+          <PageTitle title="Blog" />
+        </ContainerItem>
         <ContainerItem layout="full">
           <Grid columns={1} columnsMedium={3} gutter>
             {posts.docs.map((post) => {
