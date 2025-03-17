@@ -1,19 +1,19 @@
 .container {
-  border-radius: var(--radius-2);
-  background: white;
+  border-radius: var(--radius-1);
 }
 
 .figure {
   position: relative;
   aspect-ratio: 16/9;
   background-color: var(--theme-background-tint);
-  border: pxrem(1px) solid var(--theme-border);
-  border-radius: var(--radius-2);
 
   img {
-    border-radius: var(--radius-2);
     overflow: hidden;
   }
+}
+
+.content {
+  padding: var(--spacing-5) 0;
 }
 
 .date {
@@ -23,7 +23,7 @@
 
 .title {
   font-size: clamp(var(--font-size-3), 3vw, var(--font-size-5));
-  font-weight: var(--font-weight-extra-bold);
+  font-weight: var(--font-weight-bold);
   letter-spacing: -0.05em;
 }
 
@@ -38,27 +38,4 @@
 .description {
   font-size: clamp(var(--font-size-2), 1vw, var(--font-size-3));
   margin-top: var(--spacing-5);
-}
-
-.container {
-  height: 100%;
-
-  img {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .content {
-    padding: var(--spacing-5);
-  }
-}
-
-.container--featured {
-}
-
-.container--compact {
-  .title {
-    font-size: clamp(var(--font-size-3), 2vw, var(--font-size-5));
-    margin: 0;
-  }
 }

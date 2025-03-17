@@ -31,8 +31,16 @@ export const CardArticle = ({
       `}
     >
       <figure className={styles.figure}>
-        {imageSrc && <Image src={imageSrc} alt={imageAlt ?? ''} fill />}
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? ''}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1500px) 50vw, 50vw"
+          />
+        )}
       </figure>
+
       <div className={styles.content}>
         {date && (
           <time className={styles.date} dateTime={dateFormatter(date).machineReadableDateString}>
