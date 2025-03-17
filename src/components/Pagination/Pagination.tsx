@@ -48,7 +48,11 @@ const PageNumber = (props: { pageNumber: string; active?: boolean }) => {
   return (
     <Link
       aria-current={props.active ? 'page' : undefined}
-      className={props.active ? `${styles.link} ${styles.linkActive}` : styles.link}
+      className={
+        props.active
+          ? `${styles.link} ${styles.linkNumber} ${styles.linkActive}`
+          : `${styles.link} ${styles.linkNumber}`
+      }
       href={
         // <pathname>?sort=desc
         pathname + '?' + createQueryString('page', props.pageNumber)
@@ -79,7 +83,7 @@ const PrevLink = (props: { currentPage: number }) => {
   if (props.currentPage - 1 > 0) {
     return (
       <Link
-        className={styles.link}
+        className={`${styles.link} ${styles.linkPrev}`}
         href={pathname + '?' + createQueryString('page', (props.currentPage - 1).toString())}
       >
         &lt; Prev
@@ -87,7 +91,7 @@ const PrevLink = (props: { currentPage: number }) => {
     )
   } else {
     return (
-      <Link className={`${styles.link} ${styles.linkDisabled}`} href="#">
+      <Link className={`${styles.link} ${styles.linkPrev} ${styles.linkDisabled}`} href="#">
         &lt; Prev
       </Link>
     )
@@ -114,7 +118,7 @@ const NextLink = (props: { currentPage: number; totalPages: number }) => {
   if (props.currentPage + 1 <= props.totalPages) {
     return (
       <Link
-        className={styles.link}
+        className={`${styles.link} ${styles.linkNext}`}
         href={pathname + '?' + createQueryString('page', (props.currentPage + 1).toString())}
       >
         Next &gt;
@@ -122,7 +126,7 @@ const NextLink = (props: { currentPage: number; totalPages: number }) => {
     )
   } else {
     return (
-      <Link className={`${styles.link} ${styles.linkDisabled}`} href="#">
+      <Link className={`${styles.link} ${styles.linkNext} ${styles.linkDisabled}`} href="#">
         Next &gt;
       </Link>
     )
@@ -148,8 +152,6 @@ export const Pagination = (props: {
   if (currentPage + 2 < numberOfPages) {
     endPage = currentPage + 2
   }
-
-  console.log(currentPage)
 
   return (
     <nav className={styles.wrapper} aria-labelledby="pagination">
