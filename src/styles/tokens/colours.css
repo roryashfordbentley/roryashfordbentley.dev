@@ -4,12 +4,13 @@
 */
 :root.dark {
   --theme-primary: #fafafc;
-  --theme-text: #fafafc;
+  --theme-secondary: #999999;
+  --theme-text: var(--theme-secondary);
   --theme-text-tint: #8ba498;
   --theme-link: var(--theme-primary);
-  --theme-background: #1e2122;
+  --theme-background: #131718;
   --theme-background-tint: #191c1d;
-  --theme-border: #214b59;
+  --theme-border: #313131;
   --theme-accent: #96ffad;
 }
 
