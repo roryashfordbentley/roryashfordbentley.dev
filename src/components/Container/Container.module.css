@@ -17,9 +17,9 @@
 
   @media (--l) {
     grid-template-columns:
-      var(--spacing-7) minmax(0, auto) clamp(400px, 80%, 850px) minmax(0, auto)
-      var(--spacing-7);
-    row-gap: var(--spacing-7);
+      var(--spacing-6) minmax(0, auto) clamp(400px, 80%, 850px) minmax(0, auto)
+      var(--spacing-6);
+    row-gap: var(--spacing-6);
   }
 }
 
