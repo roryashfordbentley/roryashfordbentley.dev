@@ -93,11 +93,13 @@ export interface Config {
     Settings: Setting;
     navPrimary: NavPrimary;
     socialMediaLinks: SocialMediaLink;
+    Footer: Footer;
   };
   globalsSelect: {
     Settings: SettingsSelect<false> | SettingsSelect<true>;
     navPrimary: NavPrimarySelect<false> | NavPrimarySelect<true>;
     socialMediaLinks: SocialMediaLinksSelect<false> | SocialMediaLinksSelect<true>;
+    Footer: FooterSelect<false> | FooterSelect<true>;
   };
   locale: null;
   user: User & {
@@ -822,6 +824,34 @@ export interface SocialMediaLink {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Footer".
+ */
+export interface Footer {
+  id: string;
+  footerContactTitle?: string | null;
+  footerContactEmail?: string | null;
+  footerSocialTitle?: string | null;
+  footerSocialLinksList?:
+    | {
+        footerSocialTitle?: string | null;
+        footerSocialLink?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  footerToolsTitle?: string | null;
+  footerToolsList?:
+    | {
+        footerToolsTitle?: string | null;
+        footerToolsLink?: string | null;
+        footerToolsIcon?: (string | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "Settings_select".
  */
 export interface SettingsSelect<T extends boolean = true> {
@@ -857,6 +887,34 @@ export interface SocialMediaLinksSelect<T extends boolean = true> {
         name?: T;
         link?: T;
         'icon '?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  footerContactTitle?: T;
+  footerContactEmail?: T;
+  footerSocialTitle?: T;
+  footerSocialLinksList?:
+    | T
+    | {
+        footerSocialTitle?: T;
+        footerSocialLink?: T;
+        id?: T;
+      };
+  footerToolsTitle?: T;
+  footerToolsList?:
+    | T
+    | {
+        footerToolsTitle?: T;
+        footerToolsLink?: T;
+        footerToolsIcon?: T;
         id?: T;
       };
   updatedAt?: T;
