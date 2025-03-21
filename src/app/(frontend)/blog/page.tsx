@@ -19,6 +19,21 @@ export default async function Page({
 }) {
   const payload = await getPayload({ config: configPromise })
 
+  /**
+   * Grab the Page content by finding a page with the slug Blog in the Pages collection
+   */
+  const blogPage = await payload.find({
+    collection: 'pages',
+    limit: 1,
+    pagination: false,
+    draft: true, // Required for live preview
+    where: {
+      slug: { equals: 'blog' },
+    },
+  })
+
+  const pageTitle = blogPage.docs?.[0]?.title ?? 'Blog'
+
   const { page = '1' } = await searchParams
 
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page)
@@ -38,7 +53,7 @@ export default async function Page({
     <>
       <Container>
         <ContainerItem layout="full">
-          <PageTitle title="Blog" />
+          <PageTitle title={pageTitle} />
         </ContainerItem>
         <ContainerItem layout="full">
           <Grid columns={1} columnsMedium={3} gutter>
