@@ -15,16 +15,14 @@
   line-height: 1;
   letter-spacing: -0.07em;
   margin-bottom: var(--spacing-3);
+  color: var(--theme-accent);
 }
 
 .subtitle {
   font-size: clamp(var(--font-size-3), 8vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.07em;
-}
-
-.content {
-  letter-spacing: -0.03em;
+  color: var(--theme-accent);
 }
 
 .description {

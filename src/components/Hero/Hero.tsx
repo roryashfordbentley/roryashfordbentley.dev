@@ -17,12 +17,6 @@ export const Hero = (props: {
         {/*<p className={styles.subtitle}>{props.subtitle}</p>*/}
         <p className={styles.subtitle}>Senior Full-Stack Engineer</p>
       </header>
-
-      <div className={styles.content}>
-        <p className={styles.description}>{props.description}</p>
-
-        {props.button && <div className={styles.button}>{props.button}</div>}
-      </div>
     </section>
   )
 }
