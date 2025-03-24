@@ -7,61 +7,6 @@ import { Grid, GridItem } from '@components/Grid/Grid'
 import styles from './BlueskyFeed.module.css' // External CSS for the styles
 
 /**
- * Authenticate Bluesky user
- *
- * @returns AtP agent
- */
-const authenticateBlueskyUser = async () => {
-  const bskyIdentifier = process.env.BLUESKY_IDENTIFIER as string
-  const bskyAppPassword = process.env.BLUESKY_APP_PASSWORD as string
-
-  if (!bskyIdentifier || !bskyAppPassword) {
-    throw new Error(
-      'Missing credentials, are the keys BLUESKY_IDENTIFIER and BLUESKY_APP_PASSWORD set in the .env file?',
-    )
-  }
-
-  const session = new CredentialSession(new URL('https://bsky.social'))
-  const agent = new Agent(session)
-
-  try {
-    await session.login({
-      identifier: bskyIdentifier,
-      password: bskyAppPassword,
-    })
-
-    return { session, agent }
-  } catch (error) {
-    console.log(error)
-    throw new Error('Unable to authenticate Bluesky user.')
-  }
-}
-
-/**
- * Get Bluesky posts
- *
- * This function is used to fetch the latest Bluesky posts.
- */
-export async function getBskyPosts(numberOfPosts: number) {
-  if (numberOfPosts <= 0) {
-    throw new Error('Number of posts must be greater than 0.')
-  }
-
-  const agent = (await authenticateBlueskyUser()).agent
-
-  const response = await agent.getAuthorFeed({
-    actor: agent.assertDid,
-    includePins: false,
-    filter: 'posts_no_replies',
-    limit: numberOfPosts,
-  })
-
-  const posts = response.data.feed
-
-  return posts
-}
-
-/**
  * Post meta
  *
  * This Component is used to display the meta information for a post
@@ -144,21 +89,19 @@ export function Post(props: {
  * This Component is used to display the latest Bluesky posts.
  * Including the author, content and meta information.
  *
- * mockData is an array of dummy posts. This allows for us to test the component in Storybook without
- * dealing with API and CORS errors.
  */
-export async function BlueskyFeed(props: { numberOfPosts: number; mockData?: any }) {
-  let posts = []
+export async function BlueskyFeed(props: { posts: Array<any> }) {
+  //let posts = []
 
-  if (!props.mockData) {
+  /*if (!props.mockData) {
     posts = await getBskyPosts(props.numberOfPosts)
   } else {
     posts = props.mockData.slice(0, props.numberOfPosts)
-  }
+  }*/
 
   return (
     <Grid columnsMedium={3} gutter>
-      {posts.map((post: any, i: number) => {
+      {props.posts.map((post: any, i: number) => {
         const { author, record, embed, replyCount, repostCount, likeCount } = post.post
 
         const { avatar, displayName, handle } = author

@@ -5,7 +5,7 @@ import { Media } from '@/payload-types'
 
 import { ButtonLink } from '@components/ButtonLink/ButtonLink'
 import { Hero } from '@components/Hero/Hero'
-import { BlueskyFeed } from '@components/BlueskyFeed/BlueskyFeed'
+import { BlueskyFeedContainer } from '@components/BlueskyFeed/BlueskyFeed.container'
 
 /**
  * Load the homepage content from Payload
@@ -40,7 +40,7 @@ export default async function HomePage() {
     <>
       <main>
         <RenderBlocks blocks={layout} />
-        <BlueskyFeed numberOfPosts={3} />
+        <BlueskyFeedContainer />
       </main>
     </>
   )
