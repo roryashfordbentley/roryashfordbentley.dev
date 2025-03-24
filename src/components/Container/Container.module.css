@@ -1,5 +1,7 @@
 .container {
   position: relative;
+  max-width: pxrem(1330px);
+  margin: 0 auto;
 }
 
 .grid {
