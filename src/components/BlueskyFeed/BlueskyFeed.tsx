@@ -3,6 +3,7 @@ import { HeartIcon } from '@heroicons/react/24/outline'
 import { ArrowPathRoundedSquareIcon } from '@heroicons/react/24/outline'
 import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
 import { Grid, GridItem } from '@components/Grid/Grid'
+import { Container, ContainerItem } from '@components/Container/Container'
 
 import styles from './BlueskyFeed.module.css' // External CSS for the styles
 
@@ -67,9 +68,12 @@ export function Post(props: {
   replyCount: number
   repostCount: number
   likeCount: number
+  variant?: 'secondary' | 'tertiary'
 }) {
   return (
-    <div className={styles.card}>
+    <div
+      className={`${styles.card} ${props.variant == 'secondary' ? styles[`cardSecondary`] : ''} ${props.variant == 'tertiary' ? styles[`cardTertiary`] : ''}`}
+    >
       <PostAuthor avatar={props.avatar} displayName={props.displayName} handle={props.handle} />
 
       <PostContent>{props.content}</PostContent>
@@ -100,28 +104,44 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
   }*/
 
   return (
-    <Grid columnsMedium={3} gutter>
-      {props.posts.map((post: any, i: number) => {
-        const { author, record, embed, replyCount, repostCount, likeCount } = post.post
+    <section className={styles.wrapper}>
+      <Container>
+        <ContainerItem>
+          <h2 className={styles.title}>
+            Latest posts from
+            <br />
+            <em>Bluesky</em>
+          </h2>
+        </ContainerItem>
+        <ContainerItem>
+          <Grid columnsMedium={3} gutter>
+            {props.posts.map((post: any, i: number) => {
+              const { author, record, embed, replyCount, repostCount, likeCount } = post.post
 
-        const { avatar, displayName, handle } = author
+              const { avatar, displayName, handle } = author
 
-        const content = record.text as string
+              const content = record.text as string
 
-        return (
-          <GridItem key={i}>
-            <Post
-              avatar={avatar || ''}
-              displayName={displayName || ''}
-              handle={handle}
-              content={content}
-              replyCount={replyCount || 0}
-              repostCount={repostCount || 0}
-              likeCount={likeCount || 0}
-            />
-          </GridItem>
-        )
-      })}
-    </Grid>
+              return (
+                <GridItem key={i}>
+                  <Post
+                    avatar={avatar || ''}
+                    displayName={displayName || ''}
+                    handle={handle}
+                    content={content}
+                    replyCount={replyCount || 0}
+                    repostCount={repostCount || 0}
+                    likeCount={likeCount || 0}
+                    variant={
+                      (i + 1) % 2 == 0 ? 'secondary' : (i + 1) % 3 == 0 ? 'tertiary' : undefined
+                    }
+                  />
+                </GridItem>
+              )
+            })}
+          </Grid>
+        </ContainerItem>
+      </Container>
+    </section>
   )
 }
