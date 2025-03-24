@@ -2,30 +2,34 @@
 * @tokens Colors Dark
 * @presenter Color
 */
+
 :root.dark {
-  --theme-primary: #fafafc;
-  --theme-secondary: #999999;
-  --theme-text: var(--theme-secondary);
-  --theme-text-tint: #8ba498;
-  --theme-link: var(--theme-primary);
-  --theme-background: #131718;
-  --theme-background-tint: #191c1d;
-  --theme-border: #313131;
-  --theme-accent: #96ffad;
+  --theme-background: #0f1417;
+  --theme-background-tint: #1b2227;
+
+  --theme-accent: #e43d11;
+  --theme-accent-tint: #a03215;
+
+  --theme-foreground: #ffffff;
+  --theme-foreground-tint: #ece9e2;
+
+  --theme-text: var(--theme-foreground);
 }
 
 /**
 * @tokens Colors Light
 * @presenter Color
 */
+
 :root {
-  --theme-primary: #131718;
-  --theme-secondary: #515151;
-  --theme-text: var(--theme-secondary);
-  --theme-text-tint: #7c868a;
-  --theme-link: var(--theme-primary);
-  --theme-background: #fafafc;
-  --theme-background-tint: #e4ebec;
-  --theme-border: #d5d8d8;
-  --theme-accent: #96ffad;
+  --theme-foreground: #0f1417;
+  --theme-foreground-tint: #1b2227;
+
+  --theme-accent: #e43d11;
+  --theme-accent-tint: #a03215;
+
+  --theme-background: #ffffff;
+  --theme-background-tint: #ece9e2;
+
+  --theme-text: var(--theme-foreground);
 }
