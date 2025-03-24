@@ -20,6 +20,7 @@ import { LogoLink } from '@components/LogoLink/LogoLink'
 import { MainNav } from '@components/MainNav/MainNav'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 import { Content } from '@components/Content/Content'
+import { FooterContainer } from '@/components/Footer/Footer.container'
 
 export const metadata: Metadata = {
   title: 'R/AB website',
@@ -74,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header logo={logoInstance} navMenu={navInstance} themeToggle={themeToggleInstance} />
           {children}
         </Content>
-        <Footer />
+        <FooterContainer />
       </body>
     </html>
   )

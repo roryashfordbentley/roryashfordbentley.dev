@@ -8,12 +8,19 @@ import Image from 'next/image'
 
 const today = new Date()
 
-export async function Footer() {
+export function Footer(props: {
+  contactTitle: string
+  email: string
+  socialTitle: string
+  socialLinks: Array<any>
+  toolsTitle: string
+  tools: Array<any>
+}) {
   // TODO take business logic out and use the container/presentation pattern
   // This requires an addition file i.e. footer.container.tsx
   // we must find a way to prevent stprybook rendering containers as it will break
 
-  const payload = await getPayload({ config: configPromise })
+  /*const payload = await getPayload({ config: configPromise })
 
   const footerData = await payload.findGlobal({
     slug: 'Footer', // TODO - change case of this slug without breaking the Payload content
@@ -24,7 +31,7 @@ export async function Footer() {
   const socialTitle = footerData.footerSocialTitle || 'Find me on'
   const socialLinks = footerData.footerSocialLinksList || []
   const toolsTitle = footerData.footerToolsTitle || 'Built with'
-  const tools = footerData.footerToolsList || []
+  const tools = footerData.footerToolsList || []*/
 
   return (
     <footer className={styles.wrapper}>
@@ -33,20 +40,20 @@ export async function Footer() {
           <Grid columns={1} columnsMedium={3}>
             <GridItem columnSpan={1} columnSpanMedium={2}>
               <div className={styles.contact}>
-                <h2 className={styles.title}>{contactTitle}</h2>
+                <h2 className={styles.title}>{props.contactTitle}</h2>
 
                 <p className={styles.email}>
-                  <a href={`mailto:${email}`}>{email}</a>
+                  <a href={`mailto:${props.email}`}>{props.email}</a>
                 </p>
               </div>
             </GridItem>
 
             <GridItem columnSpan={1} columnSpanMedium={1}>
               <div className={styles.tools}>
-                <h2 className={styles.title}>{toolsTitle}</h2>
+                <h2 className={styles.title}>{props.toolsTitle}</h2>
 
                 <ul className={styles.toolsList}>
-                  {tools.map((tool, index) => (
+                  {props.tools.map((tool, index) => (
                     <li className={styles.tool} key={index}>
                       <a
                         href={tool.footerToolsLink || ''}
@@ -74,10 +81,10 @@ export async function Footer() {
 
             <GridItem columnSpan={1} columnSpanMedium={1}>
               <div className={styles.social}>
-                <h2 className={styles.title}>{socialTitle}</h2>
+                <h2 className={styles.title}>{props.socialTitle}</h2>
 
                 <ul className={styles.socialList}>
-                  {socialLinks.map((socialLink, index) => (
+                  {props.socialLinks.map((socialLink, index) => (
                     <li className={styles.socialItem} key={index}>
                       <a className={styles.socialItemLink} href={socialLink.footerSocialLink || ''}>
                         {socialLink.footerSocialTitle}
