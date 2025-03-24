@@ -55,7 +55,7 @@
 
 .cardTertiary {
   background-color: var(--theme-foreground);
-  color: white;
+  color: var(--theme-background);
 }
 
 .avatar {
