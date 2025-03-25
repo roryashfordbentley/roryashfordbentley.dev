@@ -21,28 +21,28 @@
     pxrem(50px)
     4%;
 
-  @media (--l) {
+  @media (--m) {
     grid-template-columns:
-      10%
+      5%
       pxrem(50px)
       pxrem(50px)
       minmax(0, auto)
       pxrem(50px)
       pxrem(50px)
-      10%;
+      5%;
 
     row-gap: var(--spacing-6);
   }
 
   @media (--l) {
     grid-template-columns:
-      minmax(0, auto)
+      minmax(5%, auto)
       pxrem(100px)
       minmax(auto, pxrem(140px))
       clamp(400px, 50%, 850px)
       minmax(auto, pxrem(140px))
       pxrem(100px)
-      minmax(0, auto);
+      minmax(5%, auto);
 
     row-gap: var(--spacing-6);
   }
