@@ -1,0 +1,34 @@
+.wrapper {
+  background-color: var(--theme-background-tint);
+  padding: var(--spacing-5) 0;
+
+  @media (--l) {
+    padding: var(--spacing-9) 0;
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: var(--font-weight-medium);
+  color: var(--theme-accent-tint);
+  width: 30%;
+
+  em {
+    font-style: normal;
+    color: var(--theme-accent);
+  }
+}
+
+.content {
+  width: 50%;
+  color: var(--theme-accent-tint);
+
+  p {
+    font-size: var(--font-size-3);
+    margin-bottom: var(--spacing-3);
+  }
+}

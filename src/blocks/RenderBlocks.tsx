@@ -8,6 +8,7 @@ import { CodeBlock } from '@blocks/Code/Component'
 import { HeroBlock } from '@blocks/Hero/Component'
 import { ProseBlock } from '@blocks/Prose/Component'
 import { BigImageBlock } from '@blocks/BigImage/Component'
+import { InformationBoxBlock } from '@blocks/InformationBox/Component'
 
 /**
  * Block Components
@@ -20,6 +21,7 @@ const blockComponentsRegister: { [key: string]: React.FC<any> } = {
   hero: HeroBlock,
   prose: ProseBlock,
   bigImage: BigImageBlock,
+  informationBox: InformationBoxBlock,
 }
 
 /**
@@ -35,6 +37,8 @@ export const RenderBlocks: React.FC<{
       <Container>
         {blocks.map((block, index) => {
           const { blockType } = block as { blockType: string }
+
+          console.log(blockType)
 
           /**
            * Check for layout type

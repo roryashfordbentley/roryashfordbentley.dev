@@ -353,6 +353,32 @@ export interface Page {
             blockName?: string | null;
             blockType: 'bigImage';
           }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            informationBoxTitle?: string | null;
+            informationBoxSubtitle?: string | null;
+            informationBoxContent?: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'informationBox';
+          }
       )[]
     | null;
   slug?: string | null;
@@ -634,6 +660,16 @@ export interface PagesSelect<T extends boolean = true> {
               caption?: T;
               credit?: T;
               creditLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+        informationBox?:
+          | T
+          | {
+              blockLayoutField?: T;
+              informationBoxTitle?: T;
+              informationBoxSubtitle?: T;
+              informationBoxContent?: T;
               id?: T;
               blockName?: T;
             };

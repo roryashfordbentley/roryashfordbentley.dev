@@ -4,6 +4,7 @@ import { CodeBlockSchema } from '@blocks/Code/Schema'
 import { HeroBlockSchema } from '@blocks/Hero/Schema'
 import { ProseBlockSchema } from '@blocks/Prose/Schema'
 import { BigImageBlockSchema } from '@blocks/BigImage/Schema'
+import { InformationBoxBlockSchema } from '@blocks/InformationBox/Schema'
 
 import { slugField } from '@/fields/slug'
 
@@ -37,6 +38,7 @@ export const Pages: CollectionConfig = {
         HeroBlockSchema,
         ProseBlockSchema,
         BigImageBlockSchema,
+        InformationBoxBlockSchema,
       ],
     },
     ...slugField(),
