@@ -3,6 +3,8 @@ import { layoutField } from '@blocks/LayoutField'
 
 export const HeroBlockSchema: Block = {
   slug: 'hero',
+  imageURL: '/block-previews/hero.jpg',
+  imageAltText: 'Hero Box block screenshot',
   fields: [
     layoutField,
     {
