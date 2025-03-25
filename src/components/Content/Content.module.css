@@ -1,4 +1,6 @@
 .wrapper {
-  /*background-color: var(--theme-background);*/
-  margin-bottom: pxrem(400px); /* Footer height */
+  position: relative;
+  background-color: var(--theme-background);
+  box-shadow: 0 pxrem(20px) pxrem(20px) 0 rgba(0, 0, 0, 0.75);
+  z-index: 2;
 }

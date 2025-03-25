@@ -1,5 +1,6 @@
 .wrapper {
-  position: relative;
+  position: sticky;
+  bottom: 0;
   width: 100%;
   background: black;
   color: white;
@@ -86,9 +87,13 @@
   display: block;
   position: absolute;
 
-  font-size: clamp(var(--font-size-1), 10.1vw, 8.5rem);
+  font-size: clamp(var(--font-size-1), 9vw, 8.5rem);
   font-weight: var(--font-weight-bold);
   line-height: 1;
   letter-spacing: -0.07em;
   color: var(--theme-accent);
+
+  @media (--l) {
+    font-size: clamp(var(--font-size-1), 10.1vw, 8.5rem);
+  }
 }
