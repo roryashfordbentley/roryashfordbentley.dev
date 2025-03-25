@@ -8,27 +8,35 @@
 }
 
 .inner {
-  display: flex;
-  justify-content: space-between;
+  @media (--m) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .title {
   font-weight: var(--font-weight-medium);
   color: var(--theme-accent-tint);
-  width: 30%;
 
   em {
     font-style: normal;
     color: var(--theme-accent);
   }
+
+  @media (--m) {
+    width: 30%;
+  }
 }
 
 .content {
-  width: 50%;
   color: var(--theme-accent-tint);
 
   p {
-    font-size: var(--font-size-3);
     margin-bottom: var(--spacing-3);
+  }
+
+  @media (--m) {
+    width: 50%;
+    font-size: var(--font-size-3);
   }
 }
