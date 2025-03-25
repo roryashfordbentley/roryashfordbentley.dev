@@ -1,13 +1,20 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 85vh;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  height: 35vh;
+
+  @media (--m) {
+    height: 65vh;
+  }
+
+  @media (--l) {
+    height: 85vh;
+  }
 }
 
 .header {
