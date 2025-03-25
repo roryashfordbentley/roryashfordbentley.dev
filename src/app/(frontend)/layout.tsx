@@ -68,9 +68,11 @@ const navInstance = (
 var themeToggleInstance = <ThemeToggle />
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const isLocal = process.env.NODE_ENV === 'development'
+
   return (
     <html lang="en" className={inter.className}>
-      <body>
+      <body className={isLocal ? 'dev' : ''}>
         <Content>
           <Header logo={logoInstance} navMenu={navInstance} themeToggle={themeToggleInstance} />
           {children}
