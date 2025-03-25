@@ -4,6 +4,12 @@
   height: 85vh;
 }
 
+.inner {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+}
+
 .header {
   margin-bottom: var(--spacing-7);
   margin-top: auto;
