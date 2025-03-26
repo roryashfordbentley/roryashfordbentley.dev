@@ -379,6 +379,25 @@ export interface Page {
             blockName?: string | null;
             blockType: 'informationBox';
           }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            gridListBlockTitle?: string | null;
+            gridListBlockDescription?: string | null;
+            gridListBlockList?:
+              | {
+                  gridListBlockItemImage?: (string | null) | Media;
+                  gridListBlockItemTitle?: string | null;
+                  gridListBlockItemDescription?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'gridList';
+          }
       )[]
     | null;
   slug?: string | null;
@@ -670,6 +689,23 @@ export interface PagesSelect<T extends boolean = true> {
               informationBoxTitle?: T;
               informationBoxSubtitle?: T;
               informationBoxContent?: T;
+              id?: T;
+              blockName?: T;
+            };
+        gridList?:
+          | T
+          | {
+              blockLayoutField?: T;
+              gridListBlockTitle?: T;
+              gridListBlockDescription?: T;
+              gridListBlockList?:
+                | T
+                | {
+                    gridListBlockItemImage?: T;
+                    gridListBlockItemTitle?: T;
+                    gridListBlockItemDescription?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

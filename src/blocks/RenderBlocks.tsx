@@ -9,6 +9,7 @@ import { HeroBlock } from '@blocks/Hero/Component'
 import { ProseBlock } from '@blocks/Prose/Component'
 import { BigImageBlock } from '@blocks/BigImage/Component'
 import { InformationBoxBlock } from '@blocks/InformationBox/Component'
+import { GridListBlock } from '@blocks/GridList/Component'
 
 /**
  * Block Components
@@ -22,6 +23,7 @@ const blockComponentsRegister: { [key: string]: React.FC<any> } = {
   prose: ProseBlock,
   bigImage: BigImageBlock,
   informationBox: InformationBoxBlock,
+  gridList: GridListBlock,
 }
 
 /**

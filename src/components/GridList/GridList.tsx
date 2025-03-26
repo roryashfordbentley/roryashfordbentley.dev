@@ -1,12 +1,15 @@
 import { Container, ContainerItem } from '@components/Container/Container'
-import styles from './SkillsGrid.module.css'
+import styles from './GridList.module.css'
+import { ReactElement } from 'react'
 
-export const SkillsGridItem = (props: { icon: string; title: string; description: string }) => {
+export const GridListItem = (props: {
+  icon: ReactElement | null
+  title: string
+  description: string
+}) => {
   return (
     <div className={styles.skill}>
-      <figure className={styles.skillFig}>
-        <img src={props.icon} alt={props.title + ' icon'} />
-      </figure>
+      <figure className={styles.skillFig}>{props.icon}</figure>
 
       <h3 className={styles.skillTitle}>{props.title}</h3>
       <p className={styles.skillDescription}>{props.description}</p>
@@ -14,7 +17,7 @@ export const SkillsGridItem = (props: { icon: string; title: string; description
   )
 }
 
-export const SkillsGrid = (props: {
+export const GridList = (props: {
   title: string
   description: string
   children: React.ReactNode
