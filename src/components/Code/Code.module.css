@@ -1,26 +1,26 @@
 .container {
-  --background: #fefefe;
-  --sh-class: #2d5e9d;
+  --background: #ece9e2;
+  --sh-class: #e43d11;
   --sh-identifier: #354150;
   --sh-sign: #8996a3;
-  --sh-property: #0550ae;
-  --sh-entity: #249a97;
-  --sh-jsxliterals: #6266d1;
-  --sh-string: #00a99a;
-  --sh-keyword: #f47067;
+  --sh-property: #5a1300;
+  --sh-entity: #a37a37;
+  --sh-jsxliterals: #5a1300;
+  --sh-string: #917308;
+  --sh-keyword: #1b2227;
   --sh-comment: #a19595;
 }
 
 .container--dark {
-  --background: #2e303d;
-  --sh-class: #ffffff;
-  --sh-identifier: #b588f8;
+  --background: #1b2227;
+  --sh-class: #f9673e;
+  --sh-identifier: #dfbfb7;
   --sh-sign: #ffffff;
-  --sh-property: #46f96f;
-  --sh-entity: #ff6ebf;
-  --sh-jsxliterals: #6266d1;
-  --sh-string: #eff981;
-  --sh-keyword: #ff6ebf;
+  --sh-property: #b48a6e;
+  --sh-entity: #ecf394;
+  --sh-jsxliterals: #b48a6e;
+  --sh-string: #d2da68;
+  --sh-keyword: #ffffff;
   --sh-comment: #a19595;
 }
 
@@ -30,16 +30,15 @@
 }
 
 .header {
-  background: var(--theme-background-tint);
-  color: var(--theme-primary);
+  background: var(--theme-accent);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-2);
   gap: var(--spacing-2);
-  border-bottom: pxrem(1px) var(--theme-border) solid;
-  border-top-left-radius: var(--radius-2);
-  border-top-right-radius: var(--radius-2);
+  border-top-left-radius: var(--radius-1);
+  border-top-right-radius: var(--radius-1);
 }
 
 .circles {
@@ -72,7 +71,7 @@
 
 .button {
   background: transparent;
-  border: pxrem(1px) solid var(--theme-border);
+  border: pxrem(1px) solid var(--theme-accent-tint);
   border-radius: var(--radius-1);
   padding: 0.4rem;
   width: pxrem(35px);
@@ -80,15 +79,15 @@
   flex-shrink: 0;
 
   svg path {
-    stroke: var(--theme-border);
+    stroke: var(--theme-accent-tint);
   }
 
   &:hover {
     cursor: pointer;
-    border: pxrem(1px) solid var(--theme-primary);
+    border: pxrem(1px) solid #1b2227;
 
     svg path {
-      stroke: var(--theme-primary);
+      stroke: #1b2227;
     }
   }
 }
