@@ -1,3 +1,5 @@
+'use client' // Required for client-side rendering in Next.js
+
 import React, { useEffect, useState } from 'react'
 import DOMPurify from 'dompurify'
 
