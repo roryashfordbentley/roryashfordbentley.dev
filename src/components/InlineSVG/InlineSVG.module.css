@@ -1,0 +1,8 @@
+.inlineSvg {
+  display: inline-block;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
