@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import dateFormatter from '@scripts/dateFormatter'
 import styles from './CardArticle.module.css'
+import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 
 interface CardArticleProps {
   title: string
@@ -44,6 +45,9 @@ export const CardArticle = ({
       <div className={styles.content}>
         {date && (
           <time className={styles.date} dateTime={dateFormatter(date).machineReadableDateString}>
+            <span className={styles.dateIcon}>
+              <InlineSVG svgPath="/icons/calendar.svg" />
+            </span>
             {dateFormatter(date).readableDateString}
           </time>
         )}

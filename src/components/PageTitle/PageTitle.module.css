@@ -2,11 +2,11 @@
   background-color: var(--theme-accent);
   color: var(--theme-background-tint);
   padding: var(--spacing-6) 0 var(--spacing-8) 0;
-  margin-bottom: pxrem(-160px);
+  margin-bottom: pxrem(-50px);
 
   @media (--m) {
-    padding: var(--spacing-7) 0 var(--spacing-8) 0;
-    margin-bottom: pxrem(-160px);
+    padding: var(--spacing-7) 0 var(--spacing-10) 0;
+    margin-bottom: pxrem(-60px);
   }
 
   @media (--l) {

@@ -5,26 +5,50 @@
 .figure {
   position: relative;
   aspect-ratio: 16/9;
-  background-color: var(--theme-background-tint);
+  /*background-color: var(--theme-foreground-tint);*/
+  border-radius: var(--radius-1);
 
   img {
     overflow: hidden;
+    border-radius: var(--radius-1);
   }
 }
 
 .content {
-  padding: var(--spacing-5) 0;
+  padding-top: var(--spacing-5);
 }
 
 .date {
-  display: block;
+  display: flex;
+  align-items: center;
   margin-bottom: var(--spacing-3);
+  font-size: var(--font-size-1);
+
+  @media (--l) {
+    font-size: var(--font-size-2);
+  }
+}
+
+.dateIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: pxrem(20px);
+  margin-right: var(--spacing-2);
+
+  path {
+    stroke: var(--theme-accent);
+  }
 }
 
 .title {
-  font-size: clamp(var(--font-size-3), 3vw, var(--font-size-5));
-  font-weight: var(--font-weight-bold);
-  letter-spacing: -0.05em;
+  font-size: var(--font-size-3);
+  color: var(--theme-accent);
+  font-weight: var(--font-weight-semibold);
+
+  @media (--l) {
+    font-size: var(--font-size-5);
+  }
 }
 
 .link {
@@ -36,6 +60,9 @@
 }
 
 .description {
-  font-size: clamp(var(--font-size-2), 1vw, var(--font-size-3));
-  margin-top: var(--spacing-5);
+  font-size: var(--font-size-1);
+
+  @media (--l) {
+    font-size: var(--font-size-3);
+  }
 }

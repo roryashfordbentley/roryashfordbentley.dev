@@ -1,7 +1,3 @@
-import { Media } from '@/payload-types'
-import Image from 'next/image'
-
-import { svgGetContents } from '@scripts/svgGetContents'
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 
 import styles from './BlogArticleTitle.module.css' // External CSS for the styles

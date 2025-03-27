@@ -36,7 +36,7 @@ function dateFormatter(date: Date | string) {
     date.getFullYear(),
   ]
 
-  let readableDateString = `${day} ${month} ${year}`
+  let readableDateString = `${day} ${month}, ${year}`
   let machineReadableDateString = date.toISOString()
 
   return { readableDateString, machineReadableDateString }

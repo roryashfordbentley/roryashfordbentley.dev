@@ -68,7 +68,10 @@ export default async function Page({
                     imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
                     imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
                     title={post.title ?? ''}
-                    description={post.description ?? ''}
+                    description={
+                      post.description ??
+                      'A modern headless CMS designed to empower developers and content editors alike.'
+                    }
                     date={post.createdAt ?? null}
                     url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
                   />
