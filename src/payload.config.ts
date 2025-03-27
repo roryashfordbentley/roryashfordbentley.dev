@@ -16,6 +16,7 @@ import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { SocialMediaLinks } from './collections/SocialMediaLinks'
+import { Tags } from './collections/Tags'
 
 // Global Imports (*note: also stored in src/collections)
 import { Settings } from './collections/Settings'
@@ -45,7 +46,7 @@ export default buildConfig({
       collections: ['posts', 'pages'],
     },
   },
-  collections: [Posts, Pages, Users, Media],
+  collections: [Posts, Pages, Users, Media, Tags],
   globals: [Settings, NavPrimary, SocialMediaLinks, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

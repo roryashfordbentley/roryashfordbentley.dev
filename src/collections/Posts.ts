@@ -65,6 +65,16 @@ export const Posts: CollectionConfig = {
       }),
     },
     {
+      name: 'tags',
+      type: 'relationship',
+      relationTo: 'tags',
+      hasMany: true, // Allow multiple categories per post
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'layout', // required
       type: 'blocks', // required
       minRows: 1,

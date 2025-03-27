@@ -8,7 +8,6 @@ import { InformationBoxBlockSchema } from '@blocks/InformationBox/Schema'
 import { GridListBlockSchema } from '@blocks/GridList/Schema'
 
 import { slugField } from '@/fields/slug'
-import { Grid } from '@/components/Grid/Grid'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
