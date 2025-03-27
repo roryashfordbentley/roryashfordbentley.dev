@@ -75,6 +75,17 @@ export const Posts: CollectionConfig = {
       },
     },
     {
+      name: 'relatedPosts',
+      type: 'relationship',
+      relationTo: 'posts',
+      hasMany: true, // Allow multiple categories per post
+      maxRows: 4,
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'layout', // required
       type: 'blocks', // required
       minRows: 1,

@@ -1,3 +1,5 @@
+'use client' // Required for client-side rendering in Next.js
+
 import { svgGetContents } from '@scripts/svgGetContents'
 
 import styles from './InlineSVG.module.css'

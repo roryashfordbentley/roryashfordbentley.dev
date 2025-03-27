@@ -14,6 +14,7 @@ export const BlogArticleTitle = (props: {
   datePosted: string
   readingTimeLabel?: string
   readingTime?: string
+  image?: React.ReactNode
 }) => {
   return (
     <section className={styles.wrapper}>
@@ -42,6 +43,7 @@ export const BlogArticleTitle = (props: {
                 <span className={styles.metaItemTitle}>
                   {props.readingTimeLabel ?? 'Reading time'}:
                 </span>
+
                 <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>
               </div>
             </aside>
@@ -51,14 +53,7 @@ export const BlogArticleTitle = (props: {
 
       <Container>
         <ContainerItem>
-          <figure className={styles.coverImage}>
-            <Image
-              src="/story-images/mac-1500-844.jpg"
-              alt="cover image of a Macbook"
-              width={1330}
-              height={720}
-            />
-          </figure>
+          {props.image && <div className={styles.coverImage}>{props.image}</div>}
         </ContainerItem>
       </Container>
     </section>

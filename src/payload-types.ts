@@ -162,6 +162,7 @@ export interface Post {
     [k: string]: unknown;
   } | null;
   tags?: (string | Tag)[] | null;
+  relatedPosts?: (string | Post)[] | null;
   layout?:
     | (
         | {
@@ -613,6 +614,7 @@ export interface PostsSelect<T extends boolean = true> {
   featuredImage?: T;
   content?: T;
   tags?: T;
+  relatedPosts?: T;
   layout?:
     | T
     | {
