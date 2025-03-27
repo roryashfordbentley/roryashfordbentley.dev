@@ -1,6 +1,8 @@
 import configPromise from '@payload-config'
 import { Media } from '@/payload-types'
 import { getPayload } from 'payload'
+
+import styles from './PageTitle.module.css'
 import React from 'react'
 
 //import type Media from 'payload'
@@ -33,6 +35,7 @@ export default async function Page({
   })
 
   const pageTitle = blogPage.docs?.[0]?.title ?? 'Blog'
+  const pageDescription = blogPage.docs?.[0]?.description ?? ''
 
   const { page = '1' } = await searchParams
 
@@ -51,17 +54,16 @@ export default async function Page({
 
   return (
     <>
+      <PageTitle title={pageTitle} description={pageDescription} />
+
       <Container>
-        <ContainerItem layout="full">
-          <PageTitle title={pageTitle} />
-        </ContainerItem>
-        <ContainerItem layout="full">
-          <Grid columns={1} columnsMedium={3} gutter>
-            {posts.docs.map((post) => {
+        <ContainerItem>
+          <Grid columns={1} columnsMedium={6} gutter>
+            {posts.docs.map((post, index) => {
               const featuredImage = post.featuredImage as Media
 
               return (
-                <GridItem key={post.id}>
+                <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
                   <CardArticle
                     imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
                     imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}

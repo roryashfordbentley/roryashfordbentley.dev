@@ -18,5 +18,7 @@ export default meta
 export const Default: Story = {
   args: {
     title: 'Blog',
+    description:
+      'Writing about my interests and hobbies, covering everything from JavaScript guides to Yorkshire climbing recommendations',
   },
 }

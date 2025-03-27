@@ -20,6 +20,10 @@ export const Pages: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'description',
+      type: 'textarea',
+    },
+    {
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media',

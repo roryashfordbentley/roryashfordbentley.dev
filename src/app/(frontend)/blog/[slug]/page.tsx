@@ -17,7 +17,6 @@ import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { LivePreviewListener } from '@components/utils/LivePreviewListener'
 import { Container, ContainerItem } from '@components/Container/Container'
 import { BlogArticleTitle } from '@/components/BlogArticleTitle/BlogArticleTitle'
-import { FeaturedImage } from '@/components/FeaturedImage/FeaturedImage'
 
 /**
  * Load the blog post data from Payload

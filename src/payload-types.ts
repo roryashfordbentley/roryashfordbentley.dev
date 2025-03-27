@@ -289,6 +289,7 @@ export interface Tag {
 export interface Page {
   id: string;
   title?: string | null;
+  description?: string | null;
   featuredImage?: (string | null) | Media;
   content?: {
     root: {
@@ -659,6 +660,7 @@ export interface PostsSelect<T extends boolean = true> {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
+  description?: T;
   featuredImage?: T;
   content?: T;
   layout?:
