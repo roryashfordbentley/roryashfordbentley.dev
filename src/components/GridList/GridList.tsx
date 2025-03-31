@@ -1,15 +1,14 @@
 import { Container, ContainerItem } from '@components/Container/Container'
 import styles from './GridList.module.css'
 import { ReactElement } from 'react'
+import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 
-export const GridListItem = (props: {
-  icon: ReactElement | null
-  title: string
-  description: string
-}) => {
+export const GridListItem = (props: { iconPath: string; title: string; description: string }) => {
   return (
     <div className={styles.skill}>
-      <figure className={styles.skillFig}>{props.icon}</figure>
+      <figure className={styles.skillFig}>
+        <InlineSVG svgPath={props.iconPath} />
+      </figure>
 
       <h3 className={styles.skillTitle}>{props.title}</h3>
       <p className={styles.skillDescription}>{props.description}</p>

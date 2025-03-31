@@ -25,16 +25,7 @@ export const GridListBlock: React.FC<GridListBlockProps> = ({
         {gridListBlockList.map((item, index) => (
           <GridListItem
             key={index}
-            icon={
-              item.gridListBlockItemImage?.url ? (
-                <Image
-                  src={item.gridListBlockItemImage.url}
-                  alt={item.gridListBlockItemImage.alt || 'Image description not available'}
-                  width={40}
-                  height={40}
-                />
-              ) : null
-            }
+            iconPath={item.gridListBlockItemImage?.url || ''}
             title={item.gridListBlockItemTitle}
             description={item.gridListBlockItemDescription}
           />
