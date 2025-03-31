@@ -29,7 +29,7 @@
 }
 
 .content {
-  color: var(--theme-accent-tint);
+  color: var(--theme-foreground-tint);
 
   p {
     margin-bottom: var(--spacing-3);
