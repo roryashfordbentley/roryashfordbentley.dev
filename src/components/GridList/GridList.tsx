@@ -6,9 +6,9 @@ import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 export const GridListItem = (props: { iconPath: string; title: string; description: string }) => {
   return (
     <div className={styles.skill}>
-      <figure className={styles.skillFig}>
+      <div className={styles.skillFig}>
         <InlineSVG svgPath={props.iconPath} />
-      </figure>
+      </div>
 
       <h3 className={styles.skillTitle}>{props.title}</h3>
       <p className={styles.skillDescription}>{props.description}</p>
