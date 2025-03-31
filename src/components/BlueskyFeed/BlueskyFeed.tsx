@@ -1,3 +1,5 @@
+import { RichText, Facet, RichTextSegment } from '@atproto/api'
+
 import { HeartIcon } from '@heroicons/react/24/outline'
 import { ArrowPathRoundedSquareIcon } from '@heroicons/react/24/outline'
 import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
@@ -34,6 +36,29 @@ export function PostMeta(props: { replyCount: number; repostCount: number; likeC
   )
 }
 
+function RichTextRenderer(props: { text: string; facets?: Facet[] }) {
+  const rt = new RichText({
+    text: props.text,
+    facets: props.facets,
+  })
+
+  return (
+    <span>
+      {Array.from(rt.segments()).map((segment: RichTextSegment, index: number) => {
+        if (segment.isLink() && segment.link) {
+          return (
+            <a key={index} href={segment.link.uri} target="_blank" rel="noopener noreferrer">
+              {segment.text}
+            </a>
+          )
+        }
+
+        return <span key={index}>{segment.text}</span>
+      })}
+    </span>
+  )
+}
+
 /**
  * Post author
  *
@@ -65,6 +90,7 @@ export function Post(props: {
   displayName: string
   handle: string
   content: string
+  facets: Facet[]
   replyCount: number
   repostCount: number
   likeCount: number
@@ -76,7 +102,9 @@ export function Post(props: {
     >
       <PostAuthor avatar={props.avatar} displayName={props.displayName} handle={props.handle} />
 
-      <PostContent>{props.content}</PostContent>
+      <PostContent>
+        <RichTextRenderer text={props.content} facets={props.facets} />;
+      </PostContent>
 
       <PostMeta
         replyCount={props.replyCount}
@@ -95,14 +123,6 @@ export function Post(props: {
  *
  */
 export async function BlueskyFeed(props: { posts: Array<any> }) {
-  //let posts = []
-
-  /*if (!props.mockData) {
-    posts = await getBskyPosts(props.numberOfPosts)
-  } else {
-    posts = props.mockData.slice(0, props.numberOfPosts)
-  }*/
-
   return (
     <section className={styles.wrapper}>
       <Container>
@@ -112,14 +132,15 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
             <br />
             <em>Bluesky</em>
           </h2>
+
           <div className={styles.posts}>
             <Grid columnsMedium={3} gutter>
               {props.posts.map((post: any, i: number) => {
                 const { author, record, embed, replyCount, repostCount, likeCount } = post.post
-
                 const { avatar, displayName, handle } = author
 
                 const content = record.text as string
+                const facets = record.facets as Facet[]
 
                 return (
                   <GridItem key={i}>
@@ -128,6 +149,7 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
                       displayName={displayName || ''}
                       handle={handle}
                       content={content}
+                      facets={facets}
                       replyCount={replyCount || 0}
                       repostCount={repostCount || 0}
                       likeCount={likeCount || 0}
@@ -140,6 +162,7 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
               })}
             </Grid>
           </div>
+
           <div className={styles.buttonWrapper}>
             <ButtonLink
               url="https://bsky.app/profile/roikles.bsky.social"

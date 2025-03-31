@@ -1,10 +1,4 @@
-import AtpAgent, { Agent, CredentialSession } from '@atproto/api'
-import { HeartIcon } from '@heroicons/react/24/outline'
-import { ArrowPathRoundedSquareIcon } from '@heroicons/react/24/outline'
-import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
-import { Grid, GridItem } from '@components/Grid/Grid'
-
-import styles from './BlueskyFeed.module.css' // External CSS for the styles
+import { Agent, CredentialSession } from '@atproto/api'
 import { BlueskyFeed } from './BlueskyFeed'
 
 /**
