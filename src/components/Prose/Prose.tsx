@@ -1,4 +1,4 @@
-import DOMPurify from 'dompurify'
+import DOMPurify from 'isomorphic-dompurify'
 import styles from './Prose.module.css'
 import { ReactNode } from 'react'
 

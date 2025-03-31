@@ -1,7 +1,7 @@
 'use client' // Required for client-side rendering in Next.js
 
 import React, { useEffect, useState } from 'react'
-import DOMPurify from 'dompurify'
+import DOMPurify from 'isomorphic-dompurify'
 
 /**
  * SVG Get Contents
