@@ -40,7 +40,7 @@ export const RenderBlocks: React.FC<{
         {blocks.map((block, index) => {
           const { blockType } = block as { blockType: string }
 
-          console.log(blockType)
+          //console.log(blockType)
 
           /**
            * Check for layout type
