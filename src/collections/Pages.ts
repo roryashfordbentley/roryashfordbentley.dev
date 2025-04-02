@@ -1,4 +1,6 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
+import { populatePublishedAt } from './hooks/populatePublishedAt'
 
 import { CodeBlockSchema } from '@blocks/Code/Schema'
 import { HeroBlockSchema } from '@blocks/Hero/Schema'
@@ -74,6 +76,11 @@ export const Pages: CollectionConfig = {
         ],
       }
     },
+  },
+  hooks: {
+    afterChange: [revalidatePage],
+    beforeChange: [populatePublishedAt],
+    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: {

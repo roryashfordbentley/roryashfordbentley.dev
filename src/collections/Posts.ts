@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugField } from '@/fields/slug'
+import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
 
 import { CodeBlockSchema } from '@blocks/Code/Schema'
 import { ProseBlockSchema } from '@blocks/Prose/Schema'
@@ -94,6 +95,11 @@ export const Posts: CollectionConfig = {
     },
     ...slugField(),
   ],
+  hooks: {
+    afterChange: [revalidatePost],
+    //afterRead: [populateAuthors],
+    afterDelete: [revalidateDelete],
+  },
   versions: {
     drafts: {
       autosave: {
