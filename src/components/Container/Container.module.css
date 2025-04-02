@@ -14,21 +14,17 @@
 
   grid-template-columns:
     4%
-    pxrem(50px)
-    pxrem(50px)
+    pxrem(100px)
     minmax(0, auto)
-    pxrem(50px)
-    pxrem(50px)
+    pxrem(100px)
     4%;
 
   @media (--m) {
     grid-template-columns:
       5%
-      pxrem(50px)
-      pxrem(50px)
+      pxrem(100px)
       minmax(0, auto)
-      pxrem(50px)
-      pxrem(50px)
+      pxrem(100px)
       5%;
 
     row-gap: var(--spacing-6);
@@ -38,10 +34,19 @@
     grid-template-columns:
       minmax(5%, auto)
       pxrem(100px)
-      minmax(auto, pxrem(140px))
-      clamp(400px, 50%, 850px)
-      minmax(auto, pxrem(140px))
+      minmax(400px, 850px)
       pxrem(100px)
+      minmax(5%, auto);
+
+    row-gap: var(--spacing-6);
+  }
+
+  @media (--xl) {
+    grid-template-columns:
+      minmax(5%, auto)
+      pxrem(220px)
+      minmax(400px, 850px)
+      pxrem(220px)
       minmax(5%, auto);
 
     row-gap: var(--spacing-6);
@@ -49,10 +54,10 @@
 }
 
 .item {
-  grid-column: 2 / 7;
+  grid-column: 2 / 5;
 
   @media (--m) {
-    grid-column: 2 / 7;
+    grid-column: 2 / 5;
   }
 }
 
@@ -61,10 +66,10 @@
 }
 
 .item--narrow {
-  grid-column: 2 / 7;
+  grid-column: 2 / 6;
 
   @media (--m) {
-    grid-column: 4 / 5;
+    grid-column: 3 / 4;
   }
 }
 

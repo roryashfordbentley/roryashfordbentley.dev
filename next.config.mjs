@@ -11,6 +11,12 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  // Attempting to fix issue with
+  // Failed to generate cache key for URL {
+  // href: 'https://bsky.social/xrpc/com.atproto.server.createSession',
+  experimental: {
+    serverComponentsHmrCache: false, // defaults to true
+  },
 }
 
 export default withPayload(nextConfig)
