@@ -55,7 +55,7 @@
   margin-bottom: var(--spacing-6);
 
   figure {
-    width: pxrem(40);
+    width: pxrem(40px);
   }
 
   path {
