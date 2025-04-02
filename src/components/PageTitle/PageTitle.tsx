@@ -1,7 +1,6 @@
 import { Container, ContainerItem } from '@components/Container/Container'
 import styles from './PageTitle.module.css'
 import { Grid, GridItem } from '../Grid/Grid'
-import { G } from 'vitest/dist/chunks/reporters.d.CqBhtcTq.js'
 
 export const PageTitle = (props: { title: string; description?: string }) => {
   return (
