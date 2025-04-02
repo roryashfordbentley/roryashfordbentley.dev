@@ -1,8 +1,12 @@
 .embla {
   overflow: hidden;
   --slide-spacing: var(--spacing-6);
-  --slide-size: pxrem(500px);
-  --slide-offset: 28%;
+  --slide-size: pxrem(300px);
+  --slide-size-m: pxrem(400px);
+  --slide-size-l: pxrem(500px);
+  --slide-offset: 5%;
+  --slide-offset-m: 5%;
+  --slide-offset-l: 28%;
 }
 
 .container {
@@ -18,6 +22,22 @@
 
   &:first-child {
     margin-left: var(--slide-offset);
+
+    @media (--m) {
+      margin-left: var(--slide-offset-m);
+    }
+
+    @media (--l) {
+      margin-left: var(--slide-offset-l);
+    }
+  }
+
+  @media (--m) {
+    flex: 0 0 var(--slide-size-m);
+  }
+
+  @media (--l) {
+    flex: 0 0 var(--slide-size-l);
   }
 }
 

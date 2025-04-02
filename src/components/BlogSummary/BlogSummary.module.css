@@ -9,7 +9,11 @@
 
 .header {
   /* the first slide should also have this offset margin */
-  margin-left: 28%;
+  margin-left: 5%;
+
+  @media (--l) {
+    margin-left: 28%;
+  }
 }
 
 .title {
@@ -19,7 +23,7 @@
 
 .description {
   color: var(--theme-accent-tint);
-  font-size: var(--font-size-5);
+  font-size: var(--font-size-3);
 
   letter-spacing: -0.05em;
   margin-bottom: var(--spacing-8);
