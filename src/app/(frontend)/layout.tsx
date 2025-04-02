@@ -19,6 +19,8 @@ import { Footer } from '@/components/Footer/Footer'
 import { LogoLink } from '@components/LogoLink/LogoLink'
 import { MainNav } from '@components/MainNav/MainNav'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
+import { Content } from '@components/Content/Content'
+import { FooterContainer } from '@/components/Footer/Footer.container'
 
 export const metadata: Metadata = {
   title: 'R/AB website',
@@ -66,12 +68,16 @@ const navInstance = (
 var themeToggleInstance = <ThemeToggle />
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const isLocal = process.env.NODE_ENV === 'development'
+
   return (
     <html lang="en" className={inter.className}>
-      <body>
-        <Header logo={logoInstance} navMenu={navInstance} themeToggle={themeToggleInstance} />
-        {children}
-        <Footer />
+      <body className={isLocal ? 'dev' : ''}>
+        <Content>
+          <Header logo={logoInstance} navMenu={navInstance} themeToggle={themeToggleInstance} />
+          {children}
+        </Content>
+        <FooterContainer />
       </body>
     </html>
   )

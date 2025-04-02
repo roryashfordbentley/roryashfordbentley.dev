@@ -1,0 +1,33 @@
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-1);
+  background-color: var(--theme-accent);
+  width: pxrem(50px);
+  height: pxrem(50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3);
+
+  path {
+    fill: var(--theme-background);
+  }
+
+  &:hover {
+    background-color: var(--theme-accent-tint);
+  }
+}
+
+.buttonDisabled {
+  cursor: not-allowed;
+  background: #ded9cf;
+
+  path {
+    fill: #c9bea5;
+  }
+
+  &:hover {
+    background-color: #ded9cf;
+  }
+}

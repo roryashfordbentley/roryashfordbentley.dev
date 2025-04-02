@@ -10,11 +10,14 @@ import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
 // Collection Imports
+import { Footer } from './collections/Footer'
 import { Posts } from './collections/Posts'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { SocialMediaLinks } from './collections/SocialMediaLinks'
+import { Tags } from './collections/Tags'
+
 // Global Imports (*note: also stored in src/collections)
 import { Settings } from './collections/Settings'
 import { NavPrimary } from './collections/NavPrimary'
@@ -43,8 +46,8 @@ export default buildConfig({
       collections: ['posts', 'pages'],
     },
   },
-  collections: [Posts, Pages, Users, Media],
-  globals: [Settings, NavPrimary, SocialMediaLinks],
+  collections: [Posts, Pages, Users, Media, Tags],
+  globals: [Settings, NavPrimary, SocialMediaLinks, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import dateFormatter from '@scripts/dateFormatter'
 import styles from './CardArticle.module.css'
+import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 
 interface CardArticleProps {
   title: string
@@ -31,11 +32,22 @@ export const CardArticle = ({
       `}
     >
       <figure className={styles.figure}>
-        {imageSrc && <Image src={imageSrc} alt={imageAlt ?? ''} fill />}
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? ''}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1500px) 50vw, 50vw"
+          />
+        )}
       </figure>
+
       <div className={styles.content}>
         {date && (
           <time className={styles.date} dateTime={dateFormatter(date).machineReadableDateString}>
+            <span className={styles.dateIcon}>
+              <InlineSVG svgPath="/icons/calendar.svg" />
+            </span>
             {dateFormatter(date).readableDateString}
           </time>
         )}

@@ -3,9 +3,10 @@
   height: auto;
 }
 
-.svg {
+.background {
+  fill: var(--theme-accent);
 }
 
-.shape {
-  fill: var(--theme-primary);
+.foreground {
+  fill: var(--theme-background);
 }

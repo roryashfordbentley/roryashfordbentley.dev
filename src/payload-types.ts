@@ -54,6 +54,7 @@ export type SupportedTimezones =
   | 'Asia/Singapore'
   | 'Asia/Tokyo'
   | 'Asia/Seoul'
+  | 'Australia/Brisbane'
   | 'Australia/Sydney'
   | 'Pacific/Guam'
   | 'Pacific/Noumea'
@@ -70,6 +71,7 @@ export interface Config {
     pages: Page;
     users: User;
     media: Media;
+    tags: Tag;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -81,6 +83,7 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -93,11 +96,13 @@ export interface Config {
     Settings: Setting;
     navPrimary: NavPrimary;
     socialMediaLinks: SocialMediaLink;
+    Footer: Footer;
   };
   globalsSelect: {
     Settings: SettingsSelect<false> | SettingsSelect<true>;
     navPrimary: NavPrimarySelect<false> | NavPrimarySelect<true>;
     socialMediaLinks: SocialMediaLinksSelect<false> | SocialMediaLinksSelect<true>;
+    Footer: FooterSelect<false> | FooterSelect<true>;
   };
   locale: null;
   user: User & {
@@ -156,6 +161,8 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
+  tags?: (string | Tag)[] | null;
+  relatedPosts?: (string | Post)[] | null;
   layout?:
     | (
         | {
@@ -265,11 +272,24 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: string;
+  title: string;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
   id: string;
   title?: string | null;
+  description?: string | null;
   featuredImage?: (string | null) | Media;
   content?: {
     root: {
@@ -349,6 +369,51 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'bigImage';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            informationBoxTitle?: string | null;
+            informationBoxSubtitle?: string | null;
+            informationBoxContent?: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'informationBox';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            gridListBlockTitle?: string | null;
+            gridListBlockDescription?: string | null;
+            gridListBlockList?:
+              | {
+                  gridListBlockItemImage?: (string | null) | Media;
+                  gridListBlockItemTitle?: string | null;
+                  gridListBlockItemDescription?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'gridList';
           }
       )[]
     | null;
@@ -491,6 +556,10 @@ export interface PayloadLockedDocument {
         value: string | Media;
       } | null)
     | ({
+        relationTo: 'tags';
+        value: string | Tag;
+      } | null)
+    | ({
         relationTo: 'payload-jobs';
         value: string | PayloadJob;
       } | null);
@@ -545,6 +614,8 @@ export interface PostsSelect<T extends boolean = true> {
   description?: T;
   featuredImage?: T;
   content?: T;
+  tags?: T;
+  relatedPosts?: T;
   layout?:
     | T
     | {
@@ -589,6 +660,7 @@ export interface PostsSelect<T extends boolean = true> {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
+  description?: T;
   featuredImage?: T;
   content?: T;
   layout?:
@@ -631,6 +703,33 @@ export interface PagesSelect<T extends boolean = true> {
               caption?: T;
               credit?: T;
               creditLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+        informationBox?:
+          | T
+          | {
+              blockLayoutField?: T;
+              informationBoxTitle?: T;
+              informationBoxSubtitle?: T;
+              informationBoxContent?: T;
+              id?: T;
+              blockName?: T;
+            };
+        gridList?:
+          | T
+          | {
+              blockLayoutField?: T;
+              gridListBlockTitle?: T;
+              gridListBlockDescription?: T;
+              gridListBlockList?:
+                | T
+                | {
+                    gridListBlockItemImage?: T;
+                    gridListBlockItemTitle?: T;
+                    gridListBlockItemDescription?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -711,6 +810,17 @@ export interface MediaSelect<T extends boolean = true> {
               filename?: T;
             };
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -822,6 +932,34 @@ export interface SocialMediaLink {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Footer".
+ */
+export interface Footer {
+  id: string;
+  footerContactTitle?: string | null;
+  footerContactEmail?: string | null;
+  footerSocialTitle?: string | null;
+  footerSocialLinksList?:
+    | {
+        footerSocialTitle?: string | null;
+        footerSocialLink?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  footerToolsTitle?: string | null;
+  footerToolsList?:
+    | {
+        footerToolsTitle?: string | null;
+        footerToolsLink?: string | null;
+        footerToolsIcon?: (string | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "Settings_select".
  */
 export interface SettingsSelect<T extends boolean = true> {
@@ -857,6 +995,34 @@ export interface SocialMediaLinksSelect<T extends boolean = true> {
         name?: T;
         link?: T;
         'icon '?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  footerContactTitle?: T;
+  footerContactEmail?: T;
+  footerSocialTitle?: T;
+  footerSocialLinksList?:
+    | T
+    | {
+        footerSocialTitle?: T;
+        footerSocialLink?: T;
+        id?: T;
+      };
+  footerToolsTitle?: T;
+  footerToolsList?:
+    | T
+    | {
+        footerToolsTitle?: T;
+        footerToolsLink?: T;
+        footerToolsIcon?: T;
         id?: T;
       };
   updatedAt?: T;

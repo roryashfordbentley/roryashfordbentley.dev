@@ -1,11 +1,9 @@
 import { getPayload } from 'payload'
 import { RenderBlocks } from '@blocks/RenderBlocks'
 import configPromise from '@payload-config'
-import { Media } from '@/payload-types'
 
-import { ButtonLink } from '@components/ButtonLink/ButtonLink'
-import { Hero } from '@components/Hero/Hero'
-import { BlueskyFeed } from '@components/BlueskyFeed/BlueskyFeed'
+import { BlueskyFeedContainer } from '@components/BlueskyFeed/BlueskyFeed.container'
+import { BlogSummaryContainer } from '@/components/BlogSummary/BlogSummary.container'
 
 /**
  * Load the homepage content from Payload
@@ -39,8 +37,9 @@ export default async function HomePage() {
   return (
     <>
       <main>
-        <BlueskyFeed numberOfPosts={3} />
         <RenderBlocks blocks={layout} />
+        <BlogSummaryContainer />
+        <BlueskyFeedContainer />
       </main>
     </>
   )

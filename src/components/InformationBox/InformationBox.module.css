@@ -1,0 +1,42 @@
+.wrapper {
+  background-color: var(--theme-background-tint);
+  padding: var(--spacing-5) 0;
+
+  @media (--l) {
+    padding: var(--spacing-9) 0;
+  }
+}
+
+.inner {
+  @media (--m) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-weight: var(--font-weight-medium);
+  color: var(--theme-accent-tint);
+
+  em {
+    font-style: normal;
+    color: var(--theme-accent);
+  }
+
+  @media (--m) {
+    width: 30%;
+  }
+}
+
+.content {
+  color: var(--theme-foreground-tint);
+
+  p {
+    margin-bottom: var(--spacing-3);
+  }
+
+  @media (--m) {
+    width: 50%;
+    font-size: var(--font-size-3);
+  }
+}

@@ -69,7 +69,7 @@ mongodump --uri="mongodb://<host>:<port>/<database_name>" --out ~/Desktop/mongod
 #### Restore
 
 ```sh
-mongorestore --uri="mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database_name>" ~/Desktop/mongodb-backup/<database_name>
+mongorestore --uri="mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database_name>" ~/Desktop/mongodb-backup/<database_name> --drop
 ```
 
 ### Migrate from MongoDB Atlas cluster (remote to local)
@@ -83,5 +83,5 @@ mongodump --uri="mongodb://127.0.0.1:27017/<local_database_name>" --out ~/Deskto
 #### Restore
 
 ```sh
-mongorestore --uri="mongodb+srv://<username>:<password>@<host>/<remote_database_name>" ~/Desktop/mongodb-backup/<local_database_name>
+mongorestore --uri="mongodb+srv://<username>:<password>@<host>/<remote_database_name>" ~/Desktop/mongodb-backup/<local_database_name> --drop
 ```

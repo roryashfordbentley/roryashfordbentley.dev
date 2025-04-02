@@ -18,7 +18,25 @@ export const Default: Story = {
   args: {
     url: 'https://www.roryashfordbentley.dev',
     target: '_blank',
-    label: 'Example button',
+    label: 'Button Text',
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    url: 'https://www.roryashfordbentley.dev',
+    target: '_blank',
+    label: 'Button Text',
+    type: 'secondary',
+  },
+}
+
+export const Tertiary: Story = {
+  args: {
+    url: 'https://www.roryashfordbentley.dev',
+    target: '_blank',
+    label: 'Button Text',
+    type: 'tertiary',
   },
 }
 
@@ -26,7 +44,7 @@ export const Outline: Story = {
   args: {
     url: 'https://www.roryashfordbentley.dev',
     target: '_blank',
-    label: 'Example outline button',
+    label: 'Button Text',
     type: 'outline',
   },
 }

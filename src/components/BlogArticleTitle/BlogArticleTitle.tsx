@@ -1,6 +1,7 @@
-import { Media } from '@/payload-types'
-import Image from 'next/image'
+import { InlineSVG } from '@components/InlineSVG/InlineSVG'
+
 import styles from './BlogArticleTitle.module.css' // External CSS for the styles
+import { Container, ContainerItem } from '@components/Container/Container'
 
 export const BlogArticleTitle = (props: {
   title: string
@@ -9,25 +10,48 @@ export const BlogArticleTitle = (props: {
   datePosted: string
   readingTimeLabel?: string
   readingTime?: string
+  image?: React.ReactNode
 }) => {
   return (
-    <section className={styles.grid}>
-      <div className={styles.content}>
-        {props.title && <h1 className={styles.title}>{props.title}</h1>}
-        {props.description && <p className={styles.description}>{props.description}</p>}
-      </div>
+    <section className={styles.wrapper}>
+      <header className={styles.inner}>
+        <Container>
+          <ContainerItem>
+            <div className={styles.content}>
+              {props.title && <h1 className={styles.title}>{props.title}</h1>}
+              {props.description && <p className={styles.description}>{props.description}</p>}
+            </div>
 
-      <aside className={styles.meta}>
-        <div className={styles.metaItem}>
-          <span className={styles.metaItemTitle}>{props.datePostedLabel ?? 'Date Posted'}</span>
-          <span className={styles.metaItemValue}>{props.datePosted ?? ''}</span>
-        </div>
+            <aside className={styles.meta}>
+              <div className={styles.metaItem}>
+                <div className={styles.metaIcon}>
+                  <InlineSVG svgPath="/icons/calendar.svg" />
+                </div>
 
-        <div className={styles.metaItem}>
-          <span className={styles.metaItemTitle}>{props.readingTimeLabel ?? 'Reading time'}</span>
-          <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>
-        </div>
-      </aside>
+                <span className={styles.metaItemValue}>{props.datePosted ?? ''}</span>
+              </div>
+
+              <div className={styles.metaItem}>
+                <div className={styles.metaIcon}>
+                  <InlineSVG svgPath="/icons/book.svg" />
+                </div>
+
+                <span className={styles.metaItemTitle}>
+                  {props.readingTimeLabel ?? 'Reading time'}:
+                </span>
+
+                <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>
+              </div>
+            </aside>
+          </ContainerItem>
+        </Container>
+      </header>
+
+      <Container>
+        <ContainerItem>
+          {props.image && <div className={styles.coverImage}>{props.image}</div>}
+        </ContainerItem>
+      </Container>
     </section>
   )
 }

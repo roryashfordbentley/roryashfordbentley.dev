@@ -17,7 +17,6 @@ import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { LivePreviewListener } from '@components/utils/LivePreviewListener'
 import { Container, ContainerItem } from '@components/Container/Container'
 import { BlogArticleTitle } from '@/components/BlogArticleTitle/BlogArticleTitle'
-import { FeaturedImage } from '@/components/FeaturedImage/FeaturedImage'
 
 /**
  * Load the blog post data from Payload
@@ -69,17 +68,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <LivePreviewListener />
 
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="full">
           <BlogArticleTitle
             title={title}
             description={description}
             datePosted={date}
             readingTime="5 minutes"
+            image={image}
           ></BlogArticleTitle>
-        </ContainerItem>
-
-        <ContainerItem layout="full">
-          <FeaturedImage image={image} />
         </ContainerItem>
 
         <ContainerItem layout="narrow">

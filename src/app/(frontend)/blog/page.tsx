@@ -1,15 +1,18 @@
 import configPromise from '@payload-config'
 import { Media } from '@/payload-types'
 import { getPayload } from 'payload'
+
+import styles from './PageTitle.module.css'
 import React from 'react'
 
 //import type Media from 'payload'
 
 import { Container } from '@components/Container/Container'
 import { ContainerItem } from '@components/Container/Container'
-import { BlogGrid, BlogGridItem } from '@components/BlogGrid/BlogGrid'
+import { Grid, GridItem } from '@components/Grid/Grid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Pagination } from '@components/Pagination/Pagination'
+import { PageTitle } from '@components/PageTitle/PageTitle'
 
 export default async function Page({
   searchParams,
@@ -18,6 +21,22 @@ export default async function Page({
 }) {
   const payload = await getPayload({ config: configPromise })
 
+  /**
+   * Grab the Page content by finding a page with the slug Blog in the Pages collection
+   */
+  const blogPage = await payload.find({
+    collection: 'pages',
+    limit: 1,
+    pagination: false,
+    draft: true, // Required for live preview
+    where: {
+      slug: { equals: 'blog' },
+    },
+  })
+
+  const pageTitle = blogPage.docs?.[0]?.title ?? 'Blog'
+  const pageDescription = blogPage.docs?.[0]?.description ?? ''
+
   const { page = '1' } = await searchParams
 
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page)
@@ -25,7 +44,7 @@ export default async function Page({
   const posts = await payload.find({
     collection: 'posts',
     depth: 1,
-    limit: 3,
+    limit: 6,
     overrideAccess: false,
     page: currentPage,
   })
@@ -35,15 +54,16 @@ export default async function Page({
 
   return (
     <>
-      {`the current page number is ${page}`}
+      <PageTitle title={pageTitle} description={pageDescription} />
+
       <Container>
         <ContainerItem>
-          <BlogGrid>
-            {posts.docs.map((post) => {
+          <Grid columns={1} columnsMedium={6} gutter>
+            {posts.docs.map((post, index) => {
               const featuredImage = post.featuredImage as Media
 
               return (
-                <BlogGridItem key={post.id}>
+                <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
                   <CardArticle
                     imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
                     imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
@@ -52,11 +72,16 @@ export default async function Page({
                     date={post.createdAt ?? null}
                     url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
                   />
-                </BlogGridItem>
+                </GridItem>
               )
             })}
-          </BlogGrid>
-          <Pagination totalItems={posts.totalDocs} itemsPerPage={posts.limit} currentPage={page} />
+          </Grid>
+
+          <Pagination
+            totalItems={posts.totalDocs}
+            itemsPerPage={posts.limit}
+            currentPage={currentPage}
+          />
         </ContainerItem>
       </Container>
     </>

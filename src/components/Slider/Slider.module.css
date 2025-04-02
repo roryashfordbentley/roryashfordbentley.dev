@@ -1,0 +1,50 @@
+.embla {
+  overflow: hidden;
+  --slide-spacing: var(--spacing-6);
+  --slide-size: pxrem(300px);
+  --slide-size-m: pxrem(400px);
+  --slide-size-l: pxrem(500px);
+  --slide-offset: 5%;
+  --slide-offset-m: 5%;
+  --slide-offset-l: 28%;
+}
+
+.container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  gap: var(--slide-spacing);
+}
+
+.slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+
+  &:first-child {
+    margin-left: var(--slide-offset);
+
+    @media (--l) {
+      margin-left: var(--slide-offset-l);
+    }
+  }
+
+  @media (--m) {
+    flex: 0 0 var(--slide-size-m);
+  }
+
+  @media (--l) {
+    flex: 0 0 var(--slide-size-l);
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-left: var(--slide-offset);
+  margin-top: var(--spacing-7);
+
+  @media (--l) {
+    margin-left: var(--slide-offset-l);
+  }
+}

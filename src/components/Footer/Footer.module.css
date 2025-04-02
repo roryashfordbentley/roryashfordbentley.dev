@@ -1,0 +1,99 @@
+.wrapper {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  padding-top: var(--spacing-5);
+
+  @media (--m) {
+    padding-top: var(--spacing-7);
+  }
+
+  @media (--l) {
+    padding-top: var(--spacing-9);
+  }
+}
+
+.title {
+  color: var(--theme-accent);
+  font-size: var(--font-size-2);
+
+  @media (--m) {
+    font-size: var(--font-size-4);
+  }
+}
+
+.contact,
+.tools,
+.social {
+  margin-bottom: var(--spacing-7);
+
+  @media (--l) {
+    margin-bottom: var(--spacing-9);
+  }
+}
+
+.email {
+  font-size: var(--font-size-4);
+  letter-spacing: -0.07em;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (--m) {
+    font-size: var(--font-size-7);
+  }
+}
+
+.toolsList {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.toolIcon {
+  max-height: pxrem(30px);
+
+  @media (--m) {
+    max-height: pxrem(50px);
+  }
+}
+
+.social {
+  /*margin: var(--spacing-9) 0;*/
+}
+
+.socialList {
+  list-style: none;
+  padding: 0;
+}
+
+.socialItemLink {
+  display: inline-block;
+  padding: var(--spacing-2) 0;
+  text-decoration: none;
+}
+
+.bigText {
+  position: relative;
+  aspect-ratio: 13 / 1;
+  overflow: hidden;
+}
+
+.bigTextOverflow {
+  display: block;
+  position: absolute;
+
+  font-size: clamp(var(--font-size-1), 9vw, 8.5rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  letter-spacing: -0.07em;
+  color: var(--theme-accent);
+
+  @media (--l) {
+    font-size: clamp(var(--font-size-1), 10.1vw, 8.5rem);
+  }
+}

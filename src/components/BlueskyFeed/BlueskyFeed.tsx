@@ -1,65 +1,13 @@
-import AtpAgent, { Agent, CredentialSession } from '@atproto/api'
+import { RichText, Facet, RichTextSegment } from '@atproto/api'
+
 import { HeartIcon } from '@heroicons/react/24/outline'
 import { ArrowPathRoundedSquareIcon } from '@heroicons/react/24/outline'
 import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
 import { Grid, GridItem } from '@components/Grid/Grid'
+import { Container, ContainerItem } from '@components/Container/Container'
+import { ButtonLink } from '@components/ButtonLink/ButtonLink'
 
 import styles from './BlueskyFeed.module.css' // External CSS for the styles
-
-/**
- * Authenticate Bluesky user
- *
- * @returns AtP agent
- */
-const authenticateBlueskyUser = async () => {
-  const bskyIdentifier = process.env.BLUESKY_IDENTIFIER as string
-  const bskyAppPassword = process.env.BLUESKY_APP_PASSWORD as string
-
-  if (!bskyIdentifier || !bskyAppPassword) {
-    throw new Error(
-      'Missing credentials, are the keys BLUESKY_IDENTIFIER and BLUESKY_APP_PASSWORD set in the .env file?',
-    )
-  }
-
-  const session = new CredentialSession(new URL('https://bsky.social'))
-  const agent = new Agent(session)
-
-  try {
-    await session.login({
-      identifier: bskyIdentifier,
-      password: bskyAppPassword,
-    })
-
-    return { session, agent }
-  } catch (error) {
-    console.log(error)
-    throw new Error('Unable to authenticate Bluesky user.')
-  }
-}
-
-/**
- * Get Bluesky posts
- *
- * This function is used to fetch the latest Bluesky posts.
- */
-export async function getBskyPosts(numberOfPosts: number) {
-  if (numberOfPosts <= 0) {
-    throw new Error('Number of posts must be greater than 0.')
-  }
-
-  const agent = (await authenticateBlueskyUser()).agent
-
-  const response = await agent.getAuthorFeed({
-    actor: agent.assertDid,
-    includePins: false,
-    filter: 'posts_no_replies',
-    limit: numberOfPosts,
-  })
-
-  const posts = response.data.feed
-
-  return posts
-}
 
 /**
  * Post meta
@@ -85,6 +33,29 @@ export function PostMeta(props: { replyCount: number; repostCount: number; likeC
         <span className={styles.count}>{props.replyCount}</span>
       </div>
     </footer>
+  )
+}
+
+function RichTextRenderer(props: { text: string; facets?: Facet[] }) {
+  const rt = new RichText({
+    text: props.text,
+    facets: props.facets,
+  })
+
+  return (
+    <span>
+      {Array.from(rt.segments()).map((segment: RichTextSegment, index: number) => {
+        if (segment.isLink() && segment.link) {
+          return (
+            <a key={index} href={segment.link.uri} target="_blank" rel="noopener noreferrer">
+              {segment.text}
+            </a>
+          )
+        }
+
+        return <span key={index}>{segment.text}</span>
+      })}
+    </span>
   )
 }
 
@@ -119,15 +90,21 @@ export function Post(props: {
   displayName: string
   handle: string
   content: string
+  facets: Facet[]
   replyCount: number
   repostCount: number
   likeCount: number
+  variant?: 'secondary' | 'tertiary'
 }) {
   return (
-    <div className={styles.card}>
+    <div
+      className={`${styles.card} ${props.variant == 'secondary' ? styles[`cardSecondary`] : ''} ${props.variant == 'tertiary' ? styles[`cardTertiary`] : ''}`}
+    >
       <PostAuthor avatar={props.avatar} displayName={props.displayName} handle={props.handle} />
 
-      <PostContent>{props.content}</PostContent>
+      <PostContent>
+        <RichTextRenderer text={props.content} facets={props.facets} />;
+      </PostContent>
 
       <PostMeta
         replyCount={props.replyCount}
@@ -144,41 +121,57 @@ export function Post(props: {
  * This Component is used to display the latest Bluesky posts.
  * Including the author, content and meta information.
  *
- * mockData is an array of dummy posts. This allows for us to test the component in Storybook without
- * dealing with API and CORS errors.
  */
-export async function BlueskyFeed(props: { numberOfPosts: number; mockData?: any }) {
-  let posts = []
-
-  if (!props.mockData) {
-    posts = await getBskyPosts(props.numberOfPosts)
-  } else {
-    posts = props.mockData.slice(0, props.numberOfPosts)
-  }
-
+export async function BlueskyFeed(props: { posts: Array<any> }) {
   return (
-    <Grid columnsMedium={3} gutter>
-      {posts.map((post: any, i: number) => {
-        const { author, record, embed, replyCount, repostCount, likeCount } = post.post
+    <section className={styles.wrapper}>
+      <Container>
+        <ContainerItem>
+          <h2 className={styles.title}>
+            Latest posts from
+            <br />
+            <em>Bluesky</em>
+          </h2>
 
-        const { avatar, displayName, handle } = author
+          <div className={styles.posts}>
+            <Grid columnsMedium={3} gutter>
+              {props.posts.map((post: any, i: number) => {
+                const { author, record, embed, replyCount, repostCount, likeCount } = post.post
+                const { avatar, displayName, handle } = author
 
-        const content = record.text as string
+                const content = record.text as string
+                const facets = record.facets as Facet[]
 
-        return (
-          <GridItem key={i}>
-            <Post
-              avatar={avatar || ''}
-              displayName={displayName || ''}
-              handle={handle}
-              content={content}
-              replyCount={replyCount || 0}
-              repostCount={repostCount || 0}
-              likeCount={likeCount || 0}
+                return (
+                  <GridItem key={i}>
+                    <Post
+                      avatar={avatar || ''}
+                      displayName={displayName || ''}
+                      handle={handle}
+                      content={content}
+                      facets={facets}
+                      replyCount={replyCount || 0}
+                      repostCount={repostCount || 0}
+                      likeCount={likeCount || 0}
+                      variant={
+                        (i + 1) % 2 == 0 ? 'secondary' : (i + 1) % 3 == 0 ? 'tertiary' : undefined
+                      }
+                    />
+                  </GridItem>
+                )
+              })}
+            </Grid>
+          </div>
+
+          <div className={styles.buttonWrapper}>
+            <ButtonLink
+              url="https://bsky.app/profile/roikles.bsky.social"
+              label="View more on Bluesky"
+              type="tertiary"
             />
-          </GridItem>
-        )
-      })}
-    </Grid>
+          </div>
+        </ContainerItem>
+      </Container>
+    </section>
   )
 }

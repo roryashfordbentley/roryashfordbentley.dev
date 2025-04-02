@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import styles from './Grid.module.css'
 
 export const Grid = (props: {
-  children: ReactElement<typeof GridItem>[]
+  children: ReactElement<typeof GridItem> | ReactElement<typeof GridItem>[]
   columns?: number
   columnsMedium?: number
   columnsLarge?: number
@@ -19,7 +19,7 @@ export const Grid = (props: {
       className={`${styles.grid} ${props.gutter ? styles['grid--gutter'] : ''}`}
       style={style as React.CSSProperties}
     >
-      {props.children}
+      {Array.isArray(props.children) ? props.children : [props.children]}
     </div>
   )
 }

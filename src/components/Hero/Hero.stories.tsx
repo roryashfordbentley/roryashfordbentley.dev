@@ -20,7 +20,7 @@ export default meta
 
 export const Default: Story = {
   args: {
-    title: 'Rory Ashford-Bentley.',
+    title: 'Rory<br> Ashford-Bentley.',
     subtitle: 'Full-Stack Engineer.',
     description:
       'Passionate about creating digital solutions that make meaningful change and have a positive social impact.',
