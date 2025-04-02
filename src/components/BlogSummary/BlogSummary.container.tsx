@@ -16,5 +16,7 @@ export async function BlogSummaryContainer() {
     overrideAccess: false,
   })
 
+  console.log(posts.docs)
+
   return <BlogSummary posts={posts.docs} />
 }

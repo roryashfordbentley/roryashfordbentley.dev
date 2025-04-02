@@ -23,10 +23,6 @@
   &:first-child {
     margin-left: var(--slide-offset);
 
-    @media (--m) {
-      margin-left: var(--slide-offset-m);
-    }
-
     @media (--l) {
       margin-left: var(--slide-offset-l);
     }
@@ -46,4 +42,9 @@
   align-items: center;
   gap: var(--spacing-3);
   margin-left: var(--slide-offset);
+  margin-top: var(--spacing-7);
+
+  @media (--l) {
+    margin-left: var(--slide-offset-l);
+  }
 }
