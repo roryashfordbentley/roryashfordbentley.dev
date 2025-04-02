@@ -7,6 +7,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import styles from './Slider.module.css'
 
 import { EmblaCarouselType } from 'embla-carousel'
+import { ArrowButton } from '../ArrowButton/ArrowButton'
 
 type UsePrevNextButtonsType = {
   prevBtnDisabled: boolean
@@ -62,15 +63,16 @@ export const Slider = ({ children }: { children: React.ReactElement<typeof Slide
   return (
     <div className={styles.embla} ref={emblaRef}>
       <div className={styles.container}>{children}</div>
-      <div className={styles.controls}>
-        <div className={styles.buttons}>
-          <button className={styles.button} onClick={onPrevButtonClick} disabled={prevBtnDisabled}>
-            Prev
-          </button>
-          <button className={styles.button} onClick={onNextButtonClick} disabled={nextBtnDisabled}>
-            Next
-          </button>
-        </div>
+
+      <div className={styles.buttons}>
+        <ArrowButton
+          onClick={onPrevButtonClick}
+          disabled={prevBtnDisabled}
+          title="Previous"
+          type="prev"
+        />
+
+        <ArrowButton onClick={onNextButtonClick} disabled={nextBtnDisabled} title="Next" />
       </div>
     </div>
   )

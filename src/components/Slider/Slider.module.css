@@ -1,7 +1,8 @@
 .embla {
   overflow: hidden;
   --slide-spacing: var(--spacing-6);
-  --slide-size: pxrem(400px);
+  --slide-size: pxrem(500px);
+  --slide-offset: 28%;
 }
 
 .container {
@@ -14,26 +15,15 @@
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
   min-width: 0;
-  gap: var(--slide-spacing);
 
   &:first-child {
-    margin-left: 300px;
+    margin-left: var(--slide-offset);
   }
 }
 
-/**/
-
-.controls {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-content: space-between;
-  gap: 1.2rem;
-  margin-top: 1.8rem;
-}
-
 .buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
+  display: flex;
   align-items: center;
+  gap: var(--spacing-3);
+  margin-left: var(--slide-offset);
 }
