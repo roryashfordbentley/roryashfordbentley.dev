@@ -5,6 +5,7 @@ import { Container, ContainerItem } from '@components/Container/Container'
 
 import styles from './Footer.module.css'
 import Image from 'next/image'
+import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 
 const today = new Date()
 
@@ -16,23 +17,6 @@ export function Footer(props: {
   toolsTitle: string
   tools: Array<any>
 }) {
-  // TODO take business logic out and use the container/presentation pattern
-  // This requires an addition file i.e. footer.container.tsx
-  // we must find a way to prevent stprybook rendering containers as it will break
-
-  /*const payload = await getPayload({ config: configPromise })
-
-  const footerData = await payload.findGlobal({
-    slug: 'Footer', // TODO - change case of this slug without breaking the Payload content
-  })
-
-  const contactTitle = footerData.footerContactTitle || 'Contact'
-  const email = footerData.footerContactEmail || ''
-  const socialTitle = footerData.footerSocialTitle || 'Find me on'
-  const socialLinks = footerData.footerSocialLinksList || []
-  const toolsTitle = footerData.footerToolsTitle || 'Built with'
-  const tools = footerData.footerToolsList || []*/
-
   return (
     <footer className={styles.wrapper}>
       <Container>
@@ -64,13 +48,8 @@ export function Footer(props: {
                           typeof tool.footerToolsIcon !== 'string' &&
                           tool.footerToolsIcon.url && (
                             // TODO - load SVGs as paths
-                            <Image
-                              className={styles.toolIcon}
-                              src={tool.footerToolsIcon.url}
-                              alt={tool.footerToolsIcon.alt || 'Tool Icon'}
-                              width={50}
-                              height={50}
-                            />
+
+                            <InlineSVG svgPath={tool.footerToolsIcon.url} />
                           )}
                       </a>
                     </li>

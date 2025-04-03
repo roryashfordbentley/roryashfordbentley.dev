@@ -63,7 +63,7 @@ To move the database from local to remote server, or visa-versa the following co
 #### Backup
 
 ```sh
-mongodump --uri="mongodb://<host>:<port>/<database_name>" --out ~/Desktop/mongodb-backup
+mongodump --uri="mongodb://127.0.0.1:27017/<local_database_name>" --out ~/Desktop/mongodb-backup
 ```
 
 #### Restore
@@ -77,11 +77,11 @@ mongorestore --uri="mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<d
 #### Backup
 
 ```sh
-mongodump --uri="mongodb://127.0.0.1:27017/<local_database_name>" --out ~/Desktop/mongodb-backup
+mongodump --uri="mongodb+srv://<username>:<password>@<host>/<remote_database_name>" --out ~/Desktop/mongodb-backup
 ```
 
 #### Restore
 
 ```sh
-mongorestore --uri="mongodb+srv://<username>:<password>@<host>/<remote_database_name>" ~/Desktop/mongodb-backup/<local_database_name> --drop
+mongorestore --uri="mongodb://127.0.0.1:27017/<local_database_name>" ~/Desktop/mongodb-backup/<local_database_name> --drop
 ```

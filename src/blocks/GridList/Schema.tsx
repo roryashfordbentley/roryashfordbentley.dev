@@ -25,7 +25,7 @@ export const GridListBlockSchema: Block = {
         {
           name: 'gridListBlockItemImage',
           type: 'upload',
-          relationTo: 'media',
+          relationTo: 'icons',
         },
         {
           name: 'gridListBlockItemTitle',
