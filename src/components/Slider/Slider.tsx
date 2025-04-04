@@ -3,7 +3,7 @@
 import React, { ComponentPropsWithRef, useCallback, useEffect, useState } from 'react'
 
 import useEmblaCarousel from 'embla-carousel-react'
-
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 import styles from './Slider.module.css'
 
 import { EmblaCarouselType } from 'embla-carousel'
@@ -52,10 +52,24 @@ export const usePrevNextButtons = (
   }
 }
 
+type Axis = 'x' | 'y'
+
 export const Slider = ({ children }: { children: React.ReactElement<typeof Slide>[] }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'start',
-  })
+  const [forceWheelAxis, setForceWheelAxis] = useState<Axis | undefined>()
+  const [target, setTarget] = useState<Element | undefined>()
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align: 'start',
+      loop: false,
+      skipSnaps: true,
+    },
+    [
+      WheelGesturesPlugin({
+        forceWheelAxis,
+        target,
+      }),
+    ],
+  )
 
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
     usePrevNextButtons(emblaApi)
