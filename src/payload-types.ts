@@ -1054,7 +1054,7 @@ export interface Footer {
     | {
         footerToolsTitle?: string | null;
         footerToolsLink?: string | null;
-        footerToolsIcon?: (string | null) | Media;
+        footerToolsIcon?: (string | null) | Icon;
         id?: string | null;
       }[]
     | null;

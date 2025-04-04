@@ -78,7 +78,7 @@ export const Footer: GlobalConfig = {
               name: 'footerToolsIcon',
               label: 'Icon',
               type: 'upload',
-              relationTo: 'media',
+              relationTo: 'icons',
             },
           ],
         },
