@@ -44,8 +44,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const postData = await getBlogPost(slug)
 
-  //console.log(postData)
-
   const title = postData.title || ''
   const description = postData.description || ''
   const featuredImageData = (postData.featuredImage as Media) || ''

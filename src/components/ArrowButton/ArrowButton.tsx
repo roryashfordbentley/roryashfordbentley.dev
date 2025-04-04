@@ -10,8 +10,6 @@ export const ArrowButton = (props: {
   const disabled = props.disabled ?? false
   const svgPath = props.type === 'prev' ? 'icons/arrow-left.svg' : 'icons/arrow-right.svg'
 
-  console.log(svgPath)
-
   return (
     <button
       className={`${styles.button} ${props.type == 'prev' ? styles.buttonPrev : ''} ${

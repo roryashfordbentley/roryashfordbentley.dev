@@ -101,7 +101,6 @@ const PrevLink = (props: { currentPage: number }) => {
 const NextLink = (props: { currentPage: number; totalPages: number }) => {
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
-  //console.log(typeof props.currentPage)
   const searchParams = useSearchParams()
   const pathname = usePathname()
 

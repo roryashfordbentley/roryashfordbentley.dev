@@ -39,9 +39,6 @@ export const RenderBlocks: React.FC<{
       <Container>
         {blocks.map((block, index) => {
           const { blockType } = block as { blockType: string }
-
-          //console.log(blockType)
-
           /**
            * Check for layout type
            */
@@ -61,8 +58,6 @@ export const RenderBlocks: React.FC<{
             const Block = blockComponentsRegister[blockType]
 
             if (Block) {
-              //console.log(block)
-
               return (
                 <ContainerItem key={index} layout={itemLayout}>
                   <Block {...block} />

@@ -26,8 +26,6 @@ const queryBySlug = async (collection: CollectionSlug, slug: String) => {
     },
   })
 
-  //console.log(result.docs?.[0])
-
   return result.docs?.[0] || null
 }
 

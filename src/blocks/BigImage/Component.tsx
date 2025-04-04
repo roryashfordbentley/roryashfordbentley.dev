@@ -24,8 +24,6 @@ export const BigImageBlock: React.FC<BigImageBlockProps> = ({
 
   const img = <Image src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} />
 
-  //console.log(image)
-
   return (
     <div className="big-image-block">
       <BigImage image={img} caption={caption} credit={credit} creditLink={creditLink} />
