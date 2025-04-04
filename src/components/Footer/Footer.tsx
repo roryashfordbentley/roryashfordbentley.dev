@@ -47,9 +47,14 @@ export function Footer(props: {
                         {tool.footerToolsIcon &&
                           typeof tool.footerToolsIcon !== 'string' &&
                           tool.footerToolsIcon.url && (
-                            // TODO - load SVGs as paths
+                            /* HACK: this find/replace allows use to load images directly from the public folder and not via API which requires media to be on a remote store. As these are icons it should be OK but could do with a refactor probably. */
 
-                            <InlineSVG svgPath={tool.footerToolsIcon.url} />
+                            <InlineSVG
+                              svgPath={
+                                tool.footerToolsIcon.url?.replace('/api/icons/file/', './icons/') ||
+                                ''
+                              }
+                            />
                           )}
                       </a>
                     </li>
