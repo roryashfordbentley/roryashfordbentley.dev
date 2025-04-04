@@ -37,6 +37,13 @@ export const Media: CollectionConfig = {
         position: 'centre',
       },
     ],
+    formatOptions: {
+      // Specify the format options for the image field
+      format: 'webp',
+      options: {
+        quality: 80,
+      },
+    },
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*'],
   },
