@@ -1,0 +1,20 @@
+.wrapper {
+  background-color: var(--theme-accent);
+  padding: var(--spacing-9) 0;
+
+  @media (--m) {
+    padding: var(--spacing-10) 0;
+  }
+}
+
+.heading {
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: white;
+  margin-bottom: var(--spacing-5);
+  font-size: var(--font-size-6);
+
+  @media (--m) {
+    font-size: var(--font-size-8);
+  }
+}

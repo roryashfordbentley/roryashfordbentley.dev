@@ -3,6 +3,7 @@ import { RenderBlocks } from '@blocks/RenderBlocks'
 import configPromise from '@payload-config'
 import { Media } from '@/payload-types'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
 /**
  * Blocks
@@ -44,13 +45,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const postData = await getBlogPost(slug)
 
+  if (!postData) {
+    return notFound() //  404 page
+  }
+
   const title = postData.title || ''
   const description = postData.description || ''
   const featuredImageData = (postData.featuredImage as Media) || ''
   const content = postData.content || ''
   const layout = postData.layout || []
   const date = postData.createdAt || ''
-  const updatedDate = postData.updatedAt || ''
 
   const image = featuredImageData.url ? (
     <Image

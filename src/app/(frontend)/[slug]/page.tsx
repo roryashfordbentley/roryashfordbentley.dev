@@ -1,6 +1,7 @@
 import queryBySlug from '@scripts/queryBySlug'
 import Image from 'next/image'
 import { Media } from '@/payload-types'
+import { notFound } from 'next/navigation'
 
 import { LivePreviewListener } from '@/components/utils/LivePreviewListener'
 import { LexicalToJSX } from '@/components/utils/LexicalToJSX'
@@ -11,8 +12,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const pageData = await queryBySlug('pages', slug)
 
-  const image = pageData?.featuredImage as Media
+  if (!pageData) {
+    return notFound() //  404 page
+  }
 
+  const image = pageData?.featuredImage as Media
   const layout = pageData.layout || []
 
   return (
