@@ -19,13 +19,16 @@ export const GridListBlock: React.FC<GridListBlockProps> = ({
   gridListBlockDescription,
   gridListBlockList,
 }) => {
+  //console.log(gridListBlockList)
+
   return (
     <div className="grid-list-block">
       <GridList title={gridListBlockTitle} description={gridListBlockDescription}>
         {gridListBlockList.map((item, index) => (
           <GridListItem
             key={index}
-            iconPath={item.gridListBlockItemImage?.url || ''}
+            /* HACK: this find/replace allows use to load images directly from the public folder and not via API which requires media to be on a remote store. As these are icons it should be OK but could do with a refactor probably. */
+            iconPath={item.gridListBlockItemImage?.url?.replace('/api/icons/file/', 'icons/') || ''}
             title={item.gridListBlockItemTitle}
             description={item.gridListBlockItemDescription}
           />

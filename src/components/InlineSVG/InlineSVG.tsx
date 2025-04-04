@@ -1,13 +1,9 @@
-'use client' // Required for client-side rendering in Next.js
-
 import { svgGetContents } from '@scripts/svgGetContents'
 
 import styles from './InlineSVG.module.css'
 
-export const InlineSVG = (props: { svgPath: string }) => {
-  const sanitisedSVGPath = svgGetContents(props.svgPath)
+export async function InlineSVG(props: { svgPath: string }) {
+  const sanitisedSVG = await svgGetContents(props.svgPath)
 
-  return (
-    <figure className={styles.inlineSvg} dangerouslySetInnerHTML={{ __html: sanitisedSVGPath }} />
-  )
+  return <figure className={styles.inlineSvg} dangerouslySetInnerHTML={{ __html: sanitisedSVG }} />
 }

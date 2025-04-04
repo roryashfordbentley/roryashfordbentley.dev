@@ -54,16 +54,22 @@
   gap: var(--spacing-2);
 }
 
-.toolIcon {
-  max-height: pxrem(30px);
-
-  @media (--m) {
-    max-height: pxrem(50px);
+.tool {
+  a {
+    display: block;
   }
-}
 
-.social {
-  /*margin: var(--spacing-9) 0;*/
+  svg {
+    max-height: pxrem(30px);
+
+    @media (--m) {
+      max-height: pxrem(50px);
+    }
+
+    path {
+      fill: white;
+    }
+  }
 }
 
 .socialList {
