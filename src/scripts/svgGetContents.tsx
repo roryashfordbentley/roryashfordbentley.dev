@@ -2,7 +2,7 @@ import DOMPurify from 'isomorphic-dompurify'
 
 export async function svgGetContents(svgPath: string): Promise<string | null> {
   try {
-    const res = await fetch(svgPath)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL || ''}/${svgPath}`)
 
     if (!res.ok) {
       console.error(`Failed to fetch SVG: ${res.statusText}`)
