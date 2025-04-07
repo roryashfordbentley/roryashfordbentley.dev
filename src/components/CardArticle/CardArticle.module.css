@@ -6,7 +6,7 @@
   position: relative;
   aspect-ratio: 16/9;
   border-radius: var(--radius-1);
-  background-color: var(--theme-accent);
+  background-color: var(--theme-accent-tint);
 
   img {
     overflow: hidden;
@@ -48,10 +48,6 @@
 
   @media (--l) {
     font-size: var(--font-size-4);
-  }
-
-  @media (--xl) {
-    font-size: var(--font-size-5);
   }
 }
 
