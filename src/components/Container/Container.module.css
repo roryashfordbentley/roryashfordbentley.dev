@@ -27,7 +27,7 @@
       pxrem(100px)
       5%;
 
-    row-gap: var(--spacing-6);
+    /*row-gap: var(--spacing-6);*/
   }
 
   @media (--l) {
@@ -38,7 +38,7 @@
       pxrem(100px)
       minmax(5%, auto);
 
-    row-gap: var(--spacing-6);
+    /*row-gap: var(--spacing-6);*/
   }
 
   @media (--xl) {
@@ -49,7 +49,7 @@
       pxrem(220px)
       minmax(5%, auto);
 
-    row-gap: var(--spacing-6);
+    /*row-gap: var(--spacing-6);*/
   }
 }
 
