@@ -12,6 +12,9 @@ import '@styles/typography.css'
 import '@components/Header/Header'
 import '@components/Footer/Footer'
 
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/Header/Header'
@@ -36,34 +39,29 @@ const inter = Inter({ subsets: ['latin'] })
 
 const logoInstance = <LogoLink link="/" />
 
+const payload = await getPayload({ config: configPromise })
+
+const navItems = await payload.findGlobal({
+  slug: 'navPrimary',
+})
+/**
+ * Change /home slug to /
+ */
+if (navItems?.items) {
+  navItems.items = navItems.items.map((item) => {
+    if (typeof item.page === 'object' && 'slug' in item.page && item.page.slug === 'home') {
+      console.log('Home page found')
+      item.page.slug = '/'
+
+      return item
+    }
+
+    return item
+  })
+}
+
 // Temp until we pull live data from Payload
-const navInstance = (
-  <MainNav
-    navItems={[
-      {
-        id: 1,
-        page: {
-          slug: 'home',
-          title: 'Home',
-        },
-      },
-      {
-        id: 2,
-        page: {
-          slug: 'work',
-          title: 'Work',
-        },
-      },
-      {
-        id: 3,
-        page: {
-          slug: 'blog',
-          title: 'Blog',
-        },
-      },
-    ]}
-  />
-)
+const navInstance = <MainNav navItems={navItems.items} />
 
 var themeToggleInstance = <ThemeToggle />
 
