@@ -4,9 +4,9 @@
 }
 
 .background {
-  fill: var(--theme-accent);
+  fill: var(--theme-background);
 }
 
 .foreground {
-  fill: var(--theme-background);
+  fill: var(--theme-accent);
 }
