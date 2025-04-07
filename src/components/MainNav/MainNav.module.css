@@ -7,14 +7,17 @@
   justify-content: flex-start;
   list-style: none;
   padding: 0;
+  letter-spacing: -0.05em;
 }
 
 .link {
+  text-decoration: none;
   position: relative;
   padding: var(--spacing-1) var(--spacing-3);
-  text-decoration-color: var(--theme-border);
+  color: var(--theme-background);
 
   &:hover {
-    text-decoration-color: var(--theme-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--theme-accent-tint);
   }
 }
