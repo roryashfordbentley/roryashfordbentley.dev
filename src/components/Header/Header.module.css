@@ -1,3 +1,7 @@
+.wrapper {
+  background-color: var(--theme-accent);
+}
+
 .inner {
   display: flex;
   justify-content: space-between;
