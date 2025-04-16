@@ -1,3 +1,5 @@
+'use client' // Is a client component because it uses onClick
+
 import styles from './ArrowButton.module.css'
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 

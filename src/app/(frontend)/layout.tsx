@@ -50,7 +50,6 @@ const navItems = await payload.findGlobal({
 if (navItems?.items) {
   navItems.items = navItems.items.map((item) => {
     if (typeof item.page === 'object' && 'slug' in item.page && item.page.slug === 'home') {
-      console.log('Home page found')
       item.page.slug = '/'
 
       return item
