@@ -49,7 +49,17 @@ export function BlueskyCard(props: {
 
       <Content>
         <RichTextRenderer text={props.content} facets={props.facets} />
-        {props.embed && <EmbedRenderer embed={props.embed} variant={props.variant} />}
+        {props.embed && (
+          <EmbedRenderer
+            embed={
+              props.embed as
+                | AppBskyEmbedImages.View
+                | AppBskyEmbedExternal.Main
+                | AppBskyEmbedRecord.Main
+            }
+            variant={props.variant}
+          />
+        )}
       </Content>
 
       <Meta
@@ -122,7 +132,7 @@ function RichTextRenderer(props: { text: string; facets?: Facet[] }) {
 }
 
 function EmbedRenderer(props: {
-  embed?: AppBskyEmbedImages.Main | AppBskyEmbedExternal.Main | AppBskyEmbedRecord.Main | null
+  embed?: AppBskyEmbedImages.View | AppBskyEmbedExternal.Main | AppBskyEmbedRecord.Main | null
   variant?: 'secondary' | 'tertiary'
 }) {
   if (!props.embed) {
@@ -152,7 +162,7 @@ function EmbedRenderer(props: {
       <BlueskyEmbedExternal
         link={props.embed.external.uri}
         title={props.embed.external.title}
-        thumb={props.embed.external.thumb}
+        thumb={typeof props.embed.external.thumb === 'string' ? props.embed.external.thumb : ''}
         thumbAlt={props.embed.external.title}
         description={props.embed.external.description}
         variant={props.variant}
