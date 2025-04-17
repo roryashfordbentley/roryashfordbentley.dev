@@ -6,6 +6,7 @@
 :root.dark {
   --theme-background: #0f1417;
   --theme-background-tint: #1b2227;
+  --theme-background-tint-2: #363d43;
 
   --theme-accent: #e43d11;
   --theme-accent-tint: #a03215;
@@ -13,6 +14,7 @@
 
   --theme-foreground: #ffffff;
   --theme-foreground-tint: #ece9e2;
+  --theme-foreground-tint-2: #d8d3c8;
 
   --theme-text: var(--theme-foreground);
 }
@@ -25,6 +27,7 @@
 :root {
   --theme-foreground: #0f1417;
   --theme-foreground-tint: #1b2227;
+  --theme-foreground-tint-2: #363d43;
 
   --theme-accent: #e43d11;
   --theme-accent-tint: #a03215;
@@ -32,6 +35,7 @@
 
   --theme-background: #ffffff;
   --theme-background-tint: #ece9e2;
+  --theme-background-tint-2: #d8d3c8;
 
   --theme-text: var(--theme-foreground);
 }
