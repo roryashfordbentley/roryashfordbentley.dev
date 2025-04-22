@@ -183,6 +183,20 @@ export interface Post {
              * Select the layout for this block
              */
             blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            heroBlockTitle: string;
+            heroBlockSubtitle: string;
+            heroBlockDescription: string;
+            heroBlockButtonText: string;
+            heroBlockButtonLink: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
             proseEditor: {
               root: {
                 type: string;
@@ -214,6 +228,61 @@ export interface Post {
             id?: string | null;
             blockName?: string | null;
             blockType: 'bigImage';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            informationBoxTitle?: string | null;
+            informationBoxSubtitle?: string | null;
+            informationBoxContent?: {
+              root: {
+                type: string;
+                children: {
+                  type: string;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'informationBox';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            gridListBlockTitle?: string | null;
+            gridListBlockDescription?: string | null;
+            gridListBlockList?:
+              | {
+                  gridListBlockItemImage?: (string | null) | Icon;
+                  gridListBlockItemTitle?: string | null;
+                  gridListBlockItemDescription?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'gridList';
+          }
+        | {
+            /**
+             * Select the layout for this block
+             */
+            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            videoEmbedURL?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'videoEmbed';
           }
       )[]
     | null;
@@ -283,6 +352,25 @@ export interface Tag {
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "icons".
+ */
+export interface Icon {
+  id: string;
+  name?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -424,25 +512,6 @@ export interface Page {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "icons".
- */
-export interface Icon {
-  id: string;
-  name?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -653,6 +722,18 @@ export interface PostsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        hero?:
+          | T
+          | {
+              blockLayoutField?: T;
+              heroBlockTitle?: T;
+              heroBlockSubtitle?: T;
+              heroBlockDescription?: T;
+              heroBlockButtonText?: T;
+              heroBlockButtonLink?: T;
+              id?: T;
+              blockName?: T;
+            };
         prose?:
           | T
           | {
@@ -669,6 +750,41 @@ export interface PostsSelect<T extends boolean = true> {
               caption?: T;
               credit?: T;
               creditLink?: T;
+              id?: T;
+              blockName?: T;
+            };
+        informationBox?:
+          | T
+          | {
+              blockLayoutField?: T;
+              informationBoxTitle?: T;
+              informationBoxSubtitle?: T;
+              informationBoxContent?: T;
+              id?: T;
+              blockName?: T;
+            };
+        gridList?:
+          | T
+          | {
+              blockLayoutField?: T;
+              gridListBlockTitle?: T;
+              gridListBlockDescription?: T;
+              gridListBlockList?:
+                | T
+                | {
+                    gridListBlockItemImage?: T;
+                    gridListBlockItemTitle?: T;
+                    gridListBlockItemDescription?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        videoEmbed?:
+          | T
+          | {
+              blockLayoutField?: T;
+              videoEmbedURL?: T;
               id?: T;
               blockName?: T;
             };

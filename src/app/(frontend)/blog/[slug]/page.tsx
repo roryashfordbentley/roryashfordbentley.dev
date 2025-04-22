@@ -49,6 +49,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     return notFound() //  404 page
   }
 
+  //console.log(JSON.stringify(postData.content, null, 4))
+
   const title = postData.title || ''
   const description = postData.description || ''
   const featuredImageData = (postData.featuredImage as Media) || ''

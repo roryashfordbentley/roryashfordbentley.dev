@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { BlocksFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
+import { BlocksFeature, FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { slugField } from '@/fields/slug'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
 
@@ -9,6 +9,7 @@ import { BigImageBlockSchema } from '@blocks/BigImage/Schema'
 import { HeroBlockSchema } from '@blocks/Hero/Schema'
 import { InformationBoxBlockSchema } from '@blocks/InformationBox/Schema'
 import { GridListBlockSchema } from '@blocks/GridList/Schema'
+import { VideoEmbedBlockSchema } from '@/blocks/VideoEmbed/Schema'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -69,8 +70,20 @@ export const Posts: CollectionConfig = {
               BigImageBlockSchema,
               InformationBoxBlockSchema,
               GridListBlockSchema,
+              VideoEmbedBlockSchema,
+              {
+                slug: 'testBlock',
+                fields: [
+                  {
+                    name: 'testField',
+                    type: 'text',
+                    label: 'test text field',
+                  },
+                ],
+              },
             ],
           }),
+          FixedToolbarFeature(),
         ],
       }),
     },
@@ -108,6 +121,7 @@ export const Posts: CollectionConfig = {
         BigImageBlockSchema,
         InformationBoxBlockSchema,
         GridListBlockSchema,
+        VideoEmbedBlockSchema,
       ],
     },
     ...slugField(),

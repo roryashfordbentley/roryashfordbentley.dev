@@ -10,6 +10,7 @@ import { ProseBlock } from '@blocks/Prose/Component'
 import { BigImageBlock } from '@blocks/BigImage/Component'
 import { InformationBoxBlock } from '@blocks/InformationBox/Component'
 import { GridListBlock } from '@blocks/GridList/Component'
+import { VideoEmbedBlock } from './VideoEmbed/Component'
 
 /**
  * Block Components
@@ -24,6 +25,7 @@ const blockComponentsRegister: { [key: string]: React.FC<any> } = {
   bigImage: BigImageBlock,
   informationBox: InformationBoxBlock,
   gridList: GridListBlock,
+  videoEmbed: VideoEmbedBlock,
 }
 
 /**
