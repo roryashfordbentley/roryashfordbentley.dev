@@ -6,6 +6,9 @@ import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
 import { CodeBlockSchema } from '@blocks/Code/Schema'
 import { ProseBlockSchema } from '@blocks/Prose/Schema'
 import { BigImageBlockSchema } from '@blocks/BigImage/Schema'
+import { HeroBlockSchema } from '@blocks/Hero/Schema'
+import { InformationBoxBlockSchema } from '@blocks/InformationBox/Schema'
+import { GridListBlockSchema } from '@blocks/GridList/Schema'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -60,7 +63,13 @@ export const Posts: CollectionConfig = {
         features: ({ defaultFeatures, rootFeatures }) => [
           ...defaultFeatures,
           BlocksFeature({
-            blocks: [CodeBlockSchema, ProseBlockSchema],
+            blocks: [
+              CodeBlockSchema,
+              HeroBlockSchema,
+              BigImageBlockSchema,
+              InformationBoxBlockSchema,
+              GridListBlockSchema,
+            ],
           }),
         ],
       }),
@@ -91,7 +100,15 @@ export const Posts: CollectionConfig = {
       type: 'blocks', // required
       minRows: 1,
       maxRows: 20,
-      blocks: [CodeBlockSchema, ProseBlockSchema, BigImageBlockSchema],
+      blocks: [
+        // required
+        CodeBlockSchema,
+        HeroBlockSchema,
+        ProseBlockSchema,
+        BigImageBlockSchema,
+        InformationBoxBlockSchema,
+        GridListBlockSchema,
+      ],
     },
     ...slugField(),
   ],
