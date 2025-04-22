@@ -3,7 +3,7 @@ import { RenderBlocks } from '@blocks/RenderBlocks'
 import configPromise from '@payload-config'
 
 import { BlueskyFeedContainer } from '@components/BlueskyFeed/BlueskyFeed.container'
-import { BlogSummaryContainer } from '@/components/BlogSummary/BlogSummary.container'
+import { BlogSummaryContainer } from '@components/BlogSummary/BlogSummary.container'
 
 /**
  * Load the homepage content from Payload
