@@ -84,7 +84,6 @@
 }
 
 .coverImage {
-  background-color: var(--theme-foreground);
   border-radius: var(--radius-1);
   margin-top: calc(var(--spacing-7) * -1);
 

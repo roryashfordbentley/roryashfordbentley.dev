@@ -51,10 +51,47 @@ export const Posts: CollectionConfig = {
       name: 'description',
       type: 'textarea',
     },
-    {
+    /*{
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media',
+    },*/
+    {
+      name: 'featuredImageWithMetadata',
+      type: 'group',
+      fields: [
+        {
+          name: 'featuredImage',
+          type: 'upload',
+          relationTo: 'media',
+        },
+        {
+          name: 'caption',
+          type: 'text',
+          label: 'Caption (optional)',
+        },
+        {
+          type: 'row',
+          fields: [
+            {
+              name: 'credit',
+              type: 'text',
+              label: 'Credit (optional)',
+            },
+            {
+              name: 'creditLink',
+              type: 'text',
+              label: 'Credit Link (optional)',
+              validate: (value: any) => {
+                if (value && !/^https?:\/\/[^\s]+$/.test(value)) {
+                  return 'Credit must be a valid URL if provided.'
+                }
+                return true
+              },
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'content',

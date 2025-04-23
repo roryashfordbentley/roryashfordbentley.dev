@@ -18,6 +18,7 @@ import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { LivePreviewListener } from '@components/utils/LivePreviewListener'
 import { Container, ContainerItem } from '@components/Container/Container'
 import { BlogArticleTitle } from '@/components/BlogArticleTitle/BlogArticleTitle'
+import { BigImage } from '@/components/BigImage/BigImage'
 
 /**
  * Load the blog post data from Payload
@@ -49,21 +50,28 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     return notFound() //  404 page
   }
 
-  //console.log(JSON.stringify(postData.content, null, 4))
+  //console.log(JSON.stringify(postData.featuredImageWithMetadata, null, 4))
 
   const title = postData.title || ''
   const description = postData.description || ''
-  const featuredImageData = (postData.featuredImage as Media) || ''
+  const featuredImage = (postData?.featuredImageWithMetadata?.featuredImage as Media) || ''
+  const featuredImageCaption = postData?.featuredImageWithMetadata?.caption || ''
+  const featuredImageCredit = postData?.featuredImageWithMetadata?.credit || ''
+  const featuredImageCreditLink = postData?.featuredImageWithMetadata?.creditLink || ''
   const content = postData.content || ''
   const layout = postData.layout || []
   const date = postData.createdAt || ''
 
-  const image = featuredImageData.url ? (
-    <Image
-      src={featuredImageData.url ?? ''}
-      alt={featuredImageData?.alt ?? ''}
-      width={1330}
-      height={720}
+  const image = featuredImage.url ? (
+    <Image src={featuredImage.url ?? ''} alt={featuredImage?.alt ?? ''} width={1330} height={720} />
+  ) : null
+
+  const bigImage = featuredImage ? (
+    <BigImage
+      image={image ?? ''}
+      caption={featuredImageCaption}
+      credit={featuredImageCredit}
+      creditLink={featuredImageCreditLink}
     />
   ) : null
 
@@ -78,7 +86,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             description={description}
             datePosted={date}
             readingTime="5 minutes"
-            image={image}
+            image={bigImage}
           ></BlogArticleTitle>
         </ContainerItem>
 

@@ -147,7 +147,12 @@ export interface Post {
   id: string;
   title?: string | null;
   description?: string | null;
-  featuredImage?: (string | null) | Media;
+  featuredImageWithMetadata?: {
+    featuredImage?: (string | null) | Media;
+    caption?: string | null;
+    credit?: string | null;
+    creditLink?: string | null;
+  };
   content?: {
     root: {
       type: string;
@@ -706,7 +711,14 @@ export interface PayloadMigration {
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
-  featuredImage?: T;
+  featuredImageWithMetadata?:
+    | T
+    | {
+        featuredImage?: T;
+        caption?: T;
+        credit?: T;
+        creditLink?: T;
+      };
   content?: T;
   tags?: T;
   relatedPosts?: T;
