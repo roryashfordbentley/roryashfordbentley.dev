@@ -82,9 +82,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           ></BlogArticleTitle>
         </ContainerItem>
 
-        <ContainerItem layout="narrow">
+        <ContainerItem>
           {content && (
-            <Prose>
+            <Prose padded>
               <LexicalToJSX data={content} />
             </Prose>
           )}

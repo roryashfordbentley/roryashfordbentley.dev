@@ -10,7 +10,6 @@ export type VideoEmbedBlockProps = {
 export const VideoEmbedBlock: React.FC<VideoEmbedBlockProps> = ({ videoEmbedURL }) => {
   return (
     <div className="video-embed-block">
-      {videoEmbedURL}
       <VideoEmbed videoURL={videoEmbedURL || ''} />
     </div>
   )

@@ -17,16 +17,22 @@ type NodeTypes = DefaultNodeTypes
 const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) => ({
   ...defaultConverters,
   blocks: {
-    testBlock: ({ node }) => {
+    /*testBlock: ({ node }) => {
       //console.log('testBlock', node)
       return (
         <div className="test-block">
           <h2>{node.fields.testField}</h2>
         </div>
       )
-    },
-    videoEmbed: ({ node }) => {
-      return <VideoEmbedBlock videoEmbedURL={node.fields.videoEmbedURL} />
+    },*/
+    videoEmbed: ({ node }: { node: SerializedBlockNode }) => {
+      return (
+        <div
+          className={node.fields.blockLayoutField && `block-layout-${node.fields.blockLayoutField}`}
+        >
+          <VideoEmbedBlock videoEmbedURL={node.fields.videoEmbedURL} />
+        </div>
+      )
     },
   },
 })

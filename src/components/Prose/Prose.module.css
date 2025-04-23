@@ -1,7 +1,41 @@
-.contentWrapper {
-  max-width: pxrem(850px);
+.prose {
+}
+
+/* .payload-richtext is inherited from the lexical editor */
+:global(.payload-richtext) {
   line-height: 1.7;
   color: var(--theme-text);
+
+  display: grid;
+  grid-template-columns:
+    pxrem(100px)
+    minmax(0, auto)
+    pxrem(100px);
+
+  @media (--m) {
+    grid-template-columns:
+      pxrem(100px)
+      minmax(0, auto)
+      pxrem(100px);
+  }
+
+  @media (--l) {
+    grid-template-columns:
+      pxrem(100px)
+      minmax(400px, 850px)
+      pxrem(100px);
+  }
+
+  @media (--xl) {
+    grid-template-columns:
+      pxrem(220px)
+      minmax(400px, 850px)
+      pxrem(220px);
+  }
+
+  > * {
+    grid-column: 2 / 3;
+  }
 
   p,
   ul,
@@ -63,9 +97,14 @@
     font-weight: var(--font---font-weight-medium);
     color: var(--theme-secondary);
   }
+
+  > :global(.block-layout-full) {
+    grid-column: 1 / -1;
+    margin-bottom: var(--spacing-5);
+  }
 }
 
-.contentWrapper--padded {
+.prosePadded {
   padding-top: var(--spacing-8);
   padding-bottom: var(--spacing-8);
 }

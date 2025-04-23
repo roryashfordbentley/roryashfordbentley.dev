@@ -1,10 +1,5 @@
-import DOMPurify from 'isomorphic-dompurify'
 import styles from './Prose.module.css'
 import { ReactNode } from 'react'
-
-function cleanMarkup(htmlCode: string) {
-  return { __html: DOMPurify.sanitize(htmlCode) }
-}
 
 /**
  * The Prose component is used for areas on the site that output rich-text.
@@ -15,11 +10,6 @@ function cleanMarkup(htmlCode: string) {
  */
 export const Prose = ({ children, padded }: { children: ReactNode; padded?: boolean }) => {
   return (
-    <section
-      className={`${styles.contentWrapper} ${padded ? styles['contentWrapper--padded'] : ''}`}
-      //dangerouslySetInnerHTML={cleanMarkup(children as string)}
-    >
-      {children}
-    </section>
+    <section className={`${styles.prose} ${padded ? styles.prosePadded : ''}`}>{children}</section>
   )
 }
