@@ -85,7 +85,7 @@
 
 .bigText {
   position: relative;
-  aspect-ratio: 13 / 1;
+  aspect-ratio: 15 / 1;
   overflow: hidden;
 }
 
@@ -100,6 +100,10 @@
   color: var(--theme-accent);
 
   @media (--l) {
-    font-size: clamp(var(--font-size-1), 10.1vw, 8.5rem);
+    font-size: clamp(var(--font-size-1), 9vw, 8.5rem);
+  }
+
+  @media (--xl) {
+    font-size: clamp(var(--font-size-1), 9.5vw, 7.8rem);
   }
 }
