@@ -38,5 +38,5 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
 })
 
 export const LexicalToJSX = ({ data }: { data: SerializedEditorState }) => {
-  return <RichText data={data} converters={jsxConverters} />
+  return <RichText data={data} converters={jsxConverters} disableContainer />
 }
