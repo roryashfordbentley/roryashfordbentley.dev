@@ -1,4 +1,5 @@
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
+import dateFormatter from '@scripts/dateFormatter'
 
 import styles from './BlogArticleTitle.module.css' // External CSS for the styles
 import { Container, ContainerItem } from '@components/Container/Container'
@@ -25,15 +26,17 @@ export const BlogArticleTitle = (props: {
             <aside className={styles.meta}>
               <div className={styles.metaItem}>
                 <div className={styles.metaIcon}>
-                  <InlineSVG svgPath="/icons/calendar.svg" />
+                  <InlineSVG svgPath="icons/calendar.svg" />
                 </div>
 
-                <span className={styles.metaItemValue}>{props.datePosted ?? ''}</span>
+                <span className={styles.metaItemValue}>
+                  {dateFormatter(props.datePosted).readableDateString ?? ''}
+                </span>
               </div>
 
               <div className={styles.metaItem}>
                 <div className={styles.metaIcon}>
-                  <InlineSVG svgPath="/icons/book.svg" />
+                  <InlineSVG svgPath="icons/book.svg" />
                 </div>
 
                 <span className={styles.metaItemTitle}>
