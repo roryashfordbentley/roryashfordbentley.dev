@@ -1,34 +1,20 @@
 .prose {
-  /* .payload-richtext is inherited from the lexical editor */
-
   line-height: 1.7;
   color: var(--theme-text);
 
   display: grid;
-  grid-template-columns:
-    pxrem(100px)
-    minmax(0, auto)
-    pxrem(100px);
+  grid-template-columns: 0 minmax(0, auto) 0;
 
   @media (--m) {
-    grid-template-columns:
-      pxrem(100px)
-      minmax(0, auto)
-      pxrem(100px);
+    grid-template-columns: pxrem(100px) minmax(0, auto) pxrem(100px);
   }
 
   @media (--l) {
-    grid-template-columns:
-      pxrem(100px)
-      minmax(400px, 850px)
-      pxrem(100px);
+    grid-template-columns: pxrem(100px) minmax(400px, 850px) pxrem(100px);
   }
 
   @media (--xl) {
-    grid-template-columns:
-      pxrem(220px)
-      minmax(400px, 850px)
-      pxrem(220px);
+    grid-template-columns: pxrem(220px) minmax(400px, 850px) pxrem(220px);
   }
 
   > * {
@@ -43,20 +29,17 @@
 
   ul,
   ol {
-    padding: 0 0 0 var(--spacing-6);
+    padding-left: var(--spacing-6);
   }
 
   ul ul,
   ol ul,
   ul ol {
     margin: 0;
-    padding: 0 0 0 var(--spacing-5);
+    padding-left: var(--spacing-5);
   }
 
-  ul ul li {
-    list-style-type: disc;
-  }
-
+  ul ul li,
   ol ul li {
     list-style-type: disc;
   }
@@ -66,11 +49,22 @@
   }
 
   li::marker {
-    color: var(--theme-secondary);
+    color: var(--theme-accent);
   }
 
-  :is(p, ol, ul) + :is(h2, h3, h4, h5, h6) {
-    margin-top: var(--spacing-7);
+  :is(p, ol, ul, :global(.block-layout-full))
+    + :is(h2, h3, h4, h5, h6, :global(.block-layout-full)) {
+    margin-top: var(--spacing-6);
+  }
+
+  a {
+    color: var(--theme-accent);
+  }
+
+  a:hover {
+    color: var(--theme-accent-tint-2);
+    text-decoration: underline;
+    /*text-decoration-color: var(--theme-accent-tint-2);*/
   }
 
   hr {
@@ -92,7 +86,7 @@
   }
 
   th {
-    font-weight: var(--font---font-weight-medium);
+    font-weight: var(--font-weight-medium);
     color: var(--theme-secondary);
   }
 
@@ -103,6 +97,5 @@
 }
 
 .prosePadded {
-  padding-top: var(--spacing-8);
-  padding-bottom: var(--spacing-8);
+  padding: var(--spacing-8) 0;
 }
