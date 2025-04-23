@@ -4,7 +4,7 @@ import { Code } from '@components/Code/Code'
 export type CodeBlockProps = {
   codeBlockLabel?: string
   codeBlockCode: string
-  blockType: 'code'
+  blockType?: 'code'
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ codeBlockLabel, codeBlockCode }) => {
