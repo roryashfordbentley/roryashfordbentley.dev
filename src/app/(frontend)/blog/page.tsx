@@ -60,7 +60,7 @@ export default async function Page({
         <ContainerItem>
           <Grid columns={1} columnsMedium={6} gutter>
             {posts.docs.map((post, index) => {
-              const featuredImage = post.featuredImage as Media
+              const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
 
               return (
                 <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
