@@ -5,6 +5,7 @@ import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexi
 
 import { VideoEmbedBlock } from '@blocks/VideoEmbed/Component'
 import { CodeBlock } from '@blocks/Code/Component'
+import { BlockWrapper } from '@components/BlockWrapper/BlockWrapper'
 
 type NodeTypes = DefaultNodeTypes
 
@@ -13,24 +14,19 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   blocks: {
     videoEmbed: ({ node }: { node: SerializedBlockNode }) => {
       return (
-        <div
-          className={node.fields.blockLayoutField && `block-layout-${node.fields.blockLayoutField}`}
-        >
+        <BlockWrapper layout={node.fields.blockLayoutField}>
           <VideoEmbedBlock videoEmbedURL={node.fields.videoEmbedURL} />
-        </div>
+        </BlockWrapper>
       )
     },
     code: ({ node }: { node: SerializedBlockNode }) => {
-      console.log('Code block node:', node)
       return (
-        <div
-          className={node.fields.blockLayoutField && `block-layout-${node.fields.blockLayoutField}`}
-        >
+        <BlockWrapper layout={node.fields.blockLayoutField}>
           <CodeBlock
-            codeBlockCode={node.fields.codeBlockCode || ''}
-            codeBlockLabel={node.fields.codeBlockLabel || ''}
+            code={node.fields.codeBlockCode || ''}
+            label={node.fields.codeBlockLabel || ''}
           />
-        </div>
+        </BlockWrapper>
       )
     },
   },

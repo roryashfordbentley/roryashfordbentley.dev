@@ -16,6 +16,19 @@ export const layoutField: Field = {
     description: 'Select the layout for this block',
   },
   type: 'select',
-  options: ['default', 'full', 'narrow'],
+  options: [
+    {
+      label: 'Default',
+      value: 'default',
+    },
+    {
+      label: 'Full Width (layout only, not lexical)',
+      value: 'full',
+    },
+    {
+      label: 'Narrow',
+      value: 'narrow',
+    },
+  ],
   defaultValue: 'default',
 }

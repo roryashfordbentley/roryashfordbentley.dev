@@ -2,15 +2,15 @@ import React from 'react'
 import { Code } from '@components/Code/Code'
 
 export type CodeBlockProps = {
-  codeBlockLabel?: string
-  codeBlockCode: string
+  label?: string
+  code: string
   blockType?: 'code'
 }
 
-export const CodeBlock: React.FC<CodeBlockProps> = ({ codeBlockLabel, codeBlockCode }) => {
+export const CodeBlock: React.FC<CodeBlockProps> = ({ label, code }) => {
   return (
     <div className="code-block">
-      <Code label={codeBlockLabel || ''} codeString={codeBlockCode} />
+      <Code label={label || ''} codeString={code} />
     </div>
   )
 }
