@@ -36,7 +36,7 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
 
                 //console.log(JSON.stringify(facets, null, 4))
                 // Check if the post is a repost by checking the handle
-                const isRepost = handle !== 'roikles.bsky.social' ? true : false
+                const isRepost = handle !== 'roryashfordbentley.dev' ? true : false
 
                 return (
                   <GridItem key={i}>
