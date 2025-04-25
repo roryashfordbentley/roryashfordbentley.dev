@@ -90,13 +90,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           ></BlogArticleTitle>
         </ContainerItem>
 
-        <ContainerItem>
-          {content && (
-            <Prose padded>
-              <LexicalToJSX data={content} />
-            </Prose>
-          )}
-        </ContainerItem>
+        {content && (
+          <Prose padded>
+            <LexicalToJSX data={content} />
+          </Prose>
+        )}
       </Container>
 
       <RenderBlocks blocks={layout} />

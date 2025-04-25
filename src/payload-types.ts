@@ -176,9 +176,10 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             codeBlockLabel?: string | null;
             codeBlockCode: string;
+            hideHeader?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'code';
@@ -187,7 +188,7 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             heroBlockTitle: string;
             heroBlockSubtitle: string;
             heroBlockDescription: string;
@@ -201,7 +202,7 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             proseEditor: {
               root: {
                 type: string;
@@ -225,7 +226,7 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             image: string | Media;
             caption?: string | null;
             credit?: string | null;
@@ -238,7 +239,7 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             informationBoxTitle?: string | null;
             informationBoxSubtitle?: string | null;
             informationBoxContent?: {
@@ -264,7 +265,7 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             gridListBlockTitle?: string | null;
             gridListBlockDescription?: string | null;
             gridListBlockList?:
@@ -283,7 +284,7 @@ export interface Post {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             videoEmbedURL?: string | null;
             id?: string | null;
             blockName?: string | null;
@@ -407,9 +408,10 @@ export interface Page {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             codeBlockLabel?: string | null;
             codeBlockCode: string;
+            hideHeader?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'code';
@@ -418,7 +420,7 @@ export interface Page {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             heroBlockTitle: string;
             heroBlockSubtitle: string;
             heroBlockDescription: string;
@@ -432,7 +434,7 @@ export interface Page {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             proseEditor: {
               root: {
                 type: string;
@@ -456,7 +458,7 @@ export interface Page {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             image: string | Media;
             caption?: string | null;
             credit?: string | null;
@@ -469,7 +471,7 @@ export interface Page {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             informationBoxTitle?: string | null;
             informationBoxSubtitle?: string | null;
             informationBoxContent?: {
@@ -495,7 +497,7 @@ export interface Page {
             /**
              * Select the layout for this block
              */
-            blockLayoutField?: ('default' | 'full' | 'narrow') | null;
+            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             gridListBlockTitle?: string | null;
             gridListBlockDescription?: string | null;
             gridListBlockList?:
@@ -731,6 +733,7 @@ export interface PostsSelect<T extends boolean = true> {
               blockLayoutField?: T;
               codeBlockLabel?: T;
               codeBlockCode?: T;
+              hideHeader?: T;
               id?: T;
               blockName?: T;
             };
@@ -825,6 +828,7 @@ export interface PagesSelect<T extends boolean = true> {
               blockLayoutField?: T;
               codeBlockLabel?: T;
               codeBlockCode?: T;
+              hideHeader?: T;
               id?: T;
               blockName?: T;
             };

@@ -1,24 +1,12 @@
 .prose {
+  grid-column: full;
   line-height: 1.7;
   color: var(--theme-text);
-
   display: grid;
-  grid-template-columns: 0 minmax(0, auto) 0;
-
-  @media (--m) {
-    grid-template-columns: pxrem(100px) minmax(0, auto) pxrem(100px);
-  }
-
-  @media (--l) {
-    grid-template-columns: pxrem(100px) minmax(400px, 850px) pxrem(100px);
-  }
-
-  @media (--xl) {
-    grid-template-columns: pxrem(220px) minmax(400px, 850px) pxrem(220px);
-  }
+  grid-template-columns: subgrid;
 
   > * {
-    grid-column: 2 / 3;
+    grid-column: content;
   }
 
   p,
@@ -64,7 +52,6 @@
   a:hover {
     color: var(--theme-accent-tint-2);
     text-decoration: underline;
-    /*text-decoration-color: var(--theme-accent-tint-2);*/
   }
 
   hr {
@@ -88,6 +75,14 @@
   th {
     font-weight: var(--font-weight-medium);
     color: var(--theme-secondary);
+  }
+
+  p code {
+    background-color: var(--theme-foreground);
+    color: var(--theme-background);
+    font-size: var(--font-size-1);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--radius-1);
   }
 }
 

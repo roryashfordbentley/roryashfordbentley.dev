@@ -14,7 +14,7 @@ import { MoonIcon } from '@heroicons/react/24/outline'
  * light version of a site if desired.
  */
 
-export const Code = (props: { label: string; codeString: string }) => {
+export const Code = (props: { label: string; codeString: string; hideHeader?: boolean }) => {
   const codeHTML = highlight(props.codeString as string)
 
   const [copied, setCopied] = useState(false)
@@ -34,27 +34,29 @@ export const Code = (props: { label: string; codeString: string }) => {
 
   return (
     <div className={`${styles.container} ${dark && styles['container--dark']}`}>
-      <header className={styles.header}>
-        <div className={styles.circles}>
-          <span className={styles.circle}></span>
-          <span className={styles.circle}></span>
-          <span className={styles.circle}></span>
-        </div>
+      {!props.hideHeader && (
+        <header className={styles.header}>
+          <div className={styles.circles}>
+            <span className={styles.circle}></span>
+            <span className={styles.circle}></span>
+            <span className={styles.circle}></span>
+          </div>
 
-        {props.label && <div className={styles.title}>{props.label}</div>}
+          {props.label && <div className={styles.title}>{props.label}</div>}
 
-        <div className={styles.buttonGroup}>
-          <button title="Toggle Dark Theme" className={styles.button} onClick={toggleDarkMode}>
-            {dark ? <MoonIcon /> : <SunIcon />}
-          </button>
+          <div className={styles.buttonGroup}>
+            <button title="Toggle Dark Theme" className={styles.button} onClick={toggleDarkMode}>
+              {dark ? <MoonIcon /> : <SunIcon />}
+            </button>
 
-          <button title="Copy" className={styles.button} onClick={handleCopy}>
-            {copied ? <ClipboardDocumentCheckIcon /> : <ClipboardDocumentIcon />}
-          </button>
-        </div>
-      </header>
+            <button title="Copy" className={styles.button} onClick={handleCopy}>
+              {copied ? <ClipboardDocumentCheckIcon /> : <ClipboardDocumentIcon />}
+            </button>
+          </div>
+        </header>
+      )}
 
-      <pre className={styles.codeWrapper}>
+      <pre className={`${styles.codeWrapper} ${props.hideHeader && styles.codeWrapperRounded}`}>
         <code dangerouslySetInnerHTML={{ __html: codeHTML }} className={styles.code} />
       </pre>
     </div>

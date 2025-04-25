@@ -17,7 +17,7 @@ export const BlogArticleTitle = (props: {
     <section className={styles.wrapper}>
       <header className={styles.inner}>
         <Container>
-          <ContainerItem>
+          <ContainerItem layout="wide">
             <div className={styles.content}>
               {props.title && <h1 className={styles.title}>{props.title}</h1>}
               {props.description && <p className={styles.description}>{props.description}</p>}
@@ -51,7 +51,7 @@ export const BlogArticleTitle = (props: {
       </header>
 
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           {props.image && <div className={styles.coverImage}>{props.image}</div>}
         </ContainerItem>
       </Container>

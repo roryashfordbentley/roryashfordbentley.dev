@@ -18,16 +18,16 @@ export const layoutField: Field = {
   type: 'select',
   options: [
     {
-      label: 'Default',
+      label: 'Default (Prose area for content)',
       value: 'default',
     },
     {
-      label: 'Full Width (layout only, not lexical)',
-      value: 'full',
+      label: 'Wide (breaks out of content area to emphasise)',
+      value: 'wide',
     },
     {
-      label: 'Narrow',
-      value: 'narrow',
+      label: 'Full Width (edge-to-edge layout)',
+      value: 'full',
     },
   ],
   defaultValue: 'default',

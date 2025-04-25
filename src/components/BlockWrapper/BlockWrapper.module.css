@@ -1,8 +1,12 @@
 .blockWrapper {
   margin-bottom: var(--spacing-7);
-  grid-column: 1 / -1;
+  grid-column: content;
 }
 
-.blockWrapperNarrow {
-  grid-column: 2 / 3;
+.blockWrapperWide {
+  grid-column: wide;
+}
+
+.blockWrapperFull {
+  grid-column: full;
 }

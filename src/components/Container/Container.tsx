@@ -3,7 +3,7 @@ import styles from './Container.module.css'
 
 interface ItemProps {
   children?: React.ReactNode
-  layout?: 'full' | 'narrow' | 'debug'
+  layout?: 'full' | 'wide' | 'debug'
 }
 
 export const ContainerItem = ({ children, layout }: ItemProps) => {
@@ -11,8 +11,8 @@ export const ContainerItem = ({ children, layout }: ItemProps) => {
 
   if (layout == 'full') {
     itemClassName = `${styles.item} ${styles['item--full']}`
-  } else if (layout == 'narrow') {
-    itemClassName = `${styles.item} ${styles['item--narrow']}`
+  } else if (layout == 'wide') {
+    itemClassName = `${styles.item} ${styles['item--wide']}`
   }
 
   return <div className={itemClassName}>{children}</div>

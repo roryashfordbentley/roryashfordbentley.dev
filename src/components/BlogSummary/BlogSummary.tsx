@@ -17,7 +17,7 @@ export async function BlogSummary(props: { posts: Array<any> }) {
       <div className={styles.slider}>
         <Slider>
           {props.posts.map((post, index) => {
-            const featuredImage = post.featuredImage as Media
+            const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
 
             return (
               <Slide key={index}>

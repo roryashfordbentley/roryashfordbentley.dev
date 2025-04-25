@@ -7,7 +7,7 @@ export const ErrorScreen = (props: { errorMessage?: string }) => {
   return (
     <section className={styles.wrapper}>
       <Container>
-        <ContainerItem layout="narrow">
+        <ContainerItem>
           <h1 className={styles.heading}>{props.errorMessage || '404 page not found'}</h1>
           <VideoEmbed videoURL="https://www.youtube.com/embed/uKbEH8T8d0o" />
         </ContainerItem>

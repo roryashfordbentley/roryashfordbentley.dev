@@ -45,9 +45,9 @@ export const RenderBlocks: React.FC<{
            * Check for layout type
            */
 
-          let itemLayout: 'full' | 'narrow' | 'debug' | undefined = block.blockLayoutField as
+          let itemLayout: 'full' | 'wide' | 'debug' | undefined = block.blockLayoutField as
             | 'full'
-            | 'narrow'
+            | 'wide'
             | 'debug'
             | undefined
 

@@ -12,8 +12,8 @@ export const BlockWrapper = ({ children, layout }: { children: ReactNode; layout
 
   if (layout === 'full') {
     blockLayoutClass = styles.blockWrapperFull
-  } else if (layout === 'narrow') {
-    blockLayoutClass = styles.blockWrapperNarrow
+  } else if (layout === 'wide') {
+    blockLayoutClass = styles.blockWrapperWide
   }
 
   return <div className={`${styles.blockWrapper} ${blockLayoutClass}`}>{children}</div>

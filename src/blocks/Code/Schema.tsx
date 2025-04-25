@@ -15,5 +15,11 @@ export const CodeBlockSchema: Block = {
       label: false,
       required: true,
     },
+    {
+      name: 'hideHeader',
+      type: 'checkbox',
+      label: 'Hide Header',
+      defaultValue: false,
+    },
   ],
 }

@@ -6,7 +6,7 @@ export const Header = (props: { logo: ReactNode; navMenu: ReactNode; themeToggle
   return (
     <header className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <div className={styles.inner}>
             {props.logo && <div className={styles.logo}>{props.logo}</div>}
             {props.navMenu && <div className={styles.nav}>{props.navMenu}</div>}
