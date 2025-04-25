@@ -23,7 +23,7 @@ export const Default: Story = {
     description:
       '2024 saw the official announcement and adoption of WCAG 2.2 which brings a range of additional considerations and updates.',
     datePostedLabel: 'Posted',
-    datePosted: 'January 6th 2025',
+    datePosted: '2025-03-06T10:28:13.749Z',
     readingTimeLabel: 'Reading Time',
     readingTime: '5 Minutes',
   },
