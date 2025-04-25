@@ -3,8 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Container } from './Container'
 import { ContainerItem } from './Container'
 import { WireframeBox } from '@components/WireframeBox/WireframeBox'
-import { FeaturedImage } from '@components/FeaturedImage/FeaturedImage'
-import { Default as DefaultFeaturedImage } from '@components/FeaturedImage/FeaturedImage.stories'
 import { Prose } from '@components/Prose/Prose'
 import { Default as DefaultProse } from '@components/Prose/Prose.stories'
 import { Header } from '@components/Header/Header'
@@ -35,7 +33,7 @@ export const Default: Story = {
           content="Used when you want elements to appear edge-to-edge "
         />
       </ContainerItem>,
-      <ContainerItem layout="narrow">
+      <ContainerItem>
         <WireframeBox
           title="Narrow width item"
           content="Great for Prose and areas of text. This narrow column is designed to provider better readability "
@@ -57,7 +55,7 @@ export const Debug: Story = {
           content="Used when you want elements to appear edge-to-edge "
         />
       </ContainerItem>,
-      <ContainerItem layout="narrow">
+      <ContainerItem>
         <WireframeBox
           title="Narrow width item"
           content="Great for Prose and areas of text. This narrow column is designed to provider better readability "
@@ -74,10 +72,7 @@ export const ComponentExample: Story = {
       <ContainerItem>
         <Header {...DefaultHeader.args} />
       </ContainerItem>,
-      <ContainerItem layout="full">
-        <FeaturedImage {...DefaultFeaturedImage.args} />
-      </ContainerItem>,
-      <ContainerItem layout="narrow">
+      <ContainerItem>
         <Prose padded {...DefaultProse.args} />
       </ContainerItem>,
     ],
