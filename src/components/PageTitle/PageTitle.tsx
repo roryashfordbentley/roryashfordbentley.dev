@@ -6,7 +6,7 @@ export const PageTitle = (props: { title: string; description?: string }) => {
   return (
     <section className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <Grid columns={4} gutter>
             <GridItem columnSpan={4} columnSpanMedium={3}>
               <div className={styles.content}>
