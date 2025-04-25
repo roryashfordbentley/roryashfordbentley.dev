@@ -6,7 +6,7 @@ export const InformationBox = (props: { title: string; subtitle: string; content
   return (
     <section className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <div className={styles.inner}>
             <h2 className={styles.title}>
               <em>{props.title}</em>
