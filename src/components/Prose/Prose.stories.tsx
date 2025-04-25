@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Prose } from './Prose'
+import { LexicalToJSX } from '@components/utils/LexicalToJSX'
+import { HTMLRenderer } from '@components/HTMLRenderer/HTMLRenderer'
 
 type Story = StoryObj<typeof meta>
 
@@ -17,8 +19,9 @@ export default meta
 
 export const Default: Story = {
   args: {
-    children: `
-      <h2>Marvel Cinematic Universe</h2>
+    children: (
+      <HTMLRenderer
+        html={`<h2>Marvel Cinematic Universe</h2>
 
       <p>The Marvel Cinematic Universe (MCU) is a media franchise and shared universe centered on a series of superhero films produced by Marvel Studios. The franchise has expanded to include comic books, short films, television series, and digital series. The shared universe is established by crossing over common plot elements, settings, cast, and characters.</p>
 
@@ -125,7 +128,8 @@ export const Default: Story = {
             <td>$1.4 billion</td>
           </tr>
         </tbody>
-      </table>
-    `,
+      </table>`}
+      />
+    ),
   },
 }
