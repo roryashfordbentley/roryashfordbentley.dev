@@ -33,42 +33,42 @@ export const Default: Story = {
     toolsTitle: 'Built with',
     tools: [
       {
+        footerToolsTitle: 'React',
+        footerToolsLink: 'https://react.dev/',
+        footerToolsIcon: {
+          url: '/api/icons/file/react.svg',
+          alt: 'Next.js logo',
+        },
+      },
+      {
         footerToolsTitle: 'Next.js',
         footerToolsLink: 'https://nextjs.org/',
         footerToolsIcon: {
-          url: '/rab-logo-box-inverted.svg',
+          url: '/api/icons/file/next.svg',
           alt: 'Next.js logo',
+        },
+      },
+      {
+        footerToolsTitle: 'Vercel',
+        footerToolsLink: 'https://vercel.com/',
+        footerToolsIcon: {
+          url: '/api/icons/file/vercel.svg',
+          alt: 'Vercel logo',
         },
       },
       {
         footerToolsTitle: 'Payload',
         footerToolsLink: 'https://payloadcms.com/',
         footerToolsIcon: {
-          url: '/rab-logo-box-inverted.svg',
+          url: '/api/icons/file/payload.svg',
           alt: 'Payload logo',
         },
       },
       {
-        footerToolsTitle: 'Vercel',
-        footerToolsLink: 'https://vercel.com/',
+        footerToolsTitle: 'Storybook',
+        footerToolsLink: 'https://storybook.js.org/',
         footerToolsIcon: {
-          url: '/rab-logo-box-inverted.svg',
-          alt: 'Vercel logo',
-        },
-      },
-      {
-        footerToolsTitle: 'Vercel',
-        footerToolsLink: 'https://vercel.com/',
-        footerToolsIcon: {
-          url: '/rab-logo-box-inverted.svg',
-          alt: 'Vercel logo',
-        },
-      },
-      {
-        footerToolsTitle: 'Vercel',
-        footerToolsLink: 'https://vercel.com/',
-        footerToolsIcon: {
-          url: '/rab-logo-box-inverted.svg',
+          url: '/api/icons/file/storybook.svg',
           alt: 'Vercel logo',
         },
       },

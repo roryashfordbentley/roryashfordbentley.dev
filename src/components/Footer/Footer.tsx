@@ -20,7 +20,7 @@ export function Footer(props: {
   return (
     <footer className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <Grid columns={1} columnsMedium={3}>
             <GridItem columnSpan={1} columnSpanMedium={2}>
               <div className={styles.contact}>
