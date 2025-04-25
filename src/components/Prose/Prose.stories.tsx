@@ -3,12 +3,25 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Prose } from './Prose'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { HTMLRenderer } from '@components/HTMLRenderer/HTMLRenderer'
+import { Container, ContainerItem } from '../Container/Container'
 
 type Story = StoryObj<typeof meta>
 
 const meta = {
   title: 'Components/Prose',
   component: Prose,
+  decorators: [
+    (Story) => (
+      /**
+       * Prose expects to be wrapped in a Container component as it inherits the main grid as a subgrid.
+       */
+      <Container>
+        <ContainerItem>
+          <Story />
+        </ContainerItem>
+      </Container>
+    ),
+  ],
   parameters: {
     layout: 'centered',
   },
