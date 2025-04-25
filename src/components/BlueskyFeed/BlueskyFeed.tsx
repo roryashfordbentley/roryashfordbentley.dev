@@ -18,7 +18,7 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
   return (
     <section className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <h2 className={styles.title}>
             Latest posts from
             <br />
