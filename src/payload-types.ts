@@ -177,11 +177,12 @@ export interface Post {
              * Select the layout for this block
              */
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
+            codeBlockCode: string;
+            codeBlockLabel?: string | null;
             codeBlockLanguage:
               | 'cpp'
               | 'css'
               | 'dockerfile'
-              | 'handlebars'
               | 'html'
               | 'javascript'
               | 'json'
@@ -195,8 +196,6 @@ export interface Post {
               | 'typescript'
               | 'xml'
               | 'yaml';
-            codeBlockCode: string;
-            codeBlockLabel?: string | null;
             hideHeader?: boolean | null;
             id?: string | null;
             blockName?: string | null;
@@ -427,11 +426,12 @@ export interface Page {
              * Select the layout for this block
              */
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
+            codeBlockCode: string;
+            codeBlockLabel?: string | null;
             codeBlockLanguage:
               | 'cpp'
               | 'css'
               | 'dockerfile'
-              | 'handlebars'
               | 'html'
               | 'javascript'
               | 'json'
@@ -445,8 +445,6 @@ export interface Page {
               | 'typescript'
               | 'xml'
               | 'yaml';
-            codeBlockCode: string;
-            codeBlockLabel?: string | null;
             hideHeader?: boolean | null;
             id?: string | null;
             blockName?: string | null;
@@ -767,9 +765,9 @@ export interface PostsSelect<T extends boolean = true> {
           | T
           | {
               blockLayoutField?: T;
-              codeBlockLanguage?: T;
               codeBlockCode?: T;
               codeBlockLabel?: T;
+              codeBlockLanguage?: T;
               hideHeader?: T;
               id?: T;
               blockName?: T;
@@ -863,9 +861,9 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               blockLayoutField?: T;
-              codeBlockLanguage?: T;
               codeBlockCode?: T;
               codeBlockLabel?: T;
+              codeBlockLanguage?: T;
               hideHeader?: T;
               id?: T;
               blockName?: T;
