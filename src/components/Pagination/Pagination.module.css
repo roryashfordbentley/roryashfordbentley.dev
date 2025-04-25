@@ -27,15 +27,15 @@
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  border: pxrem(1px) solid var(--theme-border);
+  border: pxrem(1px) solid #ccc;
   height: var(--spacing-7);
 
   border-radius: var(--radius-1);
 
   &:hover {
-    background-color: var(--theme-primary);
+    background-color: var(--theme-accent);
     color: var(--theme-background);
-    border: var(--theme-primary) pxrem(1px) solid;
+    border: var(--theme-accent) pxrem(1px) solid;
   }
 }
 
@@ -49,9 +49,9 @@
 }
 
 .linkActive {
-  background-color: var(--theme-primary);
+  background-color: var(--theme-foreground);
   color: var(--theme-background);
-  border: var(--theme-primary) pxrem(1px) solid;
+  border: var(--theme-foreground) pxrem(1px) solid;
 }
 
 .linkDisabled {
