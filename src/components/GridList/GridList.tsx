@@ -24,7 +24,7 @@ export const GridList = (props: {
   return (
     <section className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <header>
             <h2 className={styles.title}>{props.title}</h2>
             <p className={styles.description}>{props.description}</p>
