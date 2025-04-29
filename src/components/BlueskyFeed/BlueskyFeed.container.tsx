@@ -42,14 +42,28 @@ export async function getBskyPosts(numberOfPosts: number) {
     throw new Error('Number of posts must be greater than 0.')
   }
 
-  const agent = (await authenticateBlueskyUser()).agent
+  let agent
 
-  const response = await agent.getAuthorFeed({
-    actor: agent.assertDid,
-    includePins: false,
-    filter: 'posts_no_replies',
-    limit: numberOfPosts,
-  })
+  try {
+    agent = (await authenticateBlueskyUser()).agent
+  } catch (error) {
+    console.error('Error authenticating Bluesky user:', error)
+    throw new Error('Failed to authenticate Bluesky user.')
+  }
+
+  let response
+
+  try {
+    response = await agent.getAuthorFeed({
+      actor: agent.assertDid,
+      includePins: false,
+      filter: 'posts_no_replies',
+      limit: numberOfPosts,
+    })
+  } catch (error) {
+    console.error('Error fetching Bluesky posts:', error)
+    throw new Error('Failed to fetch Bluesky posts.')
+  }
 
   const posts = response.data.feed
 
@@ -57,7 +71,14 @@ export async function getBskyPosts(numberOfPosts: number) {
 }
 
 export async function BlueskyFeedContainer({ numberOfPosts = 3 }: { numberOfPosts?: number }) {
-  const posts = await getBskyPosts(numberOfPosts)
+  let posts
+
+  try {
+    posts = await getBskyPosts(numberOfPosts)
+  } catch (error) {
+    console.error('Error fetching Bluesky posts:', error)
+    return
+  }
 
   return <BlueskyFeed posts={posts} />
 }
