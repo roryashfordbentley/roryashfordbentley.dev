@@ -92,7 +92,7 @@
   }
 }
 
-:global(.dark) :not(pre) > code {
+:global(.dark) .prose :not(pre) > code {
   background-color: var(--theme-foreground);
 }
 
