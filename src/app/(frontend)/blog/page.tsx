@@ -57,7 +57,7 @@ export default async function Page({
       <PageTitle title={pageTitle} description={pageDescription} />
 
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <Grid columns={1} columnsMedium={6} gutter>
             {posts.docs.map((post, index) => {
               const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''

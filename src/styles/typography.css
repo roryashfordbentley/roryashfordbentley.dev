@@ -7,30 +7,44 @@ h6 {
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-4);
   color: var(--theme-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: clamp(var(--font-size-5), 4vw, var(--font-size-7));
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: var(--font-size-4);
+
+  @media (--l) {
+    font-size: var(--font-size-5);
+  }
 }
 
 h3 {
-  font-size: clamp(var(--font-size-4), 4vw, var(--font-size-6));
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: var(--font-size-3);
+
+  @media (--l) {
+    font-size: var(--font-size-4);
+  }
 }
 
 h4 {
-  font-size: clamp(var(--font-size-3), 3vw, var(--font-size-4));
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: var(--font-size-2);
+
+  @media (--l) {
+    font-size: var(--font-size-3);
+  }
 }
 
 h5 {
-  font-size: clamp(var(--font-size-1), 3vw, var(--font-size-3));
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: var(--font-size-1);
+
+  @media (--l) {
+    font-size: var(--font-size-2);
+  }
+}
+
+p {
+  font-size: var(--font-size-2);
 }
 
 a {

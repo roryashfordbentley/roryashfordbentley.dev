@@ -10,7 +10,7 @@ export const Hero = (props: {
   return (
     <section className={styles.wrapper}>
       <Container>
-        <ContainerItem>
+        <ContainerItem layout="wide">
           <div className={styles.inner}>
             <header className={styles.header}>
               {/*<h1 className={styles.title}>{props.title}</h1>*/}

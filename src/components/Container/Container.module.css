@@ -21,7 +21,11 @@
 }
 
 .item {
-  grid-column: content;
+  grid-column: wide;
+
+  @media (--l) {
+    grid-column: content;
+  }
 }
 
 .item--full {

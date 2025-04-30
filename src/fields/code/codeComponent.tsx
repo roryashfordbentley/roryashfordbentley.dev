@@ -20,7 +20,6 @@ const CodeComponent: React.FC<CodeFieldClientProps> = ({ field, path }) => {
 
   return (
     <>
-      {languageValue}
       <CodeField
         key={codeLanguagePath + (languageValue || 'javascript')}
         path={path} // Explicitly pass the required path property
