@@ -8,7 +8,7 @@ export type BigImageBlockProps = {
   caption?: string
   credit?: string
   creditLink?: string
-  blockType: 'bigImage'
+  blockType?: 'bigImage'
 }
 
 export const BigImageBlock: React.FC<BigImageBlockProps> = ({

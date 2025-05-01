@@ -103,7 +103,7 @@ export const Posts: CollectionConfig = {
           BlocksFeature({
             blocks: [CodeBlockSchema, BigImageBlockSchema, VideoEmbedBlockSchema],
           }),
-          FixedToolbarFeature(),
+          //FixedToolbarFeature(),
         ],
       }),
     },
