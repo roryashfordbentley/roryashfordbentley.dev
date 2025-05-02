@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     apple: ['/favicon/apple-touch-icon.png?v=4'],
     shortcut: ['/favicon/apple-touch-icon.png'],
   },
-  manifest: '/site.webmanifest',
+  manifest: '/favicon/site.webmanifest',
 }
 
 const inter = Inter({ subsets: ['latin'] })
