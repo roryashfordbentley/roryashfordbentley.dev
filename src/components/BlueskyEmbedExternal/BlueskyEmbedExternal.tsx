@@ -21,7 +21,7 @@ export const BlueskyEmbedExternal = (props: {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img src={props.thumb} alt={props.thumbAlt} />
+      {props.thumb && <img src={props.thumb} alt={props.thumbAlt} />}
       <span className={styles.embedTitle}>{props.title}</span>
 
       {props.description && (
