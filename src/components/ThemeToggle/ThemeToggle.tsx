@@ -40,10 +40,11 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className={`${styles.button} ${theme === 'dark' ? styles['button--dark'] : ''}`}
+      className={styles.button}
       id="themeToggle"
       type="button"
       role="switch"
+      title="Toggle light or dark mode"
       aria-checked={theme === 'dark'}
       onClick={toggleTheme}
     >

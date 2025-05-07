@@ -1,18 +1,9 @@
 .button {
   border: 0;
-  border-radius: var(--radius-1);
-  background: none;
-  width: pxrem(46px);
-  height: pxrem(46px);
+  width: pxrem(24);
+  height: pxrem(24);
   padding: 0;
   cursor: pointer;
-
-  &:hover {
-    background-color: var(--theme-background-tint);
-  }
-}
-
-.button--dark {
 }
 
 .label {
@@ -25,19 +16,19 @@
 }
 
 .icon {
-  width: pxrem(18px);
-  height: pxrem(18px);
+  width: pxrem(16px);
+  height: pxrem(16px);
   margin: auto;
 
   & path,
   & circle {
-    fill: var(--theme-primary);
+    fill: var(--theme-background);
   }
 }
 
-.icon--dark {
+/*.icon--dark {
   & path,
   & circle {
     fill: white;
   }
-}
+}*/

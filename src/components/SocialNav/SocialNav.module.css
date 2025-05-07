@@ -5,17 +5,28 @@
   display: flex;
   list-style: none;
   column-gap: var(--spacing-3);
+  padding: 0;
 }
 
 .listItem {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: pxrem(35);
 }
 
 .link {
-  path {
-    fill: var(--theme-background);
+  display: block;
+  transition: opacity 0.3s;
+
+  svg {
+    max-height: pxrem(24);
   }
+
+  path {
+    fill: currentColor;
+  }
+}
+
+.list:has(.link:hover) .link:not(:hover) {
+  opacity: 0.6;
 }

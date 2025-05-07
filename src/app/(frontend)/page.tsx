@@ -4,6 +4,7 @@ import configPromise from '@payload-config'
 
 import { BlueskyFeedContainer } from '@components/BlueskyFeed/BlueskyFeed.container'
 import { BlogSummaryContainer } from '@components/BlogSummary/BlogSummary.container'
+import { HeaderContainer } from '@components/Header/Header.container'
 
 /**
  * Load the homepage content from Payload
@@ -36,6 +37,7 @@ export default async function HomePage() {
   return (
     <>
       <main>
+        <HeaderContainer light />
         <RenderBlocks blocks={layout} />
         <BlogSummaryContainer />
         <BlueskyFeedContainer />

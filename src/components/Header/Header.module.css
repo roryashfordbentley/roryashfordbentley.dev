@@ -2,30 +2,45 @@
   background-color: var(--theme-accent);
 }
 
+.wrapperLight {
+  background-color: var(--theme-background);
+  color: var(--theme-foreground);
+}
+
 .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-3) 0;
+  padding: var(--spacing-3) var(--spacing-3);
 
   @media (--m) {
-    padding: var(--spacing-4) 0;
+    padding: var(--spacing-4) var(--spacing-5);
   }
 }
 
 .logo {
-  width: pxrem(50px);
+  width: pxrem(50);
 
   @media (--m) {
-    width: pxrem(100px);
+    width: pxrem(100);
   }
 }
 
 .nav {
   display: none;
+
   @media (--m) {
     display: block;
     margin-left: auto;
-    margin-right: var(--spacing-5);
+    margin-right: var(--spacing-6);
   }
+}
+
+.social {
+  @media (--m) {
+    margin-right: var(--spacing-6);
+  }
+}
+
+.theme-toggle {
 }

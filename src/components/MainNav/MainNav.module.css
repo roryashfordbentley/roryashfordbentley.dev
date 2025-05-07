@@ -1,5 +1,5 @@
 .nav {
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-3);
 }
 
 .list {
@@ -14,10 +14,10 @@
   text-decoration: none;
   position: relative;
   padding: var(--spacing-1) var(--spacing-3);
-  color: var(--theme-background);
+  color: currentColor;
+  transition: opacity 0.3s;
+}
 
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--theme-accent-tint);
-  }
+.list:has(.link:hover) .link:not(:hover) {
+  opacity: 0.6;
 }
