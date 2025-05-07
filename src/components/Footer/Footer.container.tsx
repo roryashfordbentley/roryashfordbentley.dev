@@ -1,11 +1,6 @@
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
-import { Grid, GridItem } from '@components/Grid/Grid'
-import { Container, ContainerItem } from '@components/Container/Container'
 import { Footer } from './Footer'
-
-import styles from './Footer.module.css'
-import Image from 'next/image'
 
 const today = new Date()
 

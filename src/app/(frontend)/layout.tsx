@@ -18,12 +18,12 @@ import configPromise from '@payload-config'
 import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/Header/Header'
-import { Footer } from '@/components/Footer/Footer'
 import { LogoLink } from '@components/LogoLink/LogoLink'
-import { MainNav } from '@components/MainNav/MainNav'
+import { MainNavContainer } from '@components/MainNav/MainNav.container'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 import { Content } from '@components/Content/Content'
 import { FooterContainer } from '@/components/Footer/Footer.container'
+import { SocialNavContainer } from '@/components/SocialNav/Social.Nav.container'
 
 export const metadata: Metadata = {
   title: 'R/AB website',
@@ -36,31 +36,29 @@ export const metadata: Metadata = {
 }
 
 const inter = Inter({ subsets: ['latin'] })
-
-const logoInstance = <LogoLink link="/" />
-
+const logo = <LogoLink link="/" />
 const payload = await getPayload({ config: configPromise })
+const navItems = await payload.findGlobal({ slug: 'navPrimary' })
 
-const navItems = await payload.findGlobal({
-  slug: 'navPrimary',
-})
+const items = navItems?.items ?? []
+const socialLinks = navItems?.socialLinks ?? []
+
 /**
- * Change /home slug to /
+ * Prepare the social items for rendering
  */
-if (navItems?.items) {
-  navItems.items = navItems.items.map((item) => {
-    if (typeof item.page === 'object' && 'slug' in item.page && item.page.slug === 'home') {
-      item.page.slug = '/'
-
-      return item
+/*const socialLinksList = socialLinks.map((item) => {
+  if (typeof item.link === 'string') {
+    return {
+      ...item,
+      link: `/${item.link.replace(/^\/+/, '')}`,
     }
+  }
 
-    return item
-  })
-}
+  return item
+})*/
 
-// Temp until we pull live data from Payload
-const navInstance = <MainNav navItems={navItems.items} />
+const nav = <MainNavContainer items={items} />
+const social = <SocialNavContainer items={socialLinks} />
 
 var themeToggleInstance = <ThemeToggle />
 
@@ -71,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={inter.className}>
       <body className={isLocal ? 'dev' : ''}>
         <Content>
-          <Header logo={logoInstance} navMenu={navInstance} themeToggle={themeToggleInstance} />
+          <Header logo={logo} navMenu={nav} socialMenu={social} themeToggle={themeToggleInstance} />
           {children}
         </Content>
         <FooterContainer />

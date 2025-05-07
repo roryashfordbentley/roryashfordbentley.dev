@@ -1,0 +1,21 @@
+.nav {
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  column-gap: var(--spacing-3);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: pxrem(35);
+}
+
+.link {
+  path {
+    fill: var(--theme-background);
+  }
+}

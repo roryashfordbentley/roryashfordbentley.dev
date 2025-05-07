@@ -18,5 +18,30 @@ export const NavPrimary: GlobalConfig = {
         },
       ],
     },
+    {
+      name: 'socialLinks',
+      type: 'array',
+      label: 'Social Links',
+      maxRows: 5,
+      fields: [
+        {
+          name: 'link',
+          type: 'text',
+          label: 'Link',
+          required: true,
+        },
+        {
+          name: 'label',
+          type: 'text',
+          label: 'Label',
+          required: true,
+        },
+        {
+          name: 'icon',
+          type: 'upload',
+          relationTo: 'icons',
+        },
+      ],
+    },
   ],
 }

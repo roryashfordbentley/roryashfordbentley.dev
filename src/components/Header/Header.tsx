@@ -2,7 +2,12 @@ import { Container, ContainerItem } from '@components/Container/Container'
 import styles from './Header.module.css'
 import { ReactNode } from 'react'
 
-export const Header = (props: { logo: ReactNode; navMenu: ReactNode; themeToggle: ReactNode }) => {
+export const Header = (props: {
+  logo: ReactNode
+  navMenu: ReactNode
+  themeToggle: ReactNode
+  socialMenu: ReactNode
+}) => {
   return (
     <header className={styles.wrapper}>
       <Container>
@@ -11,6 +16,7 @@ export const Header = (props: { logo: ReactNode; navMenu: ReactNode; themeToggle
             {props.logo && <div className={styles.logo}>{props.logo}</div>}
             {props.navMenu && <div className={styles.nav}>{props.navMenu}</div>}
             {props.themeToggle && <div className={styles.themeToggle}>{props.themeToggle}</div>}
+            {props.socialMenu && <div className={styles.social}>{props.socialMenu}</div>}
           </div>
         </ContainerItem>
       </Container>

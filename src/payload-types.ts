@@ -1123,6 +1123,14 @@ export interface NavPrimary {
     page: string | Page;
     id?: string | null;
   }[];
+  socialLinks?:
+    | {
+        link: string;
+        label: string;
+        icon?: (string | null) | Icon;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1189,6 +1197,14 @@ export interface NavPrimarySelect<T extends boolean = true> {
     | T
     | {
         page?: T;
+        id?: T;
+      };
+  socialLinks?:
+    | T
+    | {
+        link?: T;
+        label?: T;
+        icon?: T;
         id?: T;
       };
   updatedAt?: T;
