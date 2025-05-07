@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { SocialNav } from './SocialNav'
+import { link } from 'fs'
 
 type Story = StoryObj<typeof meta>
 
@@ -13,10 +14,40 @@ const meta = {
   tags: ['autodocs'],
 } satisfies Meta<typeof SocialNav>
 
-export default meta;
+export default meta
 
 export const Default: Story = {
   args: {
-    example: 'This is example text',
+    items: [
+      {
+        link: 'https://github.com/roryashfordbentley/',
+        label: 'GitHub - Rory Ashford-Bentley',
+        icon: {
+          name: 'Github icon',
+          filename: 'github-logo.svg',
+          url: '/api/icons/file/github-logo.svg',
+        },
+        id: '681a2cc4754e0e67e94d2ab9',
+      },
+      {
+        link: 'https://bsky.app/profile/roryashfordbentley.dev',
+        label: 'Bluesky - Rory Ashford-Bentley',
+        icon: {
+          filename: 'bluesky-logo.svg',
+          id: '681a2db50a85a2fee38506df',
+          url: '/api/icons/file/bluesky-logo.svg',
+        },
+        id: '681a2d08754e0e67e94d2abb',
+      },
+      {
+        link: 'https://instagram.com/roikles',
+        label: 'Instagram - Rory Ashford-Bentley',
+        icon: {
+          filename: 'instagram-logo.svg',
+          url: '/api/icons/file/instagram-logo.svg',
+        },
+        id: '681b3787754e0e67e94d2abf',
+      },
+    ],
   },
 }

@@ -3,11 +3,13 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Header } from './Header'
 import { LogoLink } from '@components/LogoLink/LogoLink'
 import { MainNav } from '@components/MainNav/MainNav'
+import { SocialNav } from '@components/SocialNav/SocialNav'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 
 // Get the Default Stories to reuse here
 import { Default as LogoLinkDefault } from '@components/LogoLink/LogoLink.stories'
 import { Default as MainNavDefault } from '@components/MainNav/MainNav.stories'
+import { Default as SocialNavDefault } from '@components/SocialNav/SocialNav.stories'
 
 type Story = StoryObj<typeof meta>
 
@@ -26,6 +28,7 @@ export const Default: Story = {
   args: {
     logo: <LogoLink {...LogoLinkDefault.args} />,
     navMenu: <MainNav {...MainNavDefault.args} />,
+    socialMenu: <SocialNav {...SocialNavDefault.args} />,
     themeToggle: <ThemeToggle />,
   },
 }
