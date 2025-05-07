@@ -1,7 +1,6 @@
 // storage-adapter-import-placeholder
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 
 import path from 'path'
