@@ -3,19 +3,27 @@
 }
 
 .list {
-  display: flex;
-  justify-content: flex-start;
+  display: block;
   list-style: none;
   padding: 0;
   letter-spacing: -0.05em;
+
+  @media (--m) {
+    display: flex;
+  }
 }
 
 .link {
   text-decoration: none;
   position: relative;
-  padding: var(--spacing-1) var(--spacing-3);
+  padding: var(--spacing-1) 0;
   color: currentColor;
   transition: opacity 0.3s;
+  font-size: var(--font-size-8);
+
+  @media (--m) {
+    font-size: var(--font-size-2);
+  }
 }
 
 .list:has(.link:hover) .link:not(:hover) {

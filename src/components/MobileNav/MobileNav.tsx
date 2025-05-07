@@ -1,11 +1,9 @@
 import styles from './MobileNav.module.css'
 
-export const MobileNav = (props: {
-  example: string
-}) => {
+export const MobileNav = (props: { toggle: boolean; children: React.ReactNode }) => {
   return (
-    <>
-     <p>{props.example}</p>
-    </>
+    <nav className={styles.wrapper + (props.toggle ? ` ${styles.wrapperOpen}` : '')}>
+      {props.children}
+    </nav>
   )
 }

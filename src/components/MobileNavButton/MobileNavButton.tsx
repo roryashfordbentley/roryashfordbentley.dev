@@ -1,9 +1,10 @@
 import styles from './MobileNavButton.module.css'
 
-export const MobileNavButton = (props: { example: string }) => {
+export const MobileNavButton = (props: { onClick: () => void }) => {
   return (
     <>
       <button
+        onClick={props.onClick}
         className={styles.button}
         aria-label="Open navigation Menu"
         title="Open navigation menu"
@@ -15,18 +16,13 @@ export const MobileNavButton = (props: { example: string }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M1.5127 7H20.4884" stroke="#222B2E" stroke-width="2" stroke-linecap="round" />
-          <path
-            d="M1.5127 12.7822H14.706"
-            stroke="#222B2E"
-            stroke-width="2"
-            stroke-linecap="round"
-          />
+          <path d="M1.5127 7H20.4884" stroke="#222B2E" strokeWidth="2" strokeLinecap="round" />
+          <path d="M1.5127 12.7822H14.706" stroke="#222B2E" strokeWidth="2" strokeLinecap="round" />
           <path
             d="M1.5127 1.21802H20.4884"
             stroke="#222B2E"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </svg>
       </button>

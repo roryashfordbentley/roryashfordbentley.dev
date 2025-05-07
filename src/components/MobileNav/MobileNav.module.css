@@ -1,0 +1,9 @@
+.wrapper {
+  display: none;
+  background-color: var(--theme-background-tint);
+  padding: var(--spacing-5);
+}
+
+.wrapperOpen {
+  display: block;
+}

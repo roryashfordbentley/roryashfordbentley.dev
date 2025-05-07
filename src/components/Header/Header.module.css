@@ -37,7 +37,9 @@
 }
 
 .social {
+  display: none;
   @media (--m) {
+    display: block;
     margin-right: var(--spacing-6);
   }
 }
