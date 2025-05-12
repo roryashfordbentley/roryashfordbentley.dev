@@ -1,0 +1,54 @@
+@property --item-rotation {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+.wrapper {
+  --background: var(--theme-accent);
+  --stroke: rgba(255, 255, 255, 0.5);
+  --text: rgba(255, 255, 255, 0.5);
+  --rotation-duration: 15s;
+  --item-rotation: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--background);
+  width: 100%;
+  aspect-ratio: 3 / 2;
+}
+
+.skillList {
+  width: 40%;
+  list-style: none;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--stroke);
+  animation: itemRotation var(--rotation-duration) linear infinite;
+}
+
+.dot {
+  display: inline-block;
+  offset-path: border-box;
+  offset-distance: calc(100% / var(--items) * var(--index) + (var(--item-rotation) * 100%));
+  min-width: 50px;
+}
+
+.dotContent {
+  display: inline-block;
+  background: var(--background);
+  border: 1px solid var(--stroke);
+  border-radius: pxrem(20px);
+  padding: var(--spacing-1) var(--spacing-2);
+  object-fit: cover;
+  rotate: calc(-360deg / var(--items) * var(--index) - (360deg * var(--item-rotation)));
+  color: var(--text);
+}
+
+@keyframes itemRotation {
+  to {
+    --item-rotation: 1;
+  }
+}
