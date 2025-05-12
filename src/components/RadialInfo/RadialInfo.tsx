@@ -1,25 +1,30 @@
 import styles from './RadialInfo.module.css'
 
-const skillsOne = ['JS/TS', 'React', 'Next.js', 'Node']
-
-const skillsTwo = ['Sass', 'Tailwind', 'PHP', 'Twig']
-
-const skillsThree = ['Docker', 'A11y', 'DBs', 'DevOps']
+const items = [
+  ['JS/TS', 'React', 'Next.js', 'Node'],
+  ['Sass', 'Tailwind', 'PHP', 'Twig'],
+  ['Docker', 'A11y', 'DBs', 'DevOps'],
+]
 
 export const RadialInfo = () => {
   return (
     <div className={styles.wrapper}>
-      <ul className={`${styles.skillList}`}>
-        {skillsOne.map((skill, index) => (
-          <li
-            key={index}
-            className={styles.dot}
-            style={{ '--index': index, '--items': skillsOne.length } as React.CSSProperties}
-          >
-            <div className={styles.dotContent}>{skill}</div>
-          </li>
-        ))}
-      </ul>
+      {items.map((itemGroup, listIndex) => (
+        <ul
+          key={listIndex}
+          className={`${styles.radialList} ${styles['radialList' + (listIndex + 1)]} `}
+        >
+          {itemGroup.map((item, index) => (
+            <li
+              key={index}
+              className={styles.node}
+              style={{ '--index': index, '--items': itemGroup.length } as React.CSSProperties}
+            >
+              <div className={styles.nodeContent}>{item}</div>
+            </li>
+          ))}
+        </ul>
+      ))}
     </div>
   )
 }
