@@ -10,15 +10,21 @@
   --text: rgba(255, 255, 255, 0.5);
   --rotation-duration: 15s;
   --item-rotation: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   background-color: var(--background);
   aspect-ratio: 3 / 2;
   padding: var(--spacing-8);
   overflow: hidden;
+}
+
+.animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  transform-style: preserve-3d;
+  /*transform: perspective(80em) rotateX(60deg);*/
 }
 
 .radialList {
@@ -27,8 +33,12 @@
   list-style: none;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1px solid var(--stroke);
-  animation: itemRotation 10s linear infinite;
+  border: pxrem(1px) solid var(--stroke);
+  animation: itemRotation 20s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 .radialList1 {
@@ -37,12 +47,20 @@
 
 .radialList2 {
   width: 60%;
-  animation: itemRotationReverse 15s linear infinite;
+  animation: itemRotationReverse 30s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 .radialList3 {
   width: 80%;
-  animation: itemRotation 30s linear infinite;
+  animation: itemRotation 50s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
 .node {
@@ -50,15 +68,17 @@
   offset-path: border-box;
   offset-distance: calc(100% / var(--items) * var(--index) + (var(--item-rotation) * 100%));
   min-width: 50px;
+  /*transform: perspective(none) rotateX(0deg);*/
 }
 
-.nodeContent {
+.radialBox {
   display: inline-block;
   background: var(--background);
   border: 1px solid var(--stroke);
   border-radius: pxrem(20px);
   padding: var(--spacing-1) var(--spacing-2);
   object-fit: cover;
+  max-width: 50px;
   rotate: calc(-360deg / var(--items) * var(--index) - (360deg * var(--item-rotation)));
   color: var(--text);
 }

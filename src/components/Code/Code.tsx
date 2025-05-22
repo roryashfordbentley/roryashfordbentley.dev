@@ -8,7 +8,8 @@ import { SunIcon } from '@heroicons/react/24/outline'
 import { MoonIcon } from '@heroicons/react/24/outline'
 
 /**
- * This component is a code previewer. It uses the [Sugar-High](https://sugar-high.vercel.app/) NPM [package](https://www.npmjs.com/package/sugar-high) for syntax
+ * This component is a code previewer. It uses the [Sugar-High](https://sugar-high.vercel.app/)
+ * NPM [package](https://www.npmjs.com/package/sugar-high) for syntax
  * highlighting and it has a dark mode toggle. This toggle is independent of any
  * global light/dark toggle so that the dark code preview can be used on the
  * light version of a site if desired.
