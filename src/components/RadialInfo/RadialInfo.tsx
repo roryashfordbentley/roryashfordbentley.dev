@@ -2,9 +2,9 @@ import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import styles from './RadialInfo.module.css'
 
 const items = [
-  ['JS/TS', 'React', 'Next.js', 'Node'],
-  ['Sass', 'Tailwind', 'PHP', 'Twig', 'CSS Modules'],
-  ['Docker', 'A11y', 'DBs', 'DevOps'],
+  ['JS', 'React', 'Next', 'Node'],
+  ['Sass', 'Tailwind', 'PHP', 'Twig'],
+  ['Docker', 'A11y', 'Database', 'DevOps'],
 ]
 
 export const RadialBox = (props: { title: string; iconPath: string }) => {
@@ -12,7 +12,7 @@ export const RadialBox = (props: { title: string; iconPath: string }) => {
     <div className={styles.radialBox}>
       <figure className={styles.radialBoxIcon}>
         <InlineSVG svgPath={props.iconPath} />
-        <figcaption className={styles.radialBoxTitle}>{props.title}</figcaption>
+        {/*<figcaption className={styles.radialBoxTitle}>{props.title}</figcaption>*/}
       </figure>
     </div>
   )

@@ -1,4 +1,5 @@
 'use client'
+
 import styles from './Code.module.css'
 import { highlight } from 'sugar-high'
 import { useState } from 'react'
@@ -8,6 +9,8 @@ import { SunIcon } from '@heroicons/react/24/outline'
 import { MoonIcon } from '@heroicons/react/24/outline'
 
 /**
+ * Code Preview component
+ *
  * This component is a code previewer. It uses the [Sugar-High](https://sugar-high.vercel.app/)
  * NPM [package](https://www.npmjs.com/package/sugar-high) for syntax
  * highlighting and it has a dark mode toggle. This toggle is independent of any
