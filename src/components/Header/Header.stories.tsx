@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Header } from './Header'
 import { MainNav } from '@components/MainNav/MainNav'

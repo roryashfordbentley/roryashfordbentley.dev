@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { ImagesRow } from './ImagesRow'
 import Image from 'next/image'

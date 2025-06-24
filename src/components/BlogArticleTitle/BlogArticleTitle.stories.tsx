@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { BlogArticleTitle } from './BlogArticleTitle'
 import Image from 'next/image'

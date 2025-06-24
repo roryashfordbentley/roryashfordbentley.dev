@@ -1,4 +1,4 @@
-import { Preview } from '@storybook/react'
+import { Preview } from '@storybook/nextjs'
 
 const preview: Preview = {
   decorators: [

@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react'
+import type { Preview } from '@storybook/nextjs'
 
 import '@styles/tokens/colours.css'
 import '@styles/tokens/fonts.css'

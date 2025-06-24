@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Prose } from './Prose'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Tags } from './Tags'
 import { Tag } from '@components/Tag/Tag'

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Slider, Slide } from './Slider'
 import { CardArticle } from '@components/CardArticle/CardArticle'

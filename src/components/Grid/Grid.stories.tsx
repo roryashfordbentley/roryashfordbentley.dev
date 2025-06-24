@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Grid, GridItem } from './Grid'
 import { WireframeBox } from '@components/WireframeBox/WireframeBox'
