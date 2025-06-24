@@ -13,10 +13,26 @@ const meta = {
   tags: ['autodocs'],
 } satisfies Meta<typeof MobileNav>
 
-export default meta;
+export default meta
 
 export const Default: Story = {
   args: {
-    example: 'This is example text',
+    toggle: true,
+    children: [
+      <ul key="mobile-nav-list" className="mobile-nav-list">
+        <li className="mobile-nav-item">
+          <a href="#home">Home</a>
+        </li>
+        <li className="mobile-nav-item">
+          <a href="#about">About</a>
+        </li>
+        <li className="mobile-nav-item">
+          <a href="#services">Services</a>
+        </li>
+        <li className="mobile-nav-item">
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>,
+    ],
   },
 }
