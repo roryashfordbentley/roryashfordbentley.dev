@@ -3,10 +3,6 @@
   height: auto;
 }
 
-.background {
-  fill: var(--theme-background);
-}
-
 .foreground {
   fill: var(--theme-accent);
 }
