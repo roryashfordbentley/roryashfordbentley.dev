@@ -4,6 +4,7 @@ import configPromise from '@payload-config'
 import { Media } from '@/payload-types'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { HeaderContainer } from '@components/Header/Header.container'
 
 /**
  * Blocks
@@ -78,7 +79,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <>
       <LivePreviewListener />
-
+      <HeaderContainer light />
       <Container>
         <ContainerItem layout="full">
           <BlogArticleTitle
