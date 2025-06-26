@@ -1,20 +1,11 @@
-.wrapper {
-  background-color: var(--theme-accent);
-}
-
-.wrapperLight {
-  background-color: var(--theme-background);
-  color: var(--theme-foreground);
-}
-
 .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-3) var(--spacing-3);
+  padding: var(--spacing-3) 0;
 
   @media (--m) {
-    padding: var(--spacing-4) var(--spacing-5);
+    padding: var(--spacing-4) 0;
   }
 }
 

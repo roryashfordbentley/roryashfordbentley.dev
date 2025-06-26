@@ -1,61 +1,59 @@
-.inner {
-  background-color: var(--theme-accent);
-  color: var(--theme-background-tint);
-  padding: var(--spacing-6) 0 var(--spacing-8) 0;
-
-  @media (--m) {
-    padding: var(--spacing-7) 0 var(--spacing-8) 0;
-  }
+.wrapper {
+  display: grid;
+  grid-template-columns: var(--content-grid-columns);
+  padding: var(--spacing-6) 0;
 
   @media (--l) {
-    padding: var(--spacing-9) 0;
+    grid-template-columns: var(--content-grid-columns-large);
+    padding: var(--spacing-10) 0;
   }
-}
 
-.content {
-  text-align: center;
+  > * {
+    grid-column: content;
+  }
 }
 
 .title {
-  font-size: clamp(var(--font-size-3), 6vw, var(--font-size-10));
-  letter-spacing: -0.07em;
-
-  grid-column: 1 / 5;
+  font-size: var(--font-size-4);
   margin-bottom: var(--spacing-5);
+  grid-column: content;
+
+  @media (--l) {
+    font-size: var(--font-size-8);
+  }
+}
+
+.coverImage {
+  grid-column: wide;
+  border-radius: var(--radius-1);
+
+  img {
+    border-radius: var(--radius-1);
+  }
 }
 
 .description {
-  font-size: clamp(var(--font-size-2), 3vw, var(--font-size-6));
+  font-size: var(--font-size-5);
   color: var(--theme-text-tint);
-  letter-spacing: -0.05em;
-  max-width: 80%;
-  margin: 0 auto var(--spacing-3) auto;
-  color: var(--theme-background-tint);
+}
 
-  @media (--m) {
-    max-width: 60%;
+.sidebarBefore {
+  @media (--l) {
+    grid-column: sidebar-before;
+    grid-row: 1 / 1;
   }
 }
 
-.meta {
-  display: flex;
-  gap: var(--spacing-3);
-  justify-content: space-between;
-  margin-top: var(--spacing-5);
-
-  @media (--m) {
-    margin-top: var(--spacing-7);
-  }
-
+.sidebarAfter {
   @media (--l) {
-    margin-top: var(--spacing-9);
+    grid-column: sidebar-after;
+    grid-row: 1 / 1;
   }
 }
 
 .metaItem {
   display: flex;
   align-items: center;
-  font-size: var(--font-size-1);
 }
 
 .metaIcon {
@@ -81,13 +79,4 @@
 
 .metaItemValue {
   color: var(--theme-text-tint);
-}
-
-.coverImage {
-  border-radius: var(--radius-1);
-  margin-top: calc(var(--spacing-7) * -1);
-
-  img {
-    border-radius: var(--radius-1);
-  }
 }

@@ -1,0 +1,9 @@
+:root {
+  --content-grid-columns: [full-start] 0 [sidebar-before-start] 0 [sidebar-before-end] pxrem(14px)
+    [wide-start] pxrem(14px) [content-start] auto [content-end] pxrem(14px) [wide-end] pxrem(14px)
+    [sidebar-after-start] 0 [sidebar-after-end] 0 [full-end];
+
+  --content-grid-columns-large: [full-start] 0 [sidebar-before-start] 1fr [sidebar-before-end]
+    pxrem(50px) [wide-start] pxrem(50px) [content-start] min(52%, 46rem) [content-end] pxrem(50px)
+    [wide-end] pxrem(50px) [sidebar-after-start] 1fr [sidebar-after-end] 0 [full-end];
+}

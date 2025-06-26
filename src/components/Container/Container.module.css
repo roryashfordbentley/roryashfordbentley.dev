@@ -8,15 +8,23 @@
 
   grid-template-columns:
     [full-start]
-    minmax(5%, auto)
+    0
+    [sidebar-before-start]
+    1fr
+    [sidebar-before-end]
+    pxrem(50px)
     [wide-start]
-    minmax(5%, 240px)
+    pxrem(50px)
     [content-start]
-    min(80%, 850px)
+    min(80%, 42rem)
     [content-end]
-    minmax(5%, 240px)
+    pxrem(50px)
     [wide-end]
-    minmax(5%, auto)
+    pxrem(50px)
+    [sidebar-after-start]
+    1fr
+    [sidebar-after-end]
+    0
     [full-end];
 }
 
@@ -34,6 +42,14 @@
 
 .item--wide {
   grid-column: wide;
+}
+
+.item--sidebar-before {
+  grid-column: sidebar-before;
+}
+
+.item--sidebar-after {
+  grid-column: sidebar-after;
 }
 
 .grid--debug {

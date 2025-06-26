@@ -80,17 +80,15 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <>
       <LivePreviewListener />
       <HeaderContainer light />
-      <Container>
-        <ContainerItem layout="full">
-          <BlogArticleTitle
-            title={title}
-            description={description}
-            datePosted={date}
-            readingTime="5 minutes"
-            image={bigImage}
-          ></BlogArticleTitle>
-        </ContainerItem>
+      <BlogArticleTitle
+        title={title}
+        description={description}
+        datePosted={date}
+        readingTime="5 minutes"
+        image={bigImage}
+      ></BlogArticleTitle>
 
+      <Container>
         {content && (
           <Prose padded>
             <LexicalToJSX data={content} />

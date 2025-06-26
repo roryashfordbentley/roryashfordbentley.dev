@@ -26,5 +26,13 @@ export const Default: Story = {
     datePosted: '2025-03-06T10:28:13.749Z',
     readingTimeLabel: 'Reading Time',
     readingTime: '5 Minutes',
+    image: (
+      <Image
+        src={'./story-images/mac-1500-844.jpg' as string}
+        alt={'Featured Image Alt Text'}
+        width={1500}
+        height={830}
+      />
+    ),
   },
 }

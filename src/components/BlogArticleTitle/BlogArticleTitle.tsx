@@ -14,47 +14,36 @@ export const BlogArticleTitle = (props: {
   image?: React.ReactNode
 }) => {
   return (
-    <section className={styles.wrapper}>
-      <header className={styles.inner}>
-        <Container>
-          <ContainerItem layout="wide">
-            <div className={styles.content}>
-              {props.title && <h1 className={styles.title}>{props.title}</h1>}
-              {props.description && <p className={styles.description}>{props.description}</p>}
-            </div>
+    <header className={styles.wrapper}>
+      {props.title && <h1 className={styles.title}>{props.title}</h1>}
 
-            <aside className={styles.meta}>
-              <div className={styles.metaItem}>
-                <div className={styles.metaIcon}>
-                  <InlineSVG svgPath="icons/calendar.svg" />
-                </div>
+      <aside className={styles.sidebarBefore}>
+        <div className={styles.metaItem}>
+          <div className={styles.metaIcon}>
+            <InlineSVG svgPath="icons/calendar.svg" />
+          </div>
 
-                <span className={styles.metaItemValue}>
-                  {dateFormatter(props.datePosted).readableDateString ?? ''}
-                </span>
-              </div>
+          <span className={styles.metaItemValue}>
+            {dateFormatter(props.datePosted).readableDateString ?? ''}
+          </span>
+        </div>
 
-              <div className={styles.metaItem}>
-                <div className={styles.metaIcon}>
-                  <InlineSVG svgPath="icons/book.svg" />
-                </div>
+        <div className={styles.metaItem}>
+          <div className={styles.metaIcon}>
+            <InlineSVG svgPath="icons/book.svg" />
+          </div>
 
-                <span className={styles.metaItemTitle}>
-                  {props.readingTimeLabel ?? 'Reading time'}:
-                </span>
+          <span className={styles.metaItemTitle}>{props.readingTimeLabel ?? 'Reading time'}:</span>
 
-                <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>
-              </div>
-            </aside>
-          </ContainerItem>
-        </Container>
-      </header>
+          <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>
+        </div>
+      </aside>
 
-      <Container>
-        <ContainerItem layout="wide">
-          {props.image && <div className={styles.coverImage}>{props.image}</div>}
-        </ContainerItem>
-      </Container>
-    </section>
+      <aside className={styles.sidebarAfter}>Next/ Prev posts...</aside>
+
+      {props.image && <div className={styles.coverImage}>{props.image}</div>}
+
+      {props.description && <p className={styles.description}>{props.description}</p>}
+    </header>
   )
 }

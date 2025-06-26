@@ -3,7 +3,7 @@ import styles from './Container.module.css'
 
 interface ItemProps {
   children?: React.ReactNode
-  layout?: 'full' | 'wide' | 'debug'
+  layout?: 'full' | 'wide' | 'debug' | 'sidebar-before' | 'sidebar-after'
 }
 
 export const ContainerItem = ({ children, layout }: ItemProps) => {
@@ -13,6 +13,10 @@ export const ContainerItem = ({ children, layout }: ItemProps) => {
     itemClassName = `${styles.item} ${styles['item--full']}`
   } else if (layout == 'wide') {
     itemClassName = `${styles.item} ${styles['item--wide']}`
+  } else if (layout == 'sidebar-before') {
+    itemClassName = `${styles.item} ${styles['item--sidebar-before']}`
+  } else if (layout == 'sidebar-after') {
+    itemClassName = `${styles.item} ${styles['item--sidebar-after']}`
   }
 
   return <div className={itemClassName}>{children}</div>
