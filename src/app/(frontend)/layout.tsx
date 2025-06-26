@@ -5,6 +5,7 @@ import '@styles/tokens/spacing.css'
 import '@styles/tokens/media-queries.css'
 import '@styles/tokens/border-radius.css'
 import '@styles/tokens/utility.css'
+import '@styles/tokens/grids.css'
 import '@styles/reset.css'
 import '@styles/global.css'
 import '@styles/typography.css'
@@ -13,7 +14,7 @@ import '@components/Header/Header'
 import '@components/Footer/Footer'
 
 import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Source_Serif_4 } from 'next/font/google'
 import { Content } from '@components/Content/Content'
 import { FooterContainer } from '@components/Footer/Footer.container'
 
@@ -27,13 +28,21 @@ export const metadata: Metadata = {
   manifest: '/favicon/site.webmanifest',
 }
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-family-inter',
+})
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-family-source-serif',
+})
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const isLocal = process.env.NODE_ENV === 'development'
 
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${sourceSerif.variable} `}>
       <body className={isLocal ? 'dev' : ''}>
         <Content>{children}</Content>
         <FooterContainer />
