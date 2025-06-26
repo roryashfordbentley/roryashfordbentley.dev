@@ -25,16 +25,16 @@
 */
 
 :root {
-  --theme-foreground: #0f1417;
+  --theme-foreground: #615e69;
   --theme-foreground-tint: #1b2227;
   --theme-foreground-tint-2: #363d43;
 
-  --theme-accent: #e43d11;
-  --theme-accent-tint: #a03215;
+  --theme-accent: #652be3;
+  --theme-accent-tint: #d8cdf0;
   --theme-accent-tint-2: #5a1300;
 
   --theme-background: #ffffff;
-  --theme-background-tint: #ece9e2;
+  --theme-background-tint: #d8cdf0;
   --theme-background-tint-2: #d8d3c8;
 
   --theme-text: var(--theme-foreground);
