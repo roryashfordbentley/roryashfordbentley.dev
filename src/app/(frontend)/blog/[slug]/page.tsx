@@ -20,6 +20,7 @@ import { LivePreviewListener } from '@components/utils/LivePreviewListener'
 import { Container, ContainerItem } from '@components/Container/Container'
 import { BlogMasthead } from '@/components/BlogMasthead/BlogMasthead'
 import { BigImage } from '@/components/BigImage/BigImage'
+import { PageWrapper } from '@/components/PageWrapper/PageWrapper'
 
 /**
  * Load the blog post data from Payload
@@ -84,25 +85,27 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <>
       <LivePreviewListener />
-      <HeaderContainer light />
-      <BlogMasthead
-        title={title}
-        description={description}
-        datePosted={date}
-        readingTime="5 minutes"
-        image={bigImage}
-        tags={tags}
-      ></BlogMasthead>
+      <PageWrapper>
+        <HeaderContainer light />
+        <BlogMasthead
+          title={title}
+          description={description}
+          datePosted={date}
+          readingTime="5 minutes"
+          image={bigImage}
+          tags={tags}
+        ></BlogMasthead>
 
-      <Container>
-        {content && (
-          <Prose padded>
-            <LexicalToJSX data={content} />
-          </Prose>
-        )}
-      </Container>
+        <Container>
+          {content && (
+            <Prose padded>
+              <LexicalToJSX data={content} />
+            </Prose>
+          )}
+        </Container>
 
-      <RenderBlocks blocks={layout} />
+        <RenderBlocks blocks={layout} />
+      </PageWrapper>
     </>
   )
 }
