@@ -5,7 +5,8 @@ html {
   font-style: normal;
   line-height: 1.3;
   color: var(--theme-text);
-  max-width: pxrem(1300px);
+  width: 95%;
+  max-width: pxrem(1400px);
   margin: 0 auto;
 }
 
@@ -15,8 +16,8 @@ body {
 }
 
 ::selection {
-  color: var(--theme-accent);
-  background: var(--theme-foreground);
+  color: white;
+  background: var(--theme-accent);
 }
 
 /**
