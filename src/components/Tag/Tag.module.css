@@ -1,56 +1,28 @@
 .tag {
-  --tag-colour-1: #fff200;
-  --tag-colour-2: #2ccfa6;
-  --tag-colour-3: #2c4dcf;
-  --tag-colour-4: #feace1;
-  --tag-colour-5: #ff9480;
-  --tag-colour-6: #2ccfa6;
-
   position: relative;
   border: pxrem(1px) solid var(--theme-border);
   border-radius: pxrem(50px);
-  padding: var(--spacing-1) var(--spacing-3) var(--spacing-1) var(--spacing-5);
-  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-1) var(--spacing-3) var(--spacing-1) var(--spacing-4);
+  background-color: var(--theme-accent-tint-2);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-1);
+  color: var(--theme-foreground-tint);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--theme-accent-tint);
+    color: var(--theme-foreground-tint);
+  }
 
   &:before {
     position: absolute;
     display: block;
     content: '';
-    width: var(--spacing-2);
-    height: var(--spacing-2);
-    top: calc(50% - var(--spacing-2) / 2);
+    width: var(--spacing-1);
+    height: var(--spacing-1);
+    top: calc(50% - var(--spacing-1) / 2);
     left: var(--spacing-2);
     border-radius: var(--spacing-2);
-    background: var(--tag-colour-1);
-  }
-
-  &:nth-child(2n) {
-    &:before {
-      background: var(--tag-colour-2);
-    }
-  }
-
-  &:nth-child(3n) {
-    &:before {
-      background: var(--tag-colour-3);
-    }
-  }
-
-  &:nth-child(4n) {
-    &:before {
-      background: var(--tag-colour-4);
-    }
-  }
-
-  &:nth-child(5n) {
-    &:before {
-      background: var(--tag-colour-5);
-    }
-  }
-
-  &:nth-child(6n) {
-    &:before {
-      background: var(--tag-colour-6);
-    }
+    background: var(--theme-accent);
   }
 }

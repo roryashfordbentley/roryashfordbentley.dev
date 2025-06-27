@@ -1,0 +1,37 @@
+.wrapper {
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-1);
+  line-height: 1;
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-1);
+}
+
+.metaIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: pxrem(18px);
+  margin-right: var(--spacing-2);
+
+  path,
+  shape {
+    stroke: var(--theme-accent-tint);
+    stroke-width: 1;
+  }
+}
+
+.metaItemTitle {
+  margin-right: var(--spacing-1);
+
+  @media (--l) {
+    display: block;
+  }
+}
+
+.metaItemValue {
+  color: var(--theme-text-tint);
+}

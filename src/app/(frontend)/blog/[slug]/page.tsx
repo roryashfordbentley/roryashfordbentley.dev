@@ -18,7 +18,7 @@ import { Prose } from '@components/Prose/Prose'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { LivePreviewListener } from '@components/utils/LivePreviewListener'
 import { Container, ContainerItem } from '@components/Container/Container'
-import { BlogArticleTitle } from '@/components/BlogArticleTitle/BlogArticleTitle'
+import { BlogMasthead } from '@/components/BlogMasthead/BlogMasthead'
 import { BigImage } from '@/components/BigImage/BigImage'
 
 /**
@@ -51,7 +51,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     return notFound() //  404 page
   }
 
-  //console.log(JSON.stringify(postData.featuredImageWithMetadata, null, 4))
+  //console.log(JSON.stringify(postData, null, 4))
 
   const title = postData.title || ''
   const description = postData.description || ''
@@ -62,6 +62,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const content = postData.content || ''
   const layout = postData.layout || []
   const date = postData.createdAt || ''
+  const tags =
+    postData.tags?.map((tag: any) => ({
+      title: tag.title,
+      slug: tag.slug,
+    })) || []
 
   const image = featuredImage.url ? (
     <Image src={featuredImage.url ?? ''} alt={featuredImage?.alt ?? ''} width={1330} height={720} />
@@ -80,13 +85,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <>
       <LivePreviewListener />
       <HeaderContainer light />
-      <BlogArticleTitle
+      <BlogMasthead
         title={title}
         description={description}
         datePosted={date}
         readingTime="5 minutes"
         image={bigImage}
-      ></BlogArticleTitle>
+        tags={tags}
+      ></BlogMasthead>
 
       <Container>
         {content && (

@@ -1,9 +1,9 @@
 import styles from './Tag.module.css'
 
-export const Tag = (props: { label: string }) => {
+export const Tag = (props: { label: string; link: string }) => {
   return (
-    <>
-      <span className={styles.tag}>{props.label}</span>
-    </>
+    <a className={styles.tag} href={props.link}>
+      {props.label}
+    </a>
   )
 }

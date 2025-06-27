@@ -1,30 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 
-import { BlogArticleTitle } from './BlogArticleTitle'
+import { BlogMasthead } from './BlogMasthead'
 import Image from 'next/image'
 
 type Story = StoryObj<typeof meta>
 
 const meta = {
-  title: 'Components/BlogArticleTitle',
-  component: BlogArticleTitle,
+  title: 'Components/BlogMasthead',
+  component: BlogMasthead,
   parameters: {
     layout: 'padded',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof BlogArticleTitle>
+} satisfies Meta<typeof BlogMasthead>
 
 export default meta
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    title: 'Key changes in WCAG 2.2: What you need to know',
+    title: 'Payload CMS - the NextJS WordPress alternative',
     description:
       '2024 saw the official announcement and adoption of WCAG 2.2 which brings a range of additional considerations and updates.',
-    datePostedLabel: 'Posted',
     datePosted: '2025-03-06T10:28:13.749Z',
-    readingTimeLabel: 'Reading Time',
     readingTime: '5 Minutes',
     image: (
       <Image

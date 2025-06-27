@@ -18,5 +18,6 @@ export default meta
 export const Default: Story = {
   args: {
     label: 'Javascript',
+    link: 'https://www.javascript.com/',
   },
 }

@@ -1,13 +1,13 @@
 .title {
-  text-align: center;
-  font-size: var(--font-size-8);
+  font-size: var(--font-size-2);
   margin-bottom: var(--spacing-5);
+  color: var(--theme-foreground-tint);
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   row-gap: var(--spacing-3);
   column-gap: var(--spacing-1);
 }
