@@ -1,8 +1,6 @@
 .wrapper {
-  position: sticky;
-  bottom: 0;
   width: 100%;
-  background: black;
+  background: var(--theme-background-tint);
   color: white;
   padding-top: var(--spacing-5);
 
