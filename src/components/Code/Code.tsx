@@ -8,6 +8,9 @@ import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'
 import { SunIcon } from '@heroicons/react/24/outline'
 import { MoonIcon } from '@heroicons/react/24/outline'
 
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+
 /**
  * Code Preview component
  *
@@ -60,9 +63,9 @@ export const Code = (props: { label: string; codeString: string; hideHeader?: bo
         </header>
       )}
 
-      <pre className={`${styles.codeWrapper} ${props.hideHeader && styles.codeWrapperRounded}`}>
-        <code dangerouslySetInnerHTML={{ __html: codeHTML }} className={styles.code} />
-      </pre>
+      <SyntaxHighlighter language="jsx" style={atomOneDark}>
+        {props.codeString}
+      </SyntaxHighlighter>
     </div>
   )
 }

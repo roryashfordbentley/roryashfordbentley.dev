@@ -12,15 +12,15 @@
 }
 
 .container--dark {
-  --background: #1b2227;
-  --sh-class: #f9673e;
-  --sh-identifier: #dfbfb7;
+  --background: #4e4660;
+  --sh-class: #89c7ff;
+  --sh-identifier: #ffffff;
   --sh-sign: #ffffff;
   --sh-property: #b48a6e;
   --sh-entity: #ecf394;
-  --sh-jsxliterals: #b48a6e;
-  --sh-string: #d2da68;
-  --sh-keyword: #ffffff;
+  --sh-jsxliterals: #fc67d7;
+  --sh-string: #fcffa0;
+  --sh-keyword: #fc67d7;
   --sh-comment: #a19595;
 }
 
@@ -30,15 +30,15 @@
 }
 
 .header {
-  background: var(--theme-accent);
-  color: white;
+  background: var(--theme-accent-tint-2);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: var(--font-family-inter);
   padding: var(--spacing-2);
   gap: var(--spacing-2);
-  border-top-left-radius: var(--radius-1);
-  border-top-right-radius: var(--radius-1);
+  border-top-left-radius: var(--radius-2);
+  border-top-right-radius: var(--radius-2);
 }
 
 .circles {
@@ -49,10 +49,10 @@
 
 .circle {
   display: block;
-  width: pxrem(13px);
-  height: pxrem(13px);
-  border-radius: pxrem(13px);
-  border: 1px solid var(--theme-foreground-tint);
+  width: pxrem(11px);
+  height: pxrem(11px);
+  border-radius: pxrem(11px);
+  background: var(--theme-accent-tint);
 }
 
 .title {
@@ -70,11 +70,11 @@
 
 .button {
   background: transparent;
-  border: pxrem(1px) solid var(--theme-accent-tint);
+  border: 0;
   border-radius: var(--radius-1);
   padding: 0.4rem;
-  width: pxrem(35px);
-  height: pxrem(35px);
+  width: pxrem(32px);
+  height: pxrem(32px);
   flex-shrink: 0;
 
   svg path {
@@ -83,10 +83,9 @@
 
   &:hover {
     cursor: pointer;
-    border: pxrem(1px) solid #1b2227;
 
     svg path {
-      stroke: #1b2227;
+      stroke: var(--theme-accent);
     }
   }
 }
