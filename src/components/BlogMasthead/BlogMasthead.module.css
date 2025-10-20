@@ -45,8 +45,10 @@
 
 .sidebarBefore {
   @media (--l) {
+    display: grid;
+    grid-template-rows: subgrid;
     grid-column: sidebar-before;
-    grid-row: 1 / 1;
+    grid-row: 1 / 3;
   }
 }
 

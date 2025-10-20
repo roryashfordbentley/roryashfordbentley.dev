@@ -3,13 +3,7 @@ import styles from './LogoLink.module.css'
 export const LogoLink = (props: { link: string }) => {
   return (
     <a className={styles.link} href={props.link} title="Rory Ashford-Bentley homepage">
-      <svg
-        width="43"
-        height="43"
-        viewBox="0 0 43 43"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M42.3732 0.5L42.4863 26.6911L32.7989 26.7428L32.8412 10.0231L0.929688 10.1784V0.5H42.3732Z"
           fill="black"

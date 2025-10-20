@@ -2,17 +2,14 @@ import configPromise from '@payload-config'
 import { Media } from '@/payload-types'
 import { getPayload } from 'payload'
 
-import styles from './PageTitle.module.css'
 import React from 'react'
 
-//import type Media from 'payload'
-
-import { Container } from '@components/Container/Container'
-import { ContainerItem } from '@components/Container/Container'
 import { Grid, GridItem } from '@components/Grid/Grid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Pagination } from '@components/Pagination/Pagination'
 import { PageTitle } from '@components/PageTitle/PageTitle'
+import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { HeaderContainer } from '@components/Header/Header.container'
 
 export default async function Page({
   searchParams,
@@ -54,36 +51,35 @@ export default async function Page({
 
   return (
     <>
-      <PageTitle title={pageTitle} description={pageDescription} />
+      <HeaderContainer light />
+      <PageWrapper>
+        <PageTitle title={pageTitle} description={pageDescription} />
 
-      <Container>
-        <ContainerItem layout="wide">
-          <Grid columns={1} columnsMedium={6} gutter>
-            {posts.docs.map((post, index) => {
-              const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
+        <Grid columns={1} columnsMedium={6} gutter>
+          {posts.docs.map((post, index) => {
+            const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
 
-              return (
-                <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
-                  <CardArticle
-                    imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
-                    imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
-                    title={post.title ?? ''}
-                    description={post.description ?? ''}
-                    date={post.createdAt ?? null}
-                    url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
-                  />
-                </GridItem>
-              )
-            })}
-          </Grid>
+            return (
+              <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
+                <CardArticle
+                  imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
+                  imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
+                  title={post.title ?? ''}
+                  description={post.description ?? ''}
+                  date={post.createdAt ?? null}
+                  url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
+                />
+              </GridItem>
+            )
+          })}
+        </Grid>
 
-          <Pagination
-            totalItems={posts.totalDocs}
-            itemsPerPage={posts.limit}
-            currentPage={currentPage}
-          />
-        </ContainerItem>
-      </Container>
+        <Pagination
+          totalItems={posts.totalDocs}
+          itemsPerPage={posts.limit}
+          currentPage={currentPage}
+        />
+      </PageWrapper>
     </>
   )
 }

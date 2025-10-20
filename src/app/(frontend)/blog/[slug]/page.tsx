@@ -85,8 +85,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <>
       <LivePreviewListener />
+      <HeaderContainer light />
       <PageWrapper>
-        <HeaderContainer light />
         <BlogMasthead
           title={title}
           description={description}

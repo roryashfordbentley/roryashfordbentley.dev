@@ -1,5 +1,5 @@
 .nav {
-  font-size: var(--font-size-3);
+  font-family: var(--font-family-inter);
 }
 
 .list {
@@ -10,22 +10,24 @@
 
   @media (--m) {
     display: flex;
+    gap: var(--spacing-4);
   }
 }
 
-.link {
+.link,
+.linkActive {
   text-decoration: none;
   position: relative;
   padding: var(--spacing-1) 0;
-  color: currentColor;
   transition: opacity 0.3s;
-  font-size: var(--font-size-8);
-
-  @media (--m) {
-    font-size: var(--font-size-2);
-  }
+  font-size: 1.25rem;
 }
 
-.list:has(.link:hover) .link:not(:hover) {
+.linkActive {
+  color: var(--theme-accent);
+}
+
+.list:has(.link:hover, .linkActive:hover) .link:not(:hover),
+.list:has(.link:hover, .linkActive:hover) .linkActive:not(:hover) {
   opacity: 0.6;
 }
