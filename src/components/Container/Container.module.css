@@ -4,28 +4,17 @@
 
 .grid {
   display: grid;
-  width: 100%;
+  grid-template-columns: var(--content-grid-columns);
+  padding: var(--spacing-6) 0 var(--spacing-3) 0;
 
-  grid-template-columns:
-    [full-start]
-    0
-    [sidebar-before-start]
-    1fr
-    [sidebar-before-end]
-    pxrem(50px)
-    [wide-start]
-    pxrem(50px)
-    [content-start]
-    min(80%, 42rem)
-    [content-end]
-    pxrem(50px)
-    [wide-end]
-    pxrem(50px)
-    [sidebar-after-start]
-    1fr
-    [sidebar-after-end]
-    0
-    [full-end];
+  @media (--l) {
+    grid-template-columns: var(--content-grid-columns-large);
+    padding: var(--spacing-10) 0 var(--spacing-4) 0;
+  }
+
+  > * {
+    grid-column: content;
+  }
 }
 
 .item {
