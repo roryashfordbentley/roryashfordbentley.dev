@@ -1,30 +1,4 @@
 .container {
-  --background: #ece9e2;
-  --sh-class: #e43d11;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-property: #5a1300;
-  --sh-entity: #a37a37;
-  --sh-jsxliterals: #5a1300;
-  --sh-string: #917308;
-  --sh-keyword: #1b2227;
-  --sh-comment: #a19595;
-}
-
-.container--dark {
-  --background: #4e4660;
-  --sh-class: #89c7ff;
-  --sh-identifier: #ffffff;
-  --sh-sign: #ffffff;
-  --sh-property: #b48a6e;
-  --sh-entity: #ecf394;
-  --sh-jsxliterals: #fc67d7;
-  --sh-string: #fcffa0;
-  --sh-keyword: #fc67d7;
-  --sh-comment: #a19595;
-}
-
-.container {
   border: 1px solid var(--theme-border);
   border-radius: var(--radius-1);
 }
@@ -90,16 +64,14 @@
   }
 }
 
-.codeWrapper {
-  background: var(--background);
-  padding: var(--spacing-4);
+.codeWrapper pre {
+  padding: var(--spacing-3) !important; /* forgive me, the code lib uses inline styles */
   overflow-x: scroll;
-  font-size: clamp(var(--font-size-1), 2vw, var(--font-size-2));
-  border-bottom-left-radius: var(--radius-1);
-  border-bottom-right-radius: var(--radius-1);
+  font-size: var(--font-size-2);
+  border-radius: var(--radius-2);
 }
 
-.codeWrapperRounded {
-  border-radius: var(--radius-1);
-  padding: var(--spacing-2) var(--spacing-4);
+.header + .codeWrapper pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

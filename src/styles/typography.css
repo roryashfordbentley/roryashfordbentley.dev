@@ -49,8 +49,10 @@ h5 {
   }
 }
 
-p {
-  font-size: var(--font-size-3);
+p,
+ul,
+ol {
+  font-size: var(--font-size-4);
   letter-spacing: -0.03em;
 }
 

@@ -82,13 +82,15 @@
   }
 
   :not(pre) > code {
-    background-color: #1b2227;
-    color: var(--theme-background);
-    font-size: var(--font-size-1);
-    padding: 0 var(--spacing-1);
+    background-color: rgb(250, 250, 250);
+    border: pxrem(1px) solid var(--theme-accent-tint-2);
+    color: var(--theme-accent);
+    font-size: var(--font-size-3);
+    padding: var(--spacing-1) var(--spacing-2);
     border-radius: var(--radius-1);
     display: inline-block; /* Prevents line-breaking artifacts */
     white-space: nowrap;
+    line-height: 1;
   }
 }
 

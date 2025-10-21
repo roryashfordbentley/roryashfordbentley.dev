@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './Code.module.css'
-import { highlight } from 'sugar-high'
+//import { highlight } from 'sugar-high'
 import { useState } from 'react'
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
 import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'
@@ -9,20 +9,24 @@ import { SunIcon } from '@heroicons/react/24/outline'
 import { MoonIcon } from '@heroicons/react/24/outline'
 
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import { atomOneLight, atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
 /**
  * Code Preview component
  *
- * This component is a code previewer. It uses the [Sugar-High](https://sugar-high.vercel.app/)
- * NPM [package](https://www.npmjs.com/package/sugar-high) for syntax
+ * This component is a code previewer. It uses the [SyntaxHighlighter](https://github.com/react-syntax-highlighter/)
  * highlighting and it has a dark mode toggle. This toggle is independent of any
  * global light/dark toggle so that the dark code preview can be used on the
  * light version of a site if desired.
  */
 
-export const Code = (props: { label: string; codeString: string; hideHeader?: boolean }) => {
-  const codeHTML = highlight(props.codeString as string)
+export const Code = (props: {
+  label: string
+  language: string
+  codeString: string
+  hideHeader?: boolean
+}) => {
+  //const codeHTML = highlight(props.codeString as string)
 
   const [copied, setCopied] = useState(false)
 
@@ -40,7 +44,7 @@ export const Code = (props: { label: string; codeString: string; hideHeader?: bo
   }
 
   return (
-    <div className={`${styles.container} ${dark && styles['container--dark']}`}>
+    <div className={styles.container}>
       {!props.hideHeader && (
         <header className={styles.header}>
           <div className={styles.circles}>
@@ -62,10 +66,14 @@ export const Code = (props: { label: string; codeString: string; hideHeader?: bo
           </div>
         </header>
       )}
-
-      <SyntaxHighlighter language="jsx" style={atomOneDark}>
-        {props.codeString}
-      </SyntaxHighlighter>
+      <div className={styles.codeWrapper}>
+        <SyntaxHighlighter
+          language={props.language ?? 'jsx'}
+          style={dark ? atomOneDark : atomOneLight}
+        >
+          {props.codeString}
+        </SyntaxHighlighter>
+      </div>
     </div>
   )
 }

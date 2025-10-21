@@ -4,7 +4,7 @@
 .metaItem {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-3);
   line-height: 1;
   font-family: var(--font-family-inter);
   font-size: var(--font-size-1);
@@ -14,13 +14,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: pxrem(18px);
+  width: pxrem(20px);
   margin-right: var(--spacing-2);
 
   path,
   shape {
-    stroke: var(--theme-accent-tint);
-    stroke-width: 1;
+    stroke: var(--theme-accent);
+    stroke-width: 1.6;
   }
 }
 
