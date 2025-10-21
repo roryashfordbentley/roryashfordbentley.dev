@@ -1,109 +1,47 @@
 .wrapper {
-  width: 100%;
-  background: var(--theme-background-tint);
-  color: white;
-  padding-top: var(--spacing-5);
-
-  @media (--m) {
-    padding-top: var(--spacing-7);
-  }
-
-  @media (--l) {
-    padding-top: var(--spacing-9);
-  }
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.5;
+  border-top: pxrem(1px) solid var(--theme-accent-tint-2);
+  padding: var(--spacing-7) 0;
 }
 
-.title {
-  color: var(--theme-accent);
-  font-size: var(--font-size-2);
-
-  @media (--m) {
-    font-size: var(--font-size-4);
-  }
-}
-
-.contact,
-.tools,
-.social {
-  margin-bottom: var(--spacing-7);
-
-  @media (--l) {
-    margin-bottom: var(--spacing-9);
-  }
-}
-
-.tools {
+.inner {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.email {
-  font-size: var(--font-size-4);
-  letter-spacing: -0.07em;
+.copyright {
+  display: flex;
+}
 
-  a {
-    text-decoration: none;
-  }
+.copyrightText {
+}
 
-  @media (--m) {
-    font-size: var(--font-size-7);
-  }
+.logo {
+  width: pxrem(24px);
+  margin-right: var(--spacing-4);
+}
+
+.buildInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.buildInfoText {
+  display: inline-block;
+  margin-right: var(--spacing-4);
 }
 
 .toolsList {
-  padding: 0;
-  list-style: none;
   display: flex;
+  list-style: none;
+
+  padding: 0;
   gap: var(--spacing-2);
 }
 
 .tool {
-  a {
-    display: block;
-  }
-
-  svg {
-    max-height: pxrem(30px);
-
-    @media (--m) {
-      max-height: pxrem(50px);
-    }
-
-    path {
-      fill: white;
-    }
-  }
-}
-
-.socialList {
-  list-style: none;
-  padding: 0;
-}
-
-.socialItemLink {
-  display: inline-block;
-  padding: var(--spacing-2) 0;
-  text-decoration: none;
-}
-
-.bigText {
-  position: relative;
-  aspect-ratio: 15 / 1;
-  overflow: hidden;
-}
-
-.bigTextOverflow {
-  display: block;
-  position: absolute;
-
-  font-size: 9.7vw;
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
-  letter-spacing: -0.07em;
-  color: var(--theme-accent);
-
-  @media (--xl) {
-    font-size: 8vw;
-  }
+  width: pxrem(22px);
 }
