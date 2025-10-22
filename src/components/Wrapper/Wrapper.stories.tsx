@@ -13,10 +13,12 @@ const meta = {
   tags: ['autodocs'],
 } satisfies Meta<typeof Wrapper>
 
-export default meta;
+export default meta
 
 export const Default: Story = {
   args: {
-    example: 'This is example text',
+    children: Array(3).fill(
+      '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
+    ),
   },
 }

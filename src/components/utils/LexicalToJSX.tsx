@@ -26,6 +26,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
           <CodeBlock
             code={node.fields.codeBlockCode || ''}
             label={node.fields.codeBlockLabel || ''}
+            language={node.fields.codeBlockLanguage || 'jsx'}
             hideHeader={node.fields.hideHeader || false}
           />
         </BlockWrapper>

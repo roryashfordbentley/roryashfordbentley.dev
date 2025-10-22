@@ -9,11 +9,6 @@ const nextConfig = {
     locales: ['en', 'en-gb'],
     defaultLocale: 'en-gb',
   },*/
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
   // Attempting to fix issue with
   // Failed to generate cache key for URL {
   // href: 'https://bsky.social/xrpc/com.atproto.server.createSession',

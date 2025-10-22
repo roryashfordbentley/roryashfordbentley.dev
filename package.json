@@ -34,7 +34,7 @@
     "embla-carousel-wheel-gestures": "^8.0.2",
     "graphql": "^16.8.1",
     "isomorphic-dompurify": "^2.22.0",
-    "next": "^15.2.3",
+    "next": "^16.0.0",
     "payload": "^3.43.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

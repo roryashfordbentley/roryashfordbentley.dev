@@ -22,7 +22,7 @@ import { atomOneLight, atomOneDark } from 'react-syntax-highlighter/dist/cjs/sty
 
 export const Code = (props: {
   label: string
-  language: string
+  language?: string
   codeString: string
   hideHeader?: boolean
 }) => {
