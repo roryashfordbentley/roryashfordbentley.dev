@@ -19,7 +19,8 @@
     "serve-storybook": "serve storybook-static",
     "create-component": "npx simple-scaffold -c simple-scaffold.json -k component $1",
     "create-block": "npx simple-scaffold -c simple-scaffold.json -k block $1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postinstall": "npm rebuild sharp --force"
   },
   "dependencies": {
     "@atproto/api": "^0.14.9",
@@ -40,7 +41,7 @@
     "react-dom": "^19.2.0",
     "react-syntax-highlighter": "^15.6.1",
     "refractor": "^5.0.0",
-    "sharp": "^0.32.6",
+    "sharp": "0.32.6",
     "sugar-high": "^0.9.2"
   },
   "devDependencies": {
