@@ -8,7 +8,7 @@ The site is built using [Next.js](https://nextjs.org/) as its underlying React f
 
 The site uses [PayloadCMS](https://payloadcms.com/) as its CMS
 
-The site deploys to [Vercel](https://vercel.com)
+The site deploys to [Vercel](https://vercel.com). **IMPORTANT**: it's only possible to use PNPM to install Sharp successfully on Vercel
 
 The site Database engine is MongoDB.
 
@@ -30,13 +30,13 @@ git clone git@github.com:roryashfordbentley/rab-website-cms.dev.git
 
 ```sh
 cd app
-npm install
+pnpm install
 ```
 
 **Run local development environment**
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 ---
@@ -45,14 +45,14 @@ npm run dev
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                           | Action                                         |
-| :-------------------------------- | :--------------------------------------------- |
-| `npm install`                     | Installs dependencies                          |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`    |
-| `npm run dev-storybook`           | Runs local dev server and storybook instance   |
-| `npm run build`                   | Runs a Next build                              |
-| `npm run create-component [NAME]` | Scaffolds a new component with stories and css |
-| `npm run create-block [NAME]`     | Scaffolds a new block with stories and css     |
+| Command                            | Action                                         |
+| :--------------------------------- | :--------------------------------------------- |
+| `pnpm install`                     | Installs dependencies                          |
+| `pnpm run dev`                     | Starts local dev server at `localhost:4321`    |
+| `pnpm run dev-storybook`           | Runs local dev server and storybook instance   |
+| `pnpm run build`                   | Runs a Next build                              |
+| `pnpm run create-component [NAME]` | Scaffolds a new component with stories and css |
+| `pnpm run create-block [NAME]`     | Scaffolds a new block with stories and css     |
 
 ## Database commands
 
