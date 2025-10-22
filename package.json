@@ -20,7 +20,7 @@
     "create-component": "npx simple-scaffold -c simple-scaffold.json -k component $1",
     "create-block": "npx simple-scaffold -c simple-scaffold.json -k block $1",
     "prepare": "husky",
-    "postinstall": "npm rebuild sharp --force"
+    "postinstall": "npm rebuild --verbose sharp"
   },
   "dependencies": {
     "@atproto/api": "^0.14.9",
