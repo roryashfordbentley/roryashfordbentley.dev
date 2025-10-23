@@ -5,7 +5,7 @@ import { SectionTitle } from './SectionTitle'
 type Story = StoryObj<typeof meta>
 
 const meta = {
-  title: 'Components/PageTitle',
+  title: 'Components/SectionTitle',
   component: SectionTitle,
   parameters: {
     layout: 'padded',
