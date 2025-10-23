@@ -1,5 +1,6 @@
 .wrapper {
-  background-color: var(--theme-background-tint);
+  position: relative;
+  background-color: var(--theme-background);
   padding: var(--spacing-5) 0;
 
   @media (--m) {
@@ -7,24 +8,15 @@
   }
 }
 
-.header {
-  /* the first slide should also have this offset margin */
-  margin-left: 5%;
-
-  @media (--l) {
-    margin-left: 28%;
-  }
-}
-
 .title {
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-9);
   color: var(--theme-accent);
+  border-bottom: pxrem(1px) solid var(--theme-accent-tint-2);
 }
 
 .description {
-  color: var(--theme-accent-tint);
+  color: var(--theme-foreground);
   font-size: var(--font-size-3);
-
   letter-spacing: -0.05em;
   margin-bottom: var(--spacing-8);
 

@@ -1,18 +1,26 @@
 .embla {
+  position: relative;
   overflow: hidden;
   --slide-spacing: var(--spacing-6);
   --slide-size: pxrem(300px);
   --slide-size-m: pxrem(400px);
   --slide-size-l: pxrem(500px);
   --slide-offset: 5%;
-  --slide-offset-m: 5%;
-  --slide-offset-l: 28%;
+  --slide-offset-m: calc((100% - var(--slide-size-m)) / 2);
+  --slide-offset-l: 4%;
 }
 
 .container {
   display: flex;
   touch-action: pan-y pinch-zoom;
   gap: var(--slide-spacing);
+
+  margin-left: 2.5%;
+
+  @media (--l) {
+    margin-left: calc((100% - var(--wrapper-max-width)) / 2);
+    width: calc(100% - ((100% - var(--wrapper-max-width)) / 2));
+  }
 }
 
 .slide {
@@ -20,13 +28,13 @@
   flex: 0 0 var(--slide-size);
   min-width: 0;
 
-  &:first-child {
+  /*&:first-child {
     margin-left: var(--slide-offset);
 
     @media (--l) {
       margin-left: var(--slide-offset-l);
     }
-  }
+  }*/
 
   @media (--m) {
     flex: 0 0 var(--slide-size-m);
@@ -41,10 +49,8 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  margin-left: var(--slide-offset);
   margin-top: var(--spacing-7);
-
-  @media (--l) {
-    margin-left: var(--slide-offset-l);
-  }
+  width: var(--wrapper-width);
+  max-width: var(--wrapper-max-width);
+  margin: 0 auto;
 }

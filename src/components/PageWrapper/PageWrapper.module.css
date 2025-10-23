@@ -1,5 +1,5 @@
 .wrapper {
   width: 95%;
-  max-width: pxrem(1400px);
+  max-width: var(--wrapper-max-width);
   margin: 0 auto;
 }

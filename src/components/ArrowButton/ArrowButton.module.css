@@ -21,13 +21,13 @@
 
 .buttonDisabled {
   cursor: not-allowed;
-  background: #ded9cf;
+  background: #d9d9d9;
 
   path {
     fill: #c9bea5;
   }
 
   &:hover {
-    background-color: #ded9cf;
+    background-color: #d9d9d9;
   }
 }
