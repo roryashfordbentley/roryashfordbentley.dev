@@ -40,7 +40,7 @@
 
 .description {
   font-size: var(--font-size-5);
-  color: var(--theme-text-tint);
+  color: var(--theme-foreground);
 }
 
 .sidebarBefore {

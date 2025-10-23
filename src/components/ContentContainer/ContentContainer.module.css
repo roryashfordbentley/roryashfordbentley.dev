@@ -1,0 +1,9 @@
+.contentContainer {
+  /*background: linear-gradient(to bottom, #f4f4f4 0%, var(--theme-background) 20%);*/
+  border-top: 1px solid var(--theme-accent-tint-2);
+  padding: var(--spacing-7) 0;
+
+  @media (--l) {
+    padding: var(--spacing-10) 0;
+  }
+}

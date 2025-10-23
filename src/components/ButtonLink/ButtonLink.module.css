@@ -8,6 +8,7 @@
   box-shadow: 0 pxrem(2px) pxrem(4px) 0 rgba(0, 0, 0, 0.25);
 
   text-decoration: none;
+  font-family: var(--font-family-inter);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-3);
 
@@ -33,7 +34,7 @@
 }
 
 .buttonTertiary {
-  background-color: var(--theme-background-tint);
+  background-color: var(--theme-background);
   color: var(--theme-accent);
 
   &:hover {

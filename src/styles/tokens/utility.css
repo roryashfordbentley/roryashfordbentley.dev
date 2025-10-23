@@ -2,6 +2,6 @@
   --util-content-width: clamp(350px, 80%, 1200px);
   --util-breakout-width: clamp(350px, 90%, 1300px);
 
-  --wrapper-width: 95%;
+  --wrapper-width: 90%;
   --wrapper-max-width: pxrem(1400px);
 }

@@ -15,9 +15,9 @@
   touch-action: pan-y pinch-zoom;
   gap: var(--slide-spacing);
 
-  margin-left: 2.5%;
+  margin-left: 5%;
 
-  @media (--l) {
+  @media (--xl) {
     margin-left: calc((100% - var(--wrapper-max-width)) / 2);
     width: calc(100% - ((100% - var(--wrapper-max-width)) / 2));
   }

@@ -5,6 +5,10 @@ import configPromise from '@payload-config'
 import { BlueskyFeedContainer } from '@components/BlueskyFeed/BlueskyFeed.container'
 import { BlogSummaryContainer } from '@components/BlogSummary/BlogSummary.container'
 import { HeaderContainer } from '@components/Header/Header.container'
+import { LexicalToJSX } from '@components/utils/LexicalToJSX'
+import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { ContentContainer } from '@/components/ContentContainer/ContentContainer'
+import { PageTitle } from '@/components/PageTitle/PageTitle'
 
 /**
  * Load the homepage content from Payload
@@ -14,7 +18,7 @@ import { HeaderContainer } from '@components/Header/Header.container'
 async function getHomepage() {
   const payload = await getPayload({ config: configPromise })
 
-  const post = await payload.find({
+  const page = await payload.find({
     collection: 'pages',
     limit: 1,
     pagination: false,
@@ -26,18 +30,25 @@ async function getHomepage() {
     },
   })
 
-  return post.docs[0]
+  return page.docs[0]
 }
 
 export default async function HomePage() {
-  const postData = await getHomepage()
+  const pageData = await getHomepage()
 
-  const layout = postData?.layout || []
+  const layout = pageData?.layout || []
 
   return (
     <>
       <main>
         <HeaderContainer light />
+        <ContentContainer>
+          <PageTitle title={pageData?.title ?? ''} description={pageData?.description ?? ''} />
+          {pageData.content && <LexicalToJSX data={pageData.content} />}
+
+          <RenderBlocks blocks={layout} />
+        </ContentContainer>
+
         <RenderBlocks blocks={layout} />
         <BlogSummaryContainer />
         <BlueskyFeedContainer />

@@ -9,6 +9,6 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--theme-background-tint);
+    background-color: var(--theme-background);
   }
 }

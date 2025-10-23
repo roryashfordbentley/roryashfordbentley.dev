@@ -1,7 +1,7 @@
 .prose {
   grid-column: full;
   line-height: 1.7;
-  color: var(--theme-text);
+  color: var(--theme-foreground);
   display: grid;
   grid-template-columns: subgrid;
 

@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: var(--theme-background-tint);
+  background-color: var(--theme-background);
   padding: var(--spacing-5) 0;
 
   @media (--l) {

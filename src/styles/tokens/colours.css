@@ -4,19 +4,15 @@
 */
 
 :root.dark {
-  --theme-background: #0f1417;
-  --theme-background-tint: #1b2227;
-  --theme-background-tint-2: #363d43;
+  --theme-background: #120f17;
 
-  --theme-accent: #e43d11;
-  --theme-accent-tint: #a03215;
-  --theme-accent-tint-2: #5a1300;
+  --theme-accent: #652be3;
+  --theme-accent-tint: #b499f0;
+  --theme-accent-tint-2: #d8cdf0;
 
   --theme-foreground: #ffffff;
-  --theme-foreground-tint: #ece9e2;
-  --theme-foreground-tint-2: #d8d3c8;
-
-  --theme-text: var(--theme-foreground);
+  --theme-foreground-tint: #eeeeee;
+  --theme-foreground-tint-2: #cccccc;
 }
 
 /**
@@ -34,8 +30,4 @@
   --theme-accent-tint-2: #d8cdf0;
 
   --theme-background: #ffffff;
-  --theme-background-tint: #d8cdf0;
-  --theme-background-tint-2: #d8d3c8;
-
-  --theme-text: var(--theme-foreground);
 }

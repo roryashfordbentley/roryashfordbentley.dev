@@ -5,10 +5,8 @@ import { Grid, GridItem } from '../Grid/Grid'
 export const PageTitle = (props: { title: string; description?: string }) => {
   return (
     <section className={styles.wrapper}>
-      <div className={styles.content}>
-        {props.title && <h1 className={styles.title}>{props.title}</h1>}
-        {props.description && <p className={styles.description}>{props.description}</p>}
-      </div>
+      {props.title && <h1 className={styles.title}>{props.title}</h1>}
+      {props.description && <p className={styles.description}>{props.description}</p>}
     </section>
   )
 }

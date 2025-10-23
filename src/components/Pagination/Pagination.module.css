@@ -56,7 +56,7 @@
 
 .linkDisabled {
   pointer-events: none;
-  background: var(--theme-background-tint);
-  color: var(--theme-text-tint);
+  background: var(--theme-background);
+  color: var(--theme-foreground);
   border: var(--theme-border) pxrem(1px) solid;
 }

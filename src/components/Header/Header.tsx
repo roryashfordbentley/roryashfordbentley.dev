@@ -25,9 +25,9 @@ export const Header = (props: { navMenu: ReactNode; socialMenu: ReactNode; light
           <div className={styles.secondaryNav}>
             {props.socialMenu && <div className={styles.social}>{props.socialMenu}</div>}
 
-            {/*<div className={styles.themeToggle}>
-            <ThemeToggle />
-          </div>*/}
+            <div className={styles.themeToggle}>
+              <ThemeToggle />
+            </div>
 
             <div className={styles.mobileNavButton}>
               <MobileNavButton onClick={() => setNavToggle(!navOpen)} />

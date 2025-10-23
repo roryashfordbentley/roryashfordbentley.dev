@@ -33,5 +33,5 @@
 }
 
 .metaItemValue {
-  color: var(--theme-text-tint);
+  color: var(--theme-foreground);
 }

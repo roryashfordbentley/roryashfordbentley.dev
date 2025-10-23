@@ -3,35 +3,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
+  font-family: var(--font-family-inter);
   border-radius: var(--radius-1);
-  background-color: var(--theme-background-tint);
+  background-color: var(--theme-background);
+  border: pxrem(1px) solid var(--theme-accent-tint-2);
   height: 100%;
   padding: var(--spacing-5);
-}
-
-.cardSecondary {
-  background-color: var(--theme-accent-tint);
-  color: white;
-
-  .metaIcon {
-    color: var(--theme-background-tint);
-  }
-
-  .displayName {
-    color: white;
-  }
 
   .repost {
-    background: rgba(255, 255, 255, 0.3);
-  }
-}
-
-.cardTertiary {
-  background-color: var(--theme-foreground);
-  color: var(--theme-background);
-
-  .repost {
-    background: var(--theme-foreground-tint-2);
+    background: var(--theme-accent-tint-2);
   }
 }
 
@@ -46,7 +26,7 @@
   width: pxrem(40px);
   height: pxrem(40px);
   border-radius: 50%;
-  background: var(--theme-background-tint-2);
+  background: var(--theme-background);
 }
 
 .repostIcon {
@@ -76,7 +56,7 @@
 .handle {
   display: block;
   font-size: var(--font-size-1);
-  color: var(--theme-text-secondary);
+  color: var(--theme-foreground-secondary);
 }
 
 .content {
@@ -154,4 +134,34 @@
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: var(--spacing-1);
   font-size: var(--font-size-1);
+}
+
+.cardSecondary {
+  background-color: #f9f6ff;
+  border: pxrem(1px) solid var(--theme-accent-tint-2);
+
+  .metaIcon {
+    color: var(--theme-accent);
+  }
+
+  .repost {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.cardTertiary {
+  background-color: var(--theme-accent);
+  color: var(--theme-background);
+
+  .displayName {
+    color: var(--theme-background);
+  }
+
+  .metaIcon {
+    color: var(--theme-background);
+  }
+
+  .repost {
+    background: var(--theme-foreground-tint-2);
+  }
 }

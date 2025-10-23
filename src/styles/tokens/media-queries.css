@@ -6,12 +6,12 @@
  * This file defines some reusable media-query breakpoints.
  */
 :root {
-	/**
+  /**
     * @tokens Media Queries
     * @presenter BorderRadius
     */
-	@custom-media --s (min-width: 600px);
-	@custom-media --m (min-width: 800px);
-	@custom-media --l (min-width: 1000px);
-	@custom-media --xl (min-width: 1200px);
+  @custom-media --s (min-width: 600px);
+  @custom-media --m (min-width: 800px);
+  @custom-media --l (min-width: 1000px);
+  @custom-media --xl (min-width: 1500px);
 }

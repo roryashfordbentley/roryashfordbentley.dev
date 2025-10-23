@@ -4,17 +4,16 @@ import { Slider, Slide } from '@components/Slider/Slider'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 import { PageWrapper } from '@components/PageWrapper/PageWrapper'
 import styles from './BlogSummary.module.css'
+import { SectionTitle } from '@components/SectionTitle/SectionTitle'
 
 export async function BlogSummary(props: { posts: Array<any> }) {
   return (
     <section className={styles.wrapper}>
       <PageWrapper>
-        <header className={styles.header}>
-          <h3 className={styles.title}>Blog.</h3>
-          <p className={styles.description}>
-            The latest from my blog. Writing about development, climbing and video games.
-          </p>
-        </header>
+        <SectionTitle
+          title="Blog."
+          description="The latest from my blog. Writing about development, climbing and video games."
+        />
       </PageWrapper>
       <div className={styles.slider}>
         <Slider>

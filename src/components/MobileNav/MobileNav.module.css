@@ -1,6 +1,6 @@
 .wrapper {
   display: none;
-  background-color: var(--theme-background-tint);
+  background-color: var(--theme-background);
   padding: var(--spacing-5);
 }
 
