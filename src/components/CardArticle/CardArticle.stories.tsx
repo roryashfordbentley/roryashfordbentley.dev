@@ -25,3 +25,10 @@ export const Default: Story = {
     imageAlt: 'A rock climber on an indoor boulder problem (V2 in my gym)',
   },
 }
+
+export const Minimal: Story = {
+  args: {
+    ...Default.args,
+    type: 'minimal',
+  },
+}

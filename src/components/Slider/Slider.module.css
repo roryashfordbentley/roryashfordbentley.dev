@@ -21,20 +21,17 @@
     margin-left: calc((100% - var(--wrapper-max-width)) / 2);
     width: calc(100% - ((100% - var(--wrapper-max-width)) / 2));
   }
+
+  &:has(.slide:hover) .slide:not(:hover) {
+    opacity: 0.65;
+    transition: opacity 0.75s ease-out;
+  }
 }
 
 .slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
   min-width: 0;
-
-  /*&:first-child {
-    margin-left: var(--slide-offset);
-
-    @media (--l) {
-      margin-left: var(--slide-offset-l);
-    }
-  }*/
 
   @media (--m) {
     flex: 0 0 var(--slide-size-m);
@@ -52,5 +49,5 @@
   margin-top: var(--spacing-7);
   width: var(--wrapper-width);
   max-width: var(--wrapper-max-width);
-  margin: 0 auto;
+  margin: var(--spacing-7) auto 0 auto;
 }

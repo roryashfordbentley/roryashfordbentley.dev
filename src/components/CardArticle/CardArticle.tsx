@@ -11,7 +11,7 @@ interface CardArticleProps {
   url: string
   imageSrc?: string
   imageAlt?: string
-  type?: 'featured' | 'compact'
+  type?: 'featured' | 'minimal'
 }
 
 export const CardArticle = ({
@@ -24,23 +24,25 @@ export const CardArticle = ({
   type,
 }: CardArticleProps) => {
   return (
-    <div
+    <Link
       className={`
         ${styles.container}
-        ${type == 'featured' ? styles['container--featured'] : ''}
-        ${type == 'compact' ? styles['container--compact'] : ''}
+        ${type == 'minimal' ? styles.containerMinimal : ''}
       `}
+      href={url}
     >
-      <figure className={styles.figure}>
-        {imageSrc && (
-          <Image
-            src={imageSrc}
-            alt={imageAlt ?? ''}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1500px) 50vw, 50vw"
-          />
-        )}
-      </figure>
+      {type !== 'minimal' && (
+        <figure className={styles.figure}>
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              alt={imageAlt ?? ''}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1500px) 50vw, 50vw"
+            />
+          )}
+        </figure>
+      )}
 
       <div className={styles.content}>
         {date && (
@@ -53,13 +55,14 @@ export const CardArticle = ({
         )}
 
         <h2 className={styles.title}>
-          <Link className={styles.link} href={url}>
-            {title}
-          </Link>
+          {title}
+          {/*<Link className={styles.link} >
+
+          </Link>*/}
         </h2>
 
-        {description && <p className={styles.description}>{description}</p>}
+        {type !== 'minimal' && description && <p className={styles.description}>{description}</p>}
       </div>
-    </div>
+    </Link>
   )
 }

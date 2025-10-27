@@ -29,6 +29,7 @@ export async function BlogSummary(props: { posts: Array<any> }) {
                   description={post.description ?? ''}
                   date={post.createdAt ?? null}
                   url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
+                  type="minimal"
                 />
               </Slide>
             )

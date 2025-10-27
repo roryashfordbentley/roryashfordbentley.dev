@@ -1,28 +1,31 @@
 .container {
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-2);
 }
 
 .figure {
   position: relative;
   aspect-ratio: 16/9;
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-2);
   background-color: var(--theme-accent);
+  margin-bottom: var(--spacing-5);
 
   img {
     overflow: hidden;
-    border-radius: var(--radius-1);
+    border-radius: var(--radius-2);
   }
 }
 
 .content {
-  padding-top: var(--spacing-5);
 }
 
 .date {
   display: flex;
   align-items: center;
   margin-bottom: var(--spacing-3);
+  font-family: var(--font-family-inter);
   font-size: var(--font-size-1);
+  letter-spacing: -0.03em;
+  line-height: 1;
 
   @media (--l) {
     font-size: var(--font-size-2);
@@ -44,7 +47,7 @@
 .title {
   font-size: var(--font-size-3);
   color: var(--theme-accent);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
 
   @media (--l) {
     font-size: var(--font-size-4);
@@ -64,5 +67,36 @@
 
   @media (--l) {
     font-size: var(--font-size-3);
+  }
+}
+
+.containerMinimal {
+  background-color: var(--theme-accent);
+  padding: var(--spacing-5);
+  height: 100%;
+  min-height: pxrem(300px);
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+
+  .content {
+  }
+
+  .title {
+    color: white;
+    margin: 0;
+  }
+
+  .date {
+    margin-bottom: var(--spacing-2);
+    color: var(--theme-accent-tint-2);
+  }
+
+  .dateIcon {
+    path {
+      stroke: var(--theme-accent-tint-2);
+    }
   }
 }
