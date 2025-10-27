@@ -1,29 +1,33 @@
 import styles from './Hero.module.css'
-import { Container, ContainerItem } from '@components/Container/Container'
+import { ContentContainer } from '@components/ContentContainer/ContentContainer'
+import { PageTitle } from '@components/PageTitle/PageTitle'
+import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 
 export const Hero = (props: {
   title: string
-  subtitle: string
   description: string
-  button: React.ReactNode
+  content: any
+  imageSrc: string
+  imageAlt?: string | null | undefined
 }) => {
   return (
     <section className={styles.wrapper}>
-      <Container>
-        <ContainerItem layout="wide">
-          <div className={styles.inner}>
-            <header className={styles.header}>
-              {/*<h1 className={styles.title}>{props.title}</h1>*/}
-              <h1 className={styles.title}>
-                Rory <br />
-                Ashford-Bentley
-              </h1>
-              {/*<p className={styles.subtitle}>{props.subtitle}</p>*/}
-              <p className={styles.subtitle}>Senior Full-Stack Engineer</p>
-            </header>
+      <ContentContainer>
+        <div className={styles.inner}>
+          <div className={styles.profile}>
+            <figure className={styles.image}>
+              <img src={props.imageSrc} alt={props.imageAlt ?? ''} />
+            </figure>
           </div>
-        </ContainerItem>
-      </Container>
+
+          <div className={styles.content}>
+            <PageTitle title={props.title ?? ''} description={props.description ?? ''} />
+            <div className={styles.wysiwyg}>
+              {props.content && <LexicalToJSX data={props.content} />}
+            </div>
+          </div>
+        </div>
+      </ContentContainer>
     </section>
   )
 }

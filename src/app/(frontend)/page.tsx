@@ -6,7 +6,6 @@ import { BlueskyFeedContainer } from '@components/BlueskyFeed/BlueskyFeed.contai
 import { BlogSummaryContainer } from '@components/BlogSummary/BlogSummary.container'
 import { HeaderContainer } from '@components/Header/Header.container'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
 import { ContentContainer } from '@/components/ContentContainer/ContentContainer'
 import { PageTitle } from '@/components/PageTitle/PageTitle'
 
@@ -35,20 +34,12 @@ async function getHomepage() {
 
 export default async function HomePage() {
   const pageData = await getHomepage()
-
   const layout = pageData?.layout || []
 
   return (
     <>
       <main>
         <HeaderContainer light />
-        <ContentContainer>
-          <PageTitle title={pageData?.title ?? ''} description={pageData?.description ?? ''} />
-          {pageData.content && <LexicalToJSX data={pageData.content} />}
-
-          <RenderBlocks blocks={layout} />
-        </ContentContainer>
-
         <RenderBlocks blocks={layout} />
         <BlogSummaryContainer />
         <BlueskyFeedContainer />

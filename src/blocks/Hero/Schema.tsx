@@ -22,10 +22,10 @@ export const HeroBlockSchema: Block = {
     {
       name: 'heroBlockDescription',
       label: 'Description',
-      type: 'textarea',
+      type: 'richText',
       required: true,
     },
-    {
+    /*{
       name: 'heroBlockButtonText',
       label: 'Button Text',
       type: 'text',
@@ -35,6 +35,13 @@ export const HeroBlockSchema: Block = {
       name: 'heroBlockButtonLink',
       label: 'Button Link (URL)',
       type: 'text',
+      required: true,
+    },*/
+    {
+      name: 'heroBlockImage',
+      label: 'Image',
+      type: 'upload',
+      relationTo: 'media',
       required: true,
     },
   ],

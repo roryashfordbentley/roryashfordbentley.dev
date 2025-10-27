@@ -20,10 +20,9 @@ export default meta
 
 export const Default: Story = {
   args: {
-    title: 'Rory<br> Ashford-Bentley.',
-    subtitle: 'Full-Stack Engineer.',
-    description:
-      'Passionate about creating digital solutions that make meaningful change and have a positive social impact.',
-    button: <ButtonLink {...ButtonLinkDefault.args} />,
+    title: '👋🏻 Hello, I’m Rory.',
+    description: "I'm a web and software engineer. I love code, climbing and cooking.",
+    content:
+      '<p>This is the hero section of the page. You can use it to introduce yourself or your website.</p>',
   },
 }

@@ -208,9 +208,22 @@ export interface Post {
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
             heroBlockTitle: string;
             heroBlockSubtitle: string;
-            heroBlockDescription: string;
-            heroBlockButtonText: string;
-            heroBlockButtonLink: string;
+            heroBlockDescription: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            heroBlockImage: string | Media;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero';
@@ -457,9 +470,22 @@ export interface Page {
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
             heroBlockTitle: string;
             heroBlockSubtitle: string;
-            heroBlockDescription: string;
-            heroBlockButtonText: string;
-            heroBlockButtonLink: string;
+            heroBlockDescription: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            };
+            heroBlockImage: string | Media;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero';
@@ -786,8 +812,7 @@ export interface PostsSelect<T extends boolean = true> {
               heroBlockTitle?: T;
               heroBlockSubtitle?: T;
               heroBlockDescription?: T;
-              heroBlockButtonText?: T;
-              heroBlockButtonLink?: T;
+              heroBlockImage?: T;
               id?: T;
               blockName?: T;
             };
@@ -882,8 +907,7 @@ export interface PagesSelect<T extends boolean = true> {
               heroBlockTitle?: T;
               heroBlockSubtitle?: T;
               heroBlockDescription?: T;
-              heroBlockButtonText?: T;
-              heroBlockButtonLink?: T;
+              heroBlockImage?: T;
               id?: T;
               blockName?: T;
             };
