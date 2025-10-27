@@ -1,15 +1,22 @@
 .wrapper {
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-2);
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.5;
   border-top: pxrem(1px) solid var(--theme-accent-tint-2);
-  padding: var(--spacing-7) 0;
+  padding: var(--spacing-5) 0;
+
+  @media (--l) {
+    font-size: var(--font-size-3);
+    padding: var(--spacing-7) 0;
+  }
 }
 
 .inner {
-  display: flex;
-  justify-content: space-between;
+  @media (--l) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .copyright {
@@ -26,7 +33,13 @@
 
 .buildInfo {
   display: flex;
-  justify-content: center;
+  margin-top: var(--spacing-3);
+  padding: 0;
+  gap: var(--spacing-2);
+
+  @media (--l) {
+    margin: 0;
+  }
 }
 
 .buildInfoText {

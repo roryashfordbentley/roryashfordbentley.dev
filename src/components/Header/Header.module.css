@@ -14,7 +14,11 @@
 }
 
 .logo {
-  width: pxrem(50);
+  width: pxrem(30);
+
+  @media (--m) {
+    width: pxrem(50);
+  }
 }
 
 .nav {
@@ -40,4 +44,5 @@
 }
 
 .theme-toggle {
+  display: none;
 }
