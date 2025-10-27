@@ -20,9 +20,11 @@ export default meta
 
 export const Default: Story = {
   args: {
-    title: '👋🏻 Hello, I’m Rory.',
+    title: "👋🏻 Hello, I'm Rory.",
     description: "I'm a web and software engineer. I love code, climbing and cooking.",
     content:
       '<p>This is the hero section of the page. You can use it to introduce yourself or your website.</p>',
+    imageSrc: '/path/to/your/image.jpg',
+    imageAlt: 'Portrait of Rory',
   },
 }
