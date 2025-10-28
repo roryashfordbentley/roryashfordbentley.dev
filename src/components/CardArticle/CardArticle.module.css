@@ -1,5 +1,10 @@
 .container {
   border-radius: var(--radius-2);
+  text-decoration: none;
+
+  &:hover .title {
+    text-decoration: underline;
+  }
 }
 
 .figure {

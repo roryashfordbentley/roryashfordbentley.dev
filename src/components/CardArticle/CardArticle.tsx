@@ -54,12 +54,7 @@ export const CardArticle = ({
           </time>
         )}
 
-        <h2 className={styles.title}>
-          {title}
-          {/*<Link className={styles.link} >
-
-          </Link>*/}
-        </h2>
+        <h2 className={styles.title}>{title}</h2>
 
         {type !== 'minimal' && description && <p className={styles.description}>{description}</p>}
       </div>
