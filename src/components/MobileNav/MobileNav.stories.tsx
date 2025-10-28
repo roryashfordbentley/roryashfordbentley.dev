@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { MobileNav } from './MobileNav'
+import { SocialNav } from '@components/SocialNav/SocialNav'
+
+import { Default as SocialNavDefault } from '@components/SocialNav/SocialNav.stories'
 
 type Story = StoryObj<typeof meta>
 
@@ -18,21 +21,26 @@ export default meta
 export const Default: Story = {
   args: {
     toggle: true,
-    children: [
-      <ul key="mobile-nav-list" className="mobile-nav-list">
-        <li className="mobile-nav-item">
-          <a href="#home">Home</a>
-        </li>
-        <li className="mobile-nav-item">
-          <a href="#about">About</a>
-        </li>
-        <li className="mobile-nav-item">
-          <a href="#services">Services</a>
-        </li>
-        <li className="mobile-nav-item">
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>,
+    items: [
+      {
+        page: {
+          slug: '#home',
+          title: 'Home',
+        },
+      },
+      {
+        page: {
+          slug: '#home',
+          title: 'About',
+        },
+      },
+      {
+        page: {
+          slug: '#home',
+          title: 'HBlog',
+        },
+      },
     ],
+    socialItems: <SocialNav {...SocialNavDefault.args} />,
   },
 }

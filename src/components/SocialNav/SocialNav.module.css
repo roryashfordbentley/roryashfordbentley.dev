@@ -24,7 +24,7 @@
   transition: opacity 0.3s;
 
   svg {
-    max-height: pxrem(24);
+    max-height: pxrem(24px);
   }
 
   path {

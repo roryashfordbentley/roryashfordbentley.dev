@@ -48,6 +48,16 @@ export const Default: Story = {
         },
         id: '681b3787754e0e67e94d2abf',
       },
+      ,
+      {
+        link: 'https://storybook.roryashfgordbentley.dev',
+        label: 'Storybook - project component stories',
+        icon: {
+          filename: 'storybook.svg',
+          url: '/api/icons/file/storybook.svg',
+        },
+        id: '681b3787754e0e67e94d2abf',
+      },
     ],
   },
 }
