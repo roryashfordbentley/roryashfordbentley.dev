@@ -1,4 +1,9 @@
 .wrapper {
+  padding: pxrem(30) 0;
+
+  @media (--l) {
+    padding: pxrem(100) 0;
+  }
 }
 
 .content {
@@ -9,6 +14,8 @@
   letter-spacing: -0.07em;
   grid-column: 1 / 5;
   margin-bottom: var(--spacing-5);
+  padding-bottom: var(--spacing-2);
+  border-bottom: pxrem(1px) solid var(--theme-accent-tint-2);
 
   @media (--l) {
     font-size: var(--font-size-9);

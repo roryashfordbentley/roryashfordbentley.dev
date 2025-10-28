@@ -1,5 +1,5 @@
 import styles from './Hero.module.css'
-import { ContentContainer } from '@components/ContentContainer/ContentContainer'
+import { PageWrapper } from '@components/PageWrapper/PageWrapper'
 import { PageTitle } from '@components/PageTitle/PageTitle'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 
@@ -12,7 +12,7 @@ export const Hero = (props: {
 }) => {
   return (
     <section className={styles.wrapper}>
-      <ContentContainer>
+      <PageWrapper>
         <div className={styles.inner}>
           <div className={styles.profile}>
             <figure className={styles.image}>
@@ -21,13 +21,14 @@ export const Hero = (props: {
           </div>
 
           <div className={styles.content}>
-            <PageTitle title={props.title ?? ''} description={props.description ?? ''} />
+            <h1 className={styles.title}>{props.title ?? ''}</h1>
+            <p className={styles.description}>{props.description ?? ''}</p>
             <div className={styles.wysiwyg}>
               {props.content && <LexicalToJSX data={props.content} />}
             </div>
           </div>
         </div>
-      </ContentContainer>
+      </PageWrapper>
     </section>
   )
 }
