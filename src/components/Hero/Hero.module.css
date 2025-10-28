@@ -1,7 +1,7 @@
 .wrapper {
   padding: pxrem(30) 0;
 
-  @media (--l) {
+  @media (--m) {
     padding: pxrem(100) 0;
   }
 }
@@ -10,7 +10,11 @@
   @media (--m) {
     display: flex;
     justify-content: space-between;
-    gap: var(--spacing-5);
+    gap: var(--spacing-6);
+  }
+
+  @media (--l) {
+    gap: var(--spacing-9);
   }
 }
 
@@ -19,7 +23,8 @@
 }
 
 .image {
-  width: pxrem(90px);
+  width: 100%;
+  max-width: pxrem(90px);
   aspect-ratio: 8 / 9;
   display: inline-block;
   border-radius: var(--radius-2);
@@ -37,13 +42,12 @@
   @media (--m) {
     border-radius: var(--radius-3);
     border: pxrem(12px) solid var(--theme-accent);
-    width: pxrem(200px);
+    max-width: pxrem(380px);
   }
 
   @media (--xl) {
     border-radius: var(--radius-4);
     border: pxrem(20px) solid var(--theme-accent);
-    width: pxrem(380px);
   }
 }
 

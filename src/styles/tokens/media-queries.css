@@ -12,6 +12,6 @@
     */
   @custom-media --s (min-width: 600px);
   @custom-media --m (min-width: 800px);
-  @custom-media --l (min-width: 1000px);
+  @custom-media --l (min-width: 1100px);
   @custom-media --xl (min-width: 1500px);
 }
