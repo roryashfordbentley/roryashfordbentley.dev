@@ -1,0 +1,21 @@
+.link {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family-inter);
+  padding-right: var(--spacing-6);
+  width: 100%;
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+.icon {
+  display: block;
+  width: pxrem(35px);
+
+  path {
+    fill: var(--theme-foreground);
+    stroke-width: 5;
+  }
+}

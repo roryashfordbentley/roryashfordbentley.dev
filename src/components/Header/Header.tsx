@@ -9,7 +9,12 @@ import { MobileNav } from '@components/MobileNav/MobileNav'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
 import { PageWrapper } from '@components/PageWrapper/PageWrapper'
 
-export const Header = (props: { navMenu: ReactNode; socialMenu: ReactNode; light?: boolean }) => {
+export const Header = (props: {
+  navMenu: ReactNode
+  mobileNavItems?: any
+  socialMenu: ReactNode
+  light?: boolean
+}) => {
   const [navOpen, setNavToggle] = useState(false)
 
   return (
@@ -37,10 +42,7 @@ export const Header = (props: { navMenu: ReactNode; socialMenu: ReactNode; light
       </PageWrapper>
 
       <div className={styles.mobileNav}>
-        <MobileNav toggle={navOpen}>
-          {props.navMenu && <div className={styles.mobileNavMenu}>{props.navMenu}</div>}
-          {props.socialMenu && <div className={styles.mobileNavSocial}>{props.socialMenu}</div>}
-        </MobileNav>
+        <MobileNav toggle={navOpen} items={props.mobileNavItems} socialItems={props.socialMenu} />
       </div>
     </header>
   )

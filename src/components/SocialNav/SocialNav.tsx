@@ -1,10 +1,10 @@
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import styles from './SocialNav.module.css'
 
-export const SocialNav = (props: { items: Array<any> }) => {
+export const SocialNav = (props: { items: Array<any>; wide?: Boolean }) => {
   return (
     <nav className={styles.nav}>
-      <ul className={styles.list}>
+      <ul className={`${styles.list} ${props.wide && styles.listWide}`}>
         {props.items.map((item) => (
           <li key={item.id} className={styles.listItem}>
             <a className={styles.link} href={item.link} title={item.label}>

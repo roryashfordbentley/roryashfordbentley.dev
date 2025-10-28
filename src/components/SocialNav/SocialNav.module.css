@@ -1,5 +1,5 @@
 .nav {
-  color: #02225e;
+  color: var(--theme-foreground);
 }
 
 .list {
@@ -7,6 +7,10 @@
   list-style: none;
   column-gap: var(--spacing-3);
   padding: 0;
+}
+
+.listWide {
+  justify-content: space-between;
 }
 
 .listItem {

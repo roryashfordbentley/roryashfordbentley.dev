@@ -14,7 +14,7 @@ const socialLinks = navItems?.socialLinks ?? []
 
 export function HeaderContainer(props: { light?: boolean }) {
   const nav = <MainNavContainer items={items} />
-  const social = <SocialNavContainer items={socialLinks} />
+  const social = <SocialNavContainer wide items={socialLinks} />
 
-  return <Header navMenu={nav} socialMenu={social} light={props.light} />
+  return <Header navMenu={nav} mobileNavItems={items} socialMenu={social} light={props.light} />
 }
