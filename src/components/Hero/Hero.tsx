@@ -1,5 +1,5 @@
 import styles from './Hero.module.css'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 import { PageTitle } from '@components/PageTitle/PageTitle'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 
@@ -12,7 +12,7 @@ export const Hero = (props: {
 }) => {
   return (
     <section className={styles.wrapper}>
-      <PageWrapper>
+      <Wrapper>
         <div className={styles.inner}>
           <div className={styles.profile}>
             <figure className={styles.image}>
@@ -28,7 +28,7 @@ export const Hero = (props: {
             </div>
           </div>
         </div>
-      </PageWrapper>
+      </Wrapper>
     </section>
   )
 }

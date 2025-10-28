@@ -7,7 +7,7 @@ import { LogoLink } from '@components/LogoLink/LogoLink'
 import { MobileNavButton } from '@components/MobileNavButton/MobileNavButton'
 import { MobileNav } from '@components/MobileNav/MobileNav'
 import ThemeToggle from '@components/ThemeToggle/ThemeToggle'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 
 export const Header = (props: {
   navMenu: ReactNode
@@ -19,7 +19,7 @@ export const Header = (props: {
 
   return (
     <header className={`${styles.wrapper} ${props.light ? styles.wrapperLight : ''}`}>
-      <PageWrapper>
+      <Wrapper>
         <div className={styles.inner}>
           <div className={styles.logo}>
             <LogoLink link="/" />
@@ -39,7 +39,7 @@ export const Header = (props: {
             </div>
           </div>
         </div>
-      </PageWrapper>
+      </Wrapper>
 
       <div className={styles.mobileNav}>
         <MobileNav toggle={navOpen} items={props.mobileNavItems} socialItems={props.socialMenu} />

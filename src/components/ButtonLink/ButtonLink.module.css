@@ -13,7 +13,7 @@
   font-size: var(--font-size-3);
 
   &:hover {
-    background-color: var(--theme-accent-tint);
+    background-color: var(--theme-foreground);
   }
 
   &:focus {
@@ -28,7 +28,7 @@
   color: var(--theme-background);
 
   &:hover {
-    background-color: var(--theme-accent-tint);
+    background-color: var(--theme-accent);
     color: white;
   }
 }
@@ -38,8 +38,8 @@
   color: var(--theme-accent);
 
   &:hover {
-    background-color: var(--theme-accent-tint);
-    color: white;
+    background-color: var(--theme-accent);
+    color: var(--theme-background);
   }
 }
 
@@ -49,8 +49,8 @@
   color: var(--theme-foreground);
 
   &:hover {
-    background-color: var(--theme-accent-tint);
+    background-color: var(--theme-accent);
     color: white;
-    border-color: var(--theme-accent-tint);
+    border-color: var(--theme-accent);
   }
 }

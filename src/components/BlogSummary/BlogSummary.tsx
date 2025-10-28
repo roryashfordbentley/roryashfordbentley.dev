@@ -2,19 +2,19 @@ import { Media } from '@/payload-types'
 
 import { Slider, Slide } from '@components/Slider/Slider'
 import { CardArticle } from '@components/CardArticle/CardArticle'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 import styles from './BlogSummary.module.css'
 import { SectionTitle } from '@components/SectionTitle/SectionTitle'
 
 export async function BlogSummary(props: { posts: Array<any> }) {
   return (
     <section className={styles.wrapper}>
-      <PageWrapper>
+      <Wrapper>
         <SectionTitle
           title="Blog."
           description="The latest from my blog. Writing about development, climbing and video games."
         />
-      </PageWrapper>
+      </Wrapper>
       <div className={styles.slider}>
         <Slider>
           {props.posts.map((post, index) => {

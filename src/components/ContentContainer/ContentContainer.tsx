@@ -1,6 +1,6 @@
 import styles from './ContentContainer.module.css'
 import { ReactNode } from 'react'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 
 interface ContentProps {
   children: ReactNode
@@ -9,7 +9,7 @@ interface ContentProps {
 export const ContentContainer = ({ children }: ContentProps) => {
   return (
     <section className={styles.contentContainer}>
-      <PageWrapper>{children}</PageWrapper>
+      <Wrapper>{children}</Wrapper>
     </section>
   )
 }

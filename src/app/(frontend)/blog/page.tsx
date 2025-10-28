@@ -8,7 +8,7 @@ import { Grid, GridItem } from '@components/Grid/Grid'
 import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Pagination } from '@components/Pagination/Pagination'
 import { PageTitle } from '@components/PageTitle/PageTitle'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 import { HeaderContainer } from '@components/Header/Header.container'
 
 export default async function Page({
@@ -52,7 +52,7 @@ export default async function Page({
   return (
     <>
       <HeaderContainer light />
-      <PageWrapper>
+      <Wrapper>
         <PageTitle title={pageTitle} description={pageDescription} />
 
         <Grid columns={1} columnsMedium={6} gutter>
@@ -79,7 +79,7 @@ export default async function Page({
           itemsPerPage={posts.limit}
           currentPage={currentPage}
         />
-      </PageWrapper>
+      </Wrapper>
     </>
   )
 }

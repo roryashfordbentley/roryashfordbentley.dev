@@ -9,7 +9,7 @@ import { RenderBlocks } from '@blocks/RenderBlocks'
 
 import { HeaderContainer } from '@components/Header/Header.container'
 import { Container, ContainerItem } from '@components/Container/Container'
-import { PageWrapper } from '@/components/PageWrapper/PageWrapper'
+import { Wrapper } from '@/components/Wrapper/Wrapper'
 import { Prose } from '@components/Prose/Prose'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <main>
         <HeaderContainer light />
 
-        <PageWrapper>
+        <Wrapper>
           <Container>
             <Prose padded>
               {pageData.title && <h1>{pageData.title}</h1>}
@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </Container>
 
           <RenderBlocks blocks={layout} />
-        </PageWrapper>
+        </Wrapper>
       </main>
     </>
   )

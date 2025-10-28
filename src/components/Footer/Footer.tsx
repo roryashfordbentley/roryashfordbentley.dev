@@ -7,7 +7,7 @@ import styles from './Footer.module.css'
 import Image from 'next/image'
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import { LogoLink } from '@components/LogoLink/LogoLink'
-import { PageWrapper } from '@components/PageWrapper/PageWrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 
 const today = new Date()
 
@@ -21,7 +21,7 @@ export function Footer(props: {
 }) {
   return (
     <footer className={styles.wrapper}>
-      <PageWrapper>
+      <Wrapper>
         <div className={styles.inner}>
           <div className={styles.copyright}>
             <figure className={styles.logo}>
@@ -65,7 +65,7 @@ export function Footer(props: {
             </ul>
           </div>
         </div>
-      </PageWrapper>
+      </Wrapper>
     </footer>
   )
 }
