@@ -41,7 +41,7 @@ export default async function Page({
   const posts = await payload.find({
     collection: 'posts',
     depth: 1,
-    limit: 6,
+    limit: 8,
     overrideAccess: false,
     page: currentPage,
   })
