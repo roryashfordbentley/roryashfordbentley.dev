@@ -28,6 +28,12 @@ const nextConfig = {
         port: '3000',
         pathname: '/api/media/**',
       },
+
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+        pathname: '/f/**',
+      },
     ],
   },
 }
