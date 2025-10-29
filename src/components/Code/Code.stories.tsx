@@ -15,6 +15,27 @@ const meta = {
 
 export default meta
 
+export const LongText: Story = {
+  args: {
+    label: 'long text',
+    codeString: `#!/bin/sh
+
+echo "Running tests before pushing..."
+echo "Check to makesure that there are no local file changes since last commit that could cause a build to differ locally"
+git diff HEAD --quiet && npx vitest run --testTimeout=0
+
+# Check if the tests passed
+if [ $? -ne 0 ]; then
+  echo "Tests failed. Push aborted."
+  exit 1
+fi
+
+echo "Tests passed. Proceeding with push."
+exit 0
+`,
+  },
+}
+
 export const Default: Story = {
   args: {
     label: 'Code.tsx',

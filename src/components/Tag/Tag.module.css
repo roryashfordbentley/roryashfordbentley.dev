@@ -5,9 +5,13 @@
   padding: var(--spacing-1) var(--spacing-3) var(--spacing-1) var(--spacing-4);
   background-color: var(--theme-accent-tint-2);
   font-family: var(--font-family-inter);
-  font-size: var(--font-size-1);
+  font-size: 0.875rem;
   color: var(--theme-foreground-tint);
   text-decoration: none;
+
+  @media (--m) {
+    font-size: var(--font-size-1);
+  }
 
   &:hover {
     background-color: var(--theme-accent-tint);

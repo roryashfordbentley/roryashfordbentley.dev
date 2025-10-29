@@ -71,7 +71,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     })) || []
 
   const image = featuredImage.url ? (
-    <Image src={featuredImage.url ?? ''} alt={featuredImage?.alt ?? ''} width={1330} height={720} />
+    <Image src={featuredImage.url ?? ''} alt={featuredImage?.alt ?? ''} width={1370} height={776} />
   ) : null
 
   const bigImage = featuredImage ? (

@@ -19,8 +19,8 @@ export const BigImageBlock: React.FC<BigImageBlockProps> = ({
 }) => {
   const imgSrc = image.url || ''
   const imgAlt = image.alt || ''
-  const imgWidth = 1330
-  const imgHeight = 750
+  const imgWidth = 1370
+  const imgHeight = 776
 
   const img = <Image src={imgSrc} alt={imgAlt} width={imgWidth} height={imgHeight} />
 

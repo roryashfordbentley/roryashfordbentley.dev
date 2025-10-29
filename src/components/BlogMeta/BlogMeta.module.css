@@ -1,4 +1,10 @@
 .wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media (--l) {
+    display: block;
+  }
 }
 
 .metaItem {

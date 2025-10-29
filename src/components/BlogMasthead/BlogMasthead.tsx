@@ -13,18 +13,24 @@ export const BlogMasthead = (props: {
 }) => {
   return (
     <header className={styles.wrapper}>
-      {props.title && <h1 className={styles.title}>{props.title}</h1>}
+      <div className={styles.grid}>
+        <div className={styles.titleWrapper}>
+          {props.title && <h1 className={styles.title}>{props.title}</h1>}
+        </div>
 
-      <aside className={styles.sidebarBefore}>
-        <BlogMeta datePosted={props.datePosted} readingTime={props.readingTime} />
-        <Tags>
-          {props.tags?.map((tag) => (
-            <Tag key={tag.slug} label={tag.title} link={`/blog/tag/${tag.slug}`} />
-          ))}
-        </Tags>
-      </aside>
-
-      <aside className={styles.sidebarAfter}>Next/ Prev posts...</aside>
+        <aside className={styles.sidebar}>
+          <div className={styles.meta}>
+            <BlogMeta datePosted={props.datePosted} readingTime={props.readingTime} />
+          </div>
+          <div className={styles.tags}>
+            <Tags>
+              {props.tags?.map((tag) => (
+                <Tag key={tag.slug} label={tag.title} link={`/blog/tag/${tag.slug}`} />
+              ))}
+            </Tags>
+          </div>
+        </aside>
+      </div>
 
       {props.image && <div className={styles.coverImage}>{props.image}</div>}
 
