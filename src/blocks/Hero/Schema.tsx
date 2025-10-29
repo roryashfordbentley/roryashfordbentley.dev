@@ -25,18 +25,6 @@ export const HeroBlockSchema: Block = {
       type: 'richText',
       required: true,
     },
-    /*{
-      name: 'heroBlockButtonText',
-      label: 'Button Text',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'heroBlockButtonLink',
-      label: 'Button Link (URL)',
-      type: 'text',
-      required: true,
-    },*/
     {
       name: 'heroBlockImage',
       label: 'Image',

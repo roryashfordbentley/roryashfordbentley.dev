@@ -5,6 +5,7 @@ import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Wrapper } from '@components/Wrapper/Wrapper'
 import styles from './BlogSummary.module.css'
 import { SectionTitle } from '@components/SectionTitle/SectionTitle'
+import { directUploadThingURL } from '@/scripts/directUploadThingURL'
 
 export async function BlogSummary(props: { posts: Array<any> }) {
   return (
@@ -20,11 +21,15 @@ export async function BlogSummary(props: { posts: Array<any> }) {
           {props.posts.map((post, index) => {
             const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
 
+            const imgSrc = featuredImage?.url || ''
+            const imgAlt = featuredImage?.alt || ''
+            const imgKey = featuredImage?._key || ''
+
             return (
               <Slide key={index}>
                 <CardArticle
-                  imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
-                  imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
+                  imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
+                  imageAlt={imgAlt}
                   title={post.title ?? ''}
                   description={post.description ?? ''}
                   date={post.createdAt ?? null}

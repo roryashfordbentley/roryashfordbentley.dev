@@ -1,6 +1,7 @@
 import React from 'react'
 import { Hero } from '@components/Hero/Hero'
 import { Media } from '@/payload-types'
+import { directUploadThingURL } from '@/scripts/directUploadThingURL'
 
 export type HeroBlockProps = {
   heroBlockTitle: string
@@ -18,6 +19,7 @@ export const HeroBlock: React.FC<HeroBlockProps> = ({
 }) => {
   const imgSrc = heroBlockImage?.url || ''
   const imgAlt = heroBlockImage?.alt || ''
+  const imgKey = heroBlockImage?._key || ''
 
   return (
     <div className="hero-block">
@@ -25,7 +27,7 @@ export const HeroBlock: React.FC<HeroBlockProps> = ({
         title={heroBlockTitle}
         description={heroBlockSubtitle}
         content={heroBlockDescription}
-        imageSrc={imgSrc}
+        imageSrc={directUploadThingURL(imgSrc, imgKey)}
         imageAlt={imgAlt}
       />
     </div>

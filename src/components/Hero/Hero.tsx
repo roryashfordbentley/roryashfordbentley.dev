@@ -1,7 +1,7 @@
 import styles from './Hero.module.css'
 import { Wrapper } from '@components/Wrapper/Wrapper'
-import { PageTitle } from '@components/PageTitle/PageTitle'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
+import Image from 'next/image'
 
 export const Hero = (props: {
   title: string
@@ -16,7 +16,7 @@ export const Hero = (props: {
         <div className={styles.inner}>
           <div className={styles.profile}>
             <figure className={styles.image}>
-              <img src={props.imageSrc} alt={props.imageAlt ?? ''} />
+              <Image src={props.imageSrc} alt={props.imageAlt ?? ''} width={408} height={544} />
             </figure>
           </div>
 

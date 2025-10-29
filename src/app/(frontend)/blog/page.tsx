@@ -10,6 +10,7 @@ import { Pagination } from '@components/Pagination/Pagination'
 import { PageTitle } from '@components/PageTitle/PageTitle'
 import { Wrapper } from '@components/Wrapper/Wrapper'
 import { HeaderContainer } from '@components/Header/Header.container'
+import { directUploadThingURL } from '@/scripts/directUploadThingURL'
 
 export default async function Page({
   searchParams,
@@ -59,11 +60,15 @@ export default async function Page({
           {posts.docs.map((post, index) => {
             const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
 
+            const imgSrc = featuredImage?.url || ''
+            const imgAlt = featuredImage?.alt || ''
+            const imgKey = featuredImage?._key || ''
+
             return (
               <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
                 <CardArticle
-                  imageSrc={featuredImage?.url ? featuredImage?.url : undefined}
-                  imageAlt={featuredImage?.alt ? featuredImage?.alt : undefined}
+                  imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
+                  imageAlt={imgAlt}
                   title={post.title ?? ''}
                   description={post.description ?? ''}
                   date={post.createdAt ?? null}
