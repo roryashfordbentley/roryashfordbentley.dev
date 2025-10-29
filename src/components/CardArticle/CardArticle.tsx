@@ -27,9 +27,10 @@ export const CardArticle = ({
     <Link
       className={`
         ${styles.container}
-        ${type == 'minimal' ? styles.containerMinimal : ''}
+        ${type === 'minimal' ? styles.containerMinimal : ''}
       `}
       href={url}
+      style={type === 'minimal' && imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
     >
       {type !== 'minimal' && (
         <figure className={styles.figure}>

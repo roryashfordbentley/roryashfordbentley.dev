@@ -76,6 +76,7 @@
 }
 
 .containerMinimal {
+  position: relative;
   background-color: var(--theme-accent);
   padding: var(--spacing-5);
   height: 100%;
@@ -85,8 +86,21 @@
   flex-direction: column;
   justify-content: flex-end;
   text-decoration: none;
+  background-size: cover;
+  overflow: hidden;
+
+  &:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgb(101, 43, 227), rgba(101, 43, 227, 0.75));
+  }
 
   .content {
+    z-index: 2;
   }
 
   .title {

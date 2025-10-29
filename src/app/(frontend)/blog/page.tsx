@@ -65,7 +65,7 @@ export default async function Page({
             const imgKey = featuredImage?._key || ''
 
             return (
-              <GridItem columnSpan={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
+              <GridItem columnSpanMedium={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
                 <CardArticle
                   imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
                   imageAlt={imgAlt}
