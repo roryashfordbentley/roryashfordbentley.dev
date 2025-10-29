@@ -14,10 +14,10 @@
 }
 
 .logo {
-  width: pxrem(30);
+  width: pxrem(30px);
 
   @media (--m) {
-    width: pxrem(50);
+    width: pxrem(50px);
   }
 }
 
