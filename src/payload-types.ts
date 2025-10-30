@@ -270,8 +270,6 @@ export interface Post {
              * Select the layout for this block
              */
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
-            informationBoxTitle?: string | null;
-            informationBoxSubtitle?: string | null;
             informationBoxContent?: {
               root: {
                 type: string;
@@ -532,8 +530,6 @@ export interface Page {
              * Select the layout for this block
              */
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
-            informationBoxTitle?: string | null;
-            informationBoxSubtitle?: string | null;
             informationBoxContent?: {
               root: {
                 type: string;
@@ -839,8 +835,6 @@ export interface PostsSelect<T extends boolean = true> {
           | T
           | {
               blockLayoutField?: T;
-              informationBoxTitle?: T;
-              informationBoxSubtitle?: T;
               informationBoxContent?: T;
               id?: T;
               blockName?: T;
@@ -934,8 +928,6 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               blockLayoutField?: T;
-              informationBoxTitle?: T;
-              informationBoxSubtitle?: T;
               informationBoxContent?: T;
               id?: T;
               blockName?: T;

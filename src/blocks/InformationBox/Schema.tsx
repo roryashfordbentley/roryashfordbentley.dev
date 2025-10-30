@@ -8,16 +8,6 @@ export const InformationBoxBlockSchema: Block = {
   fields: [
     layoutField,
     {
-      name: 'informationBoxTitle',
-      type: 'text',
-      label: 'Title',
-    },
-    {
-      name: 'informationBoxSubtitle',
-      type: 'text',
-      label: 'Subtitle',
-    },
-    {
       name: 'informationBoxContent',
       type: 'richText',
       label: 'Content',
