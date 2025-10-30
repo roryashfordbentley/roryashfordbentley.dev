@@ -1,8 +1,8 @@
 .wrapper {
-  padding: pxrem(30px) 0;
+  padding: var(--spacing-7) 0;
 
   @media (--l) {
-    padding: pxrem(100px) 0;
+    padding: var(--spacing-8) 0;
   }
 }
 
@@ -28,11 +28,11 @@
   font-weight: var(--font-weight-extra-bold);
   color: var(--theme-foreground);
   letter-spacing: -0.05em;
-  max-width: pxrem(880px);
-  margin-bottom: var(--spacing-5);
+  max-width: pxrem(500px);
+  margin-bottom: 0;
 
   @media (--l) {
-    font-size: var(--font-size-8);
-    margin-bottom: var(--spacing-7);
+    max-width: pxrem(800px);
+    font-size: var(--font-size-7);
   }
 }
