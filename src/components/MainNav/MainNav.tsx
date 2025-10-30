@@ -18,13 +18,12 @@ export const MainNav = (props: {
 
           return (
             <li key={item.id} className={styles.listItem}>
-              {isActive ? (
-                <span className={styles.linkActive}>{item.page.title}</span>
-              ) : (
-                <a className={styles.link} href={item.page.slug ?? '#'}>
-                  {item.page.title}
-                </a>
-              )}
+              <a
+                className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
+                href={item.page.slug ?? '#'}
+              >
+                {item.page.title}
+              </a>
             </li>
           )
         })}

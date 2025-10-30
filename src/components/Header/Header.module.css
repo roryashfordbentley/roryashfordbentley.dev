@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--spacing-7);
   padding: var(--spacing-3) 0;
 
   @media (--m) {
@@ -15,6 +16,7 @@
 
 .logo {
   width: pxrem(30px);
+  margin-right: auto;
 
   @media (--m) {
     width: pxrem(50px);
@@ -33,7 +35,6 @@
   display: none;
   @media (--m) {
     display: block;
-    margin-right: var(--spacing-6);
   }
 }
 

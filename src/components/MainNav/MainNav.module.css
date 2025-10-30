@@ -1,5 +1,6 @@
 .nav {
   font-family: var(--font-family-inter);
+  font-weight: var(--font-weight-bold);
 }
 
 .list {
@@ -14,20 +15,25 @@
   }
 }
 
-.link,
-.linkActive {
+.link {
   text-decoration: none;
   position: relative;
   padding: var(--spacing-1) 0;
   transition: opacity 0.3s;
-  font-size: 1.25rem;
+  font-size: var(--font-size-4);
+  padding: var(--spacing-2) var(--spacing-4);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .linkActive {
-  color: var(--theme-accent);
-}
+  background: var(--theme-accent);
+  color: var(--theme-background);
+  border-radius: var(--radius-5);
 
-.list:has(.link:hover, .linkActive:hover) .link:not(:hover),
-.list:has(.link:hover, .linkActive:hover) .linkActive:not(:hover) {
-  opacity: 0.6;
+  &:hover {
+    text-decoration: none;
+  }
 }
