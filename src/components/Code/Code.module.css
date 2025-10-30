@@ -65,10 +65,21 @@
 }
 
 .codeWrapper pre {
-  padding: var(--spacing-3) !important; /* forgive me, the code lib uses inline styles */
+  padding: var(--spacing-1) var(--spacing-2) !important; /* forgive me, the code lib uses inline styles */
+  overflow-x: scroll !important;
+  font-size: var(--font-size-1);
+  border-radius: var(--radius-1);
+
+  @media (--m) {
+    font-size: var(--font-size-2);
+    padding: var(--spacing-3) !important;
+    border-radius: var(--radius-2);
+  }
+}
+
+.codeWrapper code {
+  /*white-space: pre-wrap !important;*/
   overflow-x: scroll;
-  font-size: var(--font-size-2);
-  border-radius: var(--radius-2);
 }
 
 .header + .codeWrapper pre {

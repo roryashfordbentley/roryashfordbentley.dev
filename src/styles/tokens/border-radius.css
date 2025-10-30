@@ -3,7 +3,7 @@
     * @tokens Border Radius
     * @presenter BorderRadius
      */
-  --radius-1: pxrem(6px);
+  --radius-1: pxrem(9px);
   --radius-2: pxrem(12px);
   --radius-3: pxrem(20px);
   --radius-4: pxrem(30px);

@@ -70,7 +70,7 @@ export default async function Page({
                   imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
                   imageAlt={imgAlt}
                   title={post.title ?? ''}
-                  description={post.description ?? ''}
+                  //description={post.description ?? ''}
                   date={post.createdAt ?? null}
                   url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
                 />

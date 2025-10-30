@@ -1,17 +1,17 @@
 :root {
   /**
     * @tokens Font Sizes
-    * @presenter FontSize
+    * @presenter FontSize1
     */
-  --font-size-1: 0.875rem; /* 14px */
-  --font-size-2: 1rem; /* 16px */
-  --font-size-3: 1.125rem; /* 18px */
-  --font-size-4: 1.25rem; /* 20px */
-  --font-size-5: 1.5625rem; /* 25px */
-  --font-size-6: 1.875rem; /* 30px */
-  --font-size-7: 2.3125rem; /* 37px */
-  --font-size-8: 3rem; /* 48px */
-  --font-size-9: 4.375rem; /* 70px */
+  --font-size-1: pxrem(14px);
+  --font-size-2: pxrem(16px);
+  --font-size-3: pxrem(18px);
+  --font-size-4: pxrem(20px);
+  --font-size-5: pxrem(25px);
+  --font-size-6: pxrem(30px);
+  --font-size-7: pxrem(37px);
+  --font-size-8: pxrem(48px);
+  --font-size-9: pxrem(70px);
 
   /**
     * @tokens Font Weights

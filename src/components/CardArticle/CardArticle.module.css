@@ -55,7 +55,7 @@
   font-weight: var(--font-weight-bold);
 
   @media (--l) {
-    font-size: var(--font-size-4);
+    font-size: var(--font-size-5);
   }
 }
 
@@ -87,6 +87,7 @@
   justify-content: flex-end;
   text-decoration: none;
   background-size: cover;
+  background-position: center;
   overflow: hidden;
 
   &:after {

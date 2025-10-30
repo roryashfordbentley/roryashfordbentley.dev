@@ -99,7 +99,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <Container>
           {content && (
-            <Prose padded>
+            <Prose>
               <LexicalToJSX data={content} />
             </Prose>
           )}
