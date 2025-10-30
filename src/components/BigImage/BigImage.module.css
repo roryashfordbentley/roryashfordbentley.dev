@@ -2,6 +2,7 @@
 }
 
 .figure img {
+  background: #efefef;
   border-radius: var(--radius-2);
 }
 
