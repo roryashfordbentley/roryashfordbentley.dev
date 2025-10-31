@@ -12,9 +12,6 @@ const nextConfig = {
   // Attempting to fix issue with
   // Failed to generate cache key for URL {
   // href: 'https://bsky.social/xrpc/com.atproto.server.createSession',
-  experimental: {
-    serverComponentsHmrCache: false, // defaults to true
-  },
   // Solution for image 400 on vercel: https://github.com/vercel/next.js/discussions/20138
   images: {
     remotePatterns: [

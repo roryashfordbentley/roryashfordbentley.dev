@@ -2,34 +2,29 @@ import storybook from 'eslint-plugin-storybook'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { FlatCompat } from '@eslint/eslintrc'
-import { createRequire } from 'module'
+import tsParser from '@typescript-eslint/parser'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
 
-const require = createRequire(import.meta.url)
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
+// FlatCompat allows using older configs if needed (like eslint-config-next)
 const compat = new FlatCompat({ baseDirectory: __dirname })
 
-// require the TypeScript parser + plugin (CommonJS)
-const tsParser = require('@typescript-eslint/parser')
-const tsPlugin = require('@typescript-eslint/eslint-plugin')
-
 const baseConfigWithTsParser = {
-  // apply parser + plugin globally
   languageOptions: {
     parser: tsParser,
     parserOptions: {
-      project: ['./tsconfig.json'], // needed for type-aware rules; adjust path if needed
+      project: ['./tsconfig.json'], // type-aware rules
       tsconfigRootDir: __dirname,
       sourceType: 'module',
       ecmaVersion: 'latest',
     },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
+  },
+  plugins: {
+    '@typescript-eslint': tsPlugin, // move plugins here
   },
   rules: {
-    // optional: put any global rules here (or merge your existing eslintConfig rules)
     '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/no-empty-object-type': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn',
@@ -48,4 +43,5 @@ const baseConfigWithTsParser = {
   },
 }
 
+// Export final config with Storybook's flat config
 export default [baseConfigWithTsParser, ...storybook.configs['flat/recommended']]
