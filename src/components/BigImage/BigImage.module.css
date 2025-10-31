@@ -1,4 +1,6 @@
 .figure {
+  box-shadow: var(--box-shadow-default);
+  border-radius: var(--radius-2);
 }
 
 .figure img {

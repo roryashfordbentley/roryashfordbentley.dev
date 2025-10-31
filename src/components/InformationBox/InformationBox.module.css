@@ -3,7 +3,7 @@
   border: pxrem(1px) solid var(--theme-accent-tint);
   border-radius: var(--radius-2);
   padding: var(--spacing-3) pxrem(14px);
-  box-shadow: 0 4px 14px 0 rgba(0, 4, 14, 0.2);
+  box-shadow: var(--box-shadow-default);
   font-family: var(--font-family-inter);
   line-height: 1.6;
 

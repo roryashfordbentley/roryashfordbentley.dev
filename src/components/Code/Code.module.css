@@ -1,6 +1,7 @@
 .container {
-  border: 1px solid var(--theme-border);
-  border-radius: var(--radius-1);
+  border: 1px solid var(--theme-accent-tint);
+  border-radius: var(--radius-2);
+  box-shadow: var(--box-shadow-default);
 }
 
 .header {
