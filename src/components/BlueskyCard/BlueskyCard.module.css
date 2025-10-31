@@ -6,7 +6,7 @@
   font-family: var(--font-family-inter);
   border-radius: var(--radius-2);
   background-color: var(--theme-background);
-  border: pxrem(1px) solid var(--theme-foreground-tint-3);
+  border: pxrem(1px) solid var(--theme-background-tint-2);
   height: 100%;
   padding: var(--spacing-5);
 
@@ -163,6 +163,6 @@
   }
 
   .repost {
-    background: var(--theme-foreground-tint-2);
+    background: var(--theme-foreground-tint);
   }
 }

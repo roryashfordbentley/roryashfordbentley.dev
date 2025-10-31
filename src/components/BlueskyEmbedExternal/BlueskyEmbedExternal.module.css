@@ -24,10 +24,10 @@
 
 .embedexternalTertiary {
   color: var(--theme-background);
-  border: 1px solid var(--theme-foreground-tint-2);
+  border: 1px solid var(--theme-foreground-tint);
 
   .embedLink {
-    border-top: 1px solid var(--theme-foreground-tint-2);
+    border-top: 1px solid var(--theme-foreground-tint);
   }
 }
 

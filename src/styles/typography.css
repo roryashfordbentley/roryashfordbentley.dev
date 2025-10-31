@@ -82,5 +82,5 @@ blockquote {
 }
 
 a {
-  color: var(--theme-link);
+  color: var(--theme-accent);
 }

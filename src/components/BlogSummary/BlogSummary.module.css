@@ -11,7 +11,7 @@
 .title {
   font-size: var(--font-size-9);
   color: var(--theme-accent);
-  border-bottom: pxrem(1px) solid var(--theme-foreground-tint-3);
+  border-bottom: pxrem(1px) solid var(--theme-background-tint);
 }
 
 .description {

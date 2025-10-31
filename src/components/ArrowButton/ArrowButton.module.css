@@ -15,19 +15,19 @@
   }
 
   &:hover {
-    background-color: var(--theme-accent-tint);
+    background-color: var(--theme-foreground);
   }
 }
 
 .buttonDisabled {
   cursor: not-allowed;
-  background: #d9d9d9;
+  background: rgba(0, 0, 0, 0.125);
 
   path {
-    fill: #c9bea5;
+    fill: rgba(0, 0, 0, 0.125);
   }
 
   &:hover {
-    background-color: #d9d9d9;
+    background-color: rgba(0, 0, 0, 0.125);
   }
 }

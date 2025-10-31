@@ -71,7 +71,7 @@
 
   td,
   th {
-    border-bottom: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--theme-background-tint);
     text-align: left;
     padding: var(--spacing-1);
   }

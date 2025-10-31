@@ -4,7 +4,7 @@
 }
 
 .figure img {
-  background: #efefef;
+  background: var(--theme-foreground-tint-2);
   border-radius: var(--radius-2);
 }
 
