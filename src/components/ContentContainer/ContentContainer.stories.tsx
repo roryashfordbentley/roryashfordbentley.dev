@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { ContentContainer } from './ContentContainer'
 import { PageTitle } from '@components/PageTitle/PageTitle'

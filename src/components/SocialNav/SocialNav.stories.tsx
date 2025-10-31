@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { SocialNav } from './SocialNav'
-import { link } from 'fs'
 
 type Story = StoryObj<typeof meta>
 

@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Hero } from './Hero'
-import { ButtonLink } from '@components/ButtonLink/ButtonLink'
-
-import { Default as ButtonLinkDefault } from '@components/ButtonLink/ButtonLink.stories'
 
 type Story = StoryObj<typeof meta>
 

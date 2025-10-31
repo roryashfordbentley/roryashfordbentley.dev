@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { LayoutGrid } from './LayoutGrid'
 
@@ -13,7 +13,7 @@ const meta = {
   tags: ['autodocs'],
 } satisfies Meta<typeof LayoutGrid>
 
-export default meta;
+export default meta
 
 export const Default: Story = {
   args: {

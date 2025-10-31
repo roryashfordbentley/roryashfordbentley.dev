@@ -2,14 +2,6 @@ import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { BlueskyFeed } from './BlueskyFeed'
 
-import { BlueskyCard } from '@components/BlueskyCard/BlueskyCard'
-
-import {
-  Default as CardDefault,
-  Secondary,
-  Tertiary,
-} from '@components/BlueskyCard/BlueskyCard.stories'
-
 type Story = StoryObj<typeof meta>
 
 const meta = {

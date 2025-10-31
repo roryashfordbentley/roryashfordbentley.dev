@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 
 import { Prose } from './Prose'
-import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { HTMLRenderer } from '@components/HTMLRenderer/HTMLRenderer'
 import { Container, ContainerItem } from '../Container/Container'
 

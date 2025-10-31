@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
-import Image from 'next/image'
 
 import { GridList, GridListItem } from './GridList'
 
