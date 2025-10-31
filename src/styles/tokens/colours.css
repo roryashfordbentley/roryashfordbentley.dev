@@ -4,15 +4,16 @@
 */
 
 :root.dark {
-  --theme-background: #120f17;
+  --theme-foreground: #f7f6ee;
+  --theme-foreground-tint: #1b2227;
+  --theme-foreground-tint-2: #363d43;
+  --theme-foreground-tint-3: #dddddd;
 
   --theme-accent: #652be3;
-  --theme-accent-tint: #b499f0;
-  --theme-accent-tint-2: #d8cdf0;
+  --theme-accent-tint: #d8cdf0;
+  --theme-accent-tint-2: #f9f6ff;
 
-  --theme-foreground: #ffffff;
-  --theme-foreground-tint: #eeeeee;
-  --theme-foreground-tint-2: #cccccc;
+  --theme-background: #181702;
 }
 
 /**
@@ -30,5 +31,5 @@
   --theme-accent-tint: #d8cdf0;
   --theme-accent-tint-2: #f9f6ff;
 
-  --theme-background: #ffffff;
+  --theme-background: #f7f6ee;
 }

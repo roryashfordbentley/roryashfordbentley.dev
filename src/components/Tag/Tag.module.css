@@ -1,12 +1,12 @@
 .tag {
   position: relative;
-  border: pxrem(1px) solid var(--theme-border);
+  border: pxrem(1px) solid var(--theme-accent-tint);
   border-radius: pxrem(50px);
   padding: var(--spacing-1) var(--spacing-3) var(--spacing-1) var(--spacing-4);
   background-color: var(--theme-accent-tint-2);
   font-family: var(--font-family-inter);
   font-size: 0.875rem;
-  color: var(--theme-foreground-tint);
+
   text-decoration: none;
 
   @media (--m) {
@@ -15,7 +15,6 @@
 
   &:hover {
     background-color: var(--theme-accent-tint);
-    color: var(--theme-foreground-tint);
   }
 
   &:before {

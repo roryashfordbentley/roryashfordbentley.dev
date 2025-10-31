@@ -10,7 +10,7 @@
   padding: var(--spacing-3) 0;
 
   @media (--m) {
-    padding: var(--spacing-5) 0;
+    padding: var(--spacing-4) 0;
   }
 }
 
@@ -19,7 +19,7 @@
   margin-right: auto;
 
   @media (--m) {
-    width: pxrem(50px);
+    width: pxrem(40px);
   }
 }
 

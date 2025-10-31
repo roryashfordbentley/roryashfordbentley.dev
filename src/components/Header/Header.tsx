@@ -27,12 +27,14 @@ export const Header = (props: {
 
           {props.navMenu && <div className={styles.nav}>{props.navMenu}</div>}
 
+          {
+            <div className={styles.themeToggle}>
+              <ThemeToggle />
+            </div>
+          }
+
           <div className={styles.secondaryNav}>
             {props.socialMenu && <div className={styles.social}>{props.socialMenu}</div>}
-
-            {/*<div className={styles.themeToggle}>
-              <ThemeToggle />
-            </div>*/}
 
             <div className={styles.mobileNavButton}>
               <MobileNavButton onClick={() => setNavToggle(!navOpen)} />

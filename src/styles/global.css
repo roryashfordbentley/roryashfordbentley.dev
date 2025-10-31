@@ -50,13 +50,13 @@ img {
 }
 
 .dev {
-  position: relative;
-  padding-top: pxrem(24px);
+  /*position: relative;
+  padding-top: pxrem(24px);*/
 }
 /**
  * Developer bar (only runs locally)
  */
-.dev:before {
+/*.dev:before {
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -90,4 +90,4 @@ img {
 
 img {
   max-width: 100%;
-}
+}*/

@@ -2,7 +2,7 @@
   display: none;
   font-size: var(--font-size-2);
   margin-bottom: var(--spacing-3);
-  color: var(--theme-foreground-tint);
+  color: var(--theme-foreground);
 
   @media (--l) {
     display: block;
