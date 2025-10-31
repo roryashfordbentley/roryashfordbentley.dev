@@ -17,9 +17,7 @@ export default meta
 
 export const Default: Story = {
   args: {
-    title: 'Passionate about',
-    subtitle: 'creating meaningful change with a positive social impact',
     content:
-      "I strive to work with organisations that in some way are trying to improve lives and better the world. This has led me to work with some incredible organisation and work on projects that I am completely invested in the mission and goals of the project.I'm currently looking for my next challenge",
+      'What we are going to build is a method of scaffolding components quickly by  creating templates for Simple Scaffold, that allow us to create new,  named components that have all of their relationships and class names  generated for us.',
   },
 }
