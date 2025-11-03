@@ -9,8 +9,9 @@ import { RenderBlocks } from '@blocks/RenderBlocks'
 
 import { HeaderContainer } from '@components/Header/Header.container'
 import { Container, ContainerItem } from '@components/Container/Container'
-import { Wrapper } from '@/components/Wrapper/Wrapper'
+import { Wrapper } from '@components/Wrapper/Wrapper'
 import { Prose } from '@components/Prose/Prose'
+import { PageTitle } from '@components/PageTitle/PageTitle'
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug
@@ -32,13 +33,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <HeaderContainer light />
 
         <Wrapper>
-          <Container>
-            <Prose padded>
-              {pageData.title && <h1>{pageData.title}</h1>}
-              {pageData.description && <p>{pageData.description}</p>}
-              {pageData.content && <LexicalToJSX data={pageData.content} />}
-            </Prose>
-          </Container>
+          <PageTitle title={pageData.title ?? ''} description={pageData.description ?? ''} />
+          <Prose padded>{pageData.content && <LexicalToJSX data={pageData.content} />}</Prose>
 
           <RenderBlocks blocks={layout} />
         </Wrapper>
