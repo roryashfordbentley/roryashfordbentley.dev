@@ -25,7 +25,7 @@ export const BlogMasthead = (props: {
           <div className={styles.tags}>
             <Tags>
               {props.tags?.map((tag) => (
-                <Tag key={tag.slug} label={tag.title} link={`/blog/tag/${tag.slug}`} />
+                <Tag key={tag.slug} label={tag.title} link={`/blog?tag=${tag.slug}`} />
               ))}
             </Tags>
           </div>

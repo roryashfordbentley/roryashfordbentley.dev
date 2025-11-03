@@ -17,7 +17,7 @@ export const MobileNav = (props: {
     }
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 500) {
+      if (window.innerWidth > 800) {
         document.body.style.overflow = ''
       }
     })

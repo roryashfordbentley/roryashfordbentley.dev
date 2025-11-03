@@ -1,5 +1,4 @@
 import configPromise from '@payload-config'
-import { Media } from '@/payload-types'
 import { getPayload } from 'payload'
 
 import React from 'react'
@@ -19,60 +18,80 @@ export default async function Page({
 }) {
   const payload = await getPayload({ config: configPromise })
 
-  /**
-   * Grab the Page content by finding a page with the slug Blog in the Pages collection
-   */
+  // 1Get the Blog page
   const blogPage = await payload.find({
     collection: 'pages',
     limit: 1,
     pagination: false,
-    draft: true, // Required for live preview
-    where: {
-      slug: { equals: 'blog' },
-    },
+    draft: true,
+    where: { slug: { equals: 'blog' } },
   })
 
   const pageTitle = blogPage.docs?.[0]?.title ?? 'Blog'
   const pageDescription = blogPage.docs?.[0]?.description ?? ''
 
-  const { page = '1' } = await searchParams
-
+  // 2Extract page number and tag from searchParams
+  const { page = '1', tag } = await searchParams
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page)
+  const tagSlug = Array.isArray(tag) ? tag[0] : tag
 
-  const posts = await payload.find({
+  let tagId = null
+
+  // If tag slug is provided, fetch the tag document to get its ID
+  if (tagSlug) {
+    const tagResult = await payload.find({
+      collection: 'tags',
+      limit: 1,
+      where: { slug: { equals: tagSlug } },
+    })
+
+    if (tagResult.docs.length) {
+      tagId = tagResult.docs[0].id
+    }
+  }
+
+  // Build the posts query
+  const postsQuery: any = {
     collection: 'posts',
     depth: 1,
     limit: 8,
     overrideAccess: false,
     page: currentPage,
-  })
+  }
 
-  // Get total number of posts in collection
-  const totalPosts = posts.totalDocs
+  if (tagId) {
+    postsQuery.where = { tags: { contains: tagId } }
+  }
+
+  const posts = await payload.find(postsQuery)
+
+  // Build filtered description
+  const filteredDescription = tagSlug ? `Articles filtered by tag "${tagSlug}"` : pageDescription
 
   return (
     <>
       <HeaderContainer light />
       <Wrapper>
-        <PageTitle title={pageTitle} description={pageDescription} />
+        <PageTitle title={pageTitle} description={filteredDescription} />
 
         <Grid columns={1} columnsMedium={6} gutter>
           {posts.docs.map((post, index) => {
-            const featuredImage = (post?.featuredImageWithMetadata?.featuredImage as Media) || ''
+            const p = post as any
+            // Runtime-safe access to featuredImageWithMetadata
+            const featuredImage = p?.featuredImageWithMetadata?.featuredImage || ''
 
             const imgSrc = featuredImage?.url || ''
             const imgAlt = featuredImage?.alt || ''
             const imgKey = featuredImage?._key || ''
 
             return (
-              <GridItem columnSpanMedium={currentPage == 1 && index < 2 ? 3 : 2} key={post.id}>
+              <GridItem columnSpanMedium={currentPage === 1 && index < 2 ? 3 : 2} key={p.id}>
                 <CardArticle
                   imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
                   imageAlt={imgAlt}
-                  title={post.title ?? ''}
-                  //description={post.description ?? ''}
-                  date={post.createdAt ?? null}
-                  url={`/blog/${encodeURIComponent(post.slug ?? '')}`}
+                  title={p.title ?? ''}
+                  date={p.createdAt ?? null}
+                  url={`/blog/${encodeURIComponent(p.slug ?? '')}`}
                 />
               </GridItem>
             )
