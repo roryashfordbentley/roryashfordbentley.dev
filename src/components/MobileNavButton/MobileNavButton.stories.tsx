@@ -17,6 +17,14 @@ export default meta
 
 export const Default: Story = {
   args: {
+    toggle: false,
+    onClick: () => console.log('MobileNavButton clicked'),
+  },
+}
+
+export const Toggled: Story = {
+  args: {
+    toggle: true,
     onClick: () => console.log('MobileNavButton clicked'),
   },
 }
