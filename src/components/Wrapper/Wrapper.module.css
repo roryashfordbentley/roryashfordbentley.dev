@@ -3,3 +3,8 @@
   max-width: var(--wrapper-max-width);
   margin: 0 auto;
 }
+
+.wrapperNoMax {
+  width: auto;
+  max-width: none;
+}

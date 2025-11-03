@@ -1,30 +1,23 @@
+import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import styles from './MobileNavButton.module.css'
 
-export const MobileNavButton = (props: { onClick: () => void }) => {
+export const MobileNavButton = (props: { toggle: boolean; onClick: () => void }) => {
+  const menuIconPath = 'icons/nav-icon.svg'
+  const closeIconPath = 'icons/close-icon.svg'
+
   return (
     <>
       <button
         onClick={props.onClick}
-        className={styles.button}
+        className={`${styles.button} ${props.toggle ? styles.buttonToggle : ''}`}
         aria-label="Open navigation Menu"
         title="Open navigation menu"
       >
-        <svg
-          width="22"
-          height="14"
-          viewBox="0 0 22 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M1.5127 7H20.4884" stroke="#222B2E" strokeWidth="2" strokeLinecap="round" />
-          <path d="M1.5127 12.7822H14.706" stroke="#222B2E" strokeWidth="2" strokeLinecap="round" />
-          <path
-            d="M1.5127 1.21802H20.4884"
-            stroke="#222B2E"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </svg>
+        {!props.toggle ? (
+          <InlineSVG svgPath={menuIconPath} />
+        ) : (
+          <InlineSVG svgPath={closeIconPath} />
+        )}
       </button>
     </>
   )

@@ -4,19 +4,20 @@
 
 .inner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-7);
-  padding: var(--spacing-3) 0;
+  align-items: stretch;
+  margin: 0 auto;
 
   @media (--m) {
-    padding: var(--spacing-4) 0;
+    width: var(--wrapper-width);
+    max-width: var(--wrapper-max-width);
   }
 }
 
 .logo {
   width: pxrem(30px);
   margin-right: auto;
+  margin-left: var(--spacing-3);
+  padding: var(--spacing-3) 0;
 
   @media (--m) {
     width: pxrem(40px);
@@ -28,22 +29,38 @@
 
   @media (--m) {
     display: block;
+    padding: var(--spacing-3) var(--spacing-4);
+    border-right: pxrem(1px) solid var(--theme-background-tint);
   }
 }
 
 .social {
   display: none;
+
   @media (--m) {
-    display: block;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-3) var(--spacing-4);
   }
 }
 
 .mobileNavButton {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-4);
+
   @media (--m) {
     display: none;
   }
 }
 
-.theme-toggle {
-  display: none;
+.themeToggle {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-4);
+  border-right: pxrem(1px) solid var(--theme-background-tint);
+
+  @media (--m) {
+    padding: var(--spacing-4) var(--spacing-4);
+  }
 }

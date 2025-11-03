@@ -19,29 +19,25 @@ export const Header = (props: {
 
   return (
     <header className={`${styles.wrapper} ${props.light ? styles.wrapperLight : ''}`}>
-      <Wrapper>
-        <div className={styles.inner}>
-          <div className={styles.logo}>
-            <LogoLink link="/" />
-          </div>
-
-          {props.navMenu && <div className={styles.nav}>{props.navMenu}</div>}
-
-          {/*
-            <div className={styles.themeToggle}>
-              <ThemeToggle />
-            </div>
-          */}
-
-          <div className={styles.secondaryNav}>
-            {props.socialMenu && <div className={styles.social}>{props.socialMenu}</div>}
-
-            <div className={styles.mobileNavButton}>
-              <MobileNavButton onClick={() => setNavToggle(!navOpen)} />
-            </div>
-          </div>
+      <div className={styles.inner}>
+        <div className={styles.logo}>
+          <LogoLink link="/" />
         </div>
-      </Wrapper>
+
+        {props.navMenu && <div className={styles.nav}>{props.navMenu}</div>}
+
+        {
+          <div className={styles.themeToggle}>
+            <ThemeToggle />
+          </div>
+        }
+
+        {props.socialMenu && <div className={styles.social}>{props.socialMenu}</div>}
+
+        <div className={styles.mobileNavButton}>
+          <MobileNavButton toggle={navOpen} onClick={() => setNavToggle(!navOpen)} />
+        </div>
+      </div>
 
       <div className={styles.mobileNav}>
         <MobileNav toggle={navOpen} items={props.mobileNavItems} socialItems={props.socialMenu} />

@@ -12,10 +12,10 @@
 
 .icon {
   display: block;
-  width: pxrem(35px);
+  width: pxrem(30px);
 
   path {
-    fill: var(--theme-foreground);
+    fill: var(--theme-accent);
     stroke-width: 5;
   }
 }

@@ -31,6 +31,18 @@
   path {
     fill: currentColor;
   }
+
+  @media (--m) {
+    svg {
+      max-height: pxrem(18px);
+    }
+  }
+
+  @media (--l) {
+    svg {
+      max-height: pxrem(24px);
+    }
+  }
 }
 
 .list:has(.link:hover) .link:not(:hover) {

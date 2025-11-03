@@ -3,12 +3,24 @@
   border-radius: var(--radius-1);
   border: none;
   background: none;
-  width: pxrem(46px);
-  height: pxrem(46px);
   padding: 0;
   cursor: pointer;
 
   &:hover {
     background-color: var(--theme-background);
+  }
+
+  svg {
+    width: pxrem(24px);
+  }
+
+  path {
+    stroke: var(--theme-accent);
+  }
+}
+
+.buttonToggle {
+  svg {
+    width: pxrem(20px);
   }
 }

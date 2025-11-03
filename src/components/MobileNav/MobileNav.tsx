@@ -16,6 +16,12 @@ export const MobileNav = (props: {
       document.body.style.overflow = ''
     }
 
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 500) {
+        document.body.style.overflow = ''
+      }
+    })
+
     // Cleanup on unmount (or menu close)
     return () => {
       document.body.style.overflow = ''
@@ -38,16 +44,17 @@ export const MobileNav = (props: {
 
   return (
     <nav className={styles.wrapper + (props.toggle ? ` ${styles.wrapperOpen}` : '')}>
-      <ul className={styles.list}>
-        {navLinks &&
-          navLinks.map((item, id) => (
-            <li className={styles.listItem} key={id}>
-              <MobileNavLink title={item.page.title} href={item.page.slug} />
-            </li>
-          ))}
-      </ul>
-
-      {props.socialItems}
+      <div className={styles.inner}>
+        <ul className={styles.list}>
+          {navLinks &&
+            navLinks.map((item, id) => (
+              <li className={styles.listItem} key={id}>
+                <MobileNavLink title={item.page.title} href={item.page.slug} />
+              </li>
+            ))}
+        </ul>
+        {props.socialItems}
+      </div>
     </nav>
   )
 }
