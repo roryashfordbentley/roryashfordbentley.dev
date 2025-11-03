@@ -1,11 +1,11 @@
 .figure {
-  box-shadow: var(--box-shadow-default);
   border-radius: var(--radius-2);
 }
 
 .figure img {
-  background: var(--theme-foreground-tint-2);
+  background: var(--theme-background-tint);
   border-radius: var(--radius-2);
+  box-shadow: var(--box-shadow-default);
 }
 
 .caption {
