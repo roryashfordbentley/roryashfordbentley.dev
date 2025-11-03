@@ -1,4 +1,5 @@
 .wrapper {
+  border-top: pxrem(1px) solid var(--theme-background-tint);
   border-bottom: pxrem(1px) solid var(--theme-background-tint);
 }
 
