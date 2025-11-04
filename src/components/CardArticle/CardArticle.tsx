@@ -39,7 +39,7 @@ export const CardArticle = ({
               src={imageSrc}
               alt={imageAlt ?? ''}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1500px) 50vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
           )}
         </figure>
