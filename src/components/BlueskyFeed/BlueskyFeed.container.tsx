@@ -1,3 +1,6 @@
+// caches for 30 minutes before refetching
+export const revalidate = 1800
+
 import { Agent, CredentialSession } from '@atproto/api'
 import { BlueskyFeed } from './BlueskyFeed'
 
