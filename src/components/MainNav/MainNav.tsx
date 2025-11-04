@@ -3,6 +3,7 @@
 import { Key } from 'react'
 import { usePathname } from 'next/navigation'
 import styles from './MainNav.module.css'
+import Link from 'next/link'
 
 export const MainNav = (props: {
   navItems: { id: Key; page: { slug?: string; title: string } }[]
@@ -18,12 +19,12 @@ export const MainNav = (props: {
 
           return (
             <li key={item.id} className={styles.listItem}>
-              <a
+              <Link
                 className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
                 href={item.page.slug ?? '#'}
               >
                 {item.page.title}
-              </a>
+              </Link>
             </li>
           )
         })}
