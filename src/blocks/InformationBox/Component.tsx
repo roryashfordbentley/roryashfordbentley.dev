@@ -6,7 +6,7 @@ import { SerializedEditorState, SerializedLexicalNode } from '@payloadcms/richte
 
 export type InformationBoxBlockProps = {
   informationBoxContent: SerializedEditorState<SerializedLexicalNode>
-  blockType: 'informationBox'
+  blockType?: 'informationBox'
 }
 
 export const InformationBoxBlock: React.FC<InformationBoxBlockProps> = ({

@@ -2,6 +2,7 @@
   background: var(--theme-accent-tint-2);
   border: pxrem(1px) solid var(--theme-accent-tint);
   border-radius: var(--radius-2);
+  color: var(--theme-foreground);
   padding: var(--spacing-3) pxrem(14px);
   box-shadow: var(--box-shadow-default);
   font-family: var(--font-family-inter);
@@ -12,6 +13,16 @@
   }
 }
 
+:global(.dark) .wrapper {
+  background: var(--theme-background-tint);
+  border: pxrem(1px) solid var(--theme-accent-tint);
+  color: var(--theme-foreground);
+}
+
 .content {
   grid-column: content;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }

@@ -3,7 +3,6 @@ import { layoutField } from '@blocks/LayoutField'
 
 export const {{pascalCase name}}BlockSchema: Block = {
   slug: '{{camelCase name}}',
-  imageURL: '/block-previews/block-preview-file.jpg',
   imageAltText: '{{pascalCase name}} block screenshot',
   fields: [
     layoutField,

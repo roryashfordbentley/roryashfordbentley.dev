@@ -7,6 +7,7 @@ import { VideoEmbedBlock } from '@blocks/VideoEmbed/Component'
 import { CodeBlock } from '@blocks/Code/Component'
 import { BigImageBlock } from '@blocks/BigImage/Component'
 import { BlockWrapper } from '@components/BlockWrapper/BlockWrapper'
+import { InformationBoxBlock } from '@/blocks/InformationBox/Component'
 
 type NodeTypes = DefaultNodeTypes
 
@@ -41,6 +42,15 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
             credit={node.fields.credit}
             creditLink={node.fields.creditLink}
           />
+        </BlockWrapper>
+      )
+    },
+    informationBox: ({ node }: { node: SerializedBlockNode }) => {
+      console.log(node)
+
+      return (
+        <BlockWrapper layout={node.fields.blockLayoutField}>
+          <InformationBoxBlock informationBoxContent={node.fields.informationBoxContent} />
         </BlockWrapper>
       )
     },

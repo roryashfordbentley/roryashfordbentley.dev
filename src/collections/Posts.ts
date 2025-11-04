@@ -101,7 +101,12 @@ export const Posts: CollectionConfig = {
         features: ({ defaultFeatures, rootFeatures }) => [
           ...defaultFeatures,
           BlocksFeature({
-            blocks: [CodeBlockSchema, BigImageBlockSchema, VideoEmbedBlockSchema],
+            blocks: [
+              CodeBlockSchema,
+              BigImageBlockSchema,
+              VideoEmbedBlockSchema,
+              InformationBoxBlockSchema,
+            ],
           }),
           //FixedToolbarFeature(),
         ],

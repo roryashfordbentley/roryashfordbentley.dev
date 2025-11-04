@@ -3,7 +3,6 @@ import { layoutField } from '@blocks/LayoutField'
 
 export const GridListBlockSchema: Block = {
   slug: 'gridList',
-  imageURL: '/block-previews/grid-list.jpg',
   imageAltText: 'GridList block screenshot',
   fields: [
     layoutField,

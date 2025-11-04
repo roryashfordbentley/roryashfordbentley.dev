@@ -3,7 +3,6 @@ import { layoutField } from '@blocks/LayoutField'
 
 export const InformationBoxBlockSchema: Block = {
   slug: 'informationBox',
-  imageURL: '/block-previews/information-block.jpg',
   imageAltText: 'Information Box block screenshot',
   fields: [
     layoutField,

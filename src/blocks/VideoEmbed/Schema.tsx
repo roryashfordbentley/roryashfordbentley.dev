@@ -3,7 +3,6 @@ import { layoutField } from '@blocks/LayoutField'
 
 export const VideoEmbedBlockSchema: Block = {
   slug: 'videoEmbed',
-  imageURL: '/block-previews/video-embed.jpg',
   imageAltText: '',
   fields: [
     layoutField,
