@@ -46,8 +46,6 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
       )
     },
     informationBox: ({ node }: { node: SerializedBlockNode }) => {
-      console.log(node)
-
       return (
         <BlockWrapper layout={node.fields.blockLayoutField}>
           <InformationBoxBlock informationBoxContent={node.fields.informationBoxContent} />
