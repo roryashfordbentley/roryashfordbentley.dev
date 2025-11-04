@@ -3,26 +3,14 @@
 * @presenter Color
 */
 
-/*:root.dark {
-  --theme-foreground: #f7f6ee;
-  --theme-foreground-tint: #dddddd;
-  --theme-foreground-tint-2: #382461;
-
-  --theme-accent: #9a6eed;
-  --theme-accent-tint: #663cb3;
-  --theme-accent-tint-2: #210851;
-
-  --theme-background: #0f0523;
-}*/
-
 :root.dark {
-  --theme-background: #0f0523;
+  --theme-background: #0c031f;
   --theme-background-tint: #382560;
   --theme-background-tint-2: #472f77;
 
-  --theme-accent: #9a6eed;
-  --theme-accent-tint: #b392f3;
-  --theme-accent-tint-2: #b392f3;
+  --theme-accent: #976ef2;
+  --theme-accent-tint: #9d73ec;
+  --theme-accent-tint-2: #b799f3;
 
   --theme-foreground: #f7f6ee;
   --theme-foreground-tint: #dcdbd4;
@@ -33,18 +21,6 @@
 * @tokens Colors Light
 * @presenter Color
 */
-
-/*:root {
-  --theme-foreground: #02235e;
-  --theme-foreground-tint: #363d43;
-  --theme-foreground-tint-2: #dddddd;
-
-  --theme-accent: #652be3;
-  --theme-accent-tint: #d8cdf0;
-  --theme-accent-tint-2: #f9f6ff;
-
-  --theme-background: #f7f6ee;
-}*/
 
 :root {
   --theme-foreground: #02235e;

@@ -21,13 +21,13 @@
 
 .buttonDisabled {
   cursor: not-allowed;
-  background: rgba(0, 0, 0, 0.125);
+  background: var(--theme-background-tint);
 
   path {
-    fill: rgba(0, 0, 0, 0.125);
+    fill: var(--theme-accent-tint);
   }
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.125);
+    background: var(--theme-background-tint);
   }
 }

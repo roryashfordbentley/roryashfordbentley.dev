@@ -5,10 +5,11 @@
   gap: var(--spacing-3);
   font-family: var(--font-family-inter);
   border-radius: var(--radius-2);
-  background-color: var(--theme-background);
-  border: pxrem(1px) solid var(--theme-background-tint-2);
   height: 100%;
   padding: var(--spacing-5);
+  background-color: var(--theme-accent);
+  border: pxrem(1px) solid var(--theme-accent);
+  color: var(--theme-background);
 
   .repost {
     background: var(--theme-accent-tint-2);
@@ -50,7 +51,6 @@
 .displayName {
   display: block;
   font-weight: var(--font-weight-bold);
-  color: var(--theme-accent);
 }
 
 .handle {
@@ -88,7 +88,6 @@
 }
 
 .metaIcon {
-  color: var(--theme-accent);
   margin-right: var(--spacing-1);
   width: pxrem(20px);
 }
@@ -134,35 +133,4 @@
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: var(--spacing-1);
   font-size: var(--font-size-1);
-}
-
-.cardSecondary {
-  background-color: #f9f6ff;
-  border: pxrem(1px) solid var(--theme-accent-tint);
-
-  .metaIcon {
-    color: var(--theme-accent);
-  }
-
-  .repost {
-    background: rgba(255, 255, 255, 0.3);
-  }
-}
-
-.cardTertiary {
-  background-color: var(--theme-accent);
-  border: pxrem(1px) solid var(--theme-accent);
-  color: var(--theme-background);
-
-  .displayName {
-    color: var(--theme-background);
-  }
-
-  .metaIcon {
-    color: var(--theme-background);
-  }
-
-  .repost {
-    background: var(--theme-foreground-tint);
-  }
 }

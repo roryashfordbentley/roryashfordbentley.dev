@@ -20,7 +20,7 @@ export const Default: Story = {
     avatar:
       'https://cdn.bsky.app/img/avatar/plain/did:plc:mkhsyxtw3dld6f53t5npnoot/bafkreiewioaywizz5us2jvnox3fsc6nssek5k6vnt6a5nqosvlkj3jqv4e@jpeg',
     displayName: 'Rory',
-    handle: 'roikles.bsky.social',
+    handle: 'roryashfordbentley.dev',
     repost: false,
     content:
       'RFC: Deployment Adapters API We are planning to support adapters to deploy Next.js to any provider. github.com/vercel/next....',

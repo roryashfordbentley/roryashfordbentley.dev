@@ -97,9 +97,9 @@
 
   :not(pre) > code {
     display: inline-block; /* Prevents line-breaking artifacts */
-    background-color: rgb(250, 250, 250);
+    background-color: var(--theme-background);
     padding: var(--spacing-1) var(--spacing-2);
-    border: pxrem(1px) solid var(--theme-accent-tint);
+    border: pxrem(1px) solid var(--theme-background-tint);
     border-radius: var(--radius-1);
     color: var(--theme-accent);
     font-size: var(--font-size-1);

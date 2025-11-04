@@ -6,7 +6,6 @@
   border-radius: var(--radius-1);
   padding: var(--spacing-3) var(--spacing-4);
   box-shadow: 0 pxrem(2px) pxrem(4px) 0 rgba(0, 0, 0, 0.25);
-
   text-decoration: none;
   font-family: var(--font-family-inter);
   font-weight: var(--font-weight-bold);
@@ -14,6 +13,7 @@
 
   &:hover {
     background-color: var(--theme-foreground);
+    color: var(--theme-background);
   }
 
   &:focus {

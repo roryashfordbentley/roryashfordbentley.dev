@@ -23,7 +23,7 @@ export const Default: Story = {
     socialLinks: [
       {
         footerSocialTitle: 'Bluesky',
-        footerSocialLink: 'https://roikles.bsky.social/profile/rory.ashford.bentley',
+        footerSocialLink: 'https://bsky.app/profile/roryashfordbentley.dev',
       },
       {
         footerSocialTitle: 'GitHub',

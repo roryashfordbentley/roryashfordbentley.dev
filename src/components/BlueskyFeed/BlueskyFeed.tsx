@@ -66,7 +66,7 @@ export async function BlueskyFeed(props: { posts: Array<any> }) {
 
       <div className={styles.buttonWrapper}>
         <ButtonLink
-          url="https://bsky.app/profile/roikles.bsky.social"
+          url="https://bsky.app/profile/roryashfordbentley.dev"
           label="View more on Bluesky"
         />
       </div>
