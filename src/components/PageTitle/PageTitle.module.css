@@ -1,11 +1,10 @@
 .wrapper {
-  padding: var(--spacing-7) 0;
+  padding: var(--spacing-7) 0 0 0;
 
   @media (--l) {
-    padding: var(--spacing-8) 0;
+    padding: var(--spacing-8) 0 var(--spacing-6) 0;
   }
 }
-
 .content {
 }
 

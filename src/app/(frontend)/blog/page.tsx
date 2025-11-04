@@ -8,7 +8,7 @@ import { CardArticle } from '@components/CardArticle/CardArticle'
 import { Pagination } from '@components/Pagination/Pagination'
 import { PageTitle } from '@components/PageTitle/PageTitle'
 import { Wrapper } from '@components/Wrapper/Wrapper'
-import { HeaderContainer } from '@components/Header/Header.container'
+import { TagsContainer } from '@components/Tags/Tags.container'
 import { directUploadThingURL } from '@/scripts/directUploadThingURL'
 
 export default async function Page({
@@ -33,16 +33,16 @@ export default async function Page({
   // Extract page number and tag from searchParams
   const { page = '1', tag } = await searchParams
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page)
-  const tagSlug = Array.isArray(tag) ? tag[0] : tag
+  const currentTagSlug = Array.isArray(tag) ? tag[0] : tag
 
   let tagId = null
 
   // If tag slug is provided, fetch the tag document to get its ID
-  if (tagSlug) {
+  if (currentTagSlug) {
     const tagResult = await payload.find({
       collection: 'tags',
       limit: 1,
-      where: { slug: { equals: tagSlug } },
+      where: { slug: { equals: currentTagSlug } },
     })
 
     if (tagResult.docs.length) {
@@ -65,12 +65,11 @@ export default async function Page({
 
   const posts = await payload.find(postsQuery)
 
-  // Build filtered description
-  const filteredDescription = tagSlug ? `Articles filtered by tag "${tagSlug}"` : pageDescription
-
   return (
     <Wrapper>
-      <PageTitle title={pageTitle} description={filteredDescription} />
+      <PageTitle title={pageTitle} description={pageDescription} />
+
+      <TagsContainer currentTag={currentTagSlug} padded />
 
       <Grid columns={1} columnsMedium={6} gutter>
         {posts.docs.map((post, index) => {

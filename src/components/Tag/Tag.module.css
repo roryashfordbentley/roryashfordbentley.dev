@@ -1,20 +1,22 @@
 .tag {
   position: relative;
-  border: pxrem(1px) solid var(--theme-accent-tint);
+  border: pxrem(1px) solid var(--theme-background-tint);
   border-radius: pxrem(50px);
   padding: var(--spacing-1) var(--spacing-3) var(--spacing-1) var(--spacing-4);
-  background-color: var(--theme-accent-tint-2);
+  background-color: var(--theme-background);
   font-family: var(--font-family-inter);
   font-size: 0.875rem;
-
   text-decoration: none;
+  color: var(--theme-accent);
 
   @media (--m) {
     font-size: var(--font-size-1);
   }
 
   &:hover {
-    background-color: var(--theme-accent-tint);
+    background-color: var(--theme-background-tint-2);
+    color: var(--theme-foreground);
+    border-color: var(--theme-background-tint-2);
   }
 
   &:before {
@@ -27,5 +29,37 @@
     left: var(--spacing-2);
     border-radius: var(--spacing-2);
     background: var(--theme-accent);
+  }
+}
+
+.tagActive {
+  border: pxrem(1px) solid var(--theme-accent);
+  background-color: var(--theme-accent);
+  color: var(--theme-background);
+
+  &:hover {
+    background-color: var(--theme-accent);
+    color: var(--theme-background);
+    border: pxrem(1px) solid var(--theme-accent);
+  }
+}
+
+.closeIcon {
+  display: inline-block;
+  margin-left: var(--spacing-3);
+
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    width: pxrem(8px);
+    height: pxrem(8px);
+  }
+
+  path {
+    stroke: var(--theme-background);
   }
 }

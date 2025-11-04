@@ -21,3 +21,11 @@ export const Default: Story = {
     link: 'https://www.javascript.com/',
   },
 }
+
+export const Active: Story = {
+  args: {
+    label: 'Javascript',
+    link: 'https://www.javascript.com/',
+    active: true,
+  },
+}

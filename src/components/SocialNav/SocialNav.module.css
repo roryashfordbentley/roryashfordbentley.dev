@@ -25,7 +25,8 @@
   transition: opacity 0.3s;
 
   svg {
-    max-height: pxrem(24px);
+    height: pxrem(24px);
+    width: pxrem(24px);
   }
 
   path {
@@ -34,13 +35,15 @@
 
   @media (--m) {
     svg {
-      max-height: pxrem(18px);
+      height: pxrem(18px);
+      width: pxrem(24px);
     }
   }
 
   @media (--l) {
     svg {
-      max-height: pxrem(24px);
+      height: pxrem(24px);
+      width: pxrem(24px);
     }
   }
 }

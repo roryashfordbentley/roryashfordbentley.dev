@@ -35,7 +35,7 @@
   img {
     display: block;
     object-fit: cover;
-    transform: rotate(5deg) scale(1.2);
+    transform: rotate(5deg) rotateX(0) scale(1.2);
     transform-origin: center center;
   }
 
