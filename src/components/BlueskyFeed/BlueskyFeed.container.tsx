@@ -30,7 +30,7 @@ const authenticateBlueskyUser = async () => {
 
     return { session, agent }
   } catch (error) {
-    console.log(error)
+    //console.log(error)
     throw new Error('Unable to authenticate Bluesky user.')
   }
 }
