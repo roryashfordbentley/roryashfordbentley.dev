@@ -16,7 +16,7 @@ import '@components/Footer/Footer'
 
 import { Metadata } from 'next'
 import { Inter, Source_Serif_4 } from 'next/font/google'
-import { Content } from '@components/Content/Content'
+import { HeaderContainer } from '@components/Header/Header.container'
 import { FooterContainer } from '@components/Footer/Footer.container'
 
 export const metadata: Metadata = {
@@ -45,7 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif.variable} `}>
       <body className={isLocal ? 'dev' : ''}>
-        {children}
+        <HeaderContainer light />
+        <main>{children}</main>
+
         <FooterContainer />
       </body>
     </html>

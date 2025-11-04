@@ -18,7 +18,7 @@ export default async function Page({
 }) {
   const payload = await getPayload({ config: configPromise })
 
-  // 1Get the Blog page
+  // Get the Blog page
   const blogPage = await payload.find({
     collection: 'pages',
     limit: 1,
@@ -30,7 +30,7 @@ export default async function Page({
   const pageTitle = blogPage.docs?.[0]?.title ?? 'Blog'
   const pageDescription = blogPage.docs?.[0]?.description ?? ''
 
-  // 2Extract page number and tag from searchParams
+  // Extract page number and tag from searchParams
   const { page = '1', tag } = await searchParams
   const currentPage = parseInt(Array.isArray(page) ? page[0] : page)
   const tagSlug = Array.isArray(tag) ? tag[0] : tag
@@ -69,41 +69,36 @@ export default async function Page({
   const filteredDescription = tagSlug ? `Articles filtered by tag "${tagSlug}"` : pageDescription
 
   return (
-    <>
-      <HeaderContainer light />
-      <Wrapper>
-        <PageTitle title={pageTitle} description={filteredDescription} />
+    <Wrapper>
+      <PageTitle title={pageTitle} description={filteredDescription} />
 
-        <Grid columns={1} columnsMedium={6} gutter>
-          {posts.docs.map((post, index) => {
-            const p = post as any
-            // Runtime-safe access to featuredImageWithMetadata
-            const featuredImage = p?.featuredImageWithMetadata?.featuredImage || ''
+      <Grid columns={1} columnsMedium={6} gutter>
+        {posts.docs.map((post, index) => {
+          const p = post as any
+          const featuredImage = p?.featuredImageWithMetadata?.featuredImage || ''
+          const imgSrc = featuredImage?.url || ''
+          const imgAlt = featuredImage?.alt || ''
+          const imgKey = featuredImage?._key || ''
 
-            const imgSrc = featuredImage?.url || ''
-            const imgAlt = featuredImage?.alt || ''
-            const imgKey = featuredImage?._key || ''
+          return (
+            <GridItem columnSpanMedium={currentPage === 1 && index < 2 ? 3 : 2} key={p.id}>
+              <CardArticle
+                imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
+                imageAlt={imgAlt}
+                title={p.title ?? ''}
+                date={p.createdAt ?? null}
+                url={`/blog/${encodeURIComponent(p.slug ?? '')}`}
+              />
+            </GridItem>
+          )
+        })}
+      </Grid>
 
-            return (
-              <GridItem columnSpanMedium={currentPage === 1 && index < 2 ? 3 : 2} key={p.id}>
-                <CardArticle
-                  imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
-                  imageAlt={imgAlt}
-                  title={p.title ?? ''}
-                  date={p.createdAt ?? null}
-                  url={`/blog/${encodeURIComponent(p.slug ?? '')}`}
-                />
-              </GridItem>
-            )
-          })}
-        </Grid>
-
-        <Pagination
-          totalItems={posts.totalDocs}
-          itemsPerPage={posts.limit}
-          currentPage={currentPage}
-        />
-      </Wrapper>
-    </>
+      <Pagination
+        totalItems={posts.totalDocs}
+        itemsPerPage={posts.limit}
+        currentPage={currentPage}
+      />
+    </Wrapper>
   )
 }

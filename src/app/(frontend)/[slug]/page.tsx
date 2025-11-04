@@ -28,17 +28,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   return (
     <>
       <LivePreviewListener />
-
-      <main>
-        <HeaderContainer light />
-
-        <Wrapper>
-          <PageTitle title={pageData.title ?? ''} description={pageData.description ?? ''} />
-          <Prose padded>{pageData.content && <LexicalToJSX data={pageData.content} />}</Prose>
-
-          <RenderBlocks blocks={layout} />
-        </Wrapper>
-      </main>
+      <Wrapper>
+        <PageTitle title={pageData.title ?? ''} description={pageData.description ?? ''} />
+        <Prose padded>{pageData.content && <LexicalToJSX data={pageData.content} />}</Prose>
+        <RenderBlocks blocks={layout} />
+      </Wrapper>
     </>
   )
 }

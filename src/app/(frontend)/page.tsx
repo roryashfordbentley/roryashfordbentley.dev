@@ -38,12 +38,9 @@ export default async function HomePage() {
 
   return (
     <>
-      <main>
-        <HeaderContainer light />
-        <RenderBlocks blocks={layout} />
-        <BlogSummaryContainer />
-        <BlueskyFeedContainer />
-      </main>
+      <RenderBlocks blocks={layout} />
+      <BlogSummaryContainer />
+      <BlueskyFeedContainer />
     </>
   )
 }
