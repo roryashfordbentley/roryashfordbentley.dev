@@ -24,9 +24,38 @@
     }
   }
 
+  > h2 {
+    border-bottom: pxrem(1px) solid var(--theme-background-tint);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+  }
+
+  /* heading anchors */
+  :global(.anchor) {
+    position: absolute;
+    left: calc(var(--spacing-4) * -1);
+    color: var(--theme-accent-tint);
+    text-decoration: none;
+
+    @media (--l) {
+      left: calc(var(--spacing-6) * -1);
+    }
+
+    &:hover {
+      color: var(--theme-accent);
+    }
+  }
+
   p,
-  ul,
-  ol {
+  > ul,
+  > ol {
     margin-bottom: var(--spacing-5);
   }
 
@@ -55,12 +84,19 @@
     color: var(--theme-accent);
   }
 
-  :is(p, ol, ul, :global(.block-layout-full)) + :is(h2) {
+  :global(.blockWrapper) {
+    padding: 300px 0 !important;
+  }
+
+  :is(p, ol, ul, div) + :is(h2) {
     margin-top: var(--spacing-6);
   }
 
-  :is(p, ol, ul, :global(.block-layout-full))
-    + :is(h2, h3, h4, h5, h6, :global(.block-layout-full)) {
+  /*:is(p, ol, ul, > div) + :is(h3) {
+    margin-top: var(--spacing-5);
+  }*/
+
+  :is(p, ol, ul, div) + :is(h2, h3, h4, h5, h6) {
     margin-top: var(--spacing-5);
   }
 

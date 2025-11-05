@@ -4,7 +4,6 @@ import configPromise from '@payload-config'
 import { Media } from '@/payload-types'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { HeaderContainer } from '@components/Header/Header.container'
 
 /**
  * Blocks
@@ -22,6 +21,7 @@ import { BlogMasthead } from '@/components/BlogMasthead/BlogMasthead'
 import { BigImage } from '@/components/BigImage/BigImage'
 import { Container, ContainerItem } from '@components/Container/Container'
 import { Wrapper } from '@/components/Wrapper/Wrapper'
+import { TableOfContents } from '@components/TableOfContents/TableOfContents'
 
 /**
  * Load the blog post data from Payload
@@ -99,6 +99,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <Container>
           {content && (
             <Prose>
+              <TableOfContents data={content} />
               <LexicalToJSX data={content} />
             </Prose>
           )}
