@@ -18,18 +18,6 @@ export default meta
 export const Default: Story = {
   args: {
     contactTitle: 'Contact',
-    email: 'hello@roryashfordbentley.dev',
-    socialTitle: 'Find me on',
-    socialLinks: [
-      {
-        footerSocialTitle: 'Bluesky',
-        footerSocialLink: 'https://bsky.app/profile/roryashfordbentley.dev',
-      },
-      {
-        footerSocialTitle: 'GitHub',
-        footerSocialLink: 'https://github.com/roryashfordbentley',
-      },
-    ],
     toolsTitle: 'Built with',
     tools: [
       {
