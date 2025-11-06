@@ -82,7 +82,7 @@ export default async function Page({
           return (
             <GridItem columnSpanMedium={currentPage === 1 && index < 2 ? 3 : 2} key={p.id}>
               <CardArticle
-                imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : undefined}
+                imageSrc={imgSrc ? directUploadThingURL(imgSrc, imgKey) : ''}
                 imageAlt={imgAlt}
                 title={p.title ?? ''}
                 date={p.createdAt ?? null}

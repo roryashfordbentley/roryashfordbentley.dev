@@ -16,12 +16,13 @@ import { CodeBlockSchema } from '@/blocks/Code/Schema'
 import { Prose } from '@components/Prose/Prose'
 import { LexicalToJSX } from '@components/utils/LexicalToJSX'
 import { LivePreviewListener } from '@components/utils/LivePreviewListener'
-
 import { BlogMasthead } from '@/components/BlogMasthead/BlogMasthead'
 import { BigImage } from '@/components/BigImage/BigImage'
 import { Container, ContainerItem } from '@components/Container/Container'
 import { Wrapper } from '@/components/Wrapper/Wrapper'
 import { TableOfContents } from '@components/TableOfContents/TableOfContents'
+
+import { directUploadThingURL } from '@/scripts/directUploadThingURL'
 
 /**
  * Load the blog post data from Payload
@@ -58,6 +59,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const title = postData.title || ''
   const description = postData.description || ''
   const featuredImage = (postData?.featuredImageWithMetadata?.featuredImage as Media) || ''
+  const imgSrc = featuredImage?.url || ''
+  const imgAlt = featuredImage?.alt || ''
+  const imgKey = featuredImage?._key || ''
+
   const featuredImageCaption = postData?.featuredImageWithMetadata?.caption || ''
   const featuredImageCredit = postData?.featuredImageWithMetadata?.credit || ''
   const featuredImageCreditLink = postData?.featuredImageWithMetadata?.creditLink || ''
@@ -71,7 +76,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     })) || []
 
   const image = featuredImage.url ? (
-    <Image src={featuredImage.url ?? ''} alt={featuredImage?.alt ?? ''} width={1370} height={776} />
+    <Image
+      src={imgSrc ? directUploadThingURL(imgSrc, imgKey) : ''}
+      alt={featuredImage?.alt ?? ''}
+      width={1370}
+      height={776}
+    />
   ) : null
 
   const bigImage = featuredImage ? (
