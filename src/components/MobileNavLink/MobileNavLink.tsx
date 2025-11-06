@@ -6,7 +6,7 @@ export const MobileNavLink = (props: { href: string; title: string }) => {
     <a href={props.href} className={styles.link}>
       {props.title}
       <span className={styles.icon}>
-        <InlineSVG svgPath="icons/arrow-right.svg" />
+        <InlineSVG svgPath="/icons/arrow-right.svg" />
       </span>
     </a>
   )

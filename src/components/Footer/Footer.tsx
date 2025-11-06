@@ -1,24 +1,13 @@
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
-import { Grid, GridItem } from '@components/Grid/Grid'
-import { Container, ContainerItem } from '@components/Container/Container'
-
 import styles from './Footer.module.css'
 import Image from 'next/image'
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import { LogoLink } from '@components/LogoLink/LogoLink'
 import { Wrapper } from '@components/Wrapper/Wrapper'
+import { directUploadThingURL } from '@scripts/directUploadThingURL'
 
 const today = new Date()
 
-export function Footer(props: {
-  contactTitle: string
-  email: string
-  socialTitle: string
-  socialLinks: Array<any>
-  toolsTitle: string
-  tools: Array<any>
-}) {
+export function Footer(props: { contactTitle: string; toolsTitle: string; tools: Array<any> }) {
   return (
     <footer className={styles.wrapper}>
       <Wrapper>
@@ -46,16 +35,16 @@ export function Footer(props: {
                   >
                     {tool.footerToolsIcon &&
                       typeof tool.footerToolsIcon !== 'string' &&
-                      tool.footerToolsIcon.url && (
-                        /** HACK: this find/replace allows use to load images directly
-                         * from the public folder and not via API which requires media
-                         * to be on a remote store. As these are icons it should be OK
-                         * but could do with a refactor probably.
-                         **/
-
+                      tool.footerToolsIcon.url &&
+                      tool.footerToolsIcon._key && (
                         <InlineSVG
                           svgPath={
-                            tool.footerToolsIcon.url?.replace('/api/icons/file/', './icons/') || ''
+                            tool.footerToolsIcon.url
+                              ? directUploadThingURL(
+                                  tool.footerToolsIcon.url,
+                                  tool.footerToolsIcon._key,
+                                )
+                              : ''
                           }
                         />
                       )}

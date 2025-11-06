@@ -8,7 +8,6 @@ import { ProseBlockSchema } from '@blocks/Prose/Schema'
 import { BigImageBlockSchema } from '@blocks/BigImage/Schema'
 import { HeroBlockSchema } from '@blocks/Hero/Schema'
 import { InformationBoxBlockSchema } from '@blocks/InformationBox/Schema'
-import { GridListBlockSchema } from '@blocks/GridList/Schema'
 import { VideoEmbedBlockSchema } from '@/blocks/VideoEmbed/Schema'
 
 export const Posts: CollectionConfig = {
@@ -145,7 +144,6 @@ export const Posts: CollectionConfig = {
         ProseBlockSchema,
         BigImageBlockSchema,
         InformationBoxBlockSchema,
-        GridListBlockSchema,
         VideoEmbedBlockSchema,
       ],
     },

@@ -71,7 +71,6 @@ export interface Config {
     pages: Page;
     users: User;
     media: Media;
-    icons: Icon;
     tags: Tag;
     'payload-jobs': PayloadJob;
     'payload-locked-documents': PayloadLockedDocument;
@@ -84,7 +83,6 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    icons: IconsSelect<false> | IconsSelect<true>;
     tags: TagsSelect<false> | TagsSelect<true>;
     'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -97,13 +95,11 @@ export interface Config {
   globals: {
     Settings: Setting;
     navPrimary: NavPrimary;
-    socialMediaLinks: SocialMediaLink;
     Footer: Footer;
   };
   globalsSelect: {
     Settings: SettingsSelect<false> | SettingsSelect<true>;
     navPrimary: NavPrimarySelect<false> | NavPrimarySelect<true>;
-    socialMediaLinks: SocialMediaLinksSelect<false> | SocialMediaLinksSelect<true>;
     Footer: FooterSelect<false> | FooterSelect<true>;
   };
   locale: null;
@@ -294,25 +290,6 @@ export interface Post {
              * Select the layout for this block
              */
             blockLayoutField?: ('default' | 'wide' | 'full') | null;
-            gridListBlockTitle?: string | null;
-            gridListBlockDescription?: string | null;
-            gridListBlockList?:
-              | {
-                  gridListBlockItemImage?: (string | null) | Icon;
-                  gridListBlockItemTitle?: string | null;
-                  gridListBlockItemDescription?: string | null;
-                  id?: string | null;
-                }[]
-              | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'gridList';
-          }
-        | {
-            /**
-             * Select the layout for this block
-             */
-            blockLayoutField?: ('default' | 'wide' | 'full') | null;
             videoEmbedURL?: string | null;
             id?: string | null;
             blockName?: string | null;
@@ -386,25 +363,6 @@ export interface Tag {
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "icons".
- */
-export interface Icon {
-  id: string;
-  name?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -548,25 +506,6 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'informationBox';
-          }
-        | {
-            /**
-             * Select the layout for this block
-             */
-            blockLayoutField?: ('default' | 'wide' | 'full') | null;
-            gridListBlockTitle?: string | null;
-            gridListBlockDescription?: string | null;
-            gridListBlockList?:
-              | {
-                  gridListBlockItemImage?: (string | null) | Icon;
-                  gridListBlockItemTitle?: string | null;
-                  gridListBlockItemDescription?: string | null;
-                  id?: string | null;
-                }[]
-              | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'gridList';
           }
       )[]
     | null;
@@ -716,10 +655,6 @@ export interface PayloadLockedDocument {
         value: string | Media;
       } | null)
     | ({
-        relationTo: 'icons';
-        value: string | Icon;
-      } | null)
-    | ({
         relationTo: 'tags';
         value: string | Tag;
       } | null)
@@ -839,23 +774,6 @@ export interface PostsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        gridList?:
-          | T
-          | {
-              blockLayoutField?: T;
-              gridListBlockTitle?: T;
-              gridListBlockDescription?: T;
-              gridListBlockList?:
-                | T
-                | {
-                    gridListBlockItemImage?: T;
-                    gridListBlockItemTitle?: T;
-                    gridListBlockItemDescription?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
         videoEmbed?:
           | T
           | {
@@ -929,23 +847,6 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               blockLayoutField?: T;
               informationBoxContent?: T;
-              id?: T;
-              blockName?: T;
-            };
-        gridList?:
-          | T
-          | {
-              blockLayoutField?: T;
-              gridListBlockTitle?: T;
-              gridListBlockDescription?: T;
-              gridListBlockList?:
-                | T
-                | {
-                    gridListBlockItemImage?: T;
-                    gridListBlockItemTitle?: T;
-                    gridListBlockItemDescription?: T;
-                    id?: T;
-                  };
               id?: T;
               blockName?: T;
             };
@@ -1033,24 +934,6 @@ export interface MediaSelect<T extends boolean = true> {
               filename?: T;
             };
       };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "icons_select".
- */
-export interface IconsSelect<T extends boolean = true> {
-  name?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1157,25 +1040,10 @@ export interface NavPrimary {
     | {
         link: string;
         label: string;
-        icon?: (string | null) | Icon;
+        icon?: (string | null) | Media;
         id?: string | null;
       }[]
     | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "socialMediaLinks".
- */
-export interface SocialMediaLink {
-  id: string;
-  items: {
-    name?: string | null;
-    link?: string | null;
-    'icon '?: (string | null) | Media;
-    id?: string | null;
-  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1188,19 +1056,12 @@ export interface Footer {
   footerContactTitle?: string | null;
   footerContactEmail?: string | null;
   footerSocialTitle?: string | null;
-  footerSocialLinksList?:
-    | {
-        footerSocialTitle?: string | null;
-        footerSocialLink?: string | null;
-        id?: string | null;
-      }[]
-    | null;
   footerToolsTitle?: string | null;
   footerToolsList?:
     | {
         footerToolsTitle?: string | null;
         footerToolsLink?: string | null;
-        footerToolsIcon?: (string | null) | Icon;
+        footerToolsIcon?: (string | null) | Media;
         id?: string | null;
       }[]
     | null;
@@ -1243,36 +1104,12 @@ export interface NavPrimarySelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "socialMediaLinks_select".
- */
-export interface SocialMediaLinksSelect<T extends boolean = true> {
-  items?:
-    | T
-    | {
-        name?: T;
-        link?: T;
-        'icon '?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "Footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
   footerContactTitle?: T;
   footerContactEmail?: T;
   footerSocialTitle?: T;
-  footerSocialLinksList?:
-    | T
-    | {
-        footerSocialTitle?: T;
-        footerSocialLink?: T;
-        id?: T;
-      };
   footerToolsTitle?: T;
   footerToolsList?:
     | T

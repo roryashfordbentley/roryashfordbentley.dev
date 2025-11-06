@@ -49,7 +49,7 @@ export const CardArticle = ({
         {date && (
           <time className={styles.date} dateTime={dateFormatter(date).machineReadableDateString}>
             <span className={styles.dateIcon}>
-              <InlineSVG svgPath="icons/calendar.svg" />
+              <InlineSVG svgPath="/icons/calendar.svg" />
             </span>
             {dateFormatter(date).readableDateString}
           </time>

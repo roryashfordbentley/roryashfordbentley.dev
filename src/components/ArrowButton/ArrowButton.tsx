@@ -10,7 +10,7 @@ export const ArrowButton = (props: {
   onClick?: () => void
 }) => {
   const disabled = props.disabled ?? false
-  const svgPath = props.type === 'prev' ? 'icons/arrow-left.svg' : 'icons/arrow-right.svg'
+  const svgPath = props.type === 'prev' ? '/icons/arrow-left.svg' : '/icons/arrow-right.svg'
 
   return (
     <button

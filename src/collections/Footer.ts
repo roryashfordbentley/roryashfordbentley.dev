@@ -21,32 +21,6 @@ export const Footer: GlobalConfig = {
       defaultValue: 'Find me on',
     },
     {
-      name: 'footerSocialLinksList',
-      label: 'Social Links',
-      labels: {
-        singular: 'Social Link',
-        plural: 'Social Links',
-      },
-      type: 'array',
-      fields: [
-        {
-          type: 'row',
-          fields: [
-            {
-              name: 'footerSocialTitle',
-              label: 'Title',
-              type: 'text',
-            },
-            {
-              name: 'footerSocialLink',
-              label: 'Link',
-              type: 'text',
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: 'footerToolsTitle',
       label: 'Tools Title',
       type: 'text',
@@ -78,7 +52,7 @@ export const Footer: GlobalConfig = {
               name: 'footerToolsIcon',
               label: 'Icon',
               type: 'upload',
-              relationTo: 'icons',
+              relationTo: 'media',
             },
           ],
         },

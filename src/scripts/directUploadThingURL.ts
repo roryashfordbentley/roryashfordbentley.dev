@@ -13,7 +13,10 @@ export function directUploadThingURL(url: string, key?: string) {
   if (url.startsWith('https://') && url.includes('.ufs.sh')) return url
 
   // Use the _key if available
-  if (key) return `https://utfs.io/f/${key}`
+  if (key) {
+    //console.log(`https://utfs.io/f/${key}`)
+    return `https://utfs.io/f/${key}`
+  }
 
   // Fallback: just return the original URL
   return url

@@ -7,7 +7,7 @@ export const BlogMeta = (props: { datePosted: string; readingTime?: string }) =>
     <section className={styles.wrapper}>
       <div className={styles.metaItem}>
         <div className={styles.metaIcon}>
-          <InlineSVG svgPath="icons/calendar.svg" />
+          <InlineSVG svgPath="/icons/calendar.svg" />
         </div>
 
         <span className={styles.metaItemValue}>
@@ -17,7 +17,7 @@ export const BlogMeta = (props: { datePosted: string; readingTime?: string }) =>
 
       <div className={styles.metaItem}>
         <div className={styles.metaIcon}>
-          <InlineSVG svgPath="icons/book.svg" />
+          <InlineSVG svgPath="/icons/book.svg" />
         </div>
 
         <span className={styles.metaItemValue}>{props.readingTime ?? ''}</span>

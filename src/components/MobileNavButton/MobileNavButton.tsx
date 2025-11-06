@@ -2,8 +2,8 @@ import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import styles from './MobileNavButton.module.css'
 
 export const MobileNavButton = (props: { toggle: boolean; onClick: () => void }) => {
-  const menuIconPath = 'icons/nav-icon.svg'
-  const closeIconPath = 'icons/close-icon.svg'
+  const menuIconPath = '/icons/nav-icon.svg'
+  const closeIconPath = '/icons/close-icon.svg'
 
   return (
     <>

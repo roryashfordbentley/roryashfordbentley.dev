@@ -39,7 +39,7 @@ export const NavPrimary: GlobalConfig = {
         {
           name: 'icon',
           type: 'upload',
-          relationTo: 'icons',
+          relationTo: 'media',
         },
       ],
     },

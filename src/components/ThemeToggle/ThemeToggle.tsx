@@ -37,8 +37,8 @@ const useTheme = () => {
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme()
-  const sunIcon = 'icons/sun-icon.svg'
-  const moonIcon = 'icons/moon-icon.svg'
+  const sunIcon = '/icons/sun-icon.svg'
+  const moonIcon = '/icons/moon-icon.svg'
 
   return (
     <button

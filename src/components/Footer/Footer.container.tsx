@@ -12,20 +12,8 @@ export async function FooterContainer() {
   })
 
   const contactTitle = footerData.footerContactTitle || 'Contact'
-  const email = footerData.footerContactEmail || ''
-  const socialTitle = footerData.footerSocialTitle || 'Find me on'
-  const socialLinks = footerData.footerSocialLinksList || []
   const toolsTitle = footerData.footerToolsTitle || 'Built with'
   const tools = footerData.footerToolsList || []
 
-  return (
-    <Footer
-      contactTitle={contactTitle}
-      email={email}
-      socialTitle={socialTitle}
-      socialLinks={socialLinks}
-      toolsTitle={toolsTitle}
-      tools={tools}
-    />
-  )
+  return <Footer contactTitle={contactTitle} toolsTitle={toolsTitle} tools={tools} />
 }

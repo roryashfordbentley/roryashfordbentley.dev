@@ -1,5 +1,6 @@
 import { InlineSVG } from '@components/InlineSVG/InlineSVG'
 import styles from './SocialNav.module.css'
+import { directUploadThingURL } from '@scripts/directUploadThingURL'
 
 export const SocialNav = (props: { items: Array<any>; wide?: Boolean }) => {
   return (
@@ -8,12 +9,10 @@ export const SocialNav = (props: { items: Array<any>; wide?: Boolean }) => {
         {props.items.map((item) => (
           <li key={item.id} className={styles.listItem}>
             <a className={styles.link} href={item.link} title={item.label}>
-              {item.icon && typeof item.icon !== 'string' && item.icon.url && (
-                /* HACK: this find/replace allows use to load images directly from
-                the public folder and not via API which requires media to be on a remote store.
-                As these are icons it should be OK but could do with a refactor probably. */
-
-                <InlineSVG svgPath={item.icon.url?.replace('/api/icons/file/', './icons/') || ''} />
+              {item.icon && typeof item.icon !== 'string' && item.icon.url && item.icon._key && (
+                <InlineSVG
+                  svgPath={item.icon.url ? directUploadThingURL(item.icon.url, item.icon._key) : ''}
+                />
               )}
             </a>
           </li>

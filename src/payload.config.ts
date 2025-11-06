@@ -14,8 +14,6 @@ import { Posts } from './collections/Posts'
 import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import { Icons } from './collections/Icons'
-import { SocialMediaLinks } from './collections/SocialMediaLinks'
 import { Tags } from './collections/Tags'
 
 // Global Imports (*note: also stored in src/collections)
@@ -46,8 +44,8 @@ export default buildConfig({
       collections: ['posts', 'pages'],
     },
   },
-  collections: [Posts, Pages, Users, Media, Icons, Tags],
-  globals: [Settings, NavPrimary, SocialMediaLinks, Footer],
+  collections: [Posts, Pages, Users, Media, Tags],
+  globals: [Settings, NavPrimary, Footer],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
