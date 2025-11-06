@@ -10,9 +10,9 @@
     grid-template-columns: var(--content-grid-columns-large);
   }
 
-  > * {
+  /*> * {
     grid-column: content;
-  }
+  }*/
 }
 
 .item {
